@@ -54,7 +54,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="#">Specials</a>
+                                <a class="nav-link text-dark" href="#news">Specials</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" href="#">Pricing</a>
@@ -79,7 +79,8 @@
 
             <div class="contentall">
                 <div class="content1">
-                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
+                        style="margin: 1vw">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
                                 class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -90,62 +91,24 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
-                                <div class="container row" style="margin-top: 30px;">
-                                    <div class="col-8 center me-3">
-                                        <img src="asset/banner/banner1.jpg" class="img-fluid rounded align-middle w-100"
-                                            alt="" style="margin-left: 70px;">
-                                    </div>
-                                    <div class="col-3 ms-5 fs-5">
-                                        <div class="isiatas" style="padding-top: 2vw;">
-                                            <p>Model &bull; 2017 &bull;</p>
-                                            <h3>GBX-100NS-1DR</h3>
-                                            <p>Belle, a young woman is taken prisoner by a beast in his castle. Despite
-                                                her fears, she learns to look beyond the Beast's hideous exterior to
-                                                realize the kind heart and soul of the true prince within</p>
-                                            <a href="#" class="btn btn-secondary" role="button"
-                                                data-bs-toggle="button">Check Details</a>
-                                        </div>
-                                    </div>
+                                <img src="asset/banner/banner2.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>First slide label</h5>
+                                    <p>Some representative placeholder content for the first slide.</p>
                                 </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
-                                <div class="container row" style="margin-top: 30px;">
-                                    <div class="col-8 center me-3">
-                                        <img src="asset/banner/banner3.jpg" class="img-fluid rounded align-middle w-100"
-                                            alt="" style="margin-left: 70px;">
-                                    </div>
-                                    <div class="col-3 ms-5 fs-5">
-                                        <div class="isiatas" style="padding-top: 2vw;">
-                                            <p>Model &bull; 2017 &bull;</p>
-                                            <h3>GBX-100NS-1DR</h3>
-                                            <p>Belle, a young woman is taken prisoner by a beast in his castle. Despite
-                                                her fears, she learns to look beyond the Beast's hideous exterior to
-                                                realize the kind heart and soul of the true prince within</p>
-                                            <a href="#" class="btn btn-warning" role="button"
-                                                data-bs-toggle="button">Check Details</a>
-
-                                        </div>
-                                    </div>
+                                <img src="asset/banner/banner1.jpg" class="gmbrd-block w-100 rounded-4" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Second slide label</h5>
+                                    <p>Some representative placeholder content for the second slide.</p>
                                 </div>
                             </div>
-                            <div class="carousel-item" data-bs-interval="2000">
-                                <div class="container row" style="margin-top: 30px;">
-                                    <div class="col-8 center me-3">
-                                        <img src="asset/banner/banner2.jpg" class="img-fluid rounded align-middle w-100"
-                                            alt="" style="margin-left: 70px;">
-                                    </div>
-                                    <div class="col-3 ms-5 fs-5">
-                                        <div class="isiatas" style="padding-top: 2vw;">
-                                            <p>Model &bull; 2017 &bull;</p>
-                                            <h3>GBX-100NS-1DR</h3>
-                                            <p>Belle, a young woman is taken prisoner by a beast in his castle. Despite
-                                                her fears, she learns to look beyond the Beast's hideous exterior to
-                                                realize the kind heart and soul of the true prince within</p>
-                                            <a href="#" class="btn btn-secondary" role="button"
-                                                data-bs-toggle="button">Check Details</a>
-
-                                        </div>
-                                    </div>
+                            <div class="carousel-item">
+                                <img src="asset/banner/banner3.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Third slide label</h5>
+                                    <p>Some representative placeholder content for the third slide.</p>
                                 </div>
                             </div>
                         </div>
@@ -165,18 +128,26 @@
                     <div class="isicontent" id="jmb">
                         <!-- nav2 -->
                         <div class="nav2 container d-flex justify-content-center mt-4">
-                            <div class="bungkus d-flex justify-content-center" style="margin: 1vw;">
+                            <div class="bungkus d-flex justify-content-center" style="margin: 1vw; cursor:pointer;">
                                 <div class="logo1 me-5 ms-5 mt-2">
-                                    <img src="asset/logo/logo1.png" alt="">
+                                    <a href="#">
+                                        <img src="asset/logo/logo1.png" alt="">
+                                    </a>
                                 </div>
                                 <div class="logo2 me-5 ms-5">
-                                    <img src="asset/logo/logo2.png" alt="">
+                                    <a href="#">
+                                        <img src="asset/logo/logo2.png" alt="">
+                                    </a>
                                 </div>
                                 <div class="logo1 me-5 ms-5 mt-1">
-                                    <img src="asset/logo/logo3.png" alt="">
+                                    <a href="#">
+                                        <img src="asset/logo/logo3.png" alt="">
+                                    </a>
                                 </div>
                                 <div class="logo2 me-5 ms-5">
-                                    <img src="asset/logo/logo4.png" alt="">
+                                    <a href="">
+                                        <img src="asset/logo/logo4.png" alt="">
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -188,9 +159,9 @@
                                     <p class="display-4 fs-2" style="text-align: center;">Wactches New
                                         Series</p>
                                     <div class="cnt d-flex justify-content-center">
-                                        <div class="kanan mt-3 fixed-side">
+                                        <div class="kanan mt-3 fs-5 fixed-side">
                                             <div class="atas">
-                                                <p class="collec fs-5">
+                                                <p class="collec fs-3">
                                                     <label for="nah" class="fnt me-1">
                                                         <i class="fa-solid fa-caret-right"></i>
                                                     </label>
@@ -325,7 +296,7 @@
                                                 <hr class="my-4">
                                             </div>
                                             <div class="tengah">
-                                                <p class="collec fs-5">
+                                                <p class="collec fs-3">
                                                     <label for="nah" class="fnt me-1">
                                                         <i class="fa-solid fa-caret-right"></i>
                                                     </label>
@@ -397,7 +368,7 @@
                                                 <hr class="my-4">
                                             </div>
                                             <div class="bawah">
-                                                <p class="collec fs-5">
+                                                <p class="collec fs-3">
                                                     <label for="nah" class="fnt me-1">
                                                         <i class="fa-solid fa-caret-right"></i>
                                                     </label>
@@ -466,37 +437,43 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <hr class="my-4">
                                             </div>
                                         </div>
                                         <div class="kiri">
                                             <div class="src d-flex justify-content-center mt-5">
                                                 <form class="d-flex" role="search">
-                                                    <input class="form-control" style="width: 41vw;" type="search"
-                                                        placeholder="Search..." aria-label="Search">
-                                                    <button class="btn btn-outline-dark ms-3" style="width: 10vw;"
+                                                    <input class="form-control" type="search" placeholder="Search..."
+                                                        aria-label="Search">
+                                                    <button class="btn btn-outline-dark ms-3"
                                                         type="submit">Search</button>
                                                 </form>
                                             </div>
+                                            <hr class="my-4 w-90">
                                             <div class="isikiri">
                                                 <div class="row row-cols-1 row-cols-md-3 g-4">
-                                                    <div class="col">
+                                                    <div class="cl1 col">
                                                         <div class="card h-90">
-                                                            <img src="asset/imgW/b.jpg" class="card-img-top" alt="...">
-                                                            <div class="card-body">
+                                                            <img src="asset/imgW/b.jpg" class="card1 card-img-top"
+                                                                alt="...">
+                                                            <div class="cd card-body">
                                                                 <h5 class="card-title">GA-2110SC-4A</h5>
                                                                 <p class="card-text">This is a wider card with
                                                                     supporting text below as a
                                                                     natural lead-in to additional content
                                                                 </p>
                                                             </div>
+                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
+                                                                style="text-decoration: none;">
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    style="width: 70%;">Details</button>
+                                                            </a>
                                                             <div class="card-footer">
                                                                 <small class="text-muted">Last updated 3 mins
                                                                     ago</small>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="cl1 col">
                                                         <div class="card h-90">
                                                             <img src="asset/imgW/a.jpg" class="card-img-top" alt="...">
                                                             <div class="card-body">
@@ -506,13 +483,19 @@
                                                                     natural lead-in to additional content
                                                                 </p>
                                                             </div>
+                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
+                                                                style="text-decoration: none;">
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    style="width: 70%;">Details</button>
+                                                            </a>
+
                                                             <div class="card-footer">
                                                                 <small class="text-muted">Last updated 3 mins
                                                                     ago</small>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="cl1 col">
                                                         <div class="card h-90">
                                                             <img src="asset/imgW/c.jpg" class="card-img-top" alt="...">
                                                             <div class="card-body">
@@ -521,13 +504,18 @@
                                                                     supporting text below as a
                                                                     natural lead-in to additional content
                                                             </div>
+                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
+                                                                style="text-decoration: none;">
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    style="width: 70%;">Details</button>
+                                                            </a>
                                                             <div class="card-footer">
                                                                 <small class="text-muted">Last updated 3 mins
                                                                     ago</small>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="cl1 col">
                                                         <div class="card h-90">
                                                             <img src="asset/imgW/e.jpg" class="card-img-top" alt="...">
                                                             <div class="card-body">
@@ -537,13 +525,19 @@
                                                                     natural lead-in to additional content.
                                                                 </p>
                                                             </div>
+                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
+                                                                style="text-decoration: none;">
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    style="width: 70%;">Details</button>
+                                                            </a>
+
                                                             <div class="card-footer">
                                                                 <small class="text-muted">Last updated 3 mins
                                                                     ago</small>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="cl1 col">
                                                         <div class="card h-90">
                                                             <img src="asset/imgW/f.png" class="card-img-top" alt="...">
                                                             <div class="card-body">
@@ -553,13 +547,20 @@
                                                                     natural lead-in to additional content
                                                                 </p>
                                                             </div>
+                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
+                                                                style="text-decoration: none;">
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    style="width: 70%;">Details</button>
+                                                            </a>
+
+
                                                             <div class="card-footer">
                                                                 <small class="text-muted">Last updated 3 mins
                                                                     ago</small>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="cl1 col">
                                                         <div class="card h-90">
                                                             <img src="asset/imgW/g.jpg" class="card-img-top" alt="...">
                                                             <div class="card-body">
@@ -569,13 +570,20 @@
                                                                     natural lead-in to additional content
                                                                 </p>
                                                             </div>
+                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
+                                                                style="text-decoration: none;">
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    style="width: 70%;">Details</button>
+                                                            </a>
+
+
                                                             <div class="card-footer">
                                                                 <small class="text-muted">Last updated 3 mins
                                                                     ago</small>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="cl1 col">
                                                         <div class="card h-90">
                                                             <img src="asset/imgW/h.jpg" class="card-img-top" alt="...">
                                                             <div class="card-body">
@@ -584,13 +592,20 @@
                                                                     supporting text below as a
                                                                     natural lead-in to additional content
                                                             </div>
+                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
+                                                                style="text-decoration: none;">
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    style="width: 70%;">Details</button>
+                                                            </a>
+
+
                                                             <div class="card-footer">
                                                                 <small class="text-muted">Last updated 3 mins
                                                                     ago</small>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="cl1 col">
                                                         <div class="card h-90">
                                                             <img src="asset/imgW/d.jpg" class="card-img-top" alt="...">
                                                             <div class="card-body">
@@ -600,6 +615,34 @@
                                                                     natural lead-in to additional content.
                                                                 </p>
                                                             </div>
+                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
+                                                                style="text-decoration: none;">
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    style="width: 70%;">Details</button>
+                                                            </a>
+
+                                                            <div class="card-footer">
+                                                                <small class="text-muted">Last updated 3 mins
+                                                                    ago</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cl1 col">
+                                                        <div class="card h-90">
+                                                            <img src="asset/imgW/i.png" class="card-img-top" alt="...">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">MTP-VD03D-1A</h5>
+                                                                <p class="card-text">This is a wider card with
+                                                                    supporting text below as a
+                                                                    natural lead-in to additional content.
+                                                                </p>
+                                                            </div>
+                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
+                                                                style="text-decoration: none;">
+                                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                                    style="width: 70%;">Details</button>
+                                                            </a>
+
                                                             <div class="card-footer">
                                                                 <small class="text-muted">Last updated 3 mins
                                                                     ago</small>
@@ -630,11 +673,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                <hr class="my-4">
+
                             </div>
                         </section>
-                        <div class="footer">
-                            <div class="isifot"></div>
-                        </div>
+                        <section class="footer" id="footer">
+                            <div class="footer">
+                                <div class="isifot">
+
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>

@@ -4,9 +4,9 @@
 }
 
 .navbar {
-    background: rgb(136,136,136);
-    background: linear-gradient(180deg, rgb(175, 175, 175) 0%, rgba(253,253,253,0.9699230033810399) 100%);
-    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(207, 207, 207), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    background: rgb(204, 204, 204);
+    background: linear-gradient(180deg, rgb(201, 200, 200) 0%, rgba(253,253,253,0.9699230033810399) 100%);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 /* #jbm{
@@ -50,7 +50,7 @@
     background-color: rgb(232, 232, 232);
     width: 70%;
     margin-left: 20px;
-    height: 105vw;
+    height: 102vw;
     border-radius: 5px;
 }
 
@@ -80,9 +80,57 @@
     width: 100%;
     height: 36vw;
     border-radius: 10px;
-    margin-bottom: 20vw;
+    margin-bottom: 8vw;
 }
+
+
 
 .isiik {
     margin: 3vw;
+}
+
+.isifot {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0.9587185215883228) 0%, rgba(167,167,167,0.9699230033810399) 100%);
+    width: 100%;
+    height: 20vw;
+}
+
+@media only screen and (max-width: 1200px) {
+    .isiatas p {
+        font-size: 17px;
+        width: 20vw;
+
+    }
+    .cr1 {
+        display: flex;
+    }
+
+}
+@media only screen and (max-width: 800px) {
+    .kiri {
+        margin-left: 20px;
+        height: 490vw;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .cl1 {
+        width: 210px;
+        height: 300px;
+        margin-bottom: 14vw;
+    }
+    .kiri {
+        margin-left: 20px;
+        height: 290vw;
+        border-radius: 5px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .container1 {
+        display: flex;
+    }
 }
