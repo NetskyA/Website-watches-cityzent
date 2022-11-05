@@ -18,6 +18,9 @@
     <script src="https://kit.fontawesome.com/7e563a8c7f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
 
     <!--Framework Use-->
 
@@ -27,63 +30,51 @@
     <div class="coverall">
         <div class="cover">
             <!--navbar-->
-            <ul class="nav justify-content-center fs-5 fixed-top" id="navbar" style="cursor: pinter;">
-                <li class="nav-item ms-3">
-                    <a class="nav3 nav-link text-dark mt-3" href="#news">News</a>
-                </li>
-                <li class="nav-item ms-3 justify-content-center">
-                    <a class="nav-link dropdown-toggle justify-content-center text-dark mt-3" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Watch
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="asset/logo/logo.png" style="height: 3vw;" alt="" srcset="">
                     </a>
-                    <ul class="dropdown-menu bg-secondary bg-gradient">
-                        <li>
-                            <a class="dropdown-item" href="#">Casio</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">G-Shock</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Baby-G</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Edifice</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Pro Trek</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Shen</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Other</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item ms-3">
-                    <a class="nav2 nav-link text-dark mt-3" href="#">About us</a>
-                </li>
-                <li class="nav-item ms-3">
-                    <a class="nav-link dropdown-toggle justify-content-center text-dark mt-3" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Contact
-                    </a>
-                    <ul class="dropdown-menu bg-secondary bg-gradient">
-                        <li>
-                            <a class="dropdown-item" href="#">Number Phone</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Email</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item ms-3">
-                    <a class="nav3 nav-link text-dark mt-3" href="#">Address</a>
-                </li>
-            </ul>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    News Series
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item text-dark" href="#">Action</a></li>
+                                    <li><a class="dropdown-item text-dark" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item text-dark" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#">Specials</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Contact
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item text-dark" href="#">Action</a></li>
+                                    <li><a class="dropdown-item text-dark" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item text-dark" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
             <!--endnavbar-->
 
             <div class="contentall">
@@ -99,31 +90,63 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
-                                <a href="#">
-                                    <img src="asset/banner/banner1.jpg" class="d-block w-100" style="height: 46vw;"
-                                        alt="...">
-                                    <div class="carousel-caption text-light">
-                                        <h3>Wactches Sell</h3>
+                                <div class="container row" style="margin-top: 30px;">
+                                    <div class="col-8 center me-3">
+                                        <img src="asset/banner/banner1.jpg" class="img-fluid rounded align-middle w-100"
+                                            alt="" style="margin-left: 70px;">
                                     </div>
-                                </a>
+                                    <div class="col-3 ms-5 fs-5">
+                                        <div class="isiatas" style="padding-top: 2vw;">
+                                            <p>Model &bull; 2017 &bull;</p>
+                                            <h3>GBX-100NS-1DR</h3>
+                                            <p>Belle, a young woman is taken prisoner by a beast in his castle. Despite
+                                                her fears, she learns to look beyond the Beast's hideous exterior to
+                                                realize the kind heart and soul of the true prince within</p>
+                                            <a href="#" class="btn btn-secondary" role="button"
+                                                data-bs-toggle="button">Check Details</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
-                                <a href="#">
-                                    <img src="asset/banner/banner2.jpg" class="d-block w-100" style="height: 46vw;"
-                                        alt="...">
-                                    <div class="carousel-caption d-none d-md-block text-light">
-                                        <h3>Best Model</h3>
+                                <div class="container row" style="margin-top: 30px;">
+                                    <div class="col-8 center me-3">
+                                        <img src="asset/banner/banner3.jpg" class="img-fluid rounded align-middle w-100"
+                                            alt="" style="margin-left: 70px;">
                                     </div>
-                                </a>
+                                    <div class="col-3 ms-5 fs-5">
+                                        <div class="isiatas" style="padding-top: 2vw;">
+                                            <p>Model &bull; 2017 &bull;</p>
+                                            <h3>GBX-100NS-1DR</h3>
+                                            <p>Belle, a young woman is taken prisoner by a beast in his castle. Despite
+                                                her fears, she learns to look beyond the Beast's hideous exterior to
+                                                realize the kind heart and soul of the true prince within</p>
+                                            <a href="#" class="btn btn-warning" role="button"
+                                                data-bs-toggle="button">Check Details</a>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="carousel-item">
-                                <a href="#">
-                                    <img src="asset/banner/banner3.jpg" class="d-block w-100" style="height: 46vw;"
-                                        alt="...">
-                                    <div class="carousel-caption d-none d-md-block text-light">
-                                        <h3>Modern Part</h3>
+                            <div class="carousel-item" data-bs-interval="2000">
+                                <div class="container row" style="margin-top: 30px;">
+                                    <div class="col-8 center me-3">
+                                        <img src="asset/banner/banner2.jpg" class="img-fluid rounded align-middle w-100"
+                                            alt="" style="margin-left: 70px;">
                                     </div>
-                                </a>
+                                    <div class="col-3 ms-5 fs-5">
+                                        <div class="isiatas" style="padding-top: 2vw;">
+                                            <p>Model &bull; 2017 &bull;</p>
+                                            <h3>GBX-100NS-1DR</h3>
+                                            <p>Belle, a young woman is taken prisoner by a beast in his castle. Despite
+                                                her fears, she learns to look beyond the Beast's hideous exterior to
+                                                realize the kind heart and soul of the true prince within</p>
+                                            <a href="#" class="btn btn-secondary" role="button"
+                                                data-bs-toggle="button">Check Details</a>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
@@ -140,12 +163,30 @@
                 </div>
                 <div class="content2">
                     <div class="isicontent" id="jmb">
+                        <!-- nav2 -->
+                        <div class="nav2 container d-flex justify-content-center mt-4">
+                            <div class="bungkus d-flex justify-content-center" style="margin: 1vw;">
+                                <div class="logo1 me-5 ms-5 mt-2">
+                                    <img src="asset/logo/logo1.png" alt="">
+                                </div>
+                                <div class="logo2 me-5 ms-5">
+                                    <img src="asset/logo/logo2.png" alt="">
+                                </div>
+                                <div class="logo1 me-5 ms-5 mt-1">
+                                    <img src="asset/logo/logo3.png" alt="">
+                                </div>
+                                <div class="logo2 me-5 ms-5">
+                                    <img src="asset/logo/logo4.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- and nav2 -->
                         <section id="news" class="news">
                             <div class="container">
-                                <div class="jumbotron mt-4 ps-2 pe-2" id="jbm">
-                                    <p class="display-4 fs-2" style="text-align: center; padding-top:5vw;">Wactches New
+                                <div class="jumbotron ps-2 pe-2" id="jbm">
+                                    <hr class="my-4 mt-4">
+                                    <p class="display-4 fs-2" style="text-align: center;">Wactches New
                                         Series</p>
-                                    <hr class="my-4">
                                     <div class="cnt d-flex justify-content-center">
                                         <div class="kanan mt-3 fixed-side">
                                             <div class="atas">

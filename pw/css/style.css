@@ -1,13 +1,12 @@
 * {
-    margin: 0px;
+    margin: 0;
+    font-family: 'Dongle', sans-serif;
 }
 
-#navbar {
+.navbar {
     background: rgb(136,136,136);
     background: linear-gradient(180deg, rgb(175, 175, 175) 0%, rgba(253,253,253,0.9699230033810399) 100%);
-    height: 5vw;
-    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(207, 207, 207),
-    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(207, 207, 207), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 /* #jbm{
@@ -18,36 +17,36 @@
     margin-top: 20px;
 } */
 
-.cnt{
+.cnt {
     width: 100%;
 }
 
-.kanan{
+.kanan {
     width: 25%;
     height: 48vw;
 }
 
-.isik{
+.isik {
     /* padding-top: 20px; */
     padding-left: 24px;
     text-align: left;
 }
-.isik2{
+.isik2 {
     padding-left: 24px;
     text-align: left;
 }
 
-.isik2:hover{
+.isik2:hover {
     transform: scale(110%);
     transition: 0.8s;
 }
 
-.isik:hover{
+.isik:hover {
     transform: scale(110%);
     transition: 0.8s;
 }
 
-.kiri{
+.kiri {
     background-color: rgb(232, 232, 232);
     width: 70%;
     margin-left: 20px;
@@ -55,21 +54,27 @@
     border-radius: 5px;
 }
 
-.isi{
+.nav2 {
+    background: rgb(255,255,255);
+    background: linear-gradient(87deg, rgba(255,255,255,1) 0%, rgba(214,214,214,0.9699230033810399) 48%, rgba(255,255,255,0.9699230033810399) 100%);
+    width: 100%;
+    height: 5wv;
+}
+
+.isi {
     padding-left: 10px;
 }
 
-.isikiri{
+.isikiri {
     margin: 3vw;
 }
 
-.card:hover{
+.card:hover {
     transform: scale(110%);
     transition: 1.5s;
 }
 
-
-.iklan{
+.iklan {
     text-align: center;
     background-color: rgb(232, 232, 232);
     width: 100%;
@@ -78,8 +83,6 @@
     margin-bottom: 20vw;
 }
 
-.isiik{
+.isiik {
     margin: 3vw;
 }
-
-
