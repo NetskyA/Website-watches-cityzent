@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
 
     <!--Framework Use-->
@@ -32,7 +32,7 @@
             <!--navbar-->
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand mt-1" href="#">
                         <img src="asset/logo/logo.png" style="height: 3vw;" alt="" srcset="">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -41,33 +41,45 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
+                        <ul class="navbar-nav fs-5">
+                            <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     News Series
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item text-dark" href="#">Action</a></li>
-                                    <li><a class="dropdown-item text-dark" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item text-dark" href="#">Something else here</a></li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="#">Action</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="#">Another action</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="#">Something else here</a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item me-4">
                                 <a class="nav-link text-dark" href="#news">Specials</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item me-4">
                                 <a class="nav-link text-dark" href="#">Pricing</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     Contact
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item text-dark" href="#">Action</a></li>
-                                    <li><a class="dropdown-item text-dark" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item text-dark" href="#">Something else here</a></li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="#">Action</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="#">Another action</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="#">Something else here</a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -92,24 +104,15 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
                                 <img src="asset/banner/banner2.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>First slide label</h5>
-                                    <p>Some representative placeholder content for the first slide.</p>
-                                </div>
+
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
                                 <img src="asset/banner/banner1.jpg" class="gmbrd-block w-100 rounded-4" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Second slide label</h5>
-                                    <p>Some representative placeholder content for the second slide.</p>
-                                </div>
+
                             </div>
                             <div class="carousel-item">
                                 <img src="asset/banner/banner3.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>Third slide label</h5>
-                                    <p>Some representative placeholder content for the third slide.</p>
-                                </div>
+
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
@@ -156,8 +159,7 @@
                             <div class="container">
                                 <div class="jumbotron ps-2 pe-2" id="jbm">
                                     <hr class="my-4 mt-4">
-                                    <p class="display-4 fs-2" style="text-align: center;">Wactches New
-                                        Series</p>
+                                    <p class="display-4 fs-2" style="text-align: center;">Wactches New Series</p>
                                     <div class="cnt d-flex justify-content-center">
                                         <div class="kanan mt-3 fs-5 fixed-side">
                                             <div class="atas">
@@ -440,212 +442,237 @@
                                             </div>
                                         </div>
                                         <div class="kiri">
-                                            <div class="src d-flex justify-content-center mt-5">
-                                                <form class="d-flex" role="search">
-                                                    <input class="form-control" type="search" placeholder="Search..."
-                                                        aria-label="Search">
-                                                    <button class="btn btn-outline-dark ms-3"
-                                                        type="submit">Search</button>
-                                                </form>
-                                            </div>
-                                            <hr class="my-4 w-90">
-                                            <div class="isikiri">
-                                                <div class="row row-cols-1 row-cols-md-3 g-4">
-                                                    <div class="cl1 col">
-                                                        <div class="card h-90">
-                                                            <img src="asset/imgW/b.jpg" class="card1 card-img-top"
-                                                                alt="...">
-                                                            <div class="cd card-body">
-                                                                <h5 class="card-title">GA-2110SC-4A</h5>
-                                                                <p class="card-text">This is a wider card with
-                                                                    supporting text below as a
-                                                                    natural lead-in to additional content
-                                                                </p>
-                                                            </div>
-                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
-                                                                style="text-decoration: none;">
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    style="width: 70%;">Details</button>
-                                                            </a>
-                                                            <div class="card-footer">
-                                                                <small class="text-muted">Last updated 3 mins
-                                                                    ago</small>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cl1 col">
-                                                        <div class="card h-90">
-                                                            <img src="asset/imgW/a.jpg" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">GA-B001G-1A</h5>
-                                                                <p class="card-text">This is a wider card with
-                                                                    supporting text below as a
-                                                                    natural lead-in to additional content
-                                                                </p>
-                                                            </div>
-                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
-                                                                style="text-decoration: none;">
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    style="width: 70%;">Details</button>
-                                                            </a>
-
-                                                            <div class="card-footer">
-                                                                <small class="text-muted">Last updated 3 mins
-                                                                    ago</small>
+                                            <div class="container">
+                                                <div class="src d-flex justify-content-center mt-3">
+                                                    <form class="d-flex" role="search">
+                                                        <input class="form-control" type="search"
+                                                            placeholder="Search..." aria-label="Search">
+                                                        <button class="btn btn-outline-dark ms-3"
+                                                            type="submit">Search</button>
+                                                    </form>
+                                                </div>
+                                                <hr class="my-4 w-90">
+                                                <div class="isikiri">
+                                                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                                                        <div class="cl1 col">
+                                                            <div class="card h-90">
+                                                                <img src="asset/imgW/b.jpg" class="card1 card-img-top"
+                                                                    alt="...">
+                                                                <div class="cd card-body">
+                                                                    <h5 class="card-title">GA-2110SC-4A</h5>
+                                                                    <p class="card-text">This is a wider card with
+                                                                        supporting text below as a
+                                                                        natural lead-in to additional content
+                                                                    </p>
+                                                                </div>
+                                                                <a href="#"
+                                                                    class="opo d-flex justify-content-center mb-2"
+                                                                    style="text-decoration: none;">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
+                                                                        style="width: 70%;">Details</button>
+                                                                </a>
+                                                                <div class="card-footer">
+                                                                    <small class="text-muted">Last updated 3 mins
+                                                                        ago</small>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="cl1 col">
-                                                        <div class="card h-90">
-                                                            <img src="asset/imgW/c.jpg" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">MTG-B3000D-1A</h5>
-                                                                <p class="card-text">This is a wider card with
-                                                                    supporting text below as a
-                                                                    natural lead-in to additional content
-                                                            </div>
-                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
-                                                                style="text-decoration: none;">
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    style="width: 70%;">Details</button>
-                                                            </a>
-                                                            <div class="card-footer">
-                                                                <small class="text-muted">Last updated 3 mins
-                                                                    ago</small>
+                                                        <div class="cl1 col">
+                                                            <div class="card h-90">
+                                                                <img src="asset/imgW/a.jpg" class="card-img-top"
+                                                                    alt="...">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">GA-B001G-1A</h5>
+                                                                    <p class="card-text">This is a wider card with
+                                                                        supporting text below as a
+                                                                        natural lead-in to additional content
+                                                                    </p>
+                                                                </div>
+                                                                <a href="#"
+                                                                    class="opo d-flex justify-content-center mb-2"
+                                                                    style="text-decoration: none;">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
+                                                                        style="width: 70%;">Details</button>
+                                                                </a>
+
+                                                                <div class="card-footer">
+                                                                    <small class="text-muted">Last updated 3 mins
+                                                                        ago</small>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="cl1 col">
-                                                        <div class="card h-90">
-                                                            <img src="asset/imgW/e.jpg" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">DW-5000SS-1</h5>
-                                                                <p class="card-text">This is a wider card with
-                                                                    supporting text below as a
-                                                                    natural lead-in to additional content.
-                                                                </p>
-                                                            </div>
-                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
-                                                                style="text-decoration: none;">
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    style="width: 70%;">Details</button>
-                                                            </a>
-
-                                                            <div class="card-footer">
-                                                                <small class="text-muted">Last updated 3 mins
-                                                                    ago</small>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cl1 col">
-                                                        <div class="card h-90">
-                                                            <img src="asset/imgW/f.png" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">GA-700SC-3A</h5>
-                                                                <p class="card-text">This is a wider card with
-                                                                    supporting text below as a
-                                                                    natural lead-in to additional content
-                                                                </p>
-                                                            </div>
-                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
-                                                                style="text-decoration: none;">
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    style="width: 70%;">Details</button>
-                                                            </a>
-
-
-                                                            <div class="card-footer">
-                                                                <small class="text-muted">Last updated 3 mins
-                                                                    ago</small>
+                                                        <div class="cl1 col">
+                                                            <div class="card h-90">
+                                                                <img src="asset/imgW/c.jpg" class="card-img-top"
+                                                                    alt="...">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">MTG-B3000D-1A</h5>
+                                                                    <p class="card-text">This is a wider card with
+                                                                        supporting text below as a
+                                                                        natural lead-in to additional content
+                                                                </div>
+                                                                <a href="#"
+                                                                    class="opo d-flex justify-content-center mb-2"
+                                                                    style="text-decoration: none;">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
+                                                                        style="width: 70%;">Details</button>
+                                                                </a>
+                                                                <div class="card-footer">
+                                                                    <small class="text-muted">Last updated 3 mins
+                                                                        ago</small>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="cl1 col">
-                                                        <div class="card h-90">
-                                                            <img src="asset/imgW/g.jpg" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">SHE-4539CM-4A</h5>
-                                                                <p class="card-text">This is a wider card with
-                                                                    supporting text below as a
-                                                                    natural lead-in to additional content
-                                                                </p>
-                                                            </div>
-                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
-                                                                style="text-decoration: none;">
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    style="width: 70%;">Details</button>
-                                                            </a>
+                                                        <div class="cl1 col">
+                                                            <div class="card h-90">
+                                                                <img src="asset/imgW/e.jpg" class="card-img-top"
+                                                                    alt="...">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">DW-5000SS-1</h5>
+                                                                    <p class="card-text">This is a wider card with
+                                                                        supporting text below as a
+                                                                        natural lead-in to additional content.
+                                                                    </p>
+                                                                </div>
+                                                                <a href="#"
+                                                                    class="opo d-flex justify-content-center mb-2"
+                                                                    style="text-decoration: none;">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
+                                                                        style="width: 70%;">Details</button>
+                                                                </a>
 
-
-                                                            <div class="card-footer">
-                                                                <small class="text-muted">Last updated 3 mins
-                                                                    ago</small>
+                                                                <div class="card-footer">
+                                                                    <small class="text-muted">Last updated 3 mins
+                                                                        ago</small>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="cl1 col">
-                                                        <div class="card h-90">
-                                                            <img src="asset/imgW/h.jpg" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">SHE-4539SM-2A</h5>
-                                                                <p class="card-text">This is a wider card with
-                                                                    supporting text below as a
-                                                                    natural lead-in to additional content
-                                                            </div>
-                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
-                                                                style="text-decoration: none;">
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    style="width: 70%;">Details</button>
-                                                            </a>
+                                                        <div class="cl1 col">
+                                                            <div class="card h-90">
+                                                                <img src="asset/imgW/f.png" class="card-img-top"
+                                                                    alt="...">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">GA-700SC-3A</h5>
+                                                                    <p class="card-text">This is a wider card with
+                                                                        supporting text below as a
+                                                                        natural lead-in to additional content
+                                                                    </p>
+                                                                </div>
+                                                                <a href="#"
+                                                                    class="opo d-flex justify-content-center mb-2"
+                                                                    style="text-decoration: none;">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
+                                                                        style="width: 70%;">Details</button>
+                                                                </a>
 
-
-                                                            <div class="card-footer">
-                                                                <small class="text-muted">Last updated 3 mins
-                                                                    ago</small>
+                                                                <div class="card-footer">
+                                                                    <small class="text-muted">Last updated 3 mins
+                                                                        ago</small>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="cl1 col">
-                                                        <div class="card h-90">
-                                                            <img src="asset/imgW/d.jpg" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">MTP-VD03D-1A</h5>
-                                                                <p class="card-text">This is a wider card with
-                                                                    supporting text below as a
-                                                                    natural lead-in to additional content.
-                                                                </p>
-                                                            </div>
-                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
-                                                                style="text-decoration: none;">
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    style="width: 70%;">Details</button>
-                                                            </a>
+                                                        <div class="cl1 col">
+                                                            <div class="card h-90">
+                                                                <img src="asset/imgW/g.jpg" class="card-img-top"
+                                                                    alt="...">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">SHE-4539CM-4A</h5>
+                                                                    <p class="card-text">This is a wider card with
+                                                                        supporting text below as a
+                                                                        natural lead-in to additional content
+                                                                    </p>
+                                                                </div>
+                                                                <a href="#"
+                                                                    class="opo d-flex justify-content-center mb-2"
+                                                                    style="text-decoration: none;">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
+                                                                        style="width: 70%;">Details</button>
+                                                                </a>
 
-                                                            <div class="card-footer">
-                                                                <small class="text-muted">Last updated 3 mins
-                                                                    ago</small>
+                                                                <div class="card-footer">
+                                                                    <small class="text-muted">Last updated 3 mins
+                                                                        ago</small>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="cl1 col">
-                                                        <div class="card h-90">
-                                                            <img src="asset/imgW/i.png" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">MTP-VD03D-1A</h5>
-                                                                <p class="card-text">This is a wider card with
-                                                                    supporting text below as a
-                                                                    natural lead-in to additional content.
-                                                                </p>
-                                                            </div>
-                                                            <a href="#" class="opo d-flex justify-content-center mb-2"
-                                                                style="text-decoration: none;">
-                                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                                    style="width: 70%;">Details</button>
-                                                            </a>
+                                                        <div class="cl1 col">
+                                                            <div class="card h-90">
+                                                                <img src="asset/imgW/h.jpg" class="card-img-top"
+                                                                    alt="...">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">SHE-4539SM-2A</h5>
+                                                                    <p class="card-text">This is a wider card with
+                                                                        supporting text below as a
+                                                                        natural lead-in to additional content
+                                                                </div>
+                                                                <a href="#"
+                                                                    class="opo d-flex justify-content-center mb-2"
+                                                                    style="text-decoration: none;">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
+                                                                        style="width: 70%;">Details</button>
+                                                                </a>
 
-                                                            <div class="card-footer">
-                                                                <small class="text-muted">Last updated 3 mins
-                                                                    ago</small>
+                                                                <div class="card-footer">
+                                                                    <small class="text-muted">Last updated 3 mins
+                                                                        ago</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cl1 col">
+                                                            <div class="card h-90">
+                                                                <img src="asset/imgW/d.jpg" class="card-img-top"
+                                                                    alt="...">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">MTP-VD03D-1A</h5>
+                                                                    <p class="card-text">This is a wider card with
+                                                                        supporting text below as a
+                                                                        natural lead-in to additional content.
+                                                                    </p>
+                                                                </div>
+                                                                <a href="#"
+                                                                    class="opo d-flex justify-content-center mb-2"
+                                                                    style="text-decoration: none;">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
+                                                                        style="width: 70%;">Details</button>
+                                                                </a>
+
+                                                                <div class="card-footer">
+                                                                    <small class="text-muted">Last updated 3 mins
+                                                                        ago</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cl1 col">
+                                                            <div class="card h-90">
+                                                                <img src="asset/imgW/i.png" class="card-img-top"
+                                                                    alt="...">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">MTP-VD03D-1A</h5>
+                                                                    <p class="card-text">This is a wider card with
+                                                                        supporting text below as a
+                                                                        natural lead-in to additional content.
+                                                                    </p>
+                                                                </div>
+                                                                <a href="#"
+                                                                    class="opo d-flex justify-content-center mb-2"
+                                                                    style="text-decoration: none;">
+                                                                    <button type="button"
+                                                                        class="btn btn-secondary btn-sm"
+                                                                        style="width: 70%;">Details</button>
+                                                                </a>
+
+                                                                <div class="card-footer">
+                                                                    <small class="text-muted">Last updated 3 mins
+                                                                        ago</small>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -655,32 +682,67 @@
                                     </div>
                                     <hr class="my-4">
                         </section>
-                        <section id="promo" class="promo">
-                            <div class="container">
-                                <p class="display-4 fs-2 pt-2 pb-3" style="text-align: center;">Year End Promo</p>
-                                <div class="iklan mt-5">
-                                    <div class="isiik">
-                                        <div class="row row-cols-1 row-cols-md-3 g-4">
-                                            <div class="col" style="margin-top: 3vw;">
-                                                <img src="asset/imgW/promo.png" class="gmbr1 rounded"
-                                                    style="height: 30vw;" alt="">
-                                            </div>
-                                            <div class="col">
-                                                <img src="asset/imgW/promo2.jpg" class="gmbr1 rounded"
-                                                    style="height: 23vw; margin-left:5vw; margin-top: 2vw;" alt="">
-                                            </div>
-                                            <div class="col"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr class="my-4">
-
-                            </div>
-                        </section>
                         <section class="footer" id="footer">
                             <div class="footer">
-                                <div class="isifot">
-
+                                <h2 style="text-align: center;">Contact</h2>
+                                <div class="isifot d-flex justify-content-center">
+                                    <div class="ftr m-3">
+                                        <div class="fkanan">
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1"
+                                                    class="form-label">Username</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                    placeholder="username">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1" class="form-label">Phone
+                                                    Number</label>
+                                                <input type="number" class="form-control" id="exampleFormControlInput1"
+                                                    placeholder="Phone number">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1" class="form-label">Email
+                                                    address</label>
+                                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                                    placeholder="name@example.com">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlTextarea1" class="form-label">Example
+                                                    textarea</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                    rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="fkiri">
+                                            <div class="maps ms-2">
+                                                <div class="mapouter ms-5">
+                                                    <div class="gmap_canvas rounded"><iframe width="850" height="368"
+                                                            id="gmap_canvas"
+                                                            src="https://maps.google.com/maps?q=istts&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                                            frameborder="0" scrolling="no" marginheight="0"
+                                                            marginwidth="0"><br>
+                                                            <style>
+                                                            .mapouter {
+                                                                position: relative;
+                                                                text-align: right;
+                                                                height: 500px;
+                                                                width: 600px;
+                                                            }
+                                                            </style><a
+                                                                href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                                                            <style>
+                                                            .gmap_canvas {
+                                                                overflow: hidden;
+                                                                background: none !important;
+                                                                height: 500px;
+                                                                width: 600px;
+                                                            }
+                                                            </style>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </section>
