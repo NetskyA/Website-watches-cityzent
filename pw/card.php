@@ -54,47 +54,36 @@
                             <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    News Series
+                                    GA-2110SC-4A
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item text-dark" href="#">Action</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item text-dark" href="#">Another action</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item text-dark" href="#">Something else here</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item me-4">
-                                <a class="nav-link text-dark" href="#news">Specials</a>
-                            </li>
-                            <li class="nav-item me-4">
-                                <a class="nav-link text-dark" href="#">Pricing</a>
-                            </li>
-                            <li class="nav-item dropdown me-4">
-                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Contact
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item text-dark" href="#">Action</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item text-dark" href="#">Another action</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item text-dark" href="#">Something else here</a>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
+            <!-- and nav -->
+            <!-- content -->
+            <div class="content d-flex justify-content-center">
+                <div class="isic mt-5 rounded">
+                    <div class="view d-flex">
+                        <div class="kanan2">
+                            <div class="card m-2" style="width: 36rem;">
+                                <img src="asset/imgW/b.jpg" class="card-img-top" alt="...">
+                            </div>
+                        </div>
+                        <div class="kiri2 mt-4 fs-3">
+                            <h2>
+                                CASIO GA-2110SC-4A
+                            </h2>
+                            <p>
+                                Original men's watch waterproof quartz chain casual fashionable watch stainless steel
+                            </p>
+                            <p>Best Seller <br> &bull; 20 Sell &bull; Romance &bull;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- and content -->
         </div>
     </div>
 </body>
