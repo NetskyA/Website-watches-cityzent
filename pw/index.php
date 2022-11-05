@@ -21,6 +21,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    </script>
 
     <!--Framework Use-->
 
@@ -42,6 +48,9 @@
                     </button>
                     <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
                         <ul class="navbar-nav fs-5">
+                            <li class="nav-item me-4">
+                                <a class="nav-link text-dark" href="index.php">Home</a>
+                            </li>
                             <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
@@ -465,7 +474,7 @@
                                                                         natural lead-in to additional content
                                                                     </p>
                                                                 </div>
-                                                                <a href="#"
+                                                                <a href="card.php"
                                                                     class="opo d-flex justify-content-center mb-2"
                                                                     style="text-decoration: none;">
                                                                     <button type="button"
@@ -754,9 +763,6 @@
 
     </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>
