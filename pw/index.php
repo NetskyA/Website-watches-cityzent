@@ -111,11 +111,11 @@
                                 aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="10000">
+                            <div class="carousel-item active" data-bs-interval="5000">
                                 <img src="asset/banner/banner2.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
 
                             </div>
-                            <div class="carousel-item" data-bs-interval="2000">
+                            <div class="carousel-item" data-bs-interval="5000">
                                 <img src="asset/banner/banner1.jpg" class="gmbrd-block w-100 rounded-4" alt="...">
 
                             </div>
