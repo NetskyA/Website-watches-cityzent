@@ -91,9 +91,10 @@
                         <input type="text" class="inp" name="" id="">
                     </div>
                     <div class="detail">
-                        <p class="txt">Details</p>
-                        <textarea class="form-control" style="width: 30vw;height:3vw; margin-left:12px;"
-                            id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <p class="txt">Result</p>
+                        <div class="result d-flex justify-content-center">
+                            <div class="isiresult"></div>
+                        </div>
                         <hr class="my-4">
                         <button class="btn btn-secondary ms-3" style="width: 10vw; height:2vw"
                             type="button">Add</button>

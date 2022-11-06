@@ -28,7 +28,6 @@
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
     <!--Framework Use-->
-
 </head>
 
 <body>
