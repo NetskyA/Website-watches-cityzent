@@ -99,7 +99,7 @@
                             type="button">Add</button>
                     </div>
                 </div>
-                <div class="bawah mt-5" style="width: 86vw;">
+                <div class="bawah mt-1" style="width: 86vw;">
                     <table class="table table-striped table-bordered table-paginate" cellspacing="0" width="100%">
                         <thead>
                             <tr>
