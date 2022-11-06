@@ -9,7 +9,7 @@
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
-body{
+body {
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -moz-user-select: none;
@@ -102,7 +102,7 @@ body{
     height: 28vw;
 }
 
-.ftr{
+.ftr {
     background-color: rgba(145, 145, 145, 0.407);
     width: 80vw;
     height: 23vw;
@@ -111,20 +111,20 @@ body{
     display: flex;
 }
 
-.fkanan{
+.fkanan {
     width: 30%;
     height: 12vw;
     margin-top: 2vw;
     margin-left: 2vw;
 }
-.fkiri{
+.fkiri {
     width: 60%;
     height: 12vw;
     margin-top: 2vw;
     margin-right: 2vw;
 }
 
-.pagi{
+.pagi {
     background-color: rgb(232, 232, 232);
     width: 100%;
     height: 33vw;
@@ -148,29 +148,74 @@ body{
     font-weight: bold;
 }
 
-.kanan2{
+.kanan2 {
     width: 36%;
 }
 
-.isic{
+.isic {
     background-color: rgb(232, 232, 232);
     width: 90%;
     height: 31vw;
 
 }
 
-.cardg{
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 500px;
+    width: 600px;
+    border-radius: 10px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 500px;
+    width: 600px;
+}
+
+.cardg {
     height: 25vw;
     margin-left: 4vw;
 }
 
-.jdl{
-    font-family:Georgia, 'Times New Roman', Times, serif;
+.jdl {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 30px;
 }
-.des{
+
+.des {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+.bgr{
+    background: rgb(39,80,255);
+    background: linear-gradient(37deg, rgba(39,80,255,1) 0%, rgba(255,15,254,0.785049053801208) 100%);
+}
+
+/* .isiL{
+    background: rgb(39,80,255);
+    background: linear-gradient(37deg, rgba(39,80,255,1) 0%, rgba(255,15,254,0.785049053801208) 100%);
+    width: 100%;
+    height: 900px;
+} */
+
+.kotak{
+    background-color: rgba(255, 255, 255, 0.448);
+    width: 35%;
+    margin-left: 20px;
+    height: 23vw;
+    border-radius: 10px;
+    margin-top: 11vw;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(213, 213, 213, 0), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+
+}
+
+.log{
+    width: 60%;
+    height: 60px;
+}
+
 
 @media only screen and (max-width: 1200px) {
     .isiatas p {
@@ -184,7 +229,6 @@ body{
         margin-left: 20px;
         height: 130vw;
     }
-    
 
     .cr1 {
         display: flex;
