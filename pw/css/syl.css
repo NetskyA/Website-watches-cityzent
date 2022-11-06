@@ -9,6 +9,10 @@
     display: flex;
 }
 
+.judul{
+    font-family: 'Dongle', sans-serif;
+}
+
 .con{
     width: 15vw;
     height: 20vw;

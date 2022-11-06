@@ -28,9 +28,13 @@
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
 
-
-    <!-- Bootstrap CSS -->
-    <!--Framework Use-->
+    <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Jquery DataTables -->
+    <script type="text/javascript" language="javascript"
+        src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <!-- Bootstrap dataTables Javascript -->
+    <script type="text/javascript" language="javascript"
+        src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
 
     <script type="text/javascript" charset="utf-8">
@@ -41,7 +45,9 @@
 </head>
 
 <body>
-
+    <div class="judul" style="text-align: center;">
+        <h1>DATA CENTER</h1>
+    </div>
     <nav class="navbarr">
         <div class="container-fluid">
             <div class="cover">
@@ -94,8 +100,7 @@
                     </div>
                 </div>
                 <div class="bawah mt-5" style="width: 86vw;">
-                    <table class="table table-striped table-bordered table-paginate mt-2 mb-5" cellspacing=" 0"
-                        width="100%">
+                    <table class="table table-striped table-bordered table-paginate" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -106,6 +111,7 @@
                                 <th>Salary</th>
                             </tr>
                         </thead>
+
                         <tfoot>
                             <tr>
                                 <th>Name</th>
@@ -116,6 +122,7 @@
                                 <th>Salary</th>
                             </tr>
                         </tfoot>
+
                         <tbody>
                             <tr>
                                 <td>Tiger Nixon</td>
@@ -585,5 +592,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
 </script>
+
 
 </html>
