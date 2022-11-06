@@ -61,13 +61,22 @@
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                                 </div> -->
-                                <a href="admin.php" class="opo d-flex justify-content-center mb-2"
-                                    style="text-decoration: none; height: 3vw;">
-                                    <button type="button" class="dtl btn btn-secondary btn-sm mt-3"
-                                        style="width: 100%;">
-                                        <h4>Login</h4>
-                                    </button>
-                                </a>
+                                <div class="sub d-flex" style="width: 100%;">
+                                    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link text-secondary" id="tab-register" style="width: 10vw;"
+                                                data-mdb-toggle="pill" href="index.php" role="tab"
+                                                aria-controls="pills-register" aria-selected="false">Cancel
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active bg-secondary" style="width: 10vw;" id="tab-login"
+                                                data-mdb-toggle="pill" href="admin.php" role="tab"
+                                                aria-controls="pills-login" aria-selected="true">Login
+                                            </a>
+                                    </ul>
+                                </div>
                             </form>
                         </div>
                     </div>

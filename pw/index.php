@@ -89,7 +89,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item me-4">
-                                <a class="nav-link text-light" href="loginadmin.php">Esential</a>
+                                <a class="nav-link text-danger" href="loginadmin.php">Admin test</a>
                             </li>
                         </ul>
                     </div>
@@ -787,7 +787,7 @@
                                             <div class="maps ms-2">
                                                 <div class="mapouter ms-5">
                                                     <div class="gmap_canvas">
-                                                        <iframe width="850" height="368" id="gmap_canvas"
+                                                        <iframe width="1050" height="368" id="gmap_canvas"
                                                             src="https://maps.google.com/maps?q=istts&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                                             frameborder="0" scrolling="no" marginheight="0"
                                                             marginwidth="0"><br>
