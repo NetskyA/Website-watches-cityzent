@@ -480,9 +480,7 @@ require_once("connector.php");
                                                     </form>
                                                 </div>
                                                 <hr class="my-4 w-90">
-                                                <div class="isikiri">
-                                                    <table class="table" style="margin: 0vw;padding:0vw;">
-                                                        <tbody style="margin: 0vw;padding:0vw;">
+                                                <div class="isikiri row row-cols-2 row-cols-lg-5 g-4">
                                                             <?php
                                                             $batas = 10;
                                                             $halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
@@ -504,14 +502,7 @@ require_once("connector.php");
                                                             ?>
                                                             <?php
                                                             foreach ($data2 as $d) {
-                                                                if ($idx == 0) {
-                                                            ?>
-                                                            <tr style="margin: 0vw;padding:0vw;">
-                                                                <?php
-                                                                }
                                                                     ?>
-
-                                                                <td>
                                                                     <div class="card h-90"
                                                                         style="height: 17vw; width:10vw;">
                                                                         <?php
@@ -535,20 +526,12 @@ require_once("connector.php");
                                                                                 ago</small>
                                                                         </div>
                                                                     </div>
-                                                                </td>
+                                                                
 
-                                                                <?php
-                                                                    $idx++;
-                                                                    if ($idx == 5) {
-                                                                        $idx = 0;
-                                                                    ?>
-                                                            </tr>
+                                                
                                                             <?php
-                                                                    }
                                                                 }
                                                             ?>
-                                                        </tbody>
-                                                    </table>
                                                     <nav>
                                                         <ul class="pagination justify-content-center">
                                                             <li class="page-item">
