@@ -1,5 +1,10 @@
 <?php
 require_once("connector.php");
+
+    if(isset($_POST["cari"])){
+        $text = $_POST["tekscari"];
+        echo "<script>alert('$text')</script>";
+    }
 ?>
 
 <!doctype html>
@@ -472,11 +477,11 @@ require_once("connector.php");
                                         <div class="kiri">
                                             <div class="container">
                                                 <div class="src d-flex justify-content-center mt-3">
-                                                    <form class="d-flex" role="search">
+                                                    <form class="d-flex" role="search" method="POST">
                                                         <input class="form-control" type="search"
-                                                            placeholder="Search..." aria-label="Search">
+                                                            placeholder="Search..." aria-label="Search" name="tekscari">
                                                         <button class="btn btn-outline-dark ms-2"
-                                                            type="submit">Search</button>
+                                                            type="submit" name="cari">Search</button>
                                                     </form>
                                                 </div>
                                                 <hr class="my-4 w-90">
@@ -489,16 +494,21 @@ require_once("connector.php");
                                                             $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
                                                             $previous = $halaman - 1;
                                                             $next = $halaman + 1;
-
-                                                            $stmt = $conn->prepare("SELECT * FROM barang");
+                                                            if(isset($text)){
+                                                                $stmt = $conn->prepare("SELECT * FROM barang where nama like '%".$text."%'");
+                                                                $stmt2 = $conn->prepare("select * from barang where nama like '%".$text."%' limit $halaman_awal, $batas");
+                                                            }else{
+                                                                $stmt = $conn->prepare("SELECT * FROM barang");
+                                                                $stmt2 = $conn->prepare("select * from barang limit $halaman_awal, $batas");
+                                                            }
                                                             $stmt->execute();
                                                             $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                                             $jumlah_data = count($data);
                                                             $total_halaman = ceil($jumlah_data / $batas);
+                                                            echo "<script>alert('$jumlah_data')</script>";
 
-                                                            $stmt = $conn->prepare("select * from barang limit $halaman_awal, $batas");
-                                                            $stmt->execute();
-                                                            $data2 = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                                                            $stmt2->execute();
+                                                            $data2 = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
                                                             $nomor = $halaman_awal + 1;
                                                             $idx = 0;
                                                             ?>
