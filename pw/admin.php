@@ -1,5 +1,5 @@
 <?php
-
+    require_once("connector.php");
 
 ?>
 
@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WACTCHES SCRT | Online Shop</title>
+    <title>WATCHES SCRT | Online Shop</title>
 
     <!--Framework Use-->
     <link rel="stylesheet" href="css/syl.css">
