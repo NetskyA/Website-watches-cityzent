@@ -480,9 +480,11 @@ require_once("connector.php");
                                                     </form>
                                                 </div>
                                                 <hr class="my-4 w-90">
-                                                <div class="isikiri row row-cols-2 row-cols-lg-5 g-4">
+
+                                                    <table class="table" style="margin: 0vw;padding:0vw;">
+                                                        <tbody style="margin: 0vw;padding:0vw;">
                                                             <?php
-                                                            $batas = 10;
+                                                            $batas = 8;
                                                             $halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
                                                             $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
                                                             $previous = $halaman - 1;
@@ -502,7 +504,14 @@ require_once("connector.php");
                                                             ?>
                                                             <?php
                                                             foreach ($data2 as $d) {
+                                                                if ($idx == 0) {
+                                                            ?>
+                                                            <tr style="margin: 0vw;padding:0vw;">
+                                                                <?php
+                                                                }
                                                                     ?>
+
+                                                                <td>
                                                                     <div class="card h-90"
                                                                         style="height: 17vw; width:10vw;">
                                                                         <?php
@@ -521,17 +530,25 @@ require_once("connector.php");
                                                                                 style="width: 70%;">Details</button>
                                                                         </a>
                                                                         <div class="card-footer">
-                                                                            <small class="text-muted">Last updated 3
+                                                                            <small class="text-muted pb-3">Last updated 3
                                                                                 mins
                                                                                 ago</small>
                                                                         </div>
                                                                     </div>
-                                                                
+                                                                </td>
 
-                                                
+                                                                <?php
+                                                                    $idx++;
+                                                                    if ($idx == 4) {
+                                                                        $idx = 0;
+                                                                    ?>
+                                                            </tr>
                                                             <?php
+                                                                    }
                                                                 }
                                                             ?>
+                                                        </tbody>
+                                                    </table>
                                                     <nav>
                                                         <ul class="pagination justify-content-center">
                                                             <li class="page-item">
@@ -549,7 +566,6 @@ require_once("connector.php");
                                                             </li>
                                                         </ul>
                                                     </nav>
-                                                </div>
                                             </div>
                                         </div>
                                         <hr class="my-4">
