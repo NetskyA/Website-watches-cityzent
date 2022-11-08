@@ -43,7 +43,7 @@ echo "<tbody style='margin: 0vw;padding:0vw;'>";
                         echo $d["Nama"];
                     echo "</h5>";
                 echo "</div>";
-                echo "<a href='#' class='opo d-flex justify-content-center mb-2' style='text-decoration: none;'>";
+                echo "<a href='card.php' class='opo d-flex justify-content-center mb-2' style='text-decoration: none;'>";
                 echo "<button type='button' class='dtl btn btn-secondary btn-sm' style='width: 70%;'>Details</button>";
                 echo "</a>";
                 echo "<div class='card-footer'>";
