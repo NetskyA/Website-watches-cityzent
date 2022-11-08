@@ -1,10 +1,5 @@
 <?php
 require_once("connector.php");
-
-    if(isset($_POST["cari"])){
-        $text = $_POST["tekscari"];
-        echo "<script>alert('$text')</script>";
-    }
 ?>
 
 <!doctype html>
@@ -14,8 +9,7 @@ require_once("connector.php");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WACTCHES SCRT | Online Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!--Framework Use-->
     <link rel="stylesheet" href="css/style.css">
@@ -26,11 +20,9 @@ require_once("connector.php");
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
 
     <!--Framework Use-->
@@ -38,22 +30,37 @@ require_once("connector.php");
 
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- Jquery DataTables -->
-    <script type="text/javascript" language="javascript"
-        src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <!-- Bootstrap dataTables Javascript -->
-    <script type="text/javascript" language="javascript"
-        src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
 
     <script type="text/javascript" charset="utf-8">
-    $(document).ready(function() {
-        $('.table-paginate').dataTable();
-    });
+        $(document).ready(function() {
+            $('.table-paginate').dataTable();
+        });
     </script>
+    <script>
+        var search = "";
 
+        function load() {
+            ajax(1);
+        }
+
+
+        function ajax(idx) {
+            search = document.getElementById("cari1").value;
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("con").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "ajax.php?search=" + search + "&idx=" + idx);
+            xhttp.send();
+        }
+    </script>
 </head>
 
-<body>
+<body onload="load()">
     <div class="coverall">
         <div class="cover">
             <!--navbar-->
@@ -62,9 +69,7 @@ require_once("connector.php");
                     <a class="navbar-brand mt-1" href="#">
                         <img src="asset/logo/logo.png" style="height: 3vw;" alt="" srcset="">
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
@@ -73,8 +78,7 @@ require_once("connector.php");
                                 <a class="nav-link text-dark" href="index.php">Home</a>
                             </li>
                             <li class="nav-item dropdown me-4">
-                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     News Series
                                 </a>
                                 <ul class="dropdown-menu">
@@ -90,8 +94,7 @@ require_once("connector.php");
                                 <a class="nav-link text-dark" href="#">Pricing</a>
                             </li>
                             <li class="nav-item dropdown me-4">
-                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Contact
                                 </a>
                                 <ul class="dropdown-menu">
@@ -121,15 +124,11 @@ require_once("connector.php");
 
             <div class="contentall">
                 <div class="content1">
-                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
-                        style="margin: 1vw">
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin: 1vw">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="5000">
@@ -148,13 +147,11 @@ require_once("connector.php");
                                 </a>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -205,8 +202,7 @@ require_once("connector.php");
                                                 <div class="isik">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 G-Shock Series
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -226,8 +222,7 @@ require_once("connector.php");
                                                 <div class="isik2">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 Pro Trek Series
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -247,8 +242,7 @@ require_once("connector.php");
                                                 <div class="isik2">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 Baby-G Series
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -268,8 +262,7 @@ require_once("connector.php");
                                                 <div class="isik2">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 Edifice Series
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -289,8 +282,7 @@ require_once("connector.php");
                                                 <div class="isik2">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 Casio Series
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -310,8 +302,7 @@ require_once("connector.php");
                                                 <div class="isik2">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 Seen Series
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -340,8 +331,7 @@ require_once("connector.php");
                                                 <div class="isik">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 WR for ISO 200
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -361,8 +351,7 @@ require_once("connector.php");
                                                 <div class="isik2">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 WR 20 bar
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -382,8 +371,7 @@ require_once("connector.php");
                                                 <div class="isik2">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 WR 10 bar
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -412,8 +400,7 @@ require_once("connector.php");
                                                 <div class="isik">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 Digital and Analog
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -433,8 +420,7 @@ require_once("connector.php");
                                                 <div class="isik2">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 Digital
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -454,8 +440,7 @@ require_once("connector.php");
                                                 <div class="isik2">
                                                     <div class="dropdown" style="cursor: pointer;">
                                                         <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                                aria-expanded="false">
+                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
                                                                 Analog
                                                             </p>
                                                             <ul class="dropdown-menu ms-3">
@@ -477,105 +462,15 @@ require_once("connector.php");
                                         <div class="kiri">
                                             <div class="container">
                                                 <div class="src d-flex justify-content-center mt-3">
-                                                    <form class="d-flex" role="search" method="POST">
-                                                        <input class="form-control" type="search"
-                                                            placeholder="Search..." aria-label="Search" name="tekscari">
-                                                        <button class="btn btn-outline-dark ms-2"
-                                                            type="submit" name="cari">Search</button>
-                                                    </form>
+
+                                                    <input class="form-control" type="search" placeholder="Search..." aria-label="Search" name="tekscari" id="cari1">
+                                                    <button class="btn btn-outline-dark ms-2" onclick="ajax(1)">Search</button>
+
                                                 </div>
                                                 <hr class="my-4 w-90">
+                                                <div id="con" style="width: 100%;height:100%;">
 
-                                                    <table class="table" style="margin: 0vw;padding:0vw;">
-                                                        <tbody style="margin: 0vw;padding:0vw;">
-                                                            <?php
-                                                            $batas = 8;
-                                                            $halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
-                                                            $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
-                                                            $previous = $halaman - 1;
-                                                            $next = $halaman + 1;
-                                                            if(isset($text)){
-                                                                $stmt = $conn->prepare("SELECT * FROM barang where nama like '%".$text."%'");
-                                                                $stmt2 = $conn->prepare("select * from barang where nama like '%".$text."%' limit $halaman_awal, $batas");
-                                                            }else{
-                                                                $stmt = $conn->prepare("SELECT * FROM barang");
-                                                                $stmt2 = $conn->prepare("select * from barang limit $halaman_awal, $batas");
-                                                            }
-                                                            $stmt->execute();
-                                                            $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-                                                            $jumlah_data = count($data);
-                                                            $total_halaman = ceil($jumlah_data / $batas);
-                                                            echo "<script>alert('$jumlah_data')</script>";
-
-                                                            $stmt2->execute();
-                                                            $data2 = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
-                                                            $nomor = $halaman_awal + 1;
-                                                            $idx = 0;
-                                                            ?>
-                                                            <?php
-                                                            foreach ($data2 as $d) {
-                                                                if ($idx == 0) {
-                                                            ?>
-                                                            <tr style="margin: 0vw;padding:0vw;">
-                                                                <?php
-                                                                }
-                                                                    ?>
-
-                                                                <td>
-                                                                    <div class="card h-90"
-                                                                        style="height: 17vw; width:10vw;">
-                                                                        <?php
-                                                                            echo "<img src='https://www.casio.com" . $d['Gambar'] . "'class='card-img-top'>"
-                                                                            ?>
-                                                                        <div class="card-body">
-                                                                            <h5 class="card-title fs-6">
-                                                                                <?= $d["Nama"] ?>
-                                                                            </h5>
-                                                                        </div>
-                                                                        <a href="#"
-                                                                            class="opo d-flex justify-content-center mb-2"
-                                                                            style="text-decoration: none;">
-                                                                            <button type="button"
-                                                                                class=" dtl btn btn-secondary btn-sm"
-                                                                                style="width: 70%;">Details</button>
-                                                                        </a>
-                                                                        <div class="card-footer">
-                                                                            <small class="text-muted pb-3">Last updated 3
-                                                                                mins
-                                                                                ago</small>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-
-                                                                <?php
-                                                                    $idx++;
-                                                                    if ($idx == 4) {
-                                                                        $idx = 0;
-                                                                    ?>
-                                                            </tr>
-                                                            <?php
-                                                                    }
-                                                                }
-                                                            ?>
-                                                        </tbody>
-                                                    </table>
-                                                    <nav>
-                                                        <ul class="pagination justify-content-center">
-                                                            <li class="page-item">
-                                                                <a class="page-link" <?php if ($halaman > 1) {
-                                                                                            echo "href='?halaman=$previous'";
-                                                                                        } ?>>Previous</a>
-                                                            </li>
-                                                            <li class="page-item"><a class="page-link"
-                                                                    href="?halaman=<?php echo $halaman ?>"><?php echo $halaman; ?></a>
-                                                            </li>
-                                                            <li class="page-item">
-                                                                <a class="page-link" <?php if ($halaman < $total_halaman) {
-                                                                                            echo "href='?halaman=$next'";
-                                                                                        } ?>>Next</a>
-                                                            </li>
-                                                        </ul>
-                                                    </nav>
+                                                </div>
                                             </div>
                                         </div>
                                         <hr class="my-4">
@@ -598,9 +493,7 @@ require_once("connector.php");
                                                                 <h5 class="card-title">Card title</h5>
                                                                 <p class="card-text">This is a longer card</p>
                                                                 <hr class="my-4">
-                                                                <button type="button"
-                                                                    class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto"
-                                                                    style="width: 70%;">Details</button>
+                                                                <button type="button" class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto" style="width: 70%;">Details</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -614,9 +507,7 @@ require_once("connector.php");
                                                                 <h5 class="card-title">Card title</h5>
                                                                 <p class="card-text">This is a short card.</p>
                                                                 <hr class="my-4">
-                                                                <button type="button"
-                                                                    class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto"
-                                                                    style="width: 70%;">Details</button>
+                                                                <button type="button" class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto" style="width: 70%;">Details</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -631,9 +522,7 @@ require_once("connector.php");
                                                                 <p class="card-text">This is a longer card
                                                                 </p>
                                                                 <hr class="my-4">
-                                                                <button type="button"
-                                                                    class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto"
-                                                                    style="width: 70%;">Details</button>
+                                                                <button type="button" class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto" style="width: 70%;">Details</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -666,22 +555,16 @@ require_once("connector.php");
                                                 <h5>scrt@yahoo.co.id</h5>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="exampleFormControlTextarea1"
-                                                    class="form-label">Feedback</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                    rows="3"></textarea>
+                                                <label for="exampleFormControlTextarea1" class="form-label">Feedback</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                             </div>
                                         </div>
                                         <div class="fkiri">
                                             <div class="maps ms-2">
                                                 <div class="mapouter ms-5">
                                                     <div class="gmap_canvas">
-                                                        <iframe width="1050" height="368" id="gmap_canvas"
-                                                            src="https://maps.google.com/maps?q=istts&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                                            frameborder="0" scrolling="no" marginheight="0"
-                                                            marginwidth="0"><br>
-                                                            <a
-                                                                href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                                                        <iframe width="1050" height="368" id="gmap_canvas" src="https://maps.google.com/maps?q=istts&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><br>
+                                                            <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -697,11 +580,11 @@ require_once("connector.php");
     </div>
 </body>
 <script>
-$(document).ready(function() {
-    $('body').bind('cut copy', function(e) {
-        e.preventDefault();
+    $(document).ready(function() {
+        $('body').bind('cut copy', function(e) {
+            e.preventDefault();
+        });
     });
-});
 </script>
 
 </html>
