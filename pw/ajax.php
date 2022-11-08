@@ -37,7 +37,7 @@ echo "<tbody style='margin: 0vw;padding:0vw;'>";
 
         echo "<td>";
             echo "<div class='card h-90' style='height: 17vw; width:10vw;'>";
-                    echo "<img src='https://www.casio.com" . $d['Gambar'] . "'class='card-img-top'>";
+                    echo "<img src='". $d['Gambar'] . "'class='card-img-top'>";
                     echo "<div class='card-body'>";
                      echo "<h5 class='card-title fs-6'>";
                         echo $d["Nama"];

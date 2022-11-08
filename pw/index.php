@@ -157,424 +157,418 @@ require_once("connector.php");
                         </button>
                     </div>
                 </div>
-                <div class="content2">
-                    <div class="isicontent" id="jmb">
-                        <!-- nav2 -->
-                        <div class="nav2 container d-flex justify-content-center mt-4">
-                            <div class="bungkus d-flex justify-content-center" style="margin: 1vw; cursor:pointer;">
-                                <div class="logo1 me-5 ms-5 mt-2">
-                                    <a href="#">
-                                        <img src="asset/logo/logo1.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="logo2 me-5 ms-5">
-                                    <a href="#">
-                                        <img src="asset/logo/logo2.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="logo1 me-5 ms-5 mt-1">
-                                    <a href="#">
-                                        <img src="asset/logo/logo3.png" alt="">
-                                    </a>
-                                </div>
-                                <div class="logo2 me-5 ms-5">
-                                    <a href="">
-                                        <img src="asset/logo/logo4.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- and nav2 -->
-                        <section id="news" class="news">
-                            <div class="container">
-                                <div class="jumbotron ps-2 pe-2" id="jbm">
-                                    <hr class="my-4 mt-4">
-                                    <p class="display-4 fs-2" style="text-align: center;">Wactches New Series</p>
-                                    <div class="cnt d-flex justify-content-center">
-                                        <div class="kanan mt-3 fs-5 fixed-side">
-                                            <div class="atas">
-                                                <p class="collec fs-3">
-                                                    <label for="nah" class="fnt me-1">
-                                                        <i class="fa-solid fa-caret-right"></i>
-                                                    </label>
-                                                    Collections
-                                                </p>
-                                                <div class="isik">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                G-Shock Series
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">GA-2100-1A1</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">DW-5600BB-1</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">AW-500BB-1E</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="isik2">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Pro Trek Series
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">PRG-340-1</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">PRG-340-3</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">PRG-340T-7</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="isik2">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Baby-G Series
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">BA-110XPM-6A</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">BA-130PM-4A</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">BGA-280PM-7A</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="isik2">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Edifice Series
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">EQB-2000DB-1A</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">EQB-2000DC-1A</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">ECB-2000D-1A</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="isik2">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Casio Series
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MTP-VD03B-1A</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MTP-VD03B-7A</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MTP-VD03D-1A</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="isik2">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Seen Series
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">SHE-4539CM-4A</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">SHE-4539GM-9A</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">SHE-4539SM-2A</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr class="my-4">
-                                            </div>
-                                            <div class="tengah">
-                                                <p class="collec fs-3">
-                                                    <label for="nah" class="fnt me-1">
-                                                        <i class="fa-solid fa-caret-right"></i>
-                                                    </label>
-                                                    Water Resistance
-                                                </p>
-                                                <div class="isik">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                WR for ISO 200
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <upli>
-                                                                    <a class="dropdown-item" href="#">DW-291H-1AV</a>
-                                                                </upli>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">DW-291H-1BV</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">DW-291H-9AV</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="isik2">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                WR 20 bar
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MWA-100HD-2AV</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MWA-100HD-7AV</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MWD-100HD-1BV</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="isik2">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                WR 10 bar
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MTP-E350B-1BV</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MTP-E350B-7BV</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MTP-E350BL-1BV</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr class="my-4">
-                                            </div>
-                                            <div class="bawah">
-                                                <p class="collec fs-3">
-                                                    <label for="nah" class="fnt me-1">
-                                                        <i class="fa-solid fa-caret-right"></i>
-                                                    </label>
-                                                    Display Type
-                                                </p>
-                                                <div class="isik">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Digital and Analog
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">AEQ-120W-1AV</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">AEQ-120W-2AV</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">AEQ-120W-9AV</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="isik2">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Digital
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <upli>
-                                                                    <a class="dropdown-item" href="#">LWS-1200H-1AV</a>
-                                                                </upli>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">AE-1500WHX-3AV</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MWD-100HD-1BV</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="isik2">
-                                                    <div class="dropdown" style="cursor: pointer;">
-                                                        <div class="btn-group dropend">
-                                                            <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Analog
-                                                            </p>
-                                                            <ul class="dropdown-menu ms-3">
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MTP-E350BL-1BV</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MTP-E350B-1BV</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a class="dropdown-item" href="#">MTP-E350BL-1BV</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+                <!-- nav2 -->
+                <div class="nav2 d-flex justify-content-evenly align-items-center mt-4 row">
+                    <div class="col-3 res">
+                        <a href="#" class="gbr">
+                            <img class="logo" src="asset/logo/logo1.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col-3 res">
+                        <a href="#" class="gbr">
+                            <img class="logo" src="asset/logo/logo2.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col-3 res">
+                        <a href="#" class="gbr">
+                            <img class="logo2" src="asset/logo/logo3.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col-3 res">
+                        <a href="#" class="gbr">
+                            <img class="logo" src="asset/logo/logo4.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- and nav2 -->
+                <section id="news" class="news">
+                    <div class="container">
+                        <div class="jumbotron ps-2 pe-2" id="jbm">
+                            <hr class="my-4 mt-4">
+                            <p class="display-4 fs-2" style="text-align: center;">Wactches New Series</p>
+                            <div class="cnt d-flex justify-content-center">
+                                <div class="kanan mt-3 fs-5 fixed-side">
+                                    <div class="atas">
+                                        <p class="collec fs-3">
+                                            <label for="nah" class="fnt me-1">
+                                                <i class="fa-solid fa-caret-right"></i>
+                                            </label>
+                                            Collections
+                                        </p>
+                                        <div class="isik">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        G-Shock Series
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">GA-2100-1A1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">DW-5600BB-1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">AW-500BB-1E</a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="kiri">
-                                            <div class="container">
-                                                <div class="src d-flex justify-content-center mt-3">
-
-                                                    <input class="form-control" type="search" placeholder="Search..." aria-label="Search" name="tekscari" id="cari1">
-                                                    <button class="btn btn-outline-dark ms-2" onclick="ajax(1)">Search</button>
-
+                                        <div class="isik2">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Pro Trek Series
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">PRG-340-1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">PRG-340-3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">PRG-340T-7</a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <hr class="my-4 w-90">
-                                                <div id="con" style="width: 100%;height:100%;">
-
+                                            </div>
+                                        </div>
+                                        <div class="isik2">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Baby-G Series
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">BA-110XPM-6A</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">BA-130PM-4A</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">BGA-280PM-7A</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="isik2">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Edifice Series
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">EQB-2000DB-1A</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">EQB-2000DC-1A</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">ECB-2000D-1A</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="isik2">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Casio Series
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MTP-VD03B-1A</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MTP-VD03B-7A</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MTP-VD03D-1A</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="isik2">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Seen Series
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">SHE-4539CM-4A</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">SHE-4539GM-9A</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">SHE-4539SM-2A</a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
                                         <hr class="my-4">
-                        </section>
-                        <section id="spl" class="spl">
-                            <div class="isi2 mt-5">
-                                <p class="display-4 fs-2" style="text-align: center;">Special Collections</p>
-                                <div class="container">
-                                    <div class="pagi mt-5">
-                                        <div class="isipagi">
-                                            <div class="container">
-                                                <div class="row row-cols-1 row-cols-md-3 g-4">
-                                                    <div class="col">
-                                                        <div class="card h-100">
-                                                            <div class="new">
-                                                                <p>NEW</p>
-                                                            </div>
-                                                            <img src="asset/imgW/h.jpg" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">Card title</h5>
-                                                                <p class="card-text">This is a longer card</p>
-                                                                <hr class="my-4">
-                                                                <button type="button" class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto" style="width: 70%;">Details</button>
-                                                            </div>
-                                                        </div>
+                                    </div>
+                                    <div class="tengah">
+                                        <p class="collec fs-3">
+                                            <label for="nah" class="fnt me-1">
+                                                <i class="fa-solid fa-caret-right"></i>
+                                            </label>
+                                            Water Resistance
+                                        </p>
+                                        <div class="isik">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        WR for ISO 200
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <upli>
+                                                            <a class="dropdown-item" href="#">DW-291H-1AV</a>
+                                                        </upli>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">DW-291H-1BV</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">DW-291H-9AV</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="isik2">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        WR 20 bar
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MWA-100HD-2AV</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MWA-100HD-7AV</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MWD-100HD-1BV</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="isik2">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        WR 10 bar
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MTP-E350B-1BV</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MTP-E350B-7BV</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MTP-E350BL-1BV</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="my-4">
+                                    </div>
+                                    <div class="bawah">
+                                        <p class="collec fs-3">
+                                            <label for="nah" class="fnt me-1">
+                                                <i class="fa-solid fa-caret-right"></i>
+                                            </label>
+                                            Display Type
+                                        </p>
+                                        <div class="isik">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Digital and Analog
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">AEQ-120W-1AV</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">AEQ-120W-2AV</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">AEQ-120W-9AV</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="isik2">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Digital
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <upli>
+                                                            <a class="dropdown-item" href="#">LWS-1200H-1AV</a>
+                                                        </upli>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">AE-1500WHX-3AV</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MWD-100HD-1BV</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="isik2">
+                                            <div class="dropdown" style="cursor: pointer;">
+                                                <div class="btn-group dropend">
+                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Analog
+                                                    </p>
+                                                    <ul class="dropdown-menu ms-3">
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MTP-E350BL-1BV</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MTP-E350B-1BV</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="#">MTP-E350BL-1BV</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kiri">
+                                    <div class="container">
+                                        <div class="src d-flex justify-content-center mt-3">
+
+                                            <input class="form-control" type="search" placeholder="Search..." aria-label="Search" name="tekscari" id="cari1">
+                                            <button class="btn btn-outline-dark ms-2" onclick="ajax(1)">Search</button>
+
+                                        </div>
+                                        <hr class="my-4 w-90">
+                                        <div id="con" style="width: 100%;height:100%;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-4">
+                </section>
+                <section id="spl" class="spl">
+                    <div class="isi2 mt-5">
+                        <p class="display-4 fs-2" style="text-align: center;">Special Collections</p>
+                        <div class="container">
+                            <div class="pagi mt-5">
+                                <div class="isipagi">
+                                    <div class="container">
+                                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                                            <div class="col">
+                                                <div class="card h-100">
+                                                    <div class="new">
+                                                        <p>NEW</p>
                                                     </div>
-                                                    <div class="col">
-                                                        <div class="card h-100">
-                                                            <div class="new">
-                                                                <p>NEW</p>
-                                                            </div>
-                                                            <img src="asset/imgW/i.png" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">Card title</h5>
-                                                                <p class="card-text">This is a short card.</p>
-                                                                <hr class="my-4">
-                                                                <button type="button" class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto" style="width: 70%;">Details</button>
-                                                            </div>
-                                                        </div>
+                                                    <img src="asset/imgW/h.jpg" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This is a longer card</p>
+                                                        <hr class="my-4">
+                                                        <button type="button" class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto" style="width: 70%;">Details</button>
                                                     </div>
-                                                    <div class="col">
-                                                        <div class="card h-100">
-                                                            <div class="new">
-                                                                <p>NEW</p>
-                                                            </div>
-                                                            <img src="asset/imgW/d.jpg" class="card-img-top" alt="...">
-                                                            <div class="card-body">
-                                                                <h5 class="card-title">Card title</h5>
-                                                                <p class="card-text">This is a longer card
-                                                                </p>
-                                                                <hr class="my-4">
-                                                                <button type="button" class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto" style="width: 70%;">Details</button>
-                                                            </div>
-                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100">
+                                                    <div class="new">
+                                                        <p>NEW</p>
+                                                    </div>
+                                                    <img src="asset/imgW/i.png" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This is a short card.</p>
+                                                        <hr class="my-4">
+                                                        <button type="button" class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto" style="width: 70%;">Details</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100">
+                                                    <div class="new">
+                                                        <p>NEW</p>
+                                                    </div>
+                                                    <img src="asset/imgW/d.jpg" class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This is a longer card
+                                                        </p>
+                                                        <hr class="my-4">
+                                                        <button type="button" class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto" style="width: 70%;">Details</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <hr class="my-4">
                                 </div>
                             </div>
-                        </section>
-                        <section class="footer" id="footer">
-                            <div class="footer">
-                                <h2 style="text-align: center;">Contact</h2>
-                                <div class="isifot d-flex justify-content-center">
-                                    <div class="ftr m-3">
-                                        <div class="fkanan">
-                                            <div class="mb-3">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleFormControlInput1" class="form-label">Phone
-                                                    Number
-                                                </label>
-                                                <h5>031-1111-88</h5>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleFormControlInput1" class="form-label">Email
-                                                    address
-                                                </label>
-                                                <h5>scrt@yahoo.co.id</h5>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleFormControlTextarea1" class="form-label">Feedback</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="fkiri">
-                                            <div class="maps ms-2">
-                                                <div class="mapouter ms-5">
-                                                    <div class="gmap_canvas">
-                                                        <iframe width="1050" height="368" id="gmap_canvas" src="https://maps.google.com/maps?q=istts&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><br>
-                                                            <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                            <hr class="my-4">
+                        </div>
                     </div>
-                </div>
+                </section>
+                <section class="footer" id="footer">
+                    <div class="footer">
+                        <h2 style="text-align: center;">Contact</h2>
+                        <div class="isifot d-flex justify-content-center">
+                            <div class="ftr m-3">
+                                <div class="fkanan">
+                                    <div class="mb-3">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Phone
+                                            Number
+                                        </label>
+                                        <h5>031-1111-88</h5>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Email
+                                            address
+                                        </label>
+                                        <h5>scrt@yahoo.co.id</h5>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Feedback</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="fkiri">
+                                    <div class="maps ms-2">
+                                        <div class="mapouter ms-5">
+                                            <div class="gmap_canvas">
+                                                <iframe width="1050" height="368" id="gmap_canvas" src="https://maps.google.com/maps?q=istts&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><br>
+                                                    <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
