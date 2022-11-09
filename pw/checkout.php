@@ -36,6 +36,9 @@
             <!--navbar-->
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
+                    <a class="navbar-brand mt-1" href="#">
+                        <img src="asset/logo/logo.png" style="height: 3vw;" alt="" srcset="">
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -43,15 +46,10 @@
                     </button>
                     <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
                         <ul class="navbar-nav fs-5">
-                            <li class="nav-item ms-4">
-                                <a class="nav-link text-dark" href="index.php"><svg xmlns="http://www.w3.org/2000/svg"
-                                        width="30" height="35" fill="currentColor" class="bi bi-arrow-left-circle"
-                                        viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
-                                    </svg></a>
+                            <li class="nav-item me-4">
+                                <a class="nav-link text-dark" href="index.php">Home</a>
                             </li>
-                            <li class="nav-item dropdown ms-4">
+                            <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     GA-2110SC-4A
@@ -67,7 +65,47 @@
                 <div class="isic mt-5 rounded">
                     <div class="view d-flex mt-5">
                         <div class="kanan2">
-                            <img src="asset/imgW/d.jpg" alt="" srcset="">
+                            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                        class="active" aria-current="true" aria-label="Slide 1">
+                                    </button>
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                        aria-label="Slide 2">
+                                    </button>
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                        aria-label="Slide 3">
+                                    </button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="10000">
+                                        <img src="asset/imgW/b.jpg" class="cardg d-block w-90" alt="...">
+                                        <div class="carousel-caption d-none d-md-block"></div>
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="asset/imgW/j.jpg" class="cardg d-block w-90" alt="...">
+                                        <div class="carousel-caption d-none d-md-block"></div>
+                                    </div>
+                                    <div class="carousel-item" style="margin-left: 2vw;" data-bs-interval="1000">
+                                        <img src="asset/imgW/k.jpg" class="cardg d-block w-90 rounded" alt="...">
+                                        <div class="carousel-caption d-none d-md-block"></div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                                    <label for="next">
+                                        <i class="fa-solid fa-backward text-dark"></i>
+                                    </label>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                                    <label for="bc">
+                                        <i class="fa-solid fa-forward text-dark"></i>
+                                    </label>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
                         </div>
                         <div class="kiri2 mt-4 ms-5">
                             <div class="jdl">
@@ -83,28 +121,24 @@
                                 highlights the dynamic, colorful design. Product Specification : Regal Series -
                                 Full Black
                                 <br>
-                                <br>
                                 Movement : Quartz Movement
                                 <br>
                                 Strap : PU Leather Strap
                                 <br>
                                 Glass : Sapphire Mineral Glass
-
+                                <br>
+                                Case Thickness : 8.2 Case Thickness
+                                <br>
+                                Diameter : 40 MM Diameter
+                                <br>
+                                Warranty : 6 Months Warranty
                                 <br>
                             </div>
                             <div class="price mt-2">
                                 <h4>Price</h4>
                                 <h5>Rp. 5.999.000</h5>
-
-                                <div class="jumlah d-flex mt-5">
-                                    <button type="button" style="width: 5%;" class="btn btn-secondary">+</button>
-                                    <button type="button" style="width: 5%;" class="btn btn-secondary ms-3">-</button>
-                                </div>
-                                <hr class="my-4 mt-4">
-
                                 <button type="button" class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">Check
                                     Out</button>
-
                             </div>
                         </div>
                     </div>

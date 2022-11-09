@@ -1,0 +1,94 @@
+.bungkus {
+    width: 100%;
+    height: 46vw;
+}
+
+.isikiri {
+    background: rgba(182, 182, 182, 0);
+    background: linear-gradient(77deg, rgba(196, 196, 196, 0) 0%, rgba(204, 204, 204, 0.395) 100%);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(221, 221, 221, 0), 0.3em 0.3em 1em rgba(94, 94, 94, 0.492);
+    height: 28vw;
+    width: 40%;
+    margin-top: 8vw;
+    border-radius: 25px;
+}
+
+.isikiri2 {
+    background: rgba(182, 182, 182, 0);
+    background: linear-gradient(77deg, rgba(196, 196, 196, 0) 0%, rgba(204, 204, 204, 0.395) 100%);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(221, 221, 221, 0), 0.3em 0.3em 1em rgba(94, 94, 94, 0.492);
+    height: 40vw;
+    width: 40%;
+    margin-top: 2vw;
+    border-radius: 25px;
+}
+
+.isikiri3 {
+    background: rgba(182, 182, 182, 0);
+    background: linear-gradient(77deg, rgba(196, 196, 196, 0) 0%, rgba(204, 204, 204, 0.395) 100%);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(221, 221, 221, 0), 0.3em 0.3em 1em rgba(94, 94, 94, 0.492);
+    height: 40vw;
+    width: 90%;
+    margin-top: 3vw;
+    border-radius: 25px;
+}
+
+.kiri {
+    width: 100%;
+    height: 30vw;
+}
+
+
+.coverall {
+    background: rgb(64,110,255);
+    background: linear-gradient(38deg, rgba(64,110,255,1) 0%, rgba(255,0,241,0.8438725832129726) 39%, rgba(255,255,255,1) 98%);
+}
+
+.jdl {
+    font-family: 'Dongle', sans-serif;
+    font-size: 80px;
+    text-align: center;
+    color: rgb(53, 53, 53);
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.jdl3 {
+    font-family: 'Dongle', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    color: rgb(53, 53, 53);
+    font-weight: bold;
+}
+
+.imgs {
+    width: 10%;
+    height: 10%;
+}
+
+.imgs2 {
+    width: 55px;
+    height: 55px;
+    margin-top: 13px;
+}
+
+.header{
+    justify-content: center;
+}
+
+.fom3{
+    position: absolute;
+    height: -60px;
+}
+
+.cds{
+    background: rgba(182, 182, 182, 0);
+    background: linear-gradient(77deg, rgba(196, 196, 196, 0) 0%, rgba(255, 0, 251, 0.512) 100%);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(221, 221, 221, 0), 0.3em 0.3em 1em rgba(94, 94, 94, 0.492);
+    height: 20vw;
+    width: 80%;
+    margin-top: 3vw;
+    border-radius: 25px;
+}
+
+
