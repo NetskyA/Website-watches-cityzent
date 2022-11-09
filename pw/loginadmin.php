@@ -71,8 +71,8 @@
                                             </a>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                            <a class="nav-link active bg-secondary" style="width: 10vw;" id="tab-login"
-                                                data-mdb-toggle="pill" href="admin.php" role="tab"
+                                            <a class="nav-link active bg-secondary" name="submit" style="width: 10vw;"
+                                                id="tab-login" data-mdb-toggle="pill" href="admin.php" role="tab"
                                                 aria-controls="pills-login" aria-selected="true">Login
                                             </a>
                                     </ul>

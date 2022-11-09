@@ -30,7 +30,6 @@ require_once("connector.php");
 
     <!--Framework Use-->
 
-
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- Jquery DataTables -->
     <script type="text/javascript" language="javascript"
@@ -38,7 +37,6 @@ require_once("connector.php");
     <!-- Bootstrap dataTables Javascript -->
     <script type="text/javascript" language="javascript"
         src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-
 
     <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
@@ -52,12 +50,15 @@ require_once("connector.php");
         ajax(1);
     }
 
-
     function ajax(idx) {
-        search = document.getElementById("cari1").value;
+        search = document
+            .getElementById("cari1")
+            .value;
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function() {
-            document.getElementById("con").innerHTML = this.responseText;
+            document
+                .getElementById("con")
+                .innerHTML = this.responseText;
         }
         xhttp.open("GET", "ajax.php?search=" + search + "&idx=" + idx);
         xhttp.send();
@@ -71,16 +72,14 @@ require_once("connector.php");
             <!--navbar-->
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand mt-1" href="#">
-                        <img src="asset/logo/logo.png" style="height: 3vw;" alt="" srcset="">
-                    </a>
+                    <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
-                        <ul class="navbar-nav fs-5">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-4">
                             <li class="nav-item me-4">
                                 <a class="nav-link text-dark" href="index.php">Home</a>
                             </li>
@@ -125,6 +124,15 @@ require_once("connector.php");
                                 <a class="nav-link text-danger" href="loginadmin.php">Admin test</a>
                             </li>
                         </ul>
+                        <form class="d-flex" role="search">
+                            <button style="border-radius: 10px; margin-right:2vw;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor"
+                                    class="bi bi-cart3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                </svg>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </nav>
@@ -200,7 +208,6 @@ require_once("connector.php");
                     <div class="container">
                         <div class="jumbotron ps-2 pe-2" id="jbm">
                             <hr class="my-4 mt-4">
-                            <p class="display-4 fs-2" style="text-align: center;">Wactches New Series</p>
                             <div class="cnt d-flex justify-content-center">
                                 <div class="kanan mt-3 fs-5 fixed-side">
                                     <div class="atas">
@@ -484,6 +491,8 @@ require_once("connector.php");
                                 </div>
                                 <div class="kiri">
                                     <div class="container">
+                                        <p class="display-4 fs-2" style="text-align: center;">Wactches New Series</p>
+
                                         <div class="src d-flex justify-content-center mt-3">
 
                                             <input class="form-control" type="search" placeholder="Search..."
@@ -492,9 +501,7 @@ require_once("connector.php");
 
                                         </div>
                                         <hr class="my-4 w-90">
-                                        <div id="con" style="width: 100%;height:100%;">
-
-                                        </div>
+                                        <div id="con" style="width: 100%;height:100%;"></div>
                                     </div>
                                 </div>
                                 <hr class="my-4">
@@ -570,17 +577,14 @@ require_once("connector.php");
                         <div class="isifot d-flex justify-content-center">
                             <div class="ftr m-3">
                                 <div class="fkanan">
+                                    <div class="mb-3"></div>
                                     <div class="mb-3">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Phone
-                                            Number
+                                        <label for="exampleFormControlInput1" class="form-label">Phone Number
                                         </label>
                                         <h5>031-1111-88</h5>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Email
-                                            address
+                                        <label for="exampleFormControlInput1" class="form-label">Email address
                                         </label>
                                         <h5>scrt@yahoo.co.id</h5>
                                     </div>
