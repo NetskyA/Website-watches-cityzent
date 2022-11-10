@@ -10,13 +10,13 @@
 }
 
 .logo{
-    width: 3vw;
-    height: 3vw;
+    width: 5vw;
+    height: 4vw;
 }
 
 .logo2{
-    width: 6.2vw;
-    height: 5vw;
+    width: 6vw;
+    height: 4vw;
 }
 
 .nav2 {
@@ -93,8 +93,7 @@ body {
     padding-left: 10px;
 }
 
-.isikiri {
-}
+
 
 .dtl:hover {
     transform: scale(110%);
