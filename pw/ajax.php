@@ -36,7 +36,7 @@ echo "<tbody style='margin: 0vw;padding:0vw;'>";
         }
 
         echo "<td style='width:100% margin: 0vw;padding:0vw;'>";
-            echo "<div class='card' style='min-height: 25vw;height: 25vw; width:13.5vw;margin:0.5vw;'>";
+            echo "<div class='card' style='min-height: 25vw;height: 25vw; width:12vw;margin:0.5vw;'>";
                     echo "<img src='". $d['Gambar'] . "'class='card-img-top' style:'margin-top:0.1vw;width:5vw;height:5vw'>";
                     echo "<div class='card-body'>";
                      echo "<h5 class='card-title fs-5' style=''>";

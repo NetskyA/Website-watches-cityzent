@@ -206,7 +206,7 @@ require_once("connector.php");
                 </div>
                 <!-- and nav2 -->
                 <section id="news" class="news">
-                    <div class="container">
+                    <div class="container-fluid" style="width: 80%;">
                         <div class="jumbotron ps-2 pe-2" id="jbm">
                             <hr class="my-4 mt-4">
                             <div class="cnt d-flex justify-content-center">
@@ -502,7 +502,7 @@ require_once("connector.php");
                                             <button class="btn btn-outline-dark ms-2" onclick="ajax(1)">Search</button>
 
                                         </div>
-                                        <div id="con" style="width: 100%;height:auto;"></div>
+                                        <div id="con" style=""></div>
                                     </div>
                                 </div>
                                 <hr class="my-4">
