@@ -492,17 +492,17 @@ require_once("connector.php");
                                 </div>
                                 <div class="kiri">
                                     <div class="container-fluid">
-                                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Wactches New Series</p>
+                                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Wactches New Series
+                                        </p>
                                         <hr class="my-3 w-100">
-                                        <div class="src d-flex justify-content-center mb-3" style="width: 40%;float:right;">
-                                            
+                                        <div class="src d-flex justify-content-center mb-3"
+                                            style="width: 40%;float:right;">
                                             <input class="form-control" type="search" placeholder="Search..."
                                                 aria-label="Search" name="tekscari" id="cari1" onsearch="ajax(1)">
-                                         
+                                            <hr class="my-4">
                                             <button class="btn btn-outline-dark ms-2" onclick="ajax(1)">Search</button>
-
                                         </div>
-                                        <div id="con" style=""></div>
+                                        <div id="con"></div>
                                     </div>
                                 </div>
                                 <hr class="my-4">
@@ -628,6 +628,6 @@ $(document).ready(function() {
         e.preventDefault();
     });
 });
-    </script>
+</script>
 
 </html>
