@@ -36,15 +36,18 @@ foreach ($data2 as $d) {
     }
 
     echo "<td style='width:100% margin: 0vw;padding:0vw;'>";
-    echo "<div class='card' style='min-height: 25vw;height: 25vw; width:12vw;margin:0.5vw;'>";
-    echo "<img src='" . $d['Gambar'] . "'class='card-img-top' style:'margin-top:0.1vw;width:5vw;height:5vw'>";
-    echo "<div class='card-body'>";
-    echo "<h5 class='card-title fs-5' style=''>";
+    echo "<div class='card' style='min-height: 18vw;height: 18vw; width:12vw;margin:0.5vw;'>";
+
     echo $d["Nama"];
+
+    echo "<img src='" . $d['Gambar'] . "'class='card-img-top' style:'margin-top:0.1vw; width:5vw;height:5vw'>";
+    echo "<div class='card-body' style='display: none; padding-top:4vw;>";
+    echo "<h5 class='card-title fs-5' style=''>";
     echo "</h5>";
     echo "</div>";
     echo "<a href='card.php?barang=" . json_encode($d) . "' class='opo d-flex justify-content-center' style='text-decoration: none;'>";
-    echo "<button type='button' class='dtl btn btn-secondary btn-sm d-flex align-items-center justify-content-center' style='width: 6vw;height:3vw;font-size:1.2vw'>Details</button>";
+    echo "<button type='button' class='dtl btn btn-secondary btn-sm d-flex align-items-center justify-content-center'
+    style='width: 6vw; height:2vw;font-size:1.2vw'>Details</button>";
     echo "</a>";
     echo "</div>";
     echo "</td>";
