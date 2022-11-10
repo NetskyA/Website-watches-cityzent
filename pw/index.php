@@ -538,42 +538,45 @@ require_once("connector.php");
                         </div>
                     </div>
                 </section>
-                <section class="footer" id="footer">
-                    <div class="footer">
-                        <h2 style="text-align: center;">Contact</h2>
-                        <div class="isifot d-flex justify-content-center">
-                            <div class="ftr m-3">
-                                <div class="fkanan">
-                                    <div class="mb-3"></div>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Phone Number
-                                        </label>
-                                        <h5>031-1111-88</h5>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Email address
-                                        </label>
-                                        <h5>scrt@yahoo.co.id</h5>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleFormControlTextarea1" class="form-label">Feedback</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <button type="button" name="submit" class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto" style="width: 70%;">Submit</button>
-                                    </div>
-                                </div>
-                                <div class="fkiri">
-                                    <div class="maps ms-2">
-                                        <div class="mapouter ms-5">
-                                            <div class="gmap_canvas">
-                                                <iframe width="1050" height="368" id="gmap_canvas" src="https://maps.google.com/maps?q=istts&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><br>
-                                                    <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                <section class="container-fluid d-flex justify-content-center isifot" style="margin-top:10vw; width:100%;height:100%;">
+                    <div class="row ftr p-3" style="width: 80%;height:100%;">
+                        <div class="col-12">
+                            <h2 style="text-align: center;">Contact</h2>
+                        </div>
+                        <div class="col-6 row">
+
+                            <div class="col-12 d-flex justify-content-start">
+                                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                            </div>
+                            <div class="col-12 d-flex justify-content-start">
+                                <h5>031-1111-88</h5>
+                            </div>
+
+
+                            <div class="col-12 d-flex justify-content-start">
+                                <label for="exampleFormControlInput1" class="form-label">Email address
+                                </label>
+                            </div>
+                            <div class="col-12 d-flex justify-content-start">
+                                <h5>scrt@yahoo.co.id</h5>
+                            </div>
+
+                            <div class="col-12 d-flex justify-content-start">
+                                <label for="exampleFormControlTextarea1" class="form-label">Feedback</label>
+                            </div>
+                            <div class="col-12 d-flex justify-content-start">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center pt-3">
+                                <div class="col-6 d-flex">
+                                    <button type="button" name="submit" class="dtl btn btn-secondary btn-sm d-grid gap-2 mx-auto" style="width: 100%;">Submit</button>
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="col-6 ">
+                                    <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=istts&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><br>
+                                                    <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
                         </div>
                     </div>
                 </section>
