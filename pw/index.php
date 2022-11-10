@@ -97,9 +97,7 @@ require_once("connector.php");
                             <li class="nav-item me-4">
                                 <a class="nav-link text-dark" href="#spl">Specials</a>
                             </li>
-                            <li class="nav-item me-4">
-                                <a class="nav-link text-dark" href="#">Pricing</a>
-                            </li>
+
                             <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
@@ -493,23 +491,23 @@ require_once("connector.php");
                                     </div>
                                 </div>
                                 <div class="kiri">
-                                    <div class="container">
-                                        <p class="display-4 fs-2" style="text-align: center;">Wactches New Series</p>
-
-                                        <div class="src d-flex justify-content-center mt-3">
-
+                                    <div class="container-fluid">
+                                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Wactches New Series</p>
+                                        <hr class="my-3 w-100">
+                                        <div class="src d-flex justify-content-center mb-3" style="width: 40%;float:right;">
+                                            
                                             <input class="form-control" type="search" placeholder="Search..."
-                                                aria-label="Search" name="tekscari" id="cari1">
+                                                aria-label="Search" name="tekscari" id="cari1" onsearch="ajax(1)">
+                                         
                                             <button class="btn btn-outline-dark ms-2" onclick="ajax(1)">Search</button>
 
                                         </div>
-                                        <hr class="my-4 w-90">
-                                        <div id="con" style="width: 100%;height:100%;"></div>
+                                        <div id="con" style="width: 100%;height:auto;"></div>
                                     </div>
                                 </div>
                                 <hr class="my-4">
                 </section>
-                <section id="spl" class="spl">
+                <!-- <section id="spl" class="spl">
                     <div class="isi2 mt-5">
                         <p class="display-4 fs-2" style="text-align: center;">Special Collections</p>
                         <div class="container">
@@ -573,7 +571,7 @@ require_once("connector.php");
                             <hr class="my-4">
                         </div>
                     </div>
-                </section>
+                </section> -->
                 <section class="container-fluid d-flex justify-content-center isifot"
                     style="margin-top:3vw; width:100%;height:100%;">
                     <div class="row ftr p-3" style="width: 80%; margin-bottom:3vw; height:100%;">
@@ -630,6 +628,6 @@ $(document).ready(function() {
         e.preventDefault();
     });
 });
-</script>
+    </script>
 
 </html>

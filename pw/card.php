@@ -1,5 +1,10 @@
 <?php
-
+require_once("connector.php");
+    if($_REQUEST["barang"]){
+        $data = $_REQUEST["barang"];
+        $data = json_decode($data,true);
+        $_SESSION["temp"] = $data;
+    }
 ?>
 
 <!doctype html>
@@ -54,7 +59,7 @@
                             <li class="nav-item dropdown ms-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    GA-2110SC-4A
+                                   <?= $_SESSION["temp"]["Nama"]?>
                                 </a>
                             </li>
                         </ul>
@@ -67,11 +72,11 @@
                 <div class="isic mt-5 rounded">
                     <div class="view d-flex mt-5">
                         <div class="kanan2">
-                            <img src="asset/imgW/d.jpg" alt="" srcset="">
+                            <img src="<?= $_SESSION["temp"]["Gambar"]?>" alt="" srcset="">
                         </div>
                         <div class="kiri2 mt-4 ms-5">
                             <div class="jdl">
-                                GA-2110SC-4A
+                                <?= $_SESSION["temp"]["Nama"]?>
                                 <br>
                                 <span class="jdl2 fs-5">
                                     NEW
@@ -94,7 +99,7 @@
                             </div>
                             <div class="price mt-2">
                                 <h4>Price</h4>
-                                <h5>Rp. 5.999.000</h5>
+                                <h5><?= $_SESSION["temp"]["Harga"]?></h5>
 
                                 <div class="jumlah d-flex mt-5">
                                     <button type="button" style="width: 5%;" class="btn btn-secondary">+</button>
