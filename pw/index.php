@@ -494,17 +494,21 @@ require_once("connector.php");
                                     <div class="container-fluid">
                                         <p class="display-4 fs-2 pt-3" style="text-align: center;">Wactches New Series
                                         </p>
+
+
                                         <div class="src d-flex justify-content-center mb-3"
                                             style="width: 40%;float:right;">
                                             <input class="form-control" type="search" placeholder="Search..."
                                                 aria-label="Search" name="tekscari" id="cari1" onsearch="ajax(1)">
                                             <hr class="my-4">
                                             <button class="btn btn-outline-secondary" onclick="ajax(1)">Search</button>
+
                                         </div>
+
                                         <div id="con"></div>
                                     </div>
                                 </div>
-                                <hr class="my-4">
+
                 </section>
                 <!-- <section id="spl" class="spl">
                     <div class="isi2 mt-5">
@@ -577,6 +581,7 @@ require_once("connector.php");
                         <div class="col-12">
                             <p class="display-4 fs-2 pb-2" style="text-align: center;">Contact</p>
                         </div>
+                        <hr class="my-4">
                         <div class="col-6 row mb-3">
                             <div class="col-12 d-flex justify-content-start">
                                 <label for="exampleFormControlInput1" class="form-label">Phone Number</label>

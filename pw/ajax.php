@@ -36,20 +36,19 @@ foreach ($data2 as $d) {
     }
 
     echo "<td style='width:100% margin: 0vw;padding:0vw;'>";
-    echo "<div class='card' style='min-height: 20vw;height: 20vw;font-size: 15px; padding-top:1vw; font-weight: bold; text-align: center; margin:0.3vw;
+    echo "<div class='card' style='min-height: 20vw;height: 20vw;font-size: 16px; padding-top:1vw; font-weight: bold; text-align: center; margin:0.3vw;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- width:14vw;margin:0.5vw;'>";
+    width:14vw;margin:0.5vw;'>";
 
     echo $d["Nama"];
-
     echo "<img src='" . $d['Gambar'] . "'class='card-img-top' style:'margin-top:1vw; width:5vw;height:5vw'>";
     echo "<div class='card-body' style='display: none; padding-top:4vw;>";
     echo "<h5 class='card-title fs-5' style=''>";
     echo "</h5>";
     echo "</div>";
     echo "<a href='card.php?barang=" . json_encode($d) . "' class='opo d-flex justify-content-center' style='text-decoration: none;'>";
-    echo "<button type='button' class='dtl btn btn-secondary btn-sm d-flex align-items-center justify-content-center'
-    style='width: 6vw; margin-top:0.9vw; height:2vw;font-size:1.2vw'>Details</button>";
+    echo "<button type='button' class='dtl btn-outline-secondary btn-sm d-flex align-items-center justify-content-center'
+    style='width: 6vw; margin-top:0.9vw; border-radius: 6px; height:2vw;font-size:1.2vw'>Details</button>";
     echo "</a>";
     echo "</div>";
     echo "</td>";
