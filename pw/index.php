@@ -72,32 +72,33 @@ require_once("connector.php");
             <!--navbar-->
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
+                    <a class="nav-link text-white pt-2" href="loginadmin.php">
+                        <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-4">
                             <li class="nav-item me-4">
                                 <a class="nav-link text-dark" href="index.php">Home</a>
                             </li>
                             <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    News Series
+                                    New Series
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item text-dark" href="#news">News Collection</a>
+                                        <a class="dropdown-item text-dark" href="#news">Collection</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item me-4">
                                 <a class="nav-link text-dark" href="#spl">Specials</a>
                             </li>
-
                             <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
@@ -119,21 +120,16 @@ require_once("connector.php");
                                 </ul>
                             </li>
                             <li class="nav-item me-4">
-                                <a class="nav-link text-danger" href="loginadmin.php">Admin test</a>
+                                <a class="nav-link text-white" href="#">Comming Soon</a>
                             </li>
-
                         </ul>
-
                         <a href="checkout.php" role="button" class="btn">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor"
-                                class="bi bi-cart3" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="50" fill="currentColor"
+                                class="bi bi-cart4" viewBox="0 0 16 16" style="margin-right: 1vw;">
                                 <path
-                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
                             </svg>
-
                         </a>
-
                     </div>
                 </div>
             </nav>
@@ -160,7 +156,7 @@ require_once("connector.php");
                             </div>
                             <div class="carousel-item" data-bs-interval="5000">
                                 <a href="#news">
-                                    <img src="asset/banner/banner1.jpg" class="gmbrd-block w-100 rounded-4" alt="...">
+                                    <img src="asset/banner/banner1.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
                                 </a>
                             </div>
                             <div class="carousel-item">
@@ -185,22 +181,22 @@ require_once("connector.php");
                 <div class="nav2 d-flex justify-content-evenly align-items-center mt-4 row">
                     <div class="col-3 res">
                         <a href="#" class="gbr d-flex align-items-center justify-content-center">
-                            <img class="logo" src="asset/logo/logo1.png" alt="">
+                            <img class="logo2" src="asset/logo/casio.png" alt="">
                         </a>
                     </div>
                     <div class="col-3 res">
                         <a href="#" class="gbr d-flex align-items-center justify-content-center">
-                            <img class="logo" src="asset/logo/logo4.png" alt="">
+                            <img class="logo3" src="asset/logo/baby.png" alt="">
                         </a>
                     </div>
                     <div class="col-3 res ">
                         <a href="#" class="gbr d-flex align-items-center justify-content-center">
-                            <img class="logo2" src="asset/logo/logo3.png" alt="">
+                            <img class="logo4" src="asset/logo/edifice.png" alt="">
                         </a>
                     </div>
                     <div class="col-3 res">
                         <a href="#" class="gbr d-flex align-items-center justify-content-center">
-                            <img class="logo" src="asset/logo/logo2.png" alt="">
+                            <img class="logo2" src="asset/logo/gshock.png" alt="">
                         </a>
                     </div>
                 </div>

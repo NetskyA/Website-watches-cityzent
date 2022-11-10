@@ -62,83 +62,45 @@
             <!-- and nav -->
             <!-- content -->
             <div class="content d-flex justify-content-center">
-                <div class="isic mt-5 rounded">
-                    <div class="view d-flex mt-5">
-                        <div class="kanan2">
-                            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
-                                        class="active" aria-current="true" aria-label="Slide 1">
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                                        aria-label="Slide 2">
-                                    </button>
-                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                                        aria-label="Slide 3">
-                                    </button>
+                <div class="kiri2">
+                    <div class="container">
+                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Wactches New Series</p>
+                        <hr class="my-4">
+
+                        <div class="produk" style=" width: 100%; margin-top:2vw;">
+                            <div class="input-group">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="checkbox" value=""
+                                        aria-label="Checkbox for following text input">
                                 </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="10000">
-                                        <img src="asset/imgW/b.jpg" class="cardg d-block w-90" alt="...">
-                                        <div class="carousel-caption d-none d-md-block"></div>
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="asset/imgW/j.jpg" class="cardg d-block w-90" alt="...">
-                                        <div class="carousel-caption d-none d-md-block"></div>
-                                    </div>
-                                    <div class="carousel-item" style="margin-left: 2vw;" data-bs-interval="1000">
-                                        <img src="asset/imgW/k.jpg" class="cardg d-block w-90 rounded" alt="...">
-                                        <div class="carousel-caption d-none d-md-block"></div>
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                                    <label for="next">
-                                        <i class="fa-solid fa-backward text-dark"></i>
-                                    </label>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                                    <label for="bc">
-                                        <i class="fa-solid fa-forward text-dark"></i>
-                                    </label>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+                            </div>
+                            <div class="poto d-flex">
+                                <img src="asset/imgW/c.jpg" alt="" srcset="" style="height: 10vw; margin-left: 2vw;">
+                                <p>Total : </p>
                             </div>
                         </div>
-                        <div class="kiri2 mt-4 ms-5">
-                            <div class="jdl">
-                                GA-2110SC-4A
-                                <br>
-                                <span class="jdl2 fs-5">
-                                    NEW
-                                </span>
+                        <div class="produk" style=" width: 100%; margin-top:2vw;">
+                            <div class="input-group">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="checkbox" value=""
+                                        aria-label="Checkbox for following text input">
+                                </div>
                             </div>
-                            <div class="des fs-6" style="width: 46vw;">
-                                Go bold and rugged with G-SHOCK's signature toughness in popular bright colors.
-                                The exciting combination of two-tone bezels on the DW-5610SC and GA-2110SC
-                                highlights the dynamic, colorful design. Product Specification : Regal Series -
-                                Full Black
-                                <br>
-                                Movement : Quartz Movement
-                                <br>
-                                Strap : PU Leather Strap
-                                <br>
-                                Glass : Sapphire Mineral Glass
-                                <br>
-                                Case Thickness : 8.2 Case Thickness
-                                <br>
-                                Diameter : 40 MM Diameter
-                                <br>
-                                Warranty : 6 Months Warranty
-                                <br>
+                            <div class="poto d-flex">
+                                <img src="asset/imgW/c.jpg" alt="" srcset="" style="height: 10vw; margin-left: 2vw;">
+                                <p>Total : </p>
                             </div>
-                            <div class="price mt-2">
-                                <h4>Price</h4>
-                                <h5>Rp. 5.999.000</h5>
-                                <button type="button" class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">Check
-                                    Out</button>
+                        </div>
+                        <div class="produk" style=" width: 100%;  margin-top:2vw;">
+                            <div class="input-group">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="checkbox" value=""
+                                        aria-label="Checkbox for following text input">
+                                </div>
+                            </div>
+                            <div class="poto d-flex">
+                                <img src="asset/imgW/c.jpg" alt="" srcset="" style="height: 10vw; margin-left: 2vw;">
+                                <p>Total : </p>
                             </div>
                         </div>
                     </div>

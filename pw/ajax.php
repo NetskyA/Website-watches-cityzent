@@ -36,7 +36,7 @@ foreach ($data2 as $d) {
     }
 
     echo "<td style='width:100% margin: 0vw;padding:0vw;'>";
-    echo "<div class='card' style='min-height: 20vw;height: 20vw;font-size: 16px; padding-top:1vw; font-weight: bold; text-align: center; margin:0.3vw;
+    echo "<div class='card' style='min-height: 20vw;height: 20vw;font-size: 16px; padding-top:1vw; font-weight: bold; text-align: center; margin:0.3vw;box-shadow: inset 0 -3em 2em rgba(0, 0, 0, 0.1), 0 0 0 1px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width:14vw;margin:0.5vw;'>";
 

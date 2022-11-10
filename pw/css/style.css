@@ -15,8 +15,18 @@
 }
 
 .logo2{
-    width: 6vw;
-    height: 4vw;
+    width: 5vw;
+    height: 3.7vw;
+}
+
+.logo3{
+    width: 5vw;
+    height: 2vw;
+}
+
+.logo4{
+    width: 10vw;
+    height: 8vw;
 }
 
 .nav2 {
@@ -87,6 +97,24 @@ body {
     height: 57vw;
     border-radius: 1vw;
     box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
+}
+
+.kiri2 {
+    background-color: rgb(232, 232, 232);
+    width: 95vw;
+    margin: 2vw;
+    height: 54vw;
+    border-radius: 1vw;
+    box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
+}
+
+.produk{
+    background: rgb(204, 204, 204);
+    background: linear-gradient(180deg, rgb(201, 200, 200) 0%, rgba(253,253,253,0.9699230033810399) 100%);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    height: 13vw;
+    width: 50vw;
+    border-radius: 1vw;
 }
 
 .isi {
