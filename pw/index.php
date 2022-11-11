@@ -241,13 +241,13 @@ require_once("connector.php");
                 </div>
                 <!-- and nav2 -->
                 <section id="news" class="news">
-                    <div class="container-fluid" style="width: 80%;">
+                    <div class="container-fluid" style="width: 90%;">
                         <div class="jumbotron" id="jbm">
                             <hr class="my-4 mt-4">
                             <div class="cnt d-flex justify-content-center">
                                 <div class="kanan mt-3 fs-5 fixed-side">
                                     <div class="atas">
-                                        <p class="collec fs-3" id="tgl">
+                                        <p class="collec" id="tgl" style="font-size: 1.2vw;">
                                             <label for="nah" class="fnt">
                                                 <i class="fa-solid fa-caret-right"></i>
                                             </label>
@@ -258,21 +258,21 @@ require_once("connector.php");
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
+                                                <p class="brand" style="font-size: 1vw;">
                                                     Men
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
+                                                <p class="brand" style="font-size: 1vw;">
                                                     Women
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
+                                                <p class="brand" style="font-size: 1vw;">
                                                     Child
                                                 </p>
                                             </div>
@@ -280,7 +280,7 @@ require_once("connector.php");
                                         <hr class="my-4">
                                     </div>
                                     <div class="tengah">
-                                        <p class="collec fs-3" id="tgls">
+                                        <p class="collec" id="tgls" style="font-size: 1.2vw;">
                                             <label for="nah" class="fnt">
                                                 <i class="fa-solid fa-caret-right"></i>
                                             </label>
@@ -291,42 +291,42 @@ require_once("connector.php");
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
+                                                <p class="brand" style="font-size: 1vw;">
                                                     Casio Series
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
+                                                <p class="brand" style="font-size: 1vw;">
                                                     G-Shock Series
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
+                                                <p class="brand" style="font-size: 1vw;">
                                                     Pro Trek Series
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
+                                                <p class="brand" style="font-size: 1vw;">
                                                     Baby-G Series
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
+                                                <p class="brand" style="font-size: 1vw;">
                                                     Edifice Series
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
+                                                <p class="brand" style="font-size: 1vw;">
                                                     Seen Series
                                                 </p>
                                             </div>
@@ -335,65 +335,51 @@ require_once("connector.php");
                                         <hr class="my-4">
                                     </div>
                                     <div class="bawah">
-                                        <p class="collec fs-3" id="tglss">
+                                        <p class="collec" id="tglss" style="font-size: 1.2vw;">
                                             <label for="nah" class="fnt">
                                                 <i class="fa-solid fa-caret-right"></i>
                                             </label>
                                             Price
                                         </p>
                                         <!-- <div>Click to slide down panel</div> -->
-                                        <div id="panelss" style="width: 10vw; margin-left:1.3vw;">
+                                        <div id="panelss" style="width: 15vw; margin-left:1.3vw;">
+                                            <div class="btn-group dropend fs-5 mb-3">
+                                                <input type="text" name="min" style="width: 5vw;" id="min"
+                                                    placeholder="Min">
+                                                <h3 style="margin: 3px;">-</h3>
+                                                <input type="text" name="max" style="width: 5vw;" id="max"
+                                                    placeholder="Max">
+                                            </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
-                                                    Casio Series
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    Rp 800k - 1000k
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
-                                                    G-Shock Series
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    Rp 1000k - 1500k
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input mt-2 me-2" type="checkbox" value=""
                                                     aria-label="Checkbox">
-                                                <p class="brand">
-                                                    Pro Trek Series
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    Rp 1500k - 3000k
                                                 </p>
                                             </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
-                                                <p class="brand">
-                                                    Baby-G Series
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
-                                                <p class="brand">
-                                                    Edifice Series
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
-                                                <p class="brand">
-                                                    Seen Series
-                                                </p>
-                                            </div>
-
                                         </div>
-                                        <hr class="my-4">
                                     </div>
                                 </div>
                                 <div class="kiri">
                                     <div class="container-fluid">
                                         <p class="display-4 fs-2 pt-3" style="text-align: center;">Wacthes New Series
                                         </p>
+                                        <hr class="my-4">
+
                                         <div class="src d-flex justify-content-center mb-3"
                                             style="width: 40%;float:right;">
                                             <input class="form-control" type="search" placeholder="Search..."
@@ -408,71 +394,6 @@ require_once("connector.php");
                                 </div>
 
                 </section>
-                <!-- <section id="spl" class="spl">
-                    <div class="isi2 mt-5">
-                        <p class="display-4 fs-2" style="text-align: center;">Special Collections</p>
-                        <div class="container">
-                            <div class="pagi mt-5">
-                                <div class="isipagi">
-                                    <div class="container">
-                                        <div class="row row-cols-1 row-cols-md-3 g-4">
-                                            <div class="col">
-                                                <div class="card h-100">
-                                                    <div class="new">
-                                                        <p>NEW</p>
-                                                    </div>
-                                                    <img src="asset/imgW/h.jpg" class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a longer card</p>
-                                                        <hr class="my-4">
-                                                        <button type="button"
-                                                            class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto"
-                                                            style="width: 70%;">Details</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card h-100">
-                                                    <div class="new">
-                                                        <p>NEW</p>
-                                                    </div>
-                                                    <img src="asset/imgW/i.png" class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a short card.</p>
-                                                        <hr class="my-4">
-                                                        <button type="button"
-                                                            class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto"
-                                                            style="width: 70%;">Details</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="card h-100">
-                                                    <div class="new">
-                                                        <p>NEW</p>
-                                                    </div>
-                                                    <img src="asset/imgW/d.jpg" class="card-img-top" alt="...">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">This is a longer card
-                                                        </p>
-                                                        <hr class="my-4">
-                                                        <button type="button"
-                                                            class="dtl btn btn-secondary btn-sm d-grid gap-2 col-6 mx-auto"
-                                                            style="width: 70%;">Details</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="my-4">
-                        </div>
-                    </div>
-                </section> -->
                 <section class="container-fluid d-flex justify-content-center isifot"
                     style="margin-top:3vw; width:100%;height:100%;">
                     <div class="row ftr p-3" style="width: 80%; margin-bottom:3vw; height:100%;">
