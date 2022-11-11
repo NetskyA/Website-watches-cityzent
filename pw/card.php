@@ -1,10 +1,10 @@
 <?php
 require_once("connector.php");
-    if($_REQUEST["barang"]){
-        $data = $_REQUEST["barang"];
-        $data = json_decode($data,true);
-        $_SESSION["temp"] = $data;
-    }
+if ($_REQUEST["barang"]) {
+    $data = $_REQUEST["barang"];
+    $data = json_decode($data, true);
+    $_SESSION["temp"] = $data;
+}
 ?>
 
 <!doctype html>
@@ -59,7 +59,7 @@ require_once("connector.php");
                             <li class="nav-item dropdown ms-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                   <?= $_SESSION["temp"]["Nama"]?>
+                                    <?= $_SESSION["temp"]["Nama"] ?>
                                 </a>
                             </li>
                         </ul>
@@ -72,11 +72,11 @@ require_once("connector.php");
                 <div class="isic mt-5 rounded">
                     <div class="view d-flex mt-5">
                         <div class="kanan2">
-                            <img src="<?= $_SESSION["temp"]["Gambar"]?>" alt="" srcset="">
+                            <img src="<?= $_SESSION["temp"]["Gambar"] ?>" alt="" srcset="">
                         </div>
                         <div class="kiri2 mt-4 ms-5">
                             <div class="jdl">
-                                <?= $_SESSION["temp"]["Nama"]?>
+                                <?= $_SESSION["temp"]["Nama"] ?>
                                 <br>
                                 <span class="jdl2 fs-5">
                                     NEW
@@ -99,7 +99,7 @@ require_once("connector.php");
                             </div>
                             <div class="price mt-2">
                                 <h4>Price</h4>
-                                <h5><?= $_SESSION["temp"]["Harga"]?></h5>
+                                <h5><?= $_SESSION["temp"]["Harga"] ?></h5>
 
                                 <div class="jumlah d-flex mt-5">
                                     <button type="button" style="width: 5%;" class="btn btn-secondary">+</button>
