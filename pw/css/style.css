@@ -246,3 +246,8 @@ body {
 .animasi{
     transition: 0.8s;
 }
+
+.brand:hover{
+    transform: scale(110%);
+    transition: 1.3s;
+}

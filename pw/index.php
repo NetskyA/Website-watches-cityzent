@@ -14,6 +14,7 @@ require_once("connector.php");
 
     <!--Framework Use-->
     <link rel="stylesheet" href="css/style.css">
+    <script src="css/script.js"></script>
     <link rel="shortcut icon" href="asset/favicon/logoscrt.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/7e563a8c7f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -21,6 +22,18 @@ require_once("connector.php");
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+    <!-- <style>
+    #panel,
+    #flip {
+        width: 15vw;
+        background-color: white;
+        border: none;
+    }
+
+    #panel {
+        display: none;
+    }
+    </style> -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
@@ -29,6 +42,32 @@ require_once("connector.php");
     </script>
 
     <!--Framework Use-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#tgl").click(function() {
+            $("#panel").slideDown("slow");
+        });
+        $("#tgl").dblclick(function() {
+            $("#panel").slideUp("slow");
+        });
+
+        $("#tgls").click(function() {
+            $("#panels").slideDown("slow");
+        });
+        $("#tgls").dblclick(function() {
+            $("#panels").slideUp("slow");
+        });
+
+        $("#tglss").click(function() {
+            $("#panelss").slideDown("slow");
+        });
+        $("#tglss").dblclick(function() {
+            $("#panelss").slideUp("slow");
+        });
+    });
+    </script>
+
 
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- Jquery DataTables -->
@@ -203,287 +242,152 @@ require_once("connector.php");
                 <!-- and nav2 -->
                 <section id="news" class="news">
                     <div class="container-fluid" style="width: 80%;">
-                        <div class="jumbotron ps-2 pe-2" id="jbm">
+                        <div class="jumbotron" id="jbm">
                             <hr class="my-4 mt-4">
                             <div class="cnt d-flex justify-content-center">
                                 <div class="kanan mt-3 fs-5 fixed-side">
                                     <div class="atas">
-                                        <p class="collec fs-3">
-                                            <label for="nah" class="fnt me-1">
+                                        <p class="collec fs-3" id="tgl">
+                                            <label for="nah" class="fnt">
                                                 <i class="fa-solid fa-caret-right"></i>
                                             </label>
-                                            Collections
+                                            Gender
                                         </p>
-                                        <div class="isik">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        G-Shock Series
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">GA-2100-1A1</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">DW-5600BB-1</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">AW-500BB-1E</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                        <!-- <div>Click to slide down panel</div> -->
+                                        <div id="panel" style="width: 8vw; margin-left:1.3vw;">
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Men
+                                                </p>
                                             </div>
-                                        </div>
-                                        <div class="isik2">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        Pro Trek Series
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">PRG-340-1</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">PRG-340-3</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">PRG-340T-7</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Women
+                                                </p>
                                             </div>
-                                        </div>
-                                        <div class="isik2">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        Baby-G Series
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">BA-110XPM-6A</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">BA-130PM-4A</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">BGA-280PM-7A</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="isik2">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        Edifice Series
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">EQB-2000DB-1A</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">EQB-2000DC-1A</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">ECB-2000D-1A</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="isik2">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        Casio Series
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MTP-VD03B-1A</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MTP-VD03B-7A</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MTP-VD03D-1A</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="isik2">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        Seen Series
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">SHE-4539CM-4A</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">SHE-4539GM-9A</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">SHE-4539SM-2A</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Child
+                                                </p>
                                             </div>
                                         </div>
                                         <hr class="my-4">
                                     </div>
                                     <div class="tengah">
-                                        <p class="collec fs-3">
-                                            <label for="nah" class="fnt me-1">
+                                        <p class="collec fs-3" id="tgls">
+                                            <label for="nah" class="fnt">
                                                 <i class="fa-solid fa-caret-right"></i>
                                             </label>
-                                            Water Resistance
+                                            Brands
                                         </p>
-                                        <div class="isik">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        WR for ISO 200
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <upli>
-                                                            <a class="dropdown-item" href="#">DW-291H-1AV</a>
-                                                        </upli>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">DW-291H-1BV</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">DW-291H-9AV</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                        <!-- <div>Click to slide down panel</div> -->
+                                        <div id="panels" style="width: 10vw; margin-left:1.3vw;">
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Casio Series
+                                                </p>
                                             </div>
-                                        </div>
-                                        <div class="isik2">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        WR 20 bar
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MWA-100HD-2AV</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MWA-100HD-7AV</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MWD-100HD-1BV</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    G-Shock Series
+                                                </p>
                                             </div>
-                                        </div>
-                                        <div class="isik2">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        WR 10 bar
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MTP-E350B-1BV</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MTP-E350B-7BV</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MTP-E350BL-1BV</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Pro Trek Series
+                                                </p>
                                             </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Baby-G Series
+                                                </p>
+                                            </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Edifice Series
+                                                </p>
+                                            </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Seen Series
+                                                </p>
+                                            </div>
+
                                         </div>
                                         <hr class="my-4">
                                     </div>
                                     <div class="bawah">
-                                        <p class="collec fs-3">
-                                            <label for="nah" class="fnt me-1">
+                                        <p class="collec fs-3" id="tglss">
+                                            <label for="nah" class="fnt">
                                                 <i class="fa-solid fa-caret-right"></i>
                                             </label>
-                                            Display Type
+                                            Price
                                         </p>
-                                        <div class="isik">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        Digital and Analog
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">AEQ-120W-1AV</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">AEQ-120W-2AV</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">AEQ-120W-9AV</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                        <!-- <div>Click to slide down panel</div> -->
+                                        <div id="panelss" style="width: 10vw; margin-left:1.3vw;">
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Casio Series
+                                                </p>
                                             </div>
-                                        </div>
-                                        <div class="isik2">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        Digital
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <upli>
-                                                            <a class="dropdown-item" href="#">LWS-1200H-1AV</a>
-                                                        </upli>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">AE-1500WHX-3AV</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MWD-100HD-1BV</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    G-Shock Series
+                                                </p>
                                             </div>
-                                        </div>
-                                        <div class="isik2">
-                                            <div class="dropdown" style="cursor: pointer;">
-                                                <div class="btn-group dropend">
-                                                    <p type="text" class="side fs-6" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        Analog
-                                                    </p>
-                                                    <ul class="dropdown-menu ms-3">
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MTP-E350BL-1BV</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MTP-E350B-1BV</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="#">MTP-E350BL-1BV</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Pro Trek Series
+                                                </p>
                                             </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Baby-G Series
+                                                </p>
+                                            </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Edifice Series
+                                                </p>
+                                            </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
+                                                    aria-label="Checkbox">
+                                                <p class="brand">
+                                                    Seen Series
+                                                </p>
+                                            </div>
+
                                         </div>
+                                        <hr class="my-4">
                                     </div>
                                 </div>
                                 <div class="kiri">
