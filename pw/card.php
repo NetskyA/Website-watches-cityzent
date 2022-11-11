@@ -74,7 +74,7 @@ if ($_REQUEST["barang"]) {
                         <div class="kanan2">
                             <img src="<?= $_SESSION["temp"]["Gambar"] ?>" alt="" srcset="">
                         </div>
-                        <div class="kiri2 mt-4 ms-5">
+                        <div class="kiri2 mt-4 ms-5" style="padding-left: 3vw; padding-top:2vw">
                             <div class="jdl">
                                 <?= $_SESSION["temp"]["Nama"] ?>
                                 <br>

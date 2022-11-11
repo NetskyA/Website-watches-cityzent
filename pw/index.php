@@ -490,8 +490,6 @@ require_once("connector.php");
                                     <div class="container-fluid">
                                         <p class="display-4 fs-2 pt-3" style="text-align: center;">Wactches New Series
                                         </p>
-
-
                                         <div class="src d-flex justify-content-center mb-3"
                                             style="width: 40%;float:right;">
                                             <input class="form-control" type="search" placeholder="Search..."
