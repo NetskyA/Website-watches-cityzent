@@ -120,7 +120,7 @@ require_once("connector.php");
                                 </ul>
                             </li>
                             <li class="nav-item me-4">
-                                <a class="nav-link text-white" href="#">Comming Soon</a>
+                                <a class="nav-link text-white" href="#">Coming Soon</a>
                             </li>
                         </ul>
                         <a href="checkout.php" role="button" class="btn">
@@ -488,7 +488,7 @@ require_once("connector.php");
                                 </div>
                                 <div class="kiri">
                                     <div class="container-fluid">
-                                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Wactches New Series
+                                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Wacthes New Series
                                         </p>
                                         <div class="src d-flex justify-content-center mb-3"
                                             style="width: 40%;float:right;">
