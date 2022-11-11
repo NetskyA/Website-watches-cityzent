@@ -106,10 +106,11 @@ if ($_REQUEST["barang"]) {
                                     <button type="button" style="width: 5%;" class="btn btn-secondary ms-3">-</button>
                                 </div>
                                 <hr class="my-4 mt-4">
-
-                                <button type="button" class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">Check
-                                    Out</button>
-
+                                <a href="checkout.php" style="text-decoration: none;">
+                                    <button type="button"
+                                        class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">Check
+                                        Out</button>
+                                </a>
                             </div>
                         </div>
                     </div>

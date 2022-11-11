@@ -36,9 +36,6 @@
             <!--navbar-->
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand mt-1" href="#">
-                        <img src="asset/logo/logo.png" style="height: 3vw;" alt="" srcset="">
-                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -47,9 +44,14 @@
                     <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
                         <ul class="navbar-nav fs-5">
                             <li class="nav-item me-4">
-                                <a class="nav-link text-dark" href="index.php">Home</a>
+                                <a class="nav-link text-dark" href="index.php"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="45" height="50" fill="currentColor" class="bi bi-arrow-left-circle"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                                    </svg></a>
                             </li>
-                            <li class="nav-item dropdown me-4">
+                            <li class="nav-item dropdown me-4 pt-2">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     GA-2110SC-4A
@@ -62,9 +64,9 @@
             <!-- and nav -->
             <!-- content -->
             <div class="content d-flex justify-content-center">
-                <div class="kiri2">
+                <div class="kiri3">
                     <div class="container">
-                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Wactches New Series</p>
+                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Your Collections</p>
                         <hr class="my-4">
 
                         <div class="produk" style=" width: 100%; margin-top:2vw;">
