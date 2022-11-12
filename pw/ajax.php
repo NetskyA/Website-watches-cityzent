@@ -67,7 +67,7 @@ if ($halaman > 1) {
     echo "<button class='page-link animasi' onclick='ajax(" . $previous . ")'>Previous</button>";
 }
 echo "</li>";
-echo "<li class='page-item'><a class='page-link'>" . $halaman . "</a>";
+echo "<li class='page-item'><a class='page-link'>" . $halaman ."/".$total_halaman. "</a>";
 echo "</li>";
 echo "<li class='page-item'>";
 if ($halaman < $total_halaman) {
