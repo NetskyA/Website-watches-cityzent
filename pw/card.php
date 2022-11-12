@@ -29,8 +29,26 @@ if ($_REQUEST["barang"]) {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    </script>
+    <script>
+    $(document).ready(function() {
+        // panel hide
+        $("#panelss").hide();
+        // and panel hide
+
+        // action
+        $("#tglss").click(function() {
+            $("#tglss").text("Hide");
+            $("#panelss").toggle(1500);
+            $("#tglss").click(function() {
+                $("#tglss").text("Show More");
+            });
+        });
+        // and action
+    });
     </script>
     <!--Framework Use-->
 </head>
@@ -82,43 +100,62 @@ if ($_REQUEST["barang"]) {
                                     NEW
                                 </span>
                             </div>
-                            <div class="des fs-6" style="width: 46vw;">
+                            <div class="des fs-6" style="width: 40vw;">
                                 Go bold and rugged with G-SHOCK's signature toughness in popular bright colors.
                                 The exciting combination of two-tone bezels on the DW-5610SC and GA-2110SC
-                                highlights the dynamic, colorful design. Product Specification : Regal Series -
-                                Full Black
-                                <br>
-                                <br>
-                                Movement : Quartz Movement
-                                <br>
-                                Strap : PU Leather Strap
-                                <br>
-                                Glass : Sapphire Mineral Glass
+                                highlights the dynamic, colorful design. Product Specification Men's Digital Watch
+                                Waterproof Many Function Strap PU Silicone Material Strap ORIGINAL BL68
 
                                 <br>
                             </div>
                             <div class="price mt-2">
                                 <h4>Price</h4>
-                                <h5><?= $_SESSION["temp"]["Harga"] ?></h5>
+                                <h5><span>Rp. </span><?= $_SESSION["temp"]["Harga"] ?></h5>
 
                                 <div class="jumlah d-flex mt-5">
                                     <button type="button" style="width: 5%;" class="btn btn-secondary">+</button>
                                     <button type="button" style="width: 5%;" class="btn btn-secondary ms-3">-</button>
                                 </div>
-                                <hr class="my-4 mt-4">
-                                <a href="checkout.php" style="text-decoration: none;">
-                                    <button type="button"
-                                        class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">Check
-                                        Out</button>
-                                </a>
+                                <h5 style="padding-top: 1vw;">
+                                    <p>Total : </p>
+                                </h5>
+                                <div class="showmore">
+                                    <p class="collec" id="tglss" style="font-size: 1.2vw; text-align:center;">
+                                        Show more
+                                    </p>
+                                    <div id="panelss" style="width: 100%;">
+                                        <div class="btn-group dropend fs-5"">
+                                            - Type: Digital
+                                            <br>
+                                            - Gender: Male<br>
+                                            - Clock dimensions: 48 mm<br>
+                                            - Length of clock: 250 mm<br>
+                                            - Width of clock: 22 mm<br>
+                                            - Thickness of clock: 15 mm<br>
+                                            - Material strap: PU silicone strap<br>
+                                            - Material case: Plastic case<br>
+                                            - Glass material: Resin<br>
+                                            - Water resistance : 50m Waterproof<br>
+                                            - 1 Year Warranty<br>
+                                            - Feature : Date, Moon, Night Light, Waterproof And Countdown<br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class=" my-4 mt-4" style="width: 100%;">
+
+                                            <a href="checkout.php" style="text-decoration: none;">
+                                                <button type="button"
+                                                    class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">Check
+                                                    Out</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <!-- and content -->
                     </div>
                 </div>
-            </div>
-            <!-- and content -->
-        </div>
-    </div>
 </body>
 <script>
 $(document).ready(function() {

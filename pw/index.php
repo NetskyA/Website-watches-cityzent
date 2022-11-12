@@ -45,26 +45,35 @@ require_once("connector.php");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
     $(document).ready(function() {
+        // panel hide
+        $("#panel").hide();
+        $("#panels").hide();
+        $("#panelss").hide();
+        $("#panel1").hide();
+        $("#panel2").hide();
+        // and panel hide
+
+        // action
         $("#tgl").click(function() {
-            $("#panel").slideDown("slow");
-        });
-        $("#tgl").dblclick(function() {
-            $("#panel").slideUp("slow");
+            $("#panel").toggle(1000);
         });
 
         $("#tgls").click(function() {
-            $("#panels").slideDown("slow");
-        });
-        $("#tgls").dblclick(function() {
-            $("#panels").slideUp("slow");
+            $("#panels").toggle(1000);
         });
 
         $("#tglss").click(function() {
-            $("#panelss").slideDown("slow");
+            $("#panelss").toggle(1000);
         });
-        $("#tglss").dblclick(function() {
-            $("#panelss").slideUp("slow");
+
+        $("#tgl1").click(function() {
+            $("#panel1").toggle(1000);
         });
+
+        $("#tgl2").click(function() {
+            $("#panel2").toggle(1000);
+        });
+        // and action
     });
     </script>
 
@@ -158,9 +167,6 @@ require_once("connector.php");
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item me-4">
-                                <a class="nav-link text-white" href="#">Coming Soon</a>
-                            </li>
                         </ul>
                         <a href="checkout.php" role="button" class="btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="50" fill="currentColor"
@@ -253,27 +259,26 @@ require_once("connector.php");
                                             </label>
                                             Gender
                                         </p>
-                                        <!-- <div>Click to slide down panel</div> -->
-                                        <div id="panel" style="width: 8vw; margin-left:1.3vw;">
+                                        <div id="panel" style="width: 10vw; margin-left:1.3vw;">
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="gdr"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Men
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="gdr"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Women
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="gdr"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
-                                                    Child
+                                                    For men and women
                                                 </p>
                                             </div>
                                         </div>
@@ -289,43 +294,43 @@ require_once("connector.php");
                                         <!-- <div>Click to slide down panel</div> -->
                                         <div id="panels" style="width: 10vw; margin-left:1.3vw;">
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="brn"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Casio Series
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="brn"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     G-Shock Series
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="brn"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Pro Trek Series
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="brn"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Baby-G Series
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="brn"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Edifice Series
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="brn"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Seen Series
                                                 </p>
@@ -351,35 +356,116 @@ require_once("connector.php");
                                                     placeholder="Max">
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="prc"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Rp 800k - 1000k
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="prc"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Rp 1000k - 1500k
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input mt-2 me-2" type="checkbox" value=""
-                                                    aria-label="Checkbox">
+                                                <input class="form-check-input me-1" type="radio" name="prc"
+                                                    id="exampleRadios1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Rp 1500k - 3000k
                                                 </p>
                                             </div>
                                         </div>
+                                        <hr class="my-4">
+
+                                    </div>
+                                    <div class="bawahlagi">
+                                        <p class="collec" id="tgl1" style="font-size: 1.2vw;">
+                                            <label for="nah" class="fnt">
+                                                <i class="fa-solid fa-caret-right"></i>
+                                            </label>
+                                            Water Resistant
+                                        </p>
+                                        <!-- <div>Click to slide down panel</div> -->
+                                        <div id="panel1" style="width: 10vw; margin-left:1.3vw;">
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input me-1" type="radio" name="prc"
+                                                    id="exampleRadios1">
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    Daily
+                                                </p>
+                                            </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input me-1" type="radio" name="prc"
+                                                    id="exampleRadios1">
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    WR ISO 200m
+                                                </p>
+                                            </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input me-1" type="radio" name="prc"
+                                                    id="exampleRadios1">
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    WR to 20 bar
+                                                </p>
+                                            </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input me-1" type="radio" name="prc"
+                                                    id="exampleRadios1">
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    WR to 10 bar
+                                                </p>
+                                            </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input me-1" type="radio" name="prc"
+                                                    id="exampleRadios1">
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    WR to 5 bar
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr class="my-4">
+
+                                    </div>
+                                    <div class="bawahnih">
+                                        <p class="collec" id="tgl2" style="font-size: 1.2vw;">
+                                            <label for="nah" class="fnt">
+                                                <i class="fa-solid fa-caret-right"></i>
+                                            </label>
+                                            Display Type
+                                        </p>
+                                        <div id="panel2" style="width: 8.5vw; margin-left:1.3vw;">
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input me-1" type="radio" name="dsp"
+                                                    id="exampleRadios1">
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    Digital
+                                                </p>
+                                            </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input me-1" type="radio" name="dsp"
+                                                    id="exampleRadios1">
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    Analog
+                                                </p>
+                                            </div>
+                                            <div class="btn-group dropend fs-5">
+                                                <input class="form-check-input me-1" type="radio" name="dsp"
+                                                    id="exampleRadios1">
+                                                <p class="brand" style="font-size: 1vw;">
+                                                    Digital and Analog
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <!-- and navbar kiri -->
                                 <div class="kiri">
                                     <div class="container-fluid">
                                         <p class="display-4 fs-2 pt-3" style="text-align: center;">Wacthes New Series
                                         </p>
-                                        <hr class="my-4">
-
                                         <div class="src d-flex justify-content-center mb-3"
                                             style="width: 40%;float:right;">
                                             <input class="form-control" type="search" placeholder="Search..."
