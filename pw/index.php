@@ -120,6 +120,51 @@ require_once("connector.php");
             query+= condition.join(" or ");
             query+=")";
         }
+        condition = [];
+        var brand = document.getElementsByName("brn");
+        for(i=0;i<brand.length;i++){
+            if(brand[i].checked == true){
+                condition.push("ID_Brand="+brand[i].value);
+            }
+        }
+        if(condition.length!=0){
+            if(query!=""){
+                query+= " and "
+            }
+            query+="(";
+            query+= condition.join(" or ");
+            query+=")";
+        }
+        condition = [];
+        var resistance = document.getElementsByName("res");
+        for(i=0;i<resistance.length;i++){
+            if(resistance[i].checked == true){
+                condition.push("ID_Resistance="+resistance[i].value);
+            }
+        }
+        if(condition.length!=0){
+            if(query!=""){
+                query+= " and "
+            }
+            query+="(";
+            query+= condition.join(" or ");
+            query+=")";
+        }
+        condition = [];
+        var display = document.getElementsByName("dsp");
+        for(i=0;i<display.length;i++){
+            if(display[i].checked == true){
+                condition.push("ID_Display="+display[i].value);
+            }
+        }
+        if(condition.length!=0){
+            if(query!=""){
+                query+= " and "
+            }
+            query+="(";
+            query+= condition.join(" or ");
+            query+=")";
+        }
         $.ajax({
         type: "GET",
         data: {search:search,idx:idx,query:query},
@@ -320,7 +365,7 @@ require_once("connector.php");
                                             foreach($data as $value){
                                                 ?>
                                                 <div class="btn-group dropend fs-5">
-                                                    <input class="form-check-input me-1" type="radio" name="brn"
+                                                    <input class="form-check-input me-1" type="checkbox" name="brn"
                                                         id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
                                                     <p class="brand" style="font-size: 1vw;">
                                                         <?=$value["Nama"]?> Series
@@ -389,7 +434,7 @@ require_once("connector.php");
                                             foreach($data as $value){
                                                 ?>
                                                 <div class="btn-group dropend fs-5">
-                                                    <input class="form-check-input me-1" type="radio" name="prc"
+                                                    <input class="form-check-input me-1" type="checkbox" name="res"
                                                         id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
                                                     <p class="brand" style="font-size: 1vw;">
                                                         <?=$value["Nama"]?>
@@ -417,7 +462,7 @@ require_once("connector.php");
                                             foreach($data as $value){
                                                 ?>
                                                 <div class="btn-group dropend fs-5">
-                                                    <input class="form-check-input me-1" type="radio" name="dsp"
+                                                    <input class="form-check-input me-1" type="checkbox" name="dsp"
                                                         id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
                                                     <p class="brand" style="font-size: 1vw;">
                                                         <?=$value["Nama"]?>
@@ -438,7 +483,7 @@ require_once("connector.php");
                                         <div class="src d-flex justify-content-center mb-3"
                                             style="width: 40%;float:right;">
                                             <input class="form-control" type="search" placeholder="Search..."
-                                                aria-label="Search" name="tekscari" id="cari1" onsearch="ajax(1)">
+                                                aria-label="Search" name="tekscari" id="cari1" oninput="ajax(1)">
                                             <hr class="my-4">
                                             <button class="btn btn-outline-secondary" onclick="ajax(1)">Search</button>
 
