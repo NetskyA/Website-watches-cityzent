@@ -2,12 +2,16 @@
 require_once("connector.php");
 $text = $_REQUEST["search"];
 $halaman = $_REQUEST["idx"];
-
-echo "<table class='table' style='margin: 0vw;padding:0vw;width:100%'>";
-echo "<tbody style='margin: 0vw;padding:0vw;'>";
 $batas = 8;
 // $halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
 $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
+if($halaman == 1){
+    $awal=1;
+}else{
+    $awal=(($halaman-1)*8)+1;
+}
+
+$akhir = $awal+($batas-1);
 if ($halaman - 1 > 0) {
     $previous = $halaman - 1;
 } else {
@@ -29,6 +33,18 @@ $stmt2->execute();
 $data2 = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
 $nomor = $halaman_awal + 1;
 $idx = 0;
+if($akhir>$jumlah_data){
+    $akhir=$jumlah_data;
+}
+echo "<div style='width:100%;padding-top:1vw;font-size: 1.4vw;font-weight:bold'>".$awal."-".$akhir." of ".$jumlah_data." Found</div>";
+echo "<table class='table' style='margin: 0vw;padding:0vw;width:100%'>";
+echo "<colgroup>";
+       echo "<col span='1' style='width: 25%;'>";
+       echo "<col span='1' style='width: 25%;'>";
+       echo "<col span='1' style='width: 25%;'>";
+       echo "<col span='1' style='width: 25%;'>";
+    echo "</colgroup>";
+echo "<tbody style='margin: 0vw;padding:0vw;'>";
 foreach ($data2 as $d) {
     if ($idx == 0) {
 
@@ -46,8 +62,8 @@ foreach ($data2 as $d) {
         "Harga"=>$d["Harga"],
         "Deskripsi"=>$d["Deskripsi"]
     );
-    echo "<td style='width:100% margin: 0vw;padding:0vw;'>";
-    echo "<div class='card' style='min-height: 20vw;height: 20vw;font-size: 16px; padding-top:1vw; font-weight: bold; text-align: center; margin:0.3vw;box-shadow: inset 0 -3em 2em rgba(0, 0, 0, 0.1), 0 0 0 1px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    echo "<td style='width:25% margin: 0vw;padding:0vw;'>";
+    echo "<div class='card' style='min-height: 20vw;height: 20vw;font-size: 1.4vw; padding-top:1vw; font-weight: bold; text-align: center; margin:0.3vw;box-shadow: inset 0 -3em 2em rgba(0, 0, 0, 0.1), 0 0 0 1px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width:14vw;margin:0.5vw;'>";
 
@@ -72,6 +88,10 @@ foreach ($data2 as $d) {
         $idx = 0;
         echo "</tr>";
     }
+}
+echo "<td></td>";
+if($idx!=0){
+    echo "</tr>";
 }
 echo "</tbody>";
 echo "</table>";

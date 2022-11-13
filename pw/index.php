@@ -294,49 +294,23 @@ require_once("connector.php");
                                         </p>
                                         <!-- <div>Click to slide down panel</div> -->
                                         <div id="panels" style="width: 10vw; margin-left:1.3vw;">
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="brn"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    Casio Series
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="brn"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    G-Shock Series
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="brn"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    Pro Trek Series
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="brn"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    Baby-G Series
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="brn"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    Edifice Series
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="brn"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    Seen Series
-                                                </p>
-                                            </div>
 
+                                        <?php
+                                            $stmt = $conn->prepare("SELECT * FROM brand");
+                                            $stmt->execute();
+                                            $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                                            foreach($data as $value){
+                                                ?>
+                                                <div class="btn-group dropend fs-5">
+                                                    <input class="form-check-input me-1" type="radio" name="brn"
+                                                        id="exampleRadios1">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?=$value["Nama"]?> Series
+                                                    </p>
+                                                </div>
+                                                <?php
+                                            }
+                                        ?>
                                         </div>
                                         <hr class="my-4">
                                     </div>
@@ -390,41 +364,22 @@ require_once("connector.php");
                                         </p>
                                         <!-- <div>Click to slide down panel</div> -->
                                         <div id="panel1" style="width: 10vw; margin-left:1.3vw;">
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="prc"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    Daily
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="prc"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    WR ISO 200m
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="prc"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    WR to 20 bar
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="prc"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    WR to 10 bar
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="prc"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    WR to 5 bar
-                                                </p>
-                                            </div>
+                                        <?php
+                                            $stmt = $conn->prepare("SELECT * FROM resistant");
+                                            $stmt->execute();
+                                            $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                                            foreach($data as $value){
+                                                ?>
+                                                <div class="btn-group dropend fs-5">
+                                                    <input class="form-check-input me-1" type="radio" name="prc"
+                                                        id="exampleRadios1">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?=$value["Nama"]?>
+                                                    </p>
+                                                </div>
+                                            <?php
+                                            }
+                                        ?>
                                         </div>
                                         <hr class="my-4">
 
@@ -437,27 +392,22 @@ require_once("connector.php");
                                             Display Type
                                         </p>
                                         <div id="panel2" style="width: 8.5vw; margin-left:1.3vw;">
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="dsp"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    Digital
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="dsp"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    Analog
-                                                </p>
-                                            </div>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="dsp"
-                                                    id="exampleRadios1">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    Digital and Analog
-                                                </p>
-                                            </div>
+                                        <?php
+                                            $stmt = $conn->prepare("SELECT * FROM display");
+                                            $stmt->execute();
+                                            $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                                            foreach($data as $value){
+                                                ?>
+                                                <div class="btn-group dropend fs-5">
+                                                    <input class="form-check-input me-1" type="radio" name="dsp"
+                                                        id="exampleRadios1">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?=$value["Nama"]?>
+                                                    </p>
+                                                </div>
+                                            <?php
+                                            }
+                                        ?>
                                         </div>
                                     </div>
                                 </div>
