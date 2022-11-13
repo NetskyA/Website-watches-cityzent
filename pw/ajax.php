@@ -20,16 +20,12 @@ if ($halaman - 1 > 0) {
 }
 $next = $halaman + 1;
 if($query==""){
-    if (isset($text) != "") {
-        $stmt = $conn->prepare("SELECT * FROM barang where Nama_Barang like '%" . $text . "%'");
-        $stmt2 = $conn->prepare("select * from barang where Nama_Barang like '%" . $text . "%' limit $halaman_awal, $batas");
-    } else {
-        $stmt = $conn->prepare("SELECT * FROM barang");
-        $stmt2 = $conn->prepare("select * from barang limit $halaman_awal, $batas");
-    }
+    $stmt = $conn->prepare("SELECT * FROM barang where Nama_Barang like '%" . $text . "%'");
+    $stmt2 = $conn->prepare("select * from barang where Nama_Barang like '%" . $text . "%' limit $halaman_awal, $batas");
+    
 }else{
-    $stmt = $conn->prepare("SELECT * FROM barang where ".$query);
-    $stmt2 = $conn->prepare("SELECT * FROM barang where ". $query . " limit $halaman_awal, $batas");
+    $stmt = $conn->prepare("SELECT * FROM barang where ".$query." and Nama_Barang like '%" . $text . "%'");
+    $stmt2 = $conn->prepare("SELECT * FROM barang where ". $query . "and Nama_Barang like '%" . $text . "%' limit $halaman_awal, $batas");
 }
 $stmt->execute();
 $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);

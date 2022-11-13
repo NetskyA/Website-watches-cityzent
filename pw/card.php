@@ -138,7 +138,7 @@ $resistant = mysqli_fetch_assoc($result);
                                         <div class="btn-group dropend fs-5">
                                             - Type: <?=$display["Nama"]?>
                                             <br>
-                                            - Gender: <?if($gender["Nama"]!=null){$gender["Nama"];}?><br>
+                                            - Gender: <?=$gender["Nama"]?><br>
                                             - Clock dimensions: 48 mm<br>
                                             - Length of clock: 250 mm<br>
                                             - Width of clock: 22 mm<br>
@@ -146,7 +146,7 @@ $resistant = mysqli_fetch_assoc($result);
                                             - Material strap: PU silicone strap<br>
                                             - Material case: Plastic case<br>
                                             - Glass material: Resin<br>
-                                            - Water resistance : <?if($resistant["Nama"]!=null){$resistant["Nama"];}?><br>
+                                            - Water resistance : <?=$resistant["Nama"]?><br>
                                             - 1 Year Warranty<br>
                                             - Feature : Date, Moon, Night Light, Waterproof And Countdown<br>
                                         </div>
