@@ -102,15 +102,16 @@ require_once("connector.php");
         search = document
             .getElementById("cari1")
             .value;
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function() {
-            document
-                .getElementById("con")
-                .innerHTML = this.responseText;
+        $.ajax({
+        type: "GET",
+        data: {search:search,idx:idx},
+        url: "ajax.php",
+        success: function(msg){
+            $('#con').html(msg);
         }
-        xhttp.open("GET", "ajax.php?search=" + search + "&idx=" + idx);
-        xhttp.send();
+        });
     }
+
     </script>
 </head>
 

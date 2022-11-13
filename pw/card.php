@@ -4,7 +4,19 @@ if ($_REQUEST["barang"]) {
     $data = $_REQUEST["barang"];
     $data = json_decode($data, true);
     $_SESSION["temp"] = $data;
+    $gbr =  $_REQUEST["gbr"];
+    // $gbr = base64_decode($gbr,true);
 }
+$result = mysqli_query($conn, "SELECT Nama FROM brand WHERE ID='".$_SESSION['temp']['ID_Brand']."'");
+$brand = mysqli_fetch_assoc($result);
+$result = mysqli_query($conn, "SELECT Nama FROM color WHERE ID='".$_SESSION['temp']['ID_Warna']."'");
+$color = mysqli_fetch_assoc($result);
+$result = mysqli_query($conn, "SELECT Nama FROM display WHERE ID='".$_SESSION['temp']['ID_Display']."'");
+$display = mysqli_fetch_assoc($result);
+$result = mysqli_query($conn, "SELECT Nama FROM gender WHERE ID='".$_SESSION['temp']['ID_Gender']."'");
+$gender = mysqli_fetch_assoc($result);
+$result = mysqli_query($conn, "SELECT Nama FROM resistant WHERE ID='".$_SESSION['temp']['ID_Resistant']."'");
+$resistant = mysqli_fetch_assoc($result);
 ?>
 
 <!doctype html>
@@ -77,7 +89,7 @@ if ($_REQUEST["barang"]) {
                             <li class="nav-item dropdown ms-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <?= $_SESSION["temp"]["Nama"] ?>
+                                    <?= $_SESSION["temp"]["Nama_Barang"] ?>
                                 </a>
                             </li>
                         </ul>
@@ -90,21 +102,20 @@ if ($_REQUEST["barang"]) {
                 <div class="isic mt-5 rounded">
                     <div class="view d-flex mt-5">
                         <div class="kanan2">
-                            <img src="<?= $_SESSION["temp"]["Gambar"] ?>" alt="" srcset="">
+                            <?php
+                        echo '<img src = "data:image/png;base64,' . $gbr . '"/>';
+                        ?>
                         </div>
                         <div class="kiri2 mt-4 ms-5" style="padding-left: 3vw; padding-top:2vw">
                             <div class="jdl">
-                                <?= $_SESSION["temp"]["Nama"] ?>
+                                <?= $_SESSION["temp"]["Nama_Barang"] ?>
                                 <br>
                                 <span class="jdl2 fs-5">
                                     NEW
                                 </span>
                             </div>
                             <div class="des fs-6" style="width: 40vw;">
-                                Go bold and rugged with G-SHOCK's signature toughness in popular bright colors.
-                                The exciting combination of two-tone bezels on the DW-5610SC and GA-2110SC
-                                highlights the dynamic, colorful design. Product Specification Men's Digital Watch
-                                Waterproof Many Function Strap PU Silicone Material Strap ORIGINAL BL68
+                            <?= $_SESSION["temp"]["Deskripsi"] ?>
 
                                 <br>
                             </div>
@@ -124,10 +135,10 @@ if ($_REQUEST["barang"]) {
                                         Show more
                                     </p>
                                     <div id="panelss" style="width: 100%;">
-                                        <div class="btn-group dropend fs-5"">
-                                            - Type: Digital
+                                        <div class="btn-group dropend fs-5">
+                                            - Type: <?=$display["Nama"]?>
                                             <br>
-                                            - Gender: Male<br>
+                                            - Gender: <?if($gender["Nama"]!=null){$gender["Nama"];}?><br>
                                             - Clock dimensions: 48 mm<br>
                                             - Length of clock: 250 mm<br>
                                             - Width of clock: 22 mm<br>
@@ -135,7 +146,7 @@ if ($_REQUEST["barang"]) {
                                             - Material strap: PU silicone strap<br>
                                             - Material case: Plastic case<br>
                                             - Glass material: Resin<br>
-                                            - Water resistance : 50m Waterproof<br>
+                                            - Water resistance : <?if($resistant["Nama"]!=null){$resistant["Nama"];}?><br>
                                             - 1 Year Warranty<br>
                                             - Feature : Date, Moon, Night Light, Waterproof And Countdown<br>
                                         </div>
