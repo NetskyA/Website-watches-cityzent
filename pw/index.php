@@ -99,12 +99,30 @@ require_once("connector.php");
     }
 
     function ajax(idx) {
+        var countgender=0;
+        var countbrand=0;
+        var countwarna = 0;
+        var countwater=0;
+        var countdisplay=0;
+        var condition=[];
+        var query="";
         search = document
             .getElementById("cari1")
             .value;
+        var gender = document.getElementsByName("gdr");
+        for(i=0;i<gender.length;i++){
+            if(gender[i].checked == true){
+                condition.push("ID_Gender="+gender[i].value);
+            }
+        }
+        if(condition.length!=0){
+            query+="(";
+            query+= condition.join(" or ");
+            query+=")";
+        }
         $.ajax({
         type: "GET",
-        data: {search:search,idx:idx},
+        data: {search:search,idx:idx,query:query},
         url: "ajax.php",
         success: function(msg){
             $('#con').html(msg);
@@ -262,22 +280,22 @@ require_once("connector.php");
                                         </p>
                                         <div id="panel" style="width: 10vw; margin-left:1.3vw;">
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="gdr"
-                                                    id="exampleRadios1">
+                                                <input class="form-check-input me-1" type="checkbox" name="gdr"
+                                                    id="exampleRadios1" onclick="ajax(1)" value="1">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Men
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="gdr"
-                                                    id="exampleRadios1">
+                                                <input class="form-check-input me-1" type="checkbox" name="gdr"
+                                                    id="exampleRadios1" onclick="ajax(1)" value="2">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Women
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="gdr"
-                                                    id="exampleRadios1">
+                                                <input class="form-check-input me-1" type="checkbox" name="gdr"
+                                                    id="exampleRadios1" onclick="ajax(1)" value="3">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     For men and women
                                                 </p>
@@ -303,7 +321,7 @@ require_once("connector.php");
                                                 ?>
                                                 <div class="btn-group dropend fs-5">
                                                     <input class="form-check-input me-1" type="radio" name="brn"
-                                                        id="exampleRadios1">
+                                                        id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
                                                     <p class="brand" style="font-size: 1vw;">
                                                         <?=$value["Nama"]?> Series
                                                     </p>
@@ -372,7 +390,7 @@ require_once("connector.php");
                                                 ?>
                                                 <div class="btn-group dropend fs-5">
                                                     <input class="form-check-input me-1" type="radio" name="prc"
-                                                        id="exampleRadios1">
+                                                        id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
                                                     <p class="brand" style="font-size: 1vw;">
                                                         <?=$value["Nama"]?>
                                                     </p>
@@ -400,7 +418,7 @@ require_once("connector.php");
                                                 ?>
                                                 <div class="btn-group dropend fs-5">
                                                     <input class="form-check-input me-1" type="radio" name="dsp"
-                                                        id="exampleRadios1">
+                                                        id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
                                                     <p class="brand" style="font-size: 1vw;">
                                                         <?=$value["Nama"]?>
                                                     </p>

@@ -2,6 +2,7 @@
 require_once("connector.php");
 $text = $_REQUEST["search"];
 $halaman = $_REQUEST["idx"];
+$query = $_REQUEST["query"];
 $batas = 8;
 // $halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
 $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
@@ -18,12 +19,17 @@ if ($halaman - 1 > 0) {
     $previous = 1;
 }
 $next = $halaman + 1;
-if (isset($text) != "") {
-    $stmt = $conn->prepare("SELECT * FROM barang where Nama_Barang like '%" . $text . "%'");
-    $stmt2 = $conn->prepare("select * from barang where Nama_Barang like '%" . $text . "%' limit $halaman_awal, $batas");
-} else {
-    $stmt = $conn->prepare("SELECT * FROM barang");
-    $stmt2 = $conn->prepare("select * from barang limit $halaman_awal, $batas");
+if($query==""){
+    if (isset($text) != "") {
+        $stmt = $conn->prepare("SELECT * FROM barang where Nama_Barang like '%" . $text . "%'");
+        $stmt2 = $conn->prepare("select * from barang where Nama_Barang like '%" . $text . "%' limit $halaman_awal, $batas");
+    } else {
+        $stmt = $conn->prepare("SELECT * FROM barang");
+        $stmt2 = $conn->prepare("select * from barang limit $halaman_awal, $batas");
+    }
+}else{
+    $stmt = $conn->prepare("SELECT * FROM barang where ".$query);
+    $stmt2 = $conn->prepare("SELECT * FROM barang where ". $query . " limit $halaman_awal, $batas");
 }
 $stmt->execute();
 $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
