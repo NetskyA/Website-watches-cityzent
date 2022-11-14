@@ -42,8 +42,19 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
         "ID"=>$_SESSION["temp"]["ID"],
         "jml"=> $_SESSION["total"]
     );
-    array_push($_SESSION["cart"],$temp); 
-    print_r($_SESSION["cart"]);
+    $ket=false;
+    $length = count($_SESSION["cart"]);
+    for ($i=0; $i < $length ; $i++) { 
+        if($_SESSION["cart"][$i]["ID"]==$temp["ID"]){
+            $tot = $_SESSION["cart"][$i]["jml"]+$_SESSION["total"];
+            $_SESSION["cart"][$i]["jml"]=$tot;
+            $ket=true;
+        }
+    }
+    if(!$ket){
+        array_push($_SESSION["cart"],$temp); 
+    }
+    header("Location: index.php");
 }
 ?>
 

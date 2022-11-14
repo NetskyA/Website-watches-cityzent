@@ -512,7 +512,7 @@ require_once("connector.php");
                                         <div class="src d-flex justify-content-center mb-3"
                                             style="width: 40%;float:right;">
                                             <input class="form-control" type="search" placeholder="Search..."
-                                                aria-label="Search" name="tekscari" id="cari1" onsearch="ajax(1)">
+                                                aria-label="Search" name="tekscari" id="cari1" oninput="ajax(1)">
                                             <hr class="my-4">
                                             <button class="btn btn-outline-secondary" onclick="ajax(1)">Search</button>
 
