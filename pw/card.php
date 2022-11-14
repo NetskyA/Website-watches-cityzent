@@ -38,10 +38,12 @@ if(isset($_POST["minus"])&&($_SESSION["total"]>0)){
 }
 
 if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["total"]!=0)){
-    $_SESSION["cart"]= array(
+    $temp= array(
         "ID"=>$_SESSION["temp"]["ID"],
         "jml"=> $_SESSION["total"]
-    ); 
+    );
+    array_push($_SESSION["cart"],$temp); 
+    print_r($_SESSION["cart"]);
 }
 ?>
 
@@ -151,8 +153,8 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
 
                                 <form action="" method="post">
                                     <div class="jumlah d-flex mt-5">
-                                        <input type="submit" value="+" style="width: 5%;" class="btn btn-secondary" name="plus">
-                                        <input type="submit" value="-" style="width: 5%;margin-left:0.5vw" class="btn btn-secondary" name="minus">
+                                        <input type="submit" value="-" style="width: 5%;" class="btn btn-secondary" name="minus">
+                                        <input type="submit" value="+" style="width: 5%;margin-left:0.5vw" class="btn btn-secondary" name="plus">
                                     </div>
                                 </form>
                                 <h5 style="padding-top: 1vw;">
