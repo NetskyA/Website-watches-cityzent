@@ -1,11 +1,18 @@
 <?php
 require_once("connector.php");
-if ($_REQUEST["barang"]) {
+if (isset($_REQUEST["barang"])) {
     $data = $_REQUEST["barang"];
     $data = json_decode($data, true);
     $_SESSION["temp"] = $data;
-    $gbr =  $_REQUEST["gbr"];
-    // $gbr = base64_decode($gbr,true);
+    $_SESSION["gbr"] =  $_REQUEST["gbr"];
+    if($_SESSION["temp"]["Stok"]==0){
+        $_SESSION["total"]="Barang Habis";
+    }else{
+        $_SESSION["total"]=0;
+    }
+}
+if(!isset($_SESSION["cart"])){
+    $_SESSION["cart"]=[];
 }
 $result = mysqli_query($conn, "SELECT Nama FROM brand WHERE ID='".$_SESSION['temp']['ID_Brand']."'");
 $brand = mysqli_fetch_assoc($result);
@@ -18,13 +25,13 @@ $gender = mysqli_fetch_assoc($result);
 $result = mysqli_query($conn, "SELECT Nama FROM resistant WHERE ID='".$_SESSION['temp']['ID_Resistant']."'");
 $resistant = mysqli_fetch_assoc($result);
 
-if(isset($_POST["plus"])&&($_SESSION["total"]!="Barang Habis")){
+if(isset($_POST["plus"])&&($_SESSION["total"]>=0)){
     if(!($_SESSION["total"]+1>$_SESSION["temp"]["Stok"])){
         $_SESSION["total"]=$_SESSION["total"]+1;
     }
 }
 
-if(isset($_POST["minus"])&&($_SESSION["total"]!="Barang Habis")){
+if(isset($_POST["minus"])&&($_SESSION["total"]>0)){
     if(!($_SESSION["total"]-1<0)){
         $_SESSION["total"]=$_SESSION["total"]-1;
     }
@@ -34,7 +41,7 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
     $_SESSION["cart"]= array(
         "ID"=>$_SESSION["temp"]["ID"],
         "jml"=> $_SESSION["total"]
-    );
+    ); 
 }
 ?>
 
@@ -122,7 +129,7 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
                     <div class="view d-flex mt-5">
                         <div class="kanan2">
                             <?php
-                        echo '<img src = "data:image/png;base64,' . $gbr . '"/>';
+                        echo '<img src = "data:image/png;base64,' . $_SESSION['gbr'] . '"/>';
                         ?>
                         </div>
                         <div class="kiri2 mt-4 ms-5" style="padding-left: 3vw; padding-top:2vw">
@@ -142,12 +149,14 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
                                 <h4>Price</h4>
                                 <h5><span>Rp. </span><?= $_SESSION["temp"]["Harga"] ?></h5>
 
-                                <div class="jumlah d-flex mt-5">
-                                    <button type="button" style="width: 5%;" class="btn btn-secondary">+</button>
-                                    <button type="button" style="width: 5%;" class="btn btn-secondary ms-3">-</button>
-                                </div>
+                                <form action="" method="post">
+                                    <div class="jumlah d-flex mt-5">
+                                        <input type="submit" value="+" style="width: 5%;" class="btn btn-secondary" name="plus">
+                                        <input type="submit" value="-" style="width: 5%;margin-left:0.5vw" class="btn btn-secondary" name="minus">
+                                    </div>
+                                </form>
                                 <h5 style="padding-top: 1vw;">
-                                    <p>Total : </p>
+                                    <p>Total : <?=$_SESSION["total"]?> </p>
                                 </h5>
                                 <div class="showmore">
                                     <p class="collec" id="tglss" style="font-size: 1.2vw; text-align:center;">
@@ -173,11 +182,9 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
                                 </div>
                                 <hr class=" my-4 mt-4" style="width: 100%;">
 
-                                            <a href="checkout.php" style="text-decoration: none;">
-                                                <button type="button"
-                                                    class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">Check
-                                                    Out</button>
-                                            </a>
+                                <form action="" method="post">
+                                                <input type="submit" name="checkout" value="Check Out" class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">
+                                            </form>  
                                         </div>
                                     </div>
                                 </div>

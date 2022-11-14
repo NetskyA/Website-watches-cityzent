@@ -116,10 +116,84 @@ require_once("connector.php");
             }
         }
         if(condition.length!=0){
+            if(query!=""){
+                query+= " and ";
+            }
             query+="(";
             query+= condition.join(" or ");
             query+=")";
         }
+        condition = [];
+            var brand = document.getElementsByName("brn");
+            for (i = 0; i < brand.length; i++) {
+                if (brand[i].checked == true) {
+                    condition.push("ID_Brand=" + brand[i].value);
+                }
+            }
+            if(condition.length!=0){
+                if(query!=""){
+                    query+= " and ";
+                }
+                query+="(";
+                query+= condition.join(" or ");
+                query+=")";
+            }
+            condition = [];
+            var resistance = document.getElementsByName("res");
+            for (i = 0; i < resistance.length; i++) {
+                if (resistance[i].checked == true) {
+                    condition.push("ID_Resistant=" + resistance[i].value);
+                }
+            }
+            if(condition.length!=0){
+                if(query!=""){
+                    query+= " and ";
+                }
+                query+="(";
+                query+= condition.join(" or ");
+                query+=")";
+            }
+            condition = [];
+            var display = document.getElementsByName("dsp");
+            for (i = 0; i < display.length; i++) {
+                if (display[i].checked == true) {
+                    condition.push("ID_Display=" + display[i].value);
+                }
+            }
+            if(condition.length!=0){
+                if(query!=""){
+                    query+= " and ";
+                }
+                query+="(";
+                query+= condition.join(" or ");
+                query+=")";
+            }
+            minim = document.getElementById("minim").value;
+            maks = document.getElementById("maks").value;
+            var validmin=false;
+            var validmaks=false;
+            if (!isNaN(minim) && minim!="") {
+                validmin=true;
+            }
+            if (!isNaN(maks) && maks!="") {
+                validmaks=true;
+            }
+            if(validmaks==true && validmin==true){
+                if(query!=""){
+                    query+=" and ";
+                }
+                query+= "(Harga >="+minim+" and "+"Harga<="+maks+")";
+            }else if(validmaks==true){
+                if(query!=""){
+                    query+=" and ";
+                }
+                query+= "(Harga<="+maks+")";
+            }else if(validmin==true){
+                if(query!=""){
+                    query+=" and ";
+                }
+                query+= "(Harga>="+minim+")";
+            }
         $.ajax({
         type: "GET",
         data: {search:search,idx:idx,query:query},
@@ -320,7 +394,7 @@ require_once("connector.php");
                                             foreach($data as $value){
                                                 ?>
                                                 <div class="btn-group dropend fs-5">
-                                                    <input class="form-check-input me-1" type="radio" name="brn"
+                                                    <input class="form-check-input me-1" type="checkbox" name="brn"
                                                         id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
                                                     <p class="brand" style="font-size: 1vw;">
                                                         <?=$value["Nama"]?> Series
@@ -342,11 +416,11 @@ require_once("connector.php");
                                         <!-- <div>Click to slide down panel</div> -->
                                         <div id="panelss" style="width: 15vw; margin-left:1.3vw;">
                                             <div class="btn-group dropend fs-5 mb-3">
-                                                <input type="text" name="min" style="width: 5vw;" id="min"
-                                                    placeholder="Min">
+                                                <input type="text" name="min" style="width: 5vw;" id="minim"
+                                                    placeholder="Min" oninput="ajax(1)">
                                                 <h3 style="margin: 3px;">-</h3>
-                                                <input type="text" name="max" style="width: 5vw;" id="max"
-                                                    placeholder="Max">
+                                                <input type="text" name="max" style="width: 5vw;" id="maks"
+                                                    placeholder="Max" oninput="ajax(1)">
                                             </div>
                                             <div class="btn-group dropend fs-5">
                                                 <input class="form-check-input me-1" type="radio" name="prc"
@@ -389,7 +463,7 @@ require_once("connector.php");
                                             foreach($data as $value){
                                                 ?>
                                                 <div class="btn-group dropend fs-5">
-                                                    <input class="form-check-input me-1" type="radio" name="prc"
+                                                    <input class="form-check-input me-1" type="checkbox" name="res"
                                                         id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
                                                     <p class="brand" style="font-size: 1vw;">
                                                         <?=$value["Nama"]?>
@@ -417,7 +491,7 @@ require_once("connector.php");
                                             foreach($data as $value){
                                                 ?>
                                                 <div class="btn-group dropend fs-5">
-                                                    <input class="form-check-input me-1" type="radio" name="dsp"
+                                                    <input class="form-check-input me-1" type="checkbox" name="dsp"
                                                         id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
                                                     <p class="brand" style="font-size: 1vw;">
                                                         <?=$value["Nama"]?>
