@@ -38,7 +38,7 @@
                     <div class="isikiri" data-aos="zoom-in" data-aos-anchor="#example-anchor" data-aos-offset="500"
                         data-aos-duration="1000">
                         <div class="jdl">
-                            Welcome to Rentals PS
+                            Welcome to Administrator
                         </div>
                         <div class="logo d-flex justify-content-center mb-2">
                             <img class="imgs" src="asset/logo/logo.png" alt="" srcset="">
