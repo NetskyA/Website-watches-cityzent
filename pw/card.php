@@ -17,8 +17,6 @@ $result = mysqli_query($conn, "SELECT Nama FROM gender WHERE ID='" . $_SESSION['
 $gender = mysqli_fetch_assoc($result);
 $result = mysqli_query($conn, "SELECT Nama FROM resistant WHERE ID='" . $_SESSION['temp']['ID_Resistant'] . "'");
 $resistant = mysqli_fetch_assoc($result);
-<<<<<<< Updated upstream
-=======
 
 if(isset($_POST["plus"])&&($_SESSION["total"]!="Barang Habis")){
     if(!($_SESSION["total"]+1>$_SESSION["temp"]["Stok"])){
@@ -38,7 +36,6 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
         "jml"=> $_SESSION["total"]
     );
 }
->>>>>>> Stashed changes
 ?>
 
 <!doctype html>
