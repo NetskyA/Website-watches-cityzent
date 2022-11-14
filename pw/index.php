@@ -99,40 +99,37 @@ require_once("connector.php");
     }
 
     function ajax(idx) {
-        var countgender = 0;
-        var countbrand = 0;
+        var countgender=0;
+        var countbrand=0;
         var countwarna = 0;
-        var countwater = 0;
-        var countdisplay = 0;
-        var condition = [];
-        var query = "";
+        var countwater=0;
+        var countdisplay=0;
+        var condition=[];
+        var query="";
         search = document
             .getElementById("cari1")
             .value;
         var gender = document.getElementsByName("gdr");
-        for (i = 0; i < gender.length; i++) {
-            if (gender[i].checked == true) {
-                condition.push("ID_Gender=" + gender[i].value);
+        for(i=0;i<gender.length;i++){
+            if(gender[i].checked == true){
+                condition.push("ID_Gender="+gender[i].value);
             }
         }
-        if (condition.length != 0) {
-            query += "(";
-            query += condition.join(" or ");
-            query += ")";
+        if(condition.length!=0){
+            query+="(";
+            query+= condition.join(" or ");
+            query+=")";
         }
         $.ajax({
-            type: "GET",
-            data: {
-                search: search,
-                idx: idx,
-                query: query
-            },
-            url: "ajax.php",
-            success: function(msg) {
-                $('#con').html(msg);
-            }
+        type: "GET",
+        data: {search:search,idx:idx,query:query},
+        url: "ajax.php",
+        success: function(msg){
+            $('#con').html(msg);
+        }
         });
     }
+
     </script>
 </head>
 
@@ -216,17 +213,17 @@ require_once("connector.php");
                                 aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="2100">
+                            <div class="carousel-item active" data-bs-interval="5000">
                                 <a href="#news">
                                     <img src="asset/banner/banner2.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
                                 </a>
                             </div>
-                            <div class="carousel-item" data-bs-interval="2100">
+                            <div class="carousel-item" data-bs-interval="5000">
                                 <a href="#news">
                                     <img src="asset/banner/banner1.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
                                 </a>
                             </div>
-                            <div class="carousel-item" data-bs-interval="2100">
+                            <div class="carousel-item">
                                 <a href="#news">
                                     <img src="asset/banner/banner3.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
                                 </a>
@@ -316,22 +313,22 @@ require_once("connector.php");
                                         <!-- <div>Click to slide down panel</div> -->
                                         <div id="panels" style="width: 10vw; margin-left:1.3vw;">
 
-                                            <?php
+                                        <?php
                                             $stmt = $conn->prepare("SELECT * FROM brand");
                                             $stmt->execute();
                                             $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-                                            foreach ($data as $value) {
-                                            ?>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="brn"
-                                                    id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    <?= $value["Nama"] ?> Series
-                                                </p>
-                                            </div>
-                                            <?php
+                                            foreach($data as $value){
+                                                ?>
+                                                <div class="btn-group dropend fs-5">
+                                                    <input class="form-check-input me-1" type="radio" name="brn"
+                                                        id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?=$value["Nama"]?> Series
+                                                    </p>
+                                                </div>
+                                                <?php
                                             }
-                                            ?>
+                                        ?>
                                         </div>
                                         <hr class="my-4">
                                     </div>
@@ -385,22 +382,22 @@ require_once("connector.php");
                                         </p>
                                         <!-- <div>Click to slide down panel</div> -->
                                         <div id="panel1" style="width: 10vw; margin-left:1.3vw;">
-                                            <?php
+                                        <?php
                                             $stmt = $conn->prepare("SELECT * FROM resistant");
                                             $stmt->execute();
                                             $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-                                            foreach ($data as $value) {
-                                            ?>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="prc"
-                                                    id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    <?= $value["Nama"] ?>
-                                                </p>
-                                            </div>
+                                            foreach($data as $value){
+                                                ?>
+                                                <div class="btn-group dropend fs-5">
+                                                    <input class="form-check-input me-1" type="radio" name="prc"
+                                                        id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?=$value["Nama"]?>
+                                                    </p>
+                                                </div>
                                             <?php
                                             }
-                                            ?>
+                                        ?>
                                         </div>
                                         <hr class="my-4">
 
@@ -413,22 +410,22 @@ require_once("connector.php");
                                             Display Type
                                         </p>
                                         <div id="panel2" style="width: 8.5vw; margin-left:1.3vw;">
-                                            <?php
+                                        <?php
                                             $stmt = $conn->prepare("SELECT * FROM display");
                                             $stmt->execute();
                                             $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-                                            foreach ($data as $value) {
-                                            ?>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="radio" name="dsp"
-                                                    id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    <?= $value["Nama"] ?>
-                                                </p>
-                                            </div>
+                                            foreach($data as $value){
+                                                ?>
+                                                <div class="btn-group dropend fs-5">
+                                                    <input class="form-check-input me-1" type="radio" name="dsp"
+                                                        id="exampleRadios1" onclick="ajax(1)" value="<?=$value["ID"]?>">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?=$value["Nama"]?>
+                                                    </p>
+                                                </div>
                                             <?php
                                             }
-                                            ?>
+                                        ?>
                                         </div>
                                     </div>
                                 </div>
