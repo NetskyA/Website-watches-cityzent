@@ -38,7 +38,19 @@ $idx = 0;
 if($akhir>$jumlah_data){
     $akhir=$jumlah_data;
 }
+
+
+if($jumlah_data==0){
+    $awal=0;
+    $halaman = 0;
+}
 echo "<div style='width:100%;padding-top:1vw;font-size: 1.4vw;font-weight:bold'>".$awal."-".$akhir." of ".$jumlah_data." Found</div>";
+if($jumlah_data==0){
+    echo "<div class='d-flex justify-content-center align-items-center'style='width:100%;height:40vw;font-size: 5vw;'>";
+    echo "Product Not Found";
+    echo "</div>";
+}
+
 echo "<table class='table' style='margin: 0vw;padding:0vw;width:100%'>";
 echo "<colgroup>";
        echo "<col span='1' style='width: 25%;'>";
