@@ -66,45 +66,47 @@
             <div class="content d-flex justify-content-center">
                 <div class="kiri3">
                     <div class="container">
-                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Your Collections</p>
-                        <hr class="my-4">
+                        <div class="judulw">
+                            <p class="display-4 fs-2 pt-3" style="text-align: center;">Wishlist</p>
+                        </div>
+                        <hr class="my-4" style="border: 1px solid gray">
+                        <div class="overall d-flex">
+                            <div class="kc">
+                                <img src="asset/imgW/g.jpg" alt="" style="width: 15vw; height:15vw;" srcset="">
+                            </div>
+                            <div class="kt mt-4" style="width: 30wv;">
+                                <form action="" method="post">
+                                    <h4><b>Sheen</b></h4>
+                                    <p class="serial pt-1" style="color: gray;">She-4539-Serial Number</p>
+                                    <p class="serial pt-1" style="color: red;">Rp. 2.499.000</p>
+                                    <p class="serial pt-1" style="color: gray;">Tanggal dimasukkan : 2022-05-30</p>
+                                    <hr class="my-4" style="border: 1px solid gray">
+                                    <div class="subttl d-flex">
+                                        <div class="enti">
+                                            <p class="serial" style="color: gray; margin-right:5vw;">Entity : </p>
+                                        </div>
+                                        <div class="sub">
+                                            <p class="serial" style="color: gray;">Subtotal : </p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="kr mt-5" style="margin-left: 19vw;">
+                                <button type="button" class="btn btn-dark" style="width: 12vw; box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
+">ORDER</button>
+                                <div class="cancel" style="margin-top: 6vw; margin-left:10vw;">
+                                    <a href="#" style="color: gray;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                            fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                            <path
+                                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4" style="border: 1px solid gray">
 
-                        <div class="produk" style=" width: 100%; margin-top:2vw;">
-                            <div class="input-group">
-                                <div class="input-group-text">
-                                    <input class="form-check-input mt-0" type="checkbox" value=""
-                                        aria-label="Checkbox for following text input">
-                                </div>
-                            </div>
-                            <div class="poto d-flex">
-                                <img src="asset/imgW/c.jpg" alt="" srcset="" style="height: 10vw; margin-left: 2vw;">
-                                <p>Total : </p>
-                            </div>
-                        </div>
-                        <div class="produk" style=" width: 100%; margin-top:2vw;">
-                            <div class="input-group">
-                                <div class="input-group-text">
-                                    <input class="form-check-input mt-0" type="checkbox" value=""
-                                        aria-label="Checkbox for following text input">
-                                </div>
-                            </div>
-                            <div class="poto d-flex">
-                                <img src="asset/imgW/c.jpg" alt="" srcset="" style="height: 10vw; margin-left: 2vw;">
-                                <p>Total : </p>
-                            </div>
-                        </div>
-                        <div class="produk" style=" width: 100%;  margin-top:2vw;">
-                            <div class="input-group">
-                                <div class="input-group-text">
-                                    <input class="form-check-input mt-0" type="checkbox" value=""
-                                        aria-label="Checkbox for following text input">
-                                </div>
-                            </div>
-                            <div class="poto d-flex">
-                                <img src="asset/imgW/c.jpg" alt="" srcset="" style="height: 10vw; margin-left: 2vw;">
-                                <p>Total : </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
