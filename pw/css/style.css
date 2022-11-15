@@ -288,5 +288,8 @@ body {
 
 .order:hover{
     transform: scale(110%);
-    transition: 1s;
+    transition: 0.7s;
+    background-color: white;
+    color: rgb(0, 199, 0);
+    border: none;
 }
