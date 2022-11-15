@@ -172,7 +172,7 @@ require_once("connector.php");
             var color = document.getElementsByName("col");
             for (i = 0; i < color.length; i++) {
                 if (color[i].checked == true) {
-                    condition.push("ID_Color=" + color[i].value);
+                    condition.push("ID_Warna=" + color[i].value);
                 }
             }
             if (condition.length != 0) {
@@ -394,7 +394,7 @@ require_once("connector.php");
                         <div class="jumbotron" id="jbm">
                             <hr class="my-4 mt-4">
                             <div class="cnt d-flex justify-content-center">
-                                <div class="kanan mt-3 fs-5 fixed-side">
+                                <div class="kanan mt-3 fs-5 fixed-side" style="overflow:scroll;">
                                     <div class="atas">
                                         <p class="collec" id="tgl" style="font-size: 1.2vw;">
                                             <label for="nah" class="fnt">
