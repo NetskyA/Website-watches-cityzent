@@ -586,7 +586,7 @@ require_once("connector.php");
                                 </div>
 
                 </section>
-                <section class="container-fluid d-flex justify-content-center isifot" style="margin-top:3vw; width:100%;height:100%;">
+                <section class="container-fluid d-flex justify-content-center isifot" style="margin-top:3vw; width:100%;height:100%;" id="footer">
                     <div class="row ftr p-3" style="width: 80%; margin-bottom:3vw; height:100%;">
                         <div class="col-12">
                             <p class="display-4 fs-2 pb-2" style="text-align: center;">Contact</p>
