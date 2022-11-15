@@ -5,54 +5,54 @@ if (isset($_REQUEST["barang"])) {
     $data = json_decode($data, true);
     $_SESSION["temp"] = $data;
     $_SESSION["gbr"] =  $_REQUEST["gbr"];
-    if($_SESSION["temp"]["Stok"]==0){
-        $_SESSION["total"]="Barang Habis";
-    }else{
-        $_SESSION["total"]=0;
+    if ($_SESSION["temp"]["Stok"] == 0) {
+        $_SESSION["total"] = "Barang Habis";
+    } else {
+        $_SESSION["total"] = 0;
     }
 }
-if(!isset($_SESSION["cart"])){
-    $_SESSION["cart"]=[];
+if (!isset($_SESSION["cart"])) {
+    $_SESSION["cart"] = [];
 }
-$result = mysqli_query($conn, "SELECT Nama FROM brand WHERE ID='".$_SESSION['temp']['ID_Brand']."'");
+$result = mysqli_query($conn, "SELECT Nama FROM brand WHERE ID='" . $_SESSION['temp']['ID_Brand'] . "'");
 $brand = mysqli_fetch_assoc($result);
-$result = mysqli_query($conn, "SELECT Nama FROM color WHERE ID='".$_SESSION['temp']['ID_Warna']."'");
+$result = mysqli_query($conn, "SELECT Nama FROM color WHERE ID='" . $_SESSION['temp']['ID_Warna'] . "'");
 $color = mysqli_fetch_assoc($result);
-$result = mysqli_query($conn, "SELECT Nama FROM display WHERE ID='".$_SESSION['temp']['ID_Display']."'");
+$result = mysqli_query($conn, "SELECT Nama FROM display WHERE ID='" . $_SESSION['temp']['ID_Display'] . "'");
 $display = mysqli_fetch_assoc($result);
-$result = mysqli_query($conn, "SELECT Nama FROM gender WHERE ID='".$_SESSION['temp']['ID_Gender']."'");
+$result = mysqli_query($conn, "SELECT Nama FROM gender WHERE ID='" . $_SESSION['temp']['ID_Gender'] . "'");
 $gender = mysqli_fetch_assoc($result);
-$result = mysqli_query($conn, "SELECT Nama FROM resistant WHERE ID='".$_SESSION['temp']['ID_Resistant']."'");
+$result = mysqli_query($conn, "SELECT Nama FROM resistant WHERE ID='" . $_SESSION['temp']['ID_Resistant'] . "'");
 $resistant = mysqli_fetch_assoc($result);
 
-if(isset($_POST["plus"])&&($_SESSION["total"]>=0)){
-    if(!($_SESSION["total"]+1>$_SESSION["temp"]["Stok"])){
-        $_SESSION["total"]=$_SESSION["total"]+1;
+if (isset($_POST["plus"]) && ($_SESSION["total"] >= 0)) {
+    if (!($_SESSION["total"] + 1 > $_SESSION["temp"]["Stok"])) {
+        $_SESSION["total"] = $_SESSION["total"] + 1;
     }
 }
 
-if(isset($_POST["minus"])&&($_SESSION["total"]>0)){
-    if(!($_SESSION["total"]-1<0)){
-        $_SESSION["total"]=$_SESSION["total"]-1;
+if (isset($_POST["minus"]) && ($_SESSION["total"] > 0)) {
+    if (!($_SESSION["total"] - 1 < 0)) {
+        $_SESSION["total"] = $_SESSION["total"] - 1;
     }
 }
 
-if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["total"]!=0)){
-    $temp= array(
-        "ID"=>$_SESSION["temp"]["ID"],
-        "jml"=> $_SESSION["total"]
+if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SESSION["total"] != 0)) {
+    $temp = array(
+        "ID" => $_SESSION["temp"]["ID"],
+        "jml" => $_SESSION["total"]
     );
-    $ket=false;
+    $ket = false;
     $length = count($_SESSION["cart"]);
-    for ($i=0; $i < $length ; $i++) { 
-        if($_SESSION["cart"][$i]["ID"]==$temp["ID"]){
-            $tot = $_SESSION["cart"][$i]["jml"]+$_SESSION["total"];
-            $_SESSION["cart"][$i]["jml"]=$tot;
-            $ket=true;
+    for ($i = 0; $i < $length; $i++) {
+        if ($_SESSION["cart"][$i]["ID"] == $temp["ID"]) {
+            $tot = $_SESSION["cart"][$i]["jml"] + $_SESSION["total"];
+            $_SESSION["cart"][$i]["jml"] = $tot;
+            $ket = true;
         }
     }
-    if(!$ket){
-        array_push($_SESSION["cart"],$temp); 
+    if (!$ket) {
+        array_push($_SESSION["cart"], $temp);
     }
     header("Location: index.php");
 }
@@ -142,8 +142,8 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
                     <div class="view d-flex mt-5">
                         <div class="kanan2">
                             <?php
-                        echo '<img src = "data:image/png;base64,' . $_SESSION['gbr'] . '"/>';
-                        ?>
+                            echo '<img src = "data:image/png;base64,' . $_SESSION['gbr'] . '"/>';
+                            ?>
                         </div>
                         <div class="kiri2 mt-4 ms-5" style="padding-left: 3vw; padding-top:2vw">
                             <div class="jdl">
@@ -154,7 +154,7 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
                                 </span>
                             </div>
                             <div class="des fs-6" style="width: 40vw;">
-                            <?= $_SESSION["temp"]["Deskripsi"] ?>
+                                <?= $_SESSION["temp"]["Deskripsi"] ?>
 
                                 <br>
                             </div>
@@ -164,12 +164,14 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
 
                                 <form action="" method="post">
                                     <div class="jumlah d-flex mt-5">
-                                        <input type="submit" value="-" style="width: 5%;" class="btn btn-secondary" name="minus">
-                                        <input type="submit" value="+" style="width: 5%;margin-left:0.5vw" class="btn btn-secondary" name="plus">
+                                        <input type="submit" value="-" style="width: 5%;" class="btn btn-secondary"
+                                            name="minus">
+                                        <input type="submit" value="+" style="width: 5%;margin-left:0.5vw"
+                                            class="btn btn-secondary" name="plus">
                                     </div>
                                 </form>
                                 <h5 style="padding-top: 1vw;">
-                                    <p>Total : <?=$_SESSION["total"]?> </p>
+                                    <p>Total : <?= $_SESSION["total"] ?> </p>
                                 </h5>
                                 <div class="showmore">
                                     <p class="collec" id="tglss" style="font-size: 1.2vw; text-align:center;">
@@ -177,9 +179,9 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
                                     </p>
                                     <div id="panelss" style="width: 100%;">
                                         <div class="btn-group dropend fs-5">
-                                            - Type: <?=$display["Nama"]?>
+                                            - Type: <?= $display["Nama"] ?>
                                             <br>
-                                            - Gender: <?=$gender["Nama"]?><br>
+                                            - Gender: <?= $gender["Nama"] ?><br>
                                             - Clock dimensions: 48 mm<br>
                                             - Length of clock: 250 mm<br>
                                             - Width of clock: 22 mm<br>
@@ -187,7 +189,7 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
                                             - Material strap: PU silicone strap<br>
                                             - Material case: Plastic case<br>
                                             - Glass material: Resin<br>
-                                            - Water resistance : <?=$resistant["Nama"]?><br>
+                                            - Water resistance : <?= $resistant["Nama"] ?><br>
                                             - 1 Year Warranty<br>
                                             - Feature : Date, Moon, Night Light, Waterproof And Countdown<br>
                                         </div>
@@ -196,16 +198,17 @@ if(isset($_POST["checkout"])&&($_SESSION["total"]!="Barang Habis")&&($_SESSION["
                                 <hr class=" my-4 mt-4" style="width: 100%;">
 
                                 <form action="" method="post">
-                                                <input type="submit" name="checkout" value="Check Out" class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">
-                                            </form>  
-                                        </div>
-                                    </div>
-                                </div>
+                                    <input type="submit" name="checkout" value="Check Out"
+                                        class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">
+                                </form>
                             </div>
                         </div>
-                        <!-- and content -->
                     </div>
                 </div>
+            </div>
+            <!-- and content -->
+        </div>
+    </div>
 </body>
 <script>
 $(document).ready(function() {
