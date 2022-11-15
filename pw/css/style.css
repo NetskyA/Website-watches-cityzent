@@ -279,3 +279,14 @@ body {
     height: 4vw;
     width: auto;
 }
+
+.cancel:hover{
+    transform: scale(130%);
+    transition: 1s;
+    color: red;
+}
+
+.order:hover{
+    transform: scale(110%);
+    transition: 1s;
+}
