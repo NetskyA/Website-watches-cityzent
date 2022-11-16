@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WACTCHES SCRT | Online Shop</title>
+    <title>WATCHES SCRT | Online Shop</title>
     <!--Framework Use-->
     <link rel="stylesheet" href="css/stylecus.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -65,7 +65,7 @@
     </style>
 </head>
 
-<body>
+<body bg-dark>
 
     <div class="bg">
         <div class="isi">
@@ -75,7 +75,7 @@
                         <div class="coverall2">
                             <div class="jdl">
                                 <h2>
-                                    LOGIN WACTCHES SCRT
+                                    LOGIN WACTHES SCRT
                                 </h2>
                             </div>
                             <div class="isiuser mt-5">
