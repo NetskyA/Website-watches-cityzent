@@ -17,6 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="asset/favicon/logoscrt.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/7e563a8c7f.js" crossorigin="anonymous"></script>
@@ -32,6 +33,7 @@
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <!--Framework Use-->
     <style>
     body,
@@ -113,7 +115,13 @@
             </div>
         </div>
     </div>
-
+    <script>
+    $(document).ready(function() {
+        $('body').bind('cut copy', function(e) {
+            e.preventDefault();
+        });
+    });
+    </script>
 </body>
 
 </html>

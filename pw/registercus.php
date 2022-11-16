@@ -11,11 +11,9 @@
     <title>WACTCHES SCRT | Online Shop</title>
     <!--Framework Use-->
     <link rel="stylesheet" href="css/stylecus.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="asset/favicon/logoscrt.png" type="image/x-icon">
@@ -25,43 +23,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <!--Framework Use-->
     <style>
-    body,
-    html {
-        height: 100%;
-        margin: 0;
-    }
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
 
-    .bg {
-        background-image: url("asset/banner/logincus.jpg");
-        height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+        .bg {
+            background-image: url("asset/banner/logincus.jpg");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-    .kotak {
-        position: absolute;
-        /* bottom: 0; */
-        background: rgb(0, 0, 0);
-        background: rgba(0, 0, 0, 0.5);
-        color: #f1f1f1;
-        width: 85%;
-        height: 90%;
-        padding: 3vw;
-        border-radius: 0.9vw;
-        justify-content: center;
-        margin-left: 7vw;
-        margin-top: 2vw;
-    }
+        .kotak {
+            position: absolute;
+            /* bottom: 0; */
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 85%;
+            height: 90%;
+            padding: 3vw;
+            border-radius: 0.9vw;
+            justify-content: center;
+            margin-left: 7vw;
+            margin-top: 2vw;
+        }
     </style>
 </head>
 
@@ -70,7 +66,7 @@
     <div class="bg">
         <div class="kotak d-flex justify-content-center">
             <form action="" method="POST">
-                <h2 style="text-align: center;">
+                <h2 style="text-align: center;" onmousedown="return false" onselectstart="return false">
                     REGISTER WACTCHES SCRT
                 </h2>
                 <div class="isi d-flex justify-content-center mt-5">
@@ -91,8 +87,7 @@
                                     <label for="inputPassword6" class="col-form-label">Password</label>
                                 </div>
                                 <div class="col-auto">
-                                    <input type="password" id="inputPassword6" class="form-control"
-                                        aria-describedby="passwordHelpInline">
+                                    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
                                 </div>
                                 <div class="col-auto">
                                     <span id="passwordHelpInline" class="form-text text-light">
@@ -106,14 +101,12 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
                             <div class="isiuser">
                                 <label for="exampleInputEmail1" class="form-label" style="width: 25vw;">Number
                                     Phone</label>
-                                <input type="text" class="form-control" id="number" name="number"
-                                    aria-describedby="emailHelp">
+                                <input type="text" class="form-control" id="number" name="number" aria-describedby="emailHelp">
                             </div>
 
 
@@ -133,8 +126,7 @@
                                     <div class="col-auto me-4">
                                         <label for="inputPassword6" class="col-form-label">Country</label>
                                     </div>
-                                    <button class="btn btn-light dropdown-toggle" style="width: 10vw;" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-light dropdown-toggle" style="width: 10vw;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Select
                                     </button>
                                     <ul class="dropdown-menu" style="width: 10vw;">
@@ -151,8 +143,7 @@
                                     <div class="col-auto ms-5 me-4">
                                         <label for="inputPassword6" class="col-form-label">Province</label>
                                     </div>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     <!-- and provinsi -->
                                 </div>
                             </div>
@@ -162,15 +153,13 @@
                                     <div class="col-auto me-4">
                                         <label for="inputPassword6" class="col-form-label">City</label>
                                     </div>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     <!-- and district -->
                                     <!-- distric -->
                                     <div class="col-auto me-4 ms-5">
                                         <label for="inputPassword6" class="col-form-label">District</label>
                                     </div>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     <!-- and district -->
                                 </div>
                             </div>
@@ -180,8 +169,7 @@
                                     <div class="col-auto me-4">
                                         <label for="inputPassword6" class="col-form-label">Street</label>
                                     </div>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     <!-- and district -->
                                 </div>
 
@@ -195,8 +183,7 @@
 
                                     <!-- and district -->
                                     <!-- note -->
-                                    <textarea name="note" style="border-radius: 0.5vw; width:100%; height:25vw;"
-                                        id="note"></textarea>
+                                    <textarea name="note" style="border-radius: 0.5vw; width:100%; height:25vw;" id="note"></textarea>
                                     <!-- and note -->
                                 </div>
 
