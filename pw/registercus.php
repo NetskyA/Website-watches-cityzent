@@ -65,7 +65,7 @@
     </style>
 </head>
 
-<body>
+<body class="bd bg-dark">
 
     <div class="bg">
         <div class="kotak d-flex justify-content-center">
