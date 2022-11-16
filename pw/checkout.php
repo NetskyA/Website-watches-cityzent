@@ -100,21 +100,33 @@ $subtotalall = 0;
                                         ?>
                                     <!-- <img src="asset/imgW/g.jpg" alt="" style="width: 15vw; height:15vw;" srcset=""> -->
                                 </div>
-                                <div class="kt mt-4" style="width: 30wv;">
+                                <div class="kt mt-3" style="width: 30wv;">
                                     <form action="" method="post">
                                         <h4><b><?= $data[0]["Nama_Brand"] ?></b></h4>
                                         <p class="serial pt-1" style="color: gray;"><?= $data[0]["Nama_Barang"] ?></p>
-                                        <p class="serial pt-1" style="color: red;">Rp. <?= $data[0]["Harga"] ?></p>
-                                        <p class="serial pt-1" style="color: gray;">Tanggal dimasukkan : 2022-05-30</p>
+                                        <p class="serial" style="color: red;">Rp. <?= $data[0]["Harga"] ?></p>
+                                        <p class="serial" style="color: gray;">Tanggal dimasukkan : 2022-05-30</p>
                                         <hr class="my-4" style="border: 1px solid gray">
                                         <div class="subttl d-flex">
                                             <div class="enti">
-                                                <p class="serial" style="color: gray; margin-right:5vw;">Entity :
+                                                <form action="" method="post">
+                                                    <div class="jumlah d-flex" style="width: 10vw;">
+                                                        <input type="submit" value="-" style="width: 4vw; height: 2vw;"
+                                                            class="btn btn-secondary" name="minus">
+                                                        <input type="submit" value="+"
+                                                            style="width: 4vw; height: 2vw; margin-left:0.5vw"
+                                                            class="btn btn-secondary" name="plus">
+                                                    </div>
+                                                </form>
+                                                <p class="serial mt-1" style="color: gray; margin-right:5vw;">Entity :
                                                     <?= $value["jml"] ?></p>
                                             </div>
                                             <div class="sub">
-                                                <p class="serial" style="color: gray;">Subtotal : Rp. <?= $subtotal ?>
-                                                </p>
+                                                <h5>
+                                                    <p class="serial pt-1" style="color: gray;">Subtotal : Rp.
+                                                        <?= $subtotal ?>
+                                                        </h4>
+                                                    </p>
                                             </div>
                                         </div>
                                     </form>

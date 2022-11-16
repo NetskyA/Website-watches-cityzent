@@ -305,7 +305,7 @@ require_once("connector.php");
                                 </ul>
                             </li>
                             <li class="nav-item me-4">
-                                <a class="nav-link text-dark" href="#spl">Specials</a>
+                                <a class="nav-link text-dark" href="coba.php">Specials</a>
                             </li>
                             <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
