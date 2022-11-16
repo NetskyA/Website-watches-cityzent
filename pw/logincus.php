@@ -85,7 +85,8 @@
                             <div class="mb-3 mt-2">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1">
-                                <div id="emailHelp" class="form-text">We'll never share your password with anyone else.
+                                <div id="emailHelp" class="form-text text-light">We'll never share your password with
+                                    anyone else.
                                 </div>
 
                             </div>

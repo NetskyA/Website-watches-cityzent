@@ -116,8 +116,10 @@ $subtotalall = 0;
                                                         <input type="submit" value="+"
                                                             style="width: 4vw; height: 2vw; margin-left:0.5vw"
                                                             class="btn btn-secondary" name="plus">
+
                                                     </div>
                                                 </form>
+
                                                 <p class="serial mt-1" style="color: gray; margin-right:5vw;">Entity :
                                                     <?= $value["jml"] ?></p>
                                             </div>
@@ -220,8 +222,11 @@ $subtotalall = 0;
                         <hr class="my-4" style="border: 1px solid gray">
 
                         <div class="isiorder" style="float: right; margin-right:2vw;height:10vw">
-                            <button type="button" class="order btn btn-dark" style="width: 13vw; border:none; box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
+                            <a href="coba.php">
+
+                                <button type="button" class="order btn btn-dark" style="width: 13vw; border:none; box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
 ">ORDER</button>
+                            </a>
                         </div>
                     </div>
                 </div>
