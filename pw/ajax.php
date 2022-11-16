@@ -76,12 +76,12 @@ foreach ($data2 as $d) {
         "Deskripsi" => $d["Deskripsi"]
     );
     echo "<td style='width:25% margin: 0vw;padding:0vw;'>";
-    echo "<div class='card' style='min-height: 20vw;height: 20vw;font-size: 1.4vw; padding-top:z1vw; font-weight: bold; text-align: center; margin:0.3vw;
+    echo "<div class='card' style='min-height: 20vw;height: 20vw;font-size: 1.2vw; padding-top:z1vw; font-weight: bold; text-align: center; margin:0.3vw;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     width:14vw;margin:0.5vw;'>";
 
     echo $d["Nama_Barang"];
-    echo "<img class='card-img-top' style:'margin-top:1vw; width:5vw;height:5vw' src = 'data:image/png;base64," . base64_encode($d['Gambar']) . "'/>";
+    echo "<img class='card-img-top' style='margin-top:1vw' src = 'data:image/png;base64," . base64_encode($d['Gambar']) . "'/>";
     echo "<div class='card-body' style='display: none; padding-top:4vw;>";
     echo "<h5 class='card-title fs-5' style=''>";
     echo "</h5>";

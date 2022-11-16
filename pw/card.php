@@ -153,7 +153,7 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                                     NEW
                                 </span>
                             </div>
-                            <div class="des fs-6" style="width: 40vw;">
+                            <div class="des fs-6" style="width: 60vw;">
                                 <?= $_SESSION["temp"]["Deskripsi"] ?>
 
                                 <br>
