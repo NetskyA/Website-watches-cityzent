@@ -1,5 +1,13 @@
 <?php
+namespace Midtrans;
+
 require_once("connector.php");
+require_once dirname(__FILE__) . '/Midtrans/Midtrans.php';
+// Set Your server key
+// can find in Merchant Portal -> Settings -> Access keys
+Config::$serverKey = 'SB-Mid-server-dWPUAKiuT1S7ZwEzaJLHZSIQ';
+Config::$clientKey = 'SB-Mid-client-SoATxc1jvSH64Jjh';
+
 if (isset($_POST["delete"])) {
     $deletebarang = $_POST["dat"];
     foreach ($_SESSION["cart"] as $index => $val) {
@@ -14,7 +22,87 @@ if (isset($_SESSION["cart"])) {
     $listbarang = [];
 }
 $qtyall = 0;
-$subtotalall = 0;
+$subtotalall=0;
+foreach ($listbarang as $key => $value) {
+    $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Gambar as 'Gambar', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
+    $stmt->execute();
+    $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $subtotal = $value["jml"] * $data[0]["Harga"];
+    $subtotalall += $subtotal;
+    $qtyall += $value["jml"];
+}
+Config::$isSanitized = true;
+
+// Enable 3D-Secure
+Config::$is3ds = true;
+
+// Uncomment for append and override notification URL
+// Config::$appendNotifUrl = "https://example.com";
+// Config::$overrideNotifUrl = "https://example.com";
+
+// Required
+$transaction_details = array(
+    'order_id' => rand(),
+    'gross_amount' => $subtotalall, // no decimal allowed for creditcard
+);
+$item_details = [];
+foreach ($listbarang as $key => $value) {
+    $stmt = $conn->prepare("SELECT * from barang ba WHERE ba.ID='" . $value['ID'] . "'");
+    $stmt->execute();
+    $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $temp = array(
+        "id" => $data[0]["ID"],
+        "name" => $data[0]["Nama_Barang"],
+        "quantity" => $value["jml"],
+        'price' => $data[0]["Harga"]
+    );
+    array_push($item_details,$temp);
+}
+
+
+// Optional
+// $item_details = array ($item1_details, $item2_details);
+
+// Optional
+$billing_address = array(
+    'first_name'    => "Andri",
+    'address'       => "Mangga 20",
+    'phone'         => "081122334455"
+);
+
+// Optional
+$shipping_address = array(
+    'first_name'    => "Obet",
+    'address'       => "Manggis 90",
+    'phone'         => "08113366345"
+);
+
+// Optional
+$customer_details = array(
+    'first_name'    => "Andri",
+    'last_name'     => "Litani",
+    'email'         => "andri@litani.com",
+    'phone'         => "081122334455",
+    'billing_address'  => $billing_address,
+    'shipping_address' => $shipping_address
+);
+
+
+// Fill transaction details
+$transaction = array(
+    'transaction_details' => $transaction_details,
+    'customer_details' => $customer_details,
+    'item_details' => $item_details,
+);
+
+
+try {
+    $snap_token = Snap::getSnapToken($transaction);
+}
+catch (\Exception $e) {
+    echo "<script>alert('Keranjang Kosong')</script>";
+}
+
 ?>
 
 <!doctype html>
@@ -43,6 +131,33 @@ $subtotalall = 0;
         integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
     <!--Framework Use-->
+
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-SoATxc1jvSH64Jjh"></script>
+    <script type="text/javascript">
+            function bayar(){
+                // SnapToken acquired from previous step
+                // alert(document.getElementById("tot").value);
+                snap.pay('<?php echo $snap_token?>', {
+                    // Optional
+                    onSuccess: function(result){
+                        /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                        
+                    },
+                    // Optional
+                    onPending: function(result){
+                        /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                    },
+                    // Optional
+                    onError: function(result){
+                        /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                    },
+
+                    onClose: function(){
+                       
+                    }
+                });
+            };
+        </script>
 </head>
 
 <body>
@@ -90,7 +205,6 @@ $subtotalall = 0;
                                 $stmt->execute();
                                 $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                 $subtotal = $value["jml"] * $data[0]["Harga"];
-                                $subtotalall += $subtotal;
                                 $qtyall += $value["jml"];
                             ?>
                             <div class="d-flex" style="flex-direction:row;width:100%">
@@ -221,12 +335,9 @@ $subtotalall = 0;
 
                         <hr class="my-4" style="border: 1px solid gray">
 
-                        <div class="isiorder" style="float: right; margin-right:2vw;height:10vw">
-                            <a href="coba.php">
-
-                                <button type="button" class="order btn btn-dark" style="width: 13vw; border:none; box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
-">ORDER</button>
-                            </a>
+                        <div action="" method="post" style="float: right;margin-right:2vw;height:10vw">
+                                <input type="submit" class="order btn btn-dark" value="ORDER" onclick="bayar()" style="width: 13vw; border:none; box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
+">
                         </div>
                     </div>
                 </div>
