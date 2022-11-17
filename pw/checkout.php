@@ -193,10 +193,18 @@ if (isset($_SESSION["cart"])) {
     function bayar() {
         // SnapToken acquired from previous step
         // alert(document.getElementById("tot").value);
-        inp1 = document.getElementById("nname").value;
-        inp2 = document.getElementById("nadd").value;
-        inp3 = document.getElementById("ntelp").value;
-        inp4 = document.getElementsByClassName("note")[0].value;
+        inp1 = document
+            .getElementById("nname")
+            .value;
+        inp2 = document
+            .getElementById("nadd")
+            .value;
+        inp3 = document
+            .getElementById("ntelp")
+            .value;
+        inp4 = document
+            .getElementsByClassName("note")[0]
+            .value;
         if (inp1 == "" || inp2 == "" | inp3 == "" || inp4 == "") {
             alert("Inputan ada yang kosong");
         } else {
@@ -219,9 +227,7 @@ if (isset($_SESSION["cart"])) {
                         /* You may add your own js here, this is just example */
                     },
 
-                    onClose: function(result) {
-
-                    }
+                    onClose: function(result) {}
                 });
             }
         }
@@ -243,12 +249,13 @@ if (isset($_SESSION["cart"])) {
                     <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
                         <ul class="navbar-nav fs-5">
                             <li class="nav-item me-4">
-                                <a class="nav-link text-dark" href="index.php"><svg xmlns="http://www.w3.org/2000/svg"
-                                        width="35" height="40" fill="currentColor" class="bi bi-arrow-left-circle"
-                                        viewBox="0 0 16 16">
+                                <a class="nav-link text-dark" href="index.php">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="40" fill="currentColor"
+                                        class="bi bi-arrow-left-circle" viewbox="0 0 16 16">
                                         <path fill-rule="evenodd"
                                             d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
-                                    </svg></a>
+                                    </svg>
+                                </a>
                             </li>
                             <li class="nav-item dropdown me-4 pt-2">
                                 <h3>Collection</h3>
@@ -281,13 +288,17 @@ if (isset($_SESSION["cart"])) {
                                     <?php
                                         echo '<img style="width: 15vw; height:15vw;" src = "data:image/png;base64,' . base64_encode($data[0]['Gambar']) . '"/>';
                                         ?>
-                                    <!-- <img src="asset/imgW/g.jpg" alt="" style="width: 15vw; height:15vw;" srcset=""> -->
+                                    <!-- <img src="asset/imgW/g.jpg" alt="" style="width: 15vw; height:15vw;"
+                                        srcset=""> -->
                                 </div>
                                 <div class="kt mt-3" style="width: 30wv;">
                                     <form action="" method="post">
-                                        <h4><b><?= $data[0]["Nama_Brand"] ?></b></h4>
+                                        <h4>
+                                            <b><?= $data[0]["Nama_Brand"] ?></b>
+                                        </h4>
                                         <p class="serial pt-1" style="color: gray;"><?= $data[0]["Nama_Barang"] ?></p>
-                                        <p class="serial" style="color: red;">Rp. <?= $data[0]["Harga"] ?></p>
+                                        <p class="serial" style="color: red;">Rp.
+                                            <?= $data[0]["Harga"] ?></p>
                                         <p class="serial" style="color: gray;">Tanggal dimasukkan : 2022-05-30</p>
                                         <hr class="my-4" style="border: 1px solid gray">
                                         <div class="subttl d-flex">
@@ -323,7 +334,7 @@ if (isset($_SESSION["cart"])) {
                                             <a href="" style="color: gray;">
                                                 <button name="delete" style="border:0px;background-color:white;">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                                        fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                        fill="currentColor" class="bi bi-x-lg" viewbox="0 0 16 16">
                                                         <path
                                                             d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                                                     </svg>
@@ -364,8 +375,7 @@ if (isset($_SESSION["cart"])) {
                                     </div>
                                     <div class="up">
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Customer's
-                                                name</label>
+                                            <label for="exampleInputEmail1" class="form-label">Customer's name</label>
                                             <input type="text" class="form-control" id="nname"
                                                 aria-describedby="emailHelp">
                                         </div>
@@ -389,10 +399,16 @@ if (isset($_SESSION["cart"])) {
                                         id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                                 <div class="isinya2 mt-5 pt-4" style="margin-left: 5vw;">
-                                    <h4><b>Quantity All</b></h4>
-                                    <p class="serial pt-1"><?= $qtyall ?> Product</p>
-                                    <h4><b>Subtotal All</b></h4>
-                                    <p class="serial pt-1" style="color: red;">Rp. <?= $subtotalall ?></p>
+                                    <h4>
+                                        <b>Quantity All</b>
+                                    </h4>
+                                    <p class="serial pt-1"><?= $qtyall ?>
+                                        Product</p>
+                                    <h4>
+                                        <b>Subtotal All</b>
+                                    </h4>
+                                    <p class="serial pt-1" style="color: red;">Rp.
+                                        <?= $subtotalall ?></p>
                                 </div>
                             </div>
                         </div>
