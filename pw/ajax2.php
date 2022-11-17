@@ -1,93 +1,62 @@
 <?php
 require_once("connector.php");
-$text = $_REQUEST["search"];
-$halaman = $_REQUEST["idx"];
+$listbarang = $_SESSION["cart"];
+foreach ($listbarang as $key => $value) {
+    $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Gambar as 'Gambar', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
+    $stmt->execute();
+    $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $subtotal = $value["jml"] * $data[0]["Harga"];
+    $del = "delete";
 
-echo "<table class='table' style='margin: 0vw;padding:0vw;width:100%'>";
-echo "<tbody style='margin: 0vw;padding:0vw;'>";
-$batas = 8;
-// $halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
-$halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
-if ($halaman - 1 > 0) {
-    $previous = $halaman - 1;
-} else {
-    $previous = 1;
+    echo "<div class='d-flex' style='flex-direction:row;width:100%'>";
+        echo "<div class='kc'>";
+            echo '<img style="width: 15vw; height:15vw;" src = "data:image/png;base64,' . base64_encode($data[0]['Gambar']) . '"/>';
+        echo "</div>";
+        echo "<div class='kt mt-3' style='width: 30wv;'>";
+            echo "<h4>";
+                    echo "<b>".$data[0]['Nama_Brand']."</b>";
+                echo "</h4>";
+                echo "<p class='serial pt-1' style='color: gray;'>".$data[0]['Nama_Barang']."</p>";
+                echo "<p class='serial' style='color: red;'>Rp. ". $data[0]["Harga"]."</p>";
+                echo "<p class='serial' style='color: gray;'>Tanggal dimasukkan :".$value["waktu"]."</p>";
+                echo "<hr class='my-4' style='border: 1px solid gray'>";
+                echo "<div class='subttl d-flex'>";
+                echo "<div class='enti'>";
+                        echo "<input type='hidden' name='dat2' value=".$value["ID"].">";
+                        echo "<div class='jumlah d-flex' style='width: 10vw;'>";
+                            echo "<button id='kurang' style='width: 4vw; height: 2vw;' class='btn btn-secondary' onclick='min(". $value["ID"] .")'>-</button>";
+                            echo "<button id='tambah' style='width: 4vw; height: 2vw; margin-left:0.5vw' class='btn btn-secondary' onclick='plus(" . $value["ID"] . ")'>+</button>";
+                            echo "</div>";
+
+                        echo "<p class='serial mt-1' style='color: gray; margin-right:5vw;'>Entity : ".$value["jml"]."</p>";
+                    echo "</div>";
+                    echo "<div class='sub'>";
+                        echo "<h5>";
+                            echo "<p class='serial pt-1' style='color: gray;'>Subtotal : Rp. ". $subtotal;
+                                echo "</h4>";
+                            echo "</p>";
+                    echo "</div>";
+                echo "</div>";
+        echo "</div>";
+        echo "<div class='kr mt-4' style='margin-left: 17vw;'>";
+            echo "<div class='cancel' style='margin-right:0vw;'>";
+                    echo "<input type='hidden' name='dat' value='". $value["ID"] .">";
+                    echo "<a href='' style='color: gray;'>";
+                        echo '<button id="delete" style="border:0px;background-color:white;" onclick="del(' . $value["ID"] . ')">';
+                            echo '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-lg" viewbox="0 0 16 16">';
+                                echo '<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />';
+                            echo '</svg>';
+                        echo '</button>';
+                    echo '</a>';
+            echo '</div>';
+        echo '</div>';
+    echo '</div>';
+    echo '<hr class="my-4" style="border: 1px solid gray">';
+
 }
-$next = $halaman + 1;
-if (isset($text) != "") {
-    $stmt = $conn->prepare("SELECT * FROM barang where Nama_Barang like '%" . $text . "%'");
-    $stmt2 = $conn->prepare("select * from barang where Nama_Barang like '%" . $text . "%' limit $halaman_awal, $batas");
-} else {
-    $stmt = $conn->prepare("SELECT * FROM barang");
-    $stmt2 = $conn->prepare("select * from barang limit $halaman_awal, $batas");
-}
-$stmt->execute();
-$data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-$jumlah_data = count($data);
-$total_halaman = ceil($jumlah_data / $batas);
-$stmt2->execute();
-$data2 = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
-$nomor = $halaman_awal + 1;
-$idx = 0;
-foreach ($data2 as $d) {
-    if ($idx == 0) {
-
-        echo "<tr style='margin: 0vw;padding:0vw;'>";
-    }
-    $data = array(
-        "ID"=>$d["ID"],
-        "ID_Display"=>$d["ID_Display"],
-        "ID_Brand"=>$d["ID_Brand"],
-        "ID_Warna"=>$d["ID_Warna"],
-        "ID_Gender"=> $d["ID_Gender"],
-        "ID_Resistant"=>$d["ID_Resistant"],
-        "Nama_Barang"=>$d["Nama_Barang"],
-        "Stok"=>$d["Stok"],
-        "Harga"=>$d["Harga"],
-        "Deskripsi"=>$d["Deskripsi"]
-    );
-    echo "<td style='width:100% margin: 0vw;padding:0vw;'>";
-    echo "<div class='card' style='min-height: 20vw;height: 20vw;font-size: 16px; padding-top:1vw; font-weight: bold; text-align: center; margin:0.3vw;box-shadow: inset 0 -3em 2em rgba(0, 0, 0, 0.1), 0 0 0 1px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    width:14vw;margin:0.5vw;'>";
-
-    echo $d["Nama_Barang"];
-    echo "<img class='card-img-top' style:'margin-top:1vw; width:5vw;height:5vw' src = 'data:image/png;base64," . base64_encode($d['Gambar']) ."'/>";
-    echo "<div class='card-body' style='display: none; padding-top:4vw;>";
-    echo "<h5 class='card-title fs-5' style=''>";
-    echo "</h5>";
+if (count($listbarang) == 0) {
+    echo "<div class='d-flex justify-content-center align-items-center'style='width:100%;height:40vw;font-size: 5vw;'>";
+    echo "Product Not Found";
     echo "</div>";
-    echo "<form action='card.php' method='post'>";
-    echo "<input type='hidden' name='gbr' value='".base64_encode($d["Gambar"])."'>";
-    echo "<button type='submit' name='barang' value='".json_encode($data)."' class='dtl btn-outline-secondary btn-sm' style='width: 6vw; margin-top:0.9vw; border-radius: 6px; height:2vw;font-size:1.2vw'>Details</button>";
-    echo "</form>";
-    // echo "<a href='card.php?barang=" . json_encode($data) ."&gbr=".$gbr."' class='opo d-flex justify-content-center' style='text-decoration: none;'>";
-    // echo "<button type='button' class='dtl btn-outline-secondary btn-sm d-flex align-items-center justify-content-center'
-    // style='width: 6vw; margin-top:0.9vw; border-radius: 6px; height:2vw;font-size:1.2vw'>Details</button>";
-    // echo "</a>";
-    echo "</div>";
-    echo "</td>";
-    $idx++;
-    if ($idx == 4) {
-        $idx = 0;
-        echo "</tr>";
-    }
 }
-echo "</tbody>";
-echo "</table>";
-echo "<nav>";
-echo "<ul class='pagination justify-content-center'>";
-echo "<li class='page-item'>";
-if ($halaman > 1) {
-    echo "<button class='page-link animasi' onclick='ajax(" . $previous . ")'>Previous</button>";
-}
-echo "</li>";
-echo "<li class='page-item'><a class='page-link'>" . $halaman ."/".$total_halaman. "</a>";
-echo "</li>";
-echo "<li class='page-item'>";
-if ($halaman < $total_halaman) {
-    echo "<a class='page-link animasi' onclick='ajax(" . $next . ")'>Next</a>";
-}
-echo "</li>";
-echo "</ul>";
-echo "</nav>";
+?>

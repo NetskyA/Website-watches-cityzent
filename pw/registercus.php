@@ -2,17 +2,25 @@
 require_once("connector.php");
 if (isset($_POST["regist"])) {
     $address="";
-    $username = $_POST["username"];
-    $pass = $_POST["pass"];
-    $copass = $_POST["copass"];
-    $email = $_POST["email"];
-    $phone = $_POST["number"];
-    $negara = $_POST["negara"];
-    $provinsi = $_POST["province"];
-    $district = $_POST["district"];
-    $city = $_POST["city"];
-    $street = $_POST["street"];
-    $note = $_POST["note"];
+    $username = strip_tags($_POST["username"]);
+    $pass =strip_tags($_POST["pass"]);
+    $copass =strip_tags($_POST["copass"]);
+    $email =
+    strip_tags($_POST["email"]);
+    $phone =
+    strip_tags($_POST["number"]);
+    $negara =
+    strip_tags($_POST["negara"]);
+    $provinsi =
+    strip_tags($_POST["province"]);
+    $district =
+    strip_tags($_POST["district"]);
+    $city =
+    strip_tags($_POST["city"]);
+    $street =
+    strip_tags($_POST["street"]);
+    $note =
+    strip_tags($_POST["note"]);
     $address = $street." ".$district." ".$city." ".$provinsi." ".$negara;
     if($username=="" || $pass=="" || $copass=="" || $email=="" || $phone=="" || $negara=="" || 
     $provinsi=="" || $district=="" || $city=="" || $street=="" || $note==""){

@@ -40,7 +40,8 @@ if (isset($_POST["minus"]) && ($_SESSION["total"] > 0)) {
 if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SESSION["total"] != 0)) {
     $temp = array(
         "ID" => $_SESSION["temp"]["ID"],
-        "jml" => $_SESSION["total"]
+        "jml" => $_SESSION["total"],
+        "waktu" => date("Y-m-d")
     );
     $ket = false;
     $length = count($_SESSION["cart"]);

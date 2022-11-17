@@ -9,14 +9,6 @@ require_once dirname(__FILE__) . '/Midtrans/Midtrans.php';
 Config::$serverKey = 'SB-Mid-server-dWPUAKiuT1S7ZwEzaJLHZSIQ';
 Config::$clientKey = 'SB-Mid-client-SoATxc1jvSH64Jjh';
 
-if (isset($_POST["delete"])) {
-    $deletebarang = $_POST["dat"];
-    foreach ($_SESSION["cart"] as $index => $val) {
-        if ($deletebarang == $val["ID"]) {
-            unset($_SESSION["cart"][$index]);
-        }
-    }
-}
 if (isset($_SESSION["cart"])) {
     $listbarang = $_SESSION["cart"];
 } else {
@@ -31,6 +23,7 @@ foreach ($listbarang as $key => $value) {
     $subtotal = $value["jml"] * $data[0]["Harga"];
     $subtotalall += $subtotal;
 }
+
 Config::$isSanitized = true;
 
 // Enable 3D-Secure
@@ -41,9 +34,10 @@ Config::$is3ds = true;
 // Config::$overrideNotifUrl = "https://example.com";
 
 // Required
+$_SESSION["orderid"] = rand();
 $transaction_details = array(
-    'order_id' => rand(),
-    'gross_amount' => $subtotalall, // no decimal allowed for creditcard
+    'order_id' => $_SESSION["orderid"],
+    'gross_amount' => $subtotalall // no decimal allowed for creditcard
 );
 $item_details = [];
 foreach ($listbarang as $key => $value) {
@@ -59,11 +53,6 @@ foreach ($listbarang as $key => $value) {
     array_push($item_details, $temp);
 }
 
-
-// Optional
-// $item_details = array ($item1_details, $item2_details);
-
-// Optional
 $billing_address = array(
     'first_name'    => "Andri",
     'address'       => "Mangga 20",
@@ -88,13 +77,42 @@ $customer_details = array(
 );
 
 
-// Fill transaction details
+if (isset($_SESSION["logged"])) {
+    $stmt = $conn->prepare("SELECT * from customer c WHERE c.ID='" . $_SESSION["logged"] . "'");
+    $stmt->execute();
+    $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $billing_address = array(
+        'first_name'    => $data[0]["Nama_Lengkap"],
+        'address'       => $data[0]["Alamat_Lengkap"],
+        'phone'         => $data[0]["No_Telp"]
+    );
+
+    // Optional
+    $shipping_address = array(
+        'first_name'    => $data[0]["Nama_Lengkap"],
+        'address'       => $data[0]["Alamat_Lengkap"],
+        'phone'         => $data[0]["No_Telp"]
+    );
+
+    // Optional
+    $customer_details = array(
+        'first_name'    => $data[0]["Nama_Lengkap"],
+        'address'       => $data[0]["Alamat_Lengkap"],
+        'email'         => $data[0]["Email"],
+        'phone'         => $data[0]["No_Telp"],
+        'billing_address'  => $billing_address,
+        'shipping_address' => $shipping_address
+    );
+
+
+    // Fill transaction details
+}
+
 $transaction = array(
     'transaction_details' => $transaction_details,
     'customer_details' => $customer_details,
     'item_details' => $item_details
 );
-
 
 try {
     $snap_token = Snap::getSnapToken($transaction);
@@ -102,57 +120,6 @@ try {
     echo "<script>alert('Keranjang Kosong')</script>";
 }
 
-if (isset($_POST["plus"])) {
-    $dts = $_POST["dat2"];
-    $temp = 0;
-    $jmldatabase = 0;
-    foreach ($listbarang as $key => $value) {
-        $stmt = $conn->prepare("SELECT * from barang ba WHERE ba.ID='" . $dts . "'");
-        $stmt->execute();
-        $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-        if ($dts == $value["ID"]) {
-            $temp = $value["jml"];
-            $jmldatabase = $data[0]["Stok"];
-        }
-    }
-    if (!($temp + 1 > $jmldatabase)) {
-        foreach ($_SESSION["cart"] as $index => $val) {
-            if ($dts == $val["ID"]) {
-                $_SESSION["cart"][$index]['jml'] = $_SESSION["cart"][$index]['jml'] + 1;
-            }
-        }
-    } else {
-        echo "<script>alert('Produk Habis')</script>";
-    }
-}
-
-if (isset($_POST["minus"])) {
-    $dts = $_POST["dat2"];
-    $temp = 0;
-    $jmldatabase = 0;
-    foreach ($listbarang as $key => $value) {
-        $stmt = $conn->prepare("SELECT * from barang ba WHERE ba.ID='" . $dts . "'");
-        $stmt->execute();
-        $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-        if ($dts == $value["ID"]) {
-            $temp = $value["jml"];
-            $jmldatabase = $data[0]["Stok"];
-        }
-    }
-    if ($temp - 1 <= 0) {
-        foreach ($_SESSION["cart"] as $index => $val) {
-            if ($dts == $val["ID"]) {
-                unset($_SESSION["cart"][$index]);
-            }
-        }
-    } else {
-        foreach ($_SESSION["cart"] as $index => $val) {
-            if ($dts == $val["ID"]) {
-                $_SESSION["cart"][$index]['jml'] = $_SESSION["cart"][$index]['jml'] - 1;
-            }
-        }
-    }
-}
 if (isset($_SESSION["cart"])) {
     $listbarang = $_SESSION["cart"];
 } else {
@@ -189,13 +156,12 @@ if (isset($_SESSION["cart"])) {
     <script type="text/javascript">
         function bayar() {
             // SnapToken acquired from previous step
-            // alert(document.getElementById("tot").value);
             inp1 = document.getElementById("nname").value;
             inp2 = document.getElementById("nadd").value;
             inp3 = document.getElementById("ntelp").value;
             inp4 = document.getElementsByClassName("note")[0].value;
             status = document.getElementById("log").value;
-            if (status == false) {
+            if (status == 'false') {
                 window.location.href = "logincus.php";
             } else {
                 if (inp1 == "" || inp2 == "" | inp3 == "" || inp4 == "") {
@@ -208,7 +174,7 @@ if (isset($_SESSION["cart"])) {
                             // Optional
                             onSuccess: function(result) {
                                 /* You may add your own js here, this is just example */
-                                window.location.href = "coba.php";
+                                window.location.href = "contactus.php?berhasil=1";
                             },
                             // Optional
                             onPending: function(result) {
@@ -227,11 +193,56 @@ if (isset($_SESSION["cart"])) {
                     }
                 }
             }
+        };
+
+        function ajax() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("isi").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "ajax2.php");
+            xhttp.send();
+        }
+
+        function del(idx) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("bwh").innerHTML = this.responseText;
+                ajax();
+            }
+            xhttp.open("GET", "operation.php?operation2=delete&idx=" + idx);
+            xhttp.send();
+        }
+
+        function min(idx) {
+            // idx = document.getElementById("kurang").value;
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("bwh").innerHTML = this.responseText;
+                ajax();
+            }
+            xhttp.open("GET", "operation.php?operation2=min&idx=" + idx);
+            xhttp.send();
+        }
+
+        function plus(idx) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("bwh").innerHTML = this.responseText;
+                ajax();
+            }
+            xhttp.open("GET", "operation.php?operation2=plus&idx=" + idx);
+            xhttp.send();
+        }
+
+        function load() {
+            min(-1);
+            ajax();
         }
     </script>
 </head>
 
-<body>
+<body onload="load()">
     <div class="coverall">
         <div class="cover">
             <!--navbar-->
@@ -265,7 +276,7 @@ if (isset($_SESSION["cart"])) {
                             <p class="display-4 fs-2 pt-3" style="text-align: center;">Your Collection</p>
                         </div>
                         <hr class="my-4" style="border: 1px solid gray">
-                        <div class="overall d-flex" style="flex-direction:column;overflow:scroll;width:100%;height:25vw">
+                        <div class="overall d-flex" style="flex-direction:column;overflow:scroll;width:100%;height:25vw" id="isi">
                             <?php
                             foreach ($listbarang as $key => $value) {
                                 $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Gambar as 'Gambar', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
@@ -279,8 +290,6 @@ if (isset($_SESSION["cart"])) {
                                         <?php
                                         echo '<img style="width: 15vw; height:15vw;" src = "data:image/png;base64,' . base64_encode($data[0]['Gambar']) . '"/>';
                                         ?>
-                                        <!-- <img src="asset/imgW/g.jpg" alt="" style="width: 15vw; height:15vw;"
-                                        srcset=""> -->
                                     </div>
                                     <div class="kt mt-3" style="width: 30wv;">
                                         <form action="" method="post">
@@ -290,7 +299,7 @@ if (isset($_SESSION["cart"])) {
                                             <p class="serial pt-1" style="color: gray;"><?= $data[0]["Nama_Barang"] ?></p>
                                             <p class="serial" style="color: red;">Rp.
                                                 <?= $data[0]["Harga"] ?></p>
-                                            <p class="serial" style="color: gray;">Tanggal dimasukkan : 2022-05-30</p>
+                                            <p class="serial" style="color: gray;">Tanggal dimasukkan : <?= $value["waktu"] ?></p>
                                             <hr class="my-4" style="border: 1px solid gray">
                                             <div class="subttl d-flex">
                                                 <div class="enti">
@@ -380,24 +389,14 @@ if (isset($_SESSION["cart"])) {
                                     <label for="exampleFormControlTextarea1">Note</label>
                                     <textarea class="form-control note" style="resize: none;max-height: 15vw;" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
-                                <div class="isinya2 mt-5 pt-4" style="margin-left: 5vw;">
-                                    <h4>
-                                        <b>Quantity All</b>
-                                    </h4>
-                                    <p class="serial pt-1"><?= $qtyall ?>
-                                        Product</p>
-                                    <h4>
-                                        <b>Subtotal All</b>
-                                    </h4>
-                                    <p class="serial pt-1" style="color: red;">Rp.
-                                        <?= $subtotalall ?></p>
+                                <div class="isinya2 mt-5 pt-4" style="margin-left: 5vw;" id="bwh">
                                 </div>
                             </div>
                         </div>
 
                         <hr class="my-4" style="border: 1px solid gray">
 
-                        <div action="" method="post" style="float: right;margin-right:2vw;height:10vw">
+                        <div style="float: right;margin-right:2vw;height:10vw">
                             <?php
                             if (isset($_SESSION["logged"])) {
                             ?>
@@ -409,6 +408,7 @@ if (isset($_SESSION["cart"])) {
                             <?php
                             }
                             ?>
+
                             <input type="submit" class="order btn btn-dark" value="ORDER" onclick="bayar()" style="width: 13vw; border:none; box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
 ">
                         </div>
