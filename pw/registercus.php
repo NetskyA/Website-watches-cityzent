@@ -1,5 +1,51 @@
 <?php
-
+require_once("connector.php");
+if (isset($_POST["regist"])) {
+    $address="";
+    $username = $_POST["username"];
+    $pass = $_POST["pass"];
+    $copass = $_POST["copass"];
+    $email = $_POST["email"];
+    $phone = $_POST["number"];
+    $negara = $_POST["negara"];
+    $provinsi = $_POST["province"];
+    $district = $_POST["district"];
+    $city = $_POST["city"];
+    $street = $_POST["street"];
+    $note = $_POST["note"];
+    $address = $street." ".$district." ".$city." ".$provinsi." ".$negara;
+    if($username=="" || $pass=="" || $copass=="" || $email=="" || $phone=="" || $negara=="" || 
+    $provinsi=="" || $district=="" || $city=="" || $street=="" || $note==""){
+        echo "<script>alert('Ada Field Kosong')</script>";
+    }else{
+        if($pass == $copass){
+            $panjang = strlen($pass);
+            if($panjang>=8 && $panjang<=20){
+                $stmt = $conn->prepare("SELECT * FROM customer");
+                $stmt->execute();
+                $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                $valid = true;
+                foreach ($data as $key => $value) {
+                    if ($value["Email"] == $email) {
+                        $valid=false;
+                    }
+                }
+                if($valid){
+                    $stmt = $conn->prepare("INSERT INTO customer(Nama_Lengkap, Pass, Email, Alamat_Lengkap, No_Telp) VALUES(?,?,?,?,?)");
+                    $stmt->bind_param("sssss", $username, $pass, $email, $address, $phone);
+                    $result = $stmt->execute();
+                    header("Location: logincus.php");
+                }else{
+                    echo "<script>alert('Email Sudah Terdaftar')</script>";
+                }
+            }else{
+                echo "<script>alert('Panjang Password Invalid')</script>";
+            }
+        }else{
+            echo "<script>alert('Password dan Confirm Password Salah')</script>";
+        }
+    }
+}
 ?>
 
 <!doctype html>
@@ -80,14 +126,14 @@
                             <div class="isiuser">
                                 <label for="exampleInputEmail1" class="form-label" style="width: 25vw;">Full
                                     name</label>
-                                <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                                <input type="text" name="username" class="form-control" id="name" aria-describedby="emailHelp">
                             </div>
                             <div class="row g-3 align-items-center mt-1">
                                 <div class="col-auto">
                                     <label for="inputPassword6" class="col-form-label">Password</label>
                                 </div>
                                 <div class="col-auto">
-                                    <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                                    <input type="password" id="inputPassword6" class="form-control" name="pass" aria-describedby="passwordHelpInline">
                                 </div>
                                 <div class="col-auto">
                                     <span id="passwordHelpInline" class="form-text text-light">
@@ -97,20 +143,17 @@
                             </div>
                             <div class="mb-3 mt-2">
                                 <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="cpass">
+                                <input type="password" class="form-control" id="cpass" name="copass">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
                             <div class="isiuser">
-                                <label for="exampleInputEmail1" class="form-label" style="width: 25vw;">Number
+                                <label class="form-label" style="width: 25vw;">Number
                                     Phone</label>
                                 <input type="text" class="form-control" id="number" name="number" aria-describedby="emailHelp">
                             </div>
-
-
-
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -126,16 +169,13 @@
                                     <div class="col-auto me-4">
                                         <label for="inputPassword6" class="col-form-label">Country</label>
                                     </div>
-                                    <button class="btn btn-light dropdown-toggle" style="width: 10vw;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Select
-                                    </button>
-                                    <ul class="dropdown-menu" style="width: 10vw;">
-                                        <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                                        <li><a class="dropdown-item" href="#">Singapura</a></li>
-                                        <li><a class="dropdown-item" href="#">Malaysia</a></li>
-                                        <li><a class="dropdown-item" href="#">Brunei Darussalam</a></li>
-                                        <li><a class="dropdown-item" href="#">Thailand</a></li>
-                                    </ul>
+                                    <select name="negara" id="drop" style="width:10vw;">
+                                        <option value="Indonesia">Indonesia</option>
+                                        <option value="Singapura">Singapura</option>
+                                        <option value="Malaysia">Malaysia</option>
+                                        <option value="Brunei Darusallam">Brunei Darussalam</option>
+                                        <option value="Thailand">Thailand</option>
+                                    </select>
                                     <!-- and country -->
 
 
@@ -143,7 +183,7 @@
                                     <div class="col-auto ms-5 me-4">
                                         <label for="inputPassword6" class="col-form-label">Province</label>
                                     </div>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="text" name="province" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     <!-- and provinsi -->
                                 </div>
                             </div>
@@ -153,13 +193,13 @@
                                     <div class="col-auto me-4">
                                         <label for="inputPassword6" class="col-form-label">City</label>
                                     </div>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="text" name="city" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     <!-- and district -->
                                     <!-- distric -->
                                     <div class="col-auto me-4 ms-5">
                                         <label for="inputPassword6" class="col-form-label">District</label>
                                     </div>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="text" name="district" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     <!-- and district -->
                                 </div>
                             </div>
@@ -169,7 +209,7 @@
                                     <div class="col-auto me-4">
                                         <label for="inputPassword6" class="col-form-label">Street</label>
                                     </div>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="text" name="street" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     <!-- and district -->
                                 </div>
 
@@ -186,19 +226,14 @@
                                     <textarea name="note" style="border-radius: 0.5vw; width:100%; height:25vw;" id="note"></textarea>
                                     <!-- and note -->
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
                 <div id="emailHelp" class="form-text text-light ms-2">We'll never share your data with anyone else.
                 </div>
                 <div class="button d-flex justify-content-end">
-
-                    <a href="logincus.php">
-                        <button style="width: 10vw;" type="button" class="btn btn-light">Register</button>
-                    </a>
+                    <input type="submit" value="Register" style="width: 10vw;" class="btn btn-light" name="regist">
                 </div>
             </form>
         </div>

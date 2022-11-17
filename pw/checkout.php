@@ -194,32 +194,37 @@ if (isset($_SESSION["cart"])) {
             inp2 = document.getElementById("nadd").value;
             inp3 = document.getElementById("ntelp").value;
             inp4 = document.getElementsByClassName("note")[0].value;
-            if (inp1 == "" || inp2 == "" | inp3 == "" || inp4 == "") {
-                alert("Inputan ada yang kosong");
+            status = document.getElementById("log").value;
+            if (status == false) {
+                window.location.href = "logincus.php";
             } else {
-                if (isNaN(inp3)) {
-                    alert("Inputan Bukan Angka");
-                }else{
-                    snap.pay('<?php echo $snap_token ?>', {
-                    // Optional
-                    onSuccess: function(result) {
-                        /* You may add your own js here, this is just example */
-                        window.location.href = "coba.php";
-                    },
-                    // Optional
-                    onPending: function(result) {
-                        /* You may add your own js here, this is just example */
+                if (inp1 == "" || inp2 == "" | inp3 == "" || inp4 == "") {
+                    alert("Inputan ada yang kosong");
+                } else {
+                    if (isNaN(inp3)) {
+                        alert("Inputan Bukan Angka");
+                    } else {
+                        snap.pay('<?php echo $snap_token ?>', {
+                            // Optional
+                            onSuccess: function(result) {
+                                /* You may add your own js here, this is just example */
+                                window.location.href = "coba.php";
+                            },
+                            // Optional
+                            onPending: function(result) {
+                                /* You may add your own js here, this is just example */
 
-                    },
-                    // Optional
-                    onError: function(result) {
-                        /* You may add your own js here, this is just example */
-                    },
+                            },
+                            // Optional
+                            onError: function(result) {
+                                /* You may add your own js here, this is just example */
+                            },
 
-                    onClose: function(result) {
+                            onClose: function(result) {
 
+                            }
+                        });
                     }
-                });
                 }
             }
         };
@@ -383,6 +388,17 @@ if (isset($_SESSION["cart"])) {
                         <hr class="my-4" style="border: 1px solid gray">
 
                         <div action="" method="post" style="float: right;margin-right:2vw;height:10vw">
+                            <?php
+                            if (isset($_SESSION["logged"])) {
+                            ?>
+                                <input type="hidden" id="log" value="<?= $_SESSION["logged"] ?>">
+                            <?php
+                            } else {
+                            ?>
+                                <input type="hidden" id="log" value="false">
+                            <?php
+                            }
+                            ?>
                             <input type="submit" class="order btn btn-dark" value="ORDER" onclick="bayar()" style="width: 13vw; border:none; box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
 ">
                         </div>
