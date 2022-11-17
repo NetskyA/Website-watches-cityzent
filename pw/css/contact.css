@@ -1,0 +1,118 @@
+.logo{
+    width: 5vw;
+    height: 5vw;
+}
+
+body{
+    cursor:pointer
+}
+
+.jdl{
+    padding-left: 8vw;
+    padding-bottom: 2vw;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 5vw;
+    font-size: 1.7vw;
+    border-radius: 0.7vw;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
+}
+
+.hdr{
+    /* font-weight: normal; */
+    font-size: 1.2vw;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.hdr1{
+    /* font-weight: normal; */
+    font-size: 1vw;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.hdr2{
+    /* font-weight: normal; */
+    font-size: 1vw;
+    padding-top: 2vw;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.satu{
+    border: 1px solid rgba(128, 128, 128, 0.438);
+    width: 22vw;
+    height: 5vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-radius: 0.3vw;
+}
+
+.dua{
+    border: 1px solid rgba(128, 128, 128, 0.438);
+    width: 22vw;
+    height: 5vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-radius: 0.3vw;
+
+}
+.tiga{
+    border: 1px solid rgba(128, 128, 128, 0.438);
+    width: 22vw;
+    height: 5vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-radius: 0.3vw;
+
+}
+
+.empat{
+    border: 1px solid rgba(128, 128, 128, 0.438);
+    width: 22vw;
+    height: 5vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border-radius: 0.3vw;
+
+}
+
+.isinya{
+    display: flex;
+    margin-top: 2vw;
+}
+
+.satu:hover{
+    transition: 1s;
+    transform: scale(110%);
+    background-color: gainsboro;
+}
+.dua:hover{
+    transition: 1s;
+    transform: scale(110%);
+    background-color: gainsboro;
+
+}
+.tiga:hover{
+    transition: 1s;
+    transform: scale(110%);
+    background-color: gainsboro;
+
+}
+.empat:hover{
+    transition: 1s;
+    transform: scale(110%);
+    background-color: gainsboro;
+
+}
+
+
+.footer{
+    background-color: rgb(255, 255, 255);
+    box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
+    width: 100%;
+    height: 14vw;
+}
