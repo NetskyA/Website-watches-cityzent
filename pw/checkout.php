@@ -284,7 +284,7 @@ if (isset($_SESSION["cart"])) {
                             <p class="display-4 fs-2 pt-3" style="text-align: center;">Your Collection</p>
                         </div>
                         <hr class="my-4" style="border: 1px solid gray">
-                        <div class="overall d-flex" style="flex-direction:column;overflow:scroll;width:100%;height:25vw"
+                        <div class="overall d-flex" style="flex-direction:column;overflow:scroll;width:100%;height:70vw"
                             id="isi">
                             <?php
                             foreach ($listbarang as $key => $value) {
