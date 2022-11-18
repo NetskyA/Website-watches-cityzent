@@ -202,7 +202,7 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                                 <hr class=" my-4 mt-4" style="width: 100%;">
 
                                 <form action="" method="post">
-                                    <input type="submit" name="checkout" value="Add Chart"
+                                    <input type="submit" name="checkout" value="Add Cart"
                                         class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">
                                 </form>
                             </div>
