@@ -163,8 +163,11 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                                 <h4>Price</h4>
                                 <h5><span>Rp. </span><?= $_SESSION["temp"]["Harga"] ?></h5>
 
-                                <form action="" method="post">
-                                    <div class="jumlah d-flex mt-5">
+                                <form c action="" method="post">
+                                    <h5>
+                                        <p style="padding-top: 2vw;">Add Entity</p>
+                                    </h5>
+                                    <div class="jumlah d-flex">
                                         <input type="submit" value="-" style="width: 5%;" class="btn btn-secondary"
                                             name="minus">
                                         <input type="submit" value="+" style="width: 5%;margin-left:0.5vw"
