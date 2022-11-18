@@ -19,6 +19,18 @@
 
 .can{
     float: right;
+    padding-top: 0.3vw;
+    font-size: 0.8vw;
+    padding-right: 2vw;
+}
+
+.can:hover{
+    transform: scale(110%);
+    transition: 1s;
+}
+
+.bdr{
+    padding-left: 40vw;
 }
 
 

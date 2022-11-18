@@ -119,9 +119,10 @@
                     <a href="#">
                         <button type="submit" class="sub btn btn-outline-secondary">Submit</button>
                     </a>
-                    <a href="contactus.php">
-                        <button type="submit" class="can btn btn-outline-secondary me-2">Cancel</button>
+                    <a href="contactus.php" style="text-decoration:none">
+                        <p class="can text-dark">Cancel</p>
                     </a>
+
                 </div>
             </form>
         </div>

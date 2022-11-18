@@ -130,8 +130,6 @@ body {
     padding-left: 10px;
 }
 
-
-
 .dtl:hover {
     transform: scale(110%);
     transition: 0.8s;
