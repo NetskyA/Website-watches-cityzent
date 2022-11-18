@@ -286,7 +286,13 @@ foreach ($listbarang as $key => $value) {
                         </div>
                         <hr class="my-4" style="border: 1px solid gray">
                         <div class="overall d-flex" style="flex-direction:column;width:100%;height:auto" id="isi">
- 
+                            <?php
+                            if (count($listbarang) == 0) {
+                                echo "<div class='d-flex justify-content-center align-items-center'style='width:100%;height:40vw;font-size: 5vw;'>";
+                                echo "Product Not Found";
+                                echo "</div>";
+                            }
+                            ?>
 
                         </div>
 
