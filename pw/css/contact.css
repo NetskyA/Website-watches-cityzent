@@ -1,10 +1,15 @@
 .logo{
-    width: 5vw;
-    height: 5vw;
+    width: 4.6vw;
+    height: 4.6vw;
+    margin-top: 0.3vw;
 }
 
 body{
     cursor:pointer
+}
+
+.pusat{
+    text-decoration: none;
 }
 
 .jdl{
@@ -115,4 +120,13 @@ body{
     box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
     width: 100%;
     height: 14vw;
+}
+
+.nth{
+    width: 0px;
+    height: 40px;
+    float: left;
+    justify-content: start;
+    margin-top: 1.3vw;
+    border: 1px rgb(130, 130, 130) solid;
 }

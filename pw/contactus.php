@@ -241,14 +241,24 @@ require_once("connector.php");
     <div class="isi">
         <div class="jdl">
             <div class="bungkus d-flex" style="display: flex;">
-                <a href="index.php">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="50" fill="currentColor"
-                        class="bi bi-arrow-left-circle mt-4 me-2 text-secondary" viewBox="0 0 16 16">
+                <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="52" height="50" fill="currentColor"
+                        class="bi bi-arrow-left-circle mt-4 me-3 text-secondary" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
-                    </svg>
-                </a>
-                <p style="padding-top: 1vw; text-align:center;">Help Center</p>
+                    </svg> -->
+                <p style="padding-top: 1vw; width:14vw;">WATCHES SCRT</p>
+                <div class="nth">
+                </div>
+                <div class="pusat">
+                    <h4 style="display: flex;">
+                        <p style="padding-top: 1.5vw; padding-left:1.5vw;">Help Center</p>
+                        <a href="index.php" style="text-decoration:none">
+                            <p class="home text-dark"
+                                style="padding-top: 1.5vw; padding-left:1.5vw;text-decoration: none;">Home</p>
+                        </a>
+                    </h4>
+                </div>
             </div>
         </div>
         <div class="container" style="height: auto;">
@@ -397,7 +407,7 @@ require_once("connector.php");
                     <div class="ques d-flex justify-content-center">
                         <button type="submit" class="btn btn-outline-secondary" style="width: 20vw;">
                             <div class="atass d-flex justify-content-center">
-                                <a href="esubmit.php">
+                                <a href="esubmit.php" style="text-decoration:none">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-envelope text-warning mt-2" viewBox="0 0 16 16">
