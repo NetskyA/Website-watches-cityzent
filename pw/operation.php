@@ -67,12 +67,5 @@ foreach ($listbarang as $key => $value) {
     $total += $subtotal;
     $qtyall += $value["jml"];
 }
-echo '<h4>';
-echo '<b>Quantity All</b>';
-echo '</h4>';
-echo '<p class="serial pt-1">' . $qtyall . ' Product</p>';
-echo '<h4>';
-echo '<b>Subtotal All</b>';
-echo '</h4>';
-echo '<p class="serial pt-1" style="color: red;">Rp.' . $total . '</p>';
+
 ?>
