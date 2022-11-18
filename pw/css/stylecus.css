@@ -41,6 +41,20 @@ textarea {
 .back{
     padding-top: 2vw;
 }
+.back2{
+    padding-top: 0.5vw;
+    padding-right: 0.6vw;
+    border: 1px solid gainsboro;
+    width: 10vw;
+    margin-right: 3vw;
+    height: 2.5vw;
+    border-radius: 0.5vw;
+}
+
+.back2:hover{
+    transition: 1s;
+    transform: scale(110%);
+}
 
 .btn:hover{
     transition: 1s;

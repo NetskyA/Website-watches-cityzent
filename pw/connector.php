@@ -12,4 +12,3 @@ if ($conn->connect_errno) {
 // echo "Session = ";
 // print_r($_SESSION);
 // echo "<br>";
-?>
