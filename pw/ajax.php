@@ -37,15 +37,15 @@ $idx = 0;
 if ($akhir > $jumlah_data) {
     $akhir = $jumlah_data;
 }
-$bef = $halaman-2;
-if($bef==-1){
-    $bef+=2;
-}else if($bef==0){
-    $bef+=1;
+$bef = $halaman - 2;
+if ($bef == -1) {
+    $bef += 2;
+} else if ($bef == 0) {
+    $bef += 1;
 }
 
-$aft = $bef+4;
-if($aft>$total_halaman){
+$aft = $bef + 4;
+if ($aft > $total_halaman) {
     $aft = $total_halaman;
 }
 if ($jumlah_data == 0) {
@@ -121,13 +121,13 @@ echo "<nav>";
 echo "<ul class='pagination justify-content-center'>";
 echo "<li class='page-item'>";
 if ($halaman > 1) {
-    echo "<button class='page-link animasi' onclick='ajax(" . $previous . ")'>Previous</button>";
+    echo "<button class='page-link animasi' style='text-decoration:none;color:black;' onclick='ajax(" . $previous . ")'>Previous</button>";
 }
 echo "</li>";
 for ($x = $bef; $x <= $aft; $x++) {
-    if($x==$halaman){
+    if ($x == $halaman) {
         echo '<li class="page-item"><a class="page-link" style="text-decoration:none;color:black;font-weight:bold;" onclick="ajax(' . $x . ')">' . $x . '</a></li>';
-    }else{
+    } else {
         echo '<li class="page-item"><a class="page-link" style="text-decoration:none;color:black;" onclick="ajax(' . $x . ')">' . $x . '</a></li>';
     }
 }
@@ -135,7 +135,7 @@ for ($x = $bef; $x <= $aft; $x++) {
 echo "</li>";
 echo "<li class='page-item'>";
 if ($halaman < $total_halaman) {
-    echo "<a class='page-link animasi' onclick='ajax(" . $next . ")'>Next</a>";
+    echo "<a class='page-link animasi' style='text-decoration:none;color:black;' onclick='ajax(" . $next . ")'>Next</a>";
 }
 echo "</li>";
 echo "</ul>";
