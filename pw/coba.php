@@ -1,3 +1,45 @@
+<?php
+require_once("connector.php");
+$test = "";
+if (isset($_REQUEST["berhasil"])) {
+    $id = $_SESSION["orderid"];
+    $idcus = $_SESSION["logged"];
+    $waktu = date("Y-m-d");
+    $listbarang = $_SESSION["cart"];
+    $subtotalall = 0;
+    foreach ($listbarang as $key => $value) {
+        $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
+        $stmt->execute();
+        $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $subtotal = $value["jml"] * $data[0]["Harga"];
+        $subtotalall += $subtotal;
+    }
+    $stmt = $conn->prepare("INSERT INTO h_trans(ID, ID_Customer, Total, Waktu_Transaksi) VALUES(?,?,?,?)");
+    $stmt->bind_param("ssss", $id, $idcus, $subtotal, $waktu);
+    $result = $stmt->execute();
+    foreach ($listbarang as $key => $value) {
+        $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
+        $stmt->execute();
+        $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $subtotal = $value["jml"] * $data[0]["Harga"];
+        $subtotalall += $subtotal;
+        $jml = $value["jml"];
+        $idbar = $value['ID'];
+        $hasilstok = $data[0]["Harga"] - $value["jml"];
+        $stmt = $conn->prepare("UPDATE barang SET stok=? WHERE ID = ?");
+        $stmt->bind_param("ii", $hasilstok, $idbar);
+        $result = $stmt->execute();
+        $stmt = $conn->prepare("INSERT INTO d_trans(ID, ID_Barang, Jumlah) VALUES(?,?,?)");
+        $stmt->bind_param("iii", $id, $idbar, $jml);
+        $result = $stmt->execute();
+    }
+    unset($_SESSION["cart"]);
+    $stmt = $conn->prepare("SELECT * FROM customer where customer.ID = '" . $idcus . "'");
+    $stmt->execute();
+    $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $test = $data[0]["Nama_Lengkap"];
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -34,9 +76,28 @@
 </head>
 
 <body>
-    <div class="coverall">
+    <div class="coverall d-flex justify-content-center">
         <div class="isinya">
+            <div class="jdl">
+                <p>Thank you for purchasing goods in our store.</p>
+            </div>
+            <div class="logo d-flex justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" fill="currentColor"
+                    class="bi bi-check-all text-success" viewBox="0 0 16 16">
+                    <path
+                        d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" />
+                </svg>
+                <!-- <div name="name"><?= $test ?></div> -->
+            </div>
+            <div class="bawah d-flex justify-content-center">
 
+                <a href="index.php">
+                    <button type="button" style="width: 8vw;" class="btn btn-outline-secondary me-3">Close</button>
+                </a>
+                <a href="contactus.php">
+                    <button type="button" style="width: 8vw;" class="btn btn-outline-secondary">Help</button>
+                </a>
+            </div>
         </div>
     </div>
 </body>

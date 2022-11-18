@@ -1,39 +1,39 @@
 <?php
 require_once("connector.php");
-if (isset($_REQUEST["berhasil"])) {
-    $id = $_SESSION["orderid"];
-    $idcus = $_SESSION["logged"];
-    $waktu = date("Y-m-d");
-    $listbarang = $_SESSION["cart"];
-    $subtotalall = 0;
-    foreach ($listbarang as $key => $value) {
-        $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
-        $stmt->execute();
-        $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-        $subtotal = $value["jml"] * $data[0]["Harga"];
-        $subtotalall += $subtotal;
-    }
-    $stmt = $conn->prepare("INSERT INTO h_trans(ID, ID_Customer, Total, Waktu_Transaksi) VALUES(?,?,?,?)");
-    $stmt->bind_param("ssss", $id, $idcus, $subtotal, $waktu);
-    $result = $stmt->execute();
-    foreach ($listbarang as $key => $value) {
-        $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
-        $stmt->execute();
-        $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-        $subtotal = $value["jml"] * $data[0]["Harga"];
-        $subtotalall += $subtotal;
-        $jml = $value["jml"];
-        $idbar = $value['ID'];
-        $hasilstok = $data[0]["Harga"] - $value["jml"];
-        $stmt = $conn->prepare("UPDATE barang SET stok=? WHERE ID = ?");
-        $stmt->bind_param("ii", $hasilstok, $idbar);
-        $result = $stmt->execute();
-        $stmt = $conn->prepare("INSERT INTO d_trans(ID, ID_Barang, Jumlah) VALUES(?,?,?)");
-        $stmt->bind_param("iii", $id, $idbar, $jml);
-        $result = $stmt->execute();
-    }
-    unset($_SESSION["cart"]);
-}
+// if (isset($_REQUEST["berhasil"])) {
+//     $id = $_SESSION["orderid"];
+//     $idcus = $_SESSION["logged"];
+//     $waktu = date("Y-m-d");
+//     $listbarang = $_SESSION["cart"];
+//     $subtotalall = 0;
+//     foreach ($listbarang as $key => $value) {
+//         $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
+//         $stmt->execute();
+//         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+//         $subtotal = $value["jml"] * $data[0]["Harga"];
+//         $subtotalall += $subtotal;
+//     }
+//     $stmt = $conn->prepare("INSERT INTO h_trans(ID, ID_Customer, Total, Waktu_Transaksi) VALUES(?,?,?,?)");
+//     $stmt->bind_param("ssss", $id, $idcus, $subtotal, $waktu);
+//     $result = $stmt->execute();
+//     foreach ($listbarang as $key => $value) {
+//         $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
+//         $stmt->execute();
+//         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+//         $subtotal = $value["jml"] * $data[0]["Harga"];
+//         $subtotalall += $subtotal;
+//         $jml = $value["jml"];
+//         $idbar = $value['ID'];
+//         $hasilstok = $data[0]["Harga"] - $value["jml"];
+//         $stmt = $conn->prepare("UPDATE barang SET stok=? WHERE ID = ?");
+//         $stmt->bind_param("ii", $hasilstok, $idbar);
+//         $result = $stmt->execute();
+//         $stmt = $conn->prepare("INSERT INTO d_trans(ID, ID_Barang, Jumlah) VALUES(?,?,?)");
+//         $stmt->bind_param("iii", $id, $idbar, $jml);
+//         $result = $stmt->execute();
+//     }
+//     unset($_SESSION["cart"]);
+// }
 ?>
 
 <!doctype html>
@@ -242,9 +242,13 @@ if (isset($_REQUEST["berhasil"])) {
         <div class="jdl">
             <div class="bungkus d-flex" style="display: flex;">
                 <a href="index.php">
-                    <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="50" fill="currentColor"
+                        class="bi bi-arrow-left-circle mt-4 me-2 text-secondary" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                    </svg>
                 </a>
-                <p style="padding-top: 1vw;">Help Center</p>
+                <p style="padding-top: 1vw; text-align:center;">Help Center</p>
             </div>
         </div>
         <div class="container" style="height: auto;">
