@@ -75,27 +75,50 @@ if (isset($_REQUEST["berhasil"])) {
 
 </head>
 
-<body>
+<body class="bdy">
     <div class="coverall d-flex justify-content-center">
         <div class="isinya">
+            <div class="atas d-flex">
+                <img src="asset/logo/logo.png" class="logo2" alt="" srcset="">
+                <p style="font-size:0.8vw; padding-top:0.5vw;">WATCHES SCRT</p>
+            </div>
             <div class="jdl">
-                <p>Thank you for purchasing goods in our store.</p>
+                <p>Appreciation to you</p>
             </div>
-            <div class="logo d-flex justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" fill="currentColor"
-                    class="bi bi-check-all text-success" viewBox="0 0 16 16">
-                    <path
-                        d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" />
-                </svg>
-                <!-- <div name="name"><?= $test ?></div> -->
+            <img src="asset/animate/test.gif" class="logo" alt="Computer man"
+                style="width:8.2vw;height:6vw;justify-content:center;">
+            <div class="sks  d-flex justify-content-center">
+                <p style="text-align: center; width:28vw; font-size:0.8vw;">For those of you who care about style, the
+                    purchase of this
+                    watch
+                    is very
+                    helpful to support a very
+                    fashionable look.</p>
             </div>
-            <div class="bawah d-flex justify-content-center">
+            <hr class="my-4 mt-2" style="width: 100%;">
 
+            <div class="isi justify-content-center mt-2">
+                <div class="kusus" style="display: flex; font-size:0.8vw;">
+                    <p>Invoice number : </p>
+                    <p style="padding-left:28vw;">Status : Gold</p>
+                </div>
+                <p style="font-size:0.8vw;">Name customer : </p>
+                <p style="font-size:0.8vw;">Product name : </p>
+                <p style="font-size:0.8vw;">Total price : </p>
+            </div>
+            <hr class="my-4 mt-2">
+            <div class="bawah d-flex justify-content-center">
                 <a href="index.php">
-                    <button type="button" style="width: 8vw;" class="btn btn-outline-secondary me-3">Close</button>
+                    <button type="button" style="width: 8vw; font-size:0.8vw;"
+                        class="btn btn-outline-secondary me-3">Close</button>
                 </a>
-                <a href="contactus.php">
-                    <button type="button" style="width: 8vw;" class="btn btn-outline-secondary">Help</button>
+
+            </div>
+            <div class="print" style="margin-top: 2vw;">
+                <button style="font-size:0.8vw;" class="prn text-secondary" onclick="window.print()">Print this
+                    page</button>
+                <a href="contactus.php" style="padding-left: 23vw;">
+                    <button type="button" style="width: 8vw; font-size:0.8vw;" class="btn text-secondary">Help</button>
                 </a>
             </div>
         </div>

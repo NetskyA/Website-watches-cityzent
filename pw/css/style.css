@@ -293,3 +293,12 @@ body {
     color: rgb(0, 199, 0);
     border: none;
 }
+
+.nth{
+    width: 0px;
+    height: 40px;
+    float: left;
+    justify-content: start;
+    margin-top: 0.8vw;
+    border: 1px rgb(130, 130, 130) solid;
+}

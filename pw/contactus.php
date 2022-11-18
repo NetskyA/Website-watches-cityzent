@@ -263,7 +263,7 @@ require_once("connector.php");
         </div>
         <div class="container" style="height: auto;">
             <div class="atas">
-                <div class="hdr mt-3">
+                <div class="hdr mt-5 mb-4">
                     <p>Hi, how can we help you?
                     </p>
                 </div>
@@ -351,7 +351,7 @@ require_once("connector.php");
                 </div>
             </div>
             <hr class="my-4 mt-5">
-            <div class="hdr1 mt-5" style="text-align: center;">
+            <div class="hdr1 mt-5 mb-4" style="text-align: center;">
                 <p>Contact Us
                 </p>
             </div>
@@ -407,8 +407,7 @@ require_once("connector.php");
                     <div class="ques d-flex justify-content-center">
                         <button type="submit" class="btn btn-outline-secondary" style="width: 20vw;">
                             <div class="atass d-flex justify-content-center">
-                                <a href="esubmit.php" style="text-decoration:none">
-
+                                <a href="esubmit.php" style="text-decoration:none; display:flex;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-envelope text-warning mt-2" viewBox="0 0 16 16">
                                         <path

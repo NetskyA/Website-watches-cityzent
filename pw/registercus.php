@@ -97,7 +97,7 @@ if (isset($_POST["regist"])) {
     }
 
     .bg {
-        background-image: url("asset/banner/logincus.jpg");
+        background-image: url("asset/banner/banner.jpg");
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -126,9 +126,9 @@ if (isset($_POST["regist"])) {
     <div class="bg">
         <div class="kotak d-flex justify-content-center">
             <form action="" method="POST">
-                <h2 style="text-align: center;" onmousedown="return false" onselectstart="return false">
+                <h1 style="text-align: center;" onmousedown="return false" onselectstart="return false">
                     REGISTER WACTCHES SCRT
-                </h2>
+                </h1>
                 <div class="isi d-flex justify-content-center mt-5">
                     <div class="kiri">
                         <div class="coverall">

@@ -280,19 +280,21 @@ require_once("connector.php");
             <!--navbar-->
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <a class="nav-link text-white pt-2" href="loginadmin.php">
+                    <a class="nav-link text-white pt-2" href="loginadmin.php" style="display: flex;">
                         <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
+                        <h2 style="padding-top: 0.5vw; color:black;">
+                            WATCHES SCRT
+                        </h2>
+                        <div class="nth ms-3">
+                        </div>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="nsavbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse ms-3" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-4">
-                            <li class="nav-item me-4">
-                                <a class="nav-link text-dark" href="index.php">Home</a>
-                            </li>
                             <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
@@ -310,7 +312,7 @@ require_once("connector.php");
                             <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    Contact
+                                    Support
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
@@ -358,11 +360,15 @@ require_once("connector.php");
                                 aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                                 aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                                aria-label="Slide 5"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="5000">
                                 <a href="#news">
-                                    <img src="asset/banner/banner2.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
+                                    <img src="asset/banner/banner4.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
                                 </a>
                             </div>
                             <div class="carousel-item" data-bs-interval="5000">
@@ -373,6 +379,16 @@ require_once("connector.php");
                             <div class="carousel-item">
                                 <a href="#news">
                                     <img src="asset/banner/banner3.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#news">
+                                    <img src="asset/banner/banner1.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#news">
+                                    <img src="asset/banner/banner5.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
                                 </a>
                             </div>
                         </div>
