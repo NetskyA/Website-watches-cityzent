@@ -348,8 +348,13 @@ require_once("connector.php");
                                 </a>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="logincus.php">Login</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <?php
+                                    if(!isset($_SESSION["logged"])){
+                                        echo '<li><a class="dropdown-item" href="logincus.php">Login</a></li>';
+                                    }else{
+                                        echo '<li><a class="dropdown-item" href="logout.php">Logout</a></li>';
+                                    }
+                                ?>
                             </ul>
                         </div>
 
