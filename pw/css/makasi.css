@@ -10,9 +10,11 @@
 }
 
 .logo{
-    margin-left: 14.6vw;
+    margin-left: 18vw;
     position: relative;
     margin-top: -2vw;
+    justify-content: center;
+    display: flex;
 }
 
 .logo2{
