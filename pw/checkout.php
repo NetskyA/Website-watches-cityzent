@@ -119,7 +119,11 @@ try {
 } catch (\Exception $e) {
     echo "<script>alert('Keranjang Kosong')</script>";
 }
-$listbarang = $_SESSION["cart"];
+if (isset($_SESSION["cart"])) {
+    $listbarang = $_SESSION["cart"];
+} else {
+    $listbarang = [];
+}
 $total = 0;
 $qtyall = 0;
 foreach ($listbarang as $key => $value) {

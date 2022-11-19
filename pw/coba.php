@@ -7,10 +7,13 @@ if (isset($_REQUEST["berhasil"])) {
     $waktu = date("Y-m-d");
     $listbarang = $_SESSION["cart"];
     $subtotalall = 0;
+    $listbarang2=[];
+    $subtotalall = 0;
     foreach ($listbarang as $key => $value) {
         $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
         $stmt->execute();
         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        array_push($listbarang2,$data[0]["Nama_Barang"]);
         $subtotal = $value["jml"] * $data[0]["Harga"];
         $subtotalall += $subtotal;
     }
@@ -26,7 +29,7 @@ if (isset($_REQUEST["berhasil"])) {
         $jml = $value["jml"];
         $idbar = $value['ID'];
         $hasilstok = $data[0]["Harga"] - $value["jml"];
-        $stmt = $conn->prepare("UPDATE barang SET stok=? WHERE ID = ?");
+        $stmt = $conn->prepare("UPDATE barang SET stok = ? WHERE ID = ?");
         $stmt->bind_param("ii", $hasilstok, $idbar);
         $result = $stmt->execute();
         $stmt = $conn->prepare("INSERT INTO d_trans(ID, ID_Barang, Jumlah) VALUES(?,?,?)");
@@ -37,7 +40,7 @@ if (isset($_REQUEST["berhasil"])) {
     $stmt = $conn->prepare("SELECT * FROM customer where customer.ID = '" . $idcus . "'");
     $stmt->execute();
     $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-    $test = $data[0]["Nama_Lengkap"];
+    $nama = $data[0]["Nama_Lengkap"];
 }
 ?>
 <!doctype html>
@@ -99,12 +102,17 @@ if (isset($_REQUEST["berhasil"])) {
 
             <div class="isi justify-content-center mt-2">
                 <div class="kusus" style="display: flex; font-size:0.8vw;">
-                    <p>Invoice number : </p>
+                    <p>Invoice number : <?=$id?></p>
                     <p style="padding-left:28vw;">Status : Gold</p>
                 </div>
-                <p style="font-size:0.8vw;">Name customer : </p>
+                <p style="font-size:0.8vw;">Name customer : <?=$nama?></p>
                 <p style="font-size:0.8vw;">Product name : </p>
-                <p style="font-size:0.8vw;">Total price : </p>
+                <?php
+                    foreach ($listbarang2 as $key => $value) {
+                        echo '<p style="font-size:0.8vw;">'.$value.'</p>';
+                    }
+                ?>
+                <p style="font-size:0.8vw;">Total price : Rp. <?=$subtotalall?></p>
             </div>
             <hr class="my-4 mt-2">
             <div class="bawah d-flex justify-content-center">
