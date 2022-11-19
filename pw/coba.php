@@ -28,7 +28,7 @@ if (isset($_REQUEST["berhasil"])) {
         $subtotalall += $subtotal;
         $jml = $value["jml"];
         $idbar = $value['ID'];
-        $hasilstok = $data[0]["Harga"] - $value["jml"];
+        $hasilstok = $data[0]["Stok"] - $value["jml"];
         $stmt = $conn->prepare("UPDATE barang SET stok = ? WHERE ID = ?");
         $stmt->bind_param("ii", $hasilstok, $idbar);
         $result = $stmt->execute();
