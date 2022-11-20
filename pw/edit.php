@@ -149,7 +149,7 @@ require_once("connector.php");
                                         aria-describedby="passwordHelpBlock">
                                 </div>
                             </div>
-                            <div class="des ms-3">
+                            <div class="des ms-3 mt-3">
                                 <label for="Nm" class="form-label">Description</label>
                                 <textarea name="note" class="note" style="border-radius: 0.5vw; width:100%; height:8vw;"
                                     id="note"></textarea>
@@ -171,8 +171,8 @@ require_once("connector.php");
                     </div>
                     <div class="detail">
                         <hr class="my-4">
-                        <button class="btn btn-secondary ms-3 mb-3" style="width: 10vw; height:2vw"
-                            type="button">Save</button>
+                        <button class="btn btn-secondary ms-3 mb-3" style="width: 10vw; height:2vw" type="button">Save
+                            Edit</button>
                     </div>
                 </div>
                 <div class="bawah mt-1" style="width: 86vw;">

@@ -168,7 +168,7 @@ require_once("connector.php");
                         </div>
                     </div>
                     <div class="kanan2 col-3 ms-3">
-                        <div class="des">
+                        <div class="des mt-3">
                             <label for="Nm" class="form-label">Description</label>
                             <textarea name="note" class="note" style="border-radius: 0.5vw; width:200%; height:8vw;"
                                 id="note"></textarea>
