@@ -4,7 +4,6 @@ if (isset($_REQUEST["barang"])) {
     $data = $_REQUEST["barang"];
     $data = json_decode($data, true);
     $_SESSION["temp"] = $data;
-    $_SESSION["gbr"] =  $_REQUEST["gbr"];
     if ($_SESSION["temp"]["Stok"] == 0) {
         $_SESSION["total"] = "Barang Habis";
     } else {
@@ -143,7 +142,7 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                     <div class="view d-flex mt-5">
                         <div class="kanan2">
                             <?php
-                            echo '<img src = "data:image/png;base64,' . $_SESSION['gbr'] . '"/>';
+                            echo '<img src = "'.$_SESSION['temp']["Gambar"].'">';
                             ?>
                         </div>
                         <div class="kiri2 mt-4 ms-5" style="padding-left: 3vw; padding-top:2vw">

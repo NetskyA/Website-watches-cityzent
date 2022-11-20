@@ -10,7 +10,7 @@ foreach ($listbarang as $key => $value) {
 
     echo "<div class='d-flex' style='flex-direction:row;width:100%'>";
     echo "<div class='kc'>";
-    echo '<img style="width: 15vw; height:15vw;" src = "data:image/png;base64,' . base64_encode($data[0]['Gambar']) . '"/>';
+    echo '<img style="width: 15vw; height:15vw;" src = "'.$data[0]['Gambar']. '"/>';
     echo "</div>";
     echo "<div class='kt mt-3' style='width: 30wv;'>";
     echo "<h4>";

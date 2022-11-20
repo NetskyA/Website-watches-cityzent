@@ -82,7 +82,8 @@ foreach ($data2 as $d) {
         "Nama_Barang" => $d["Nama_Barang"],
         "Stok" => $d["Stok"],
         "Harga" => $d["Harga"],
-        "Deskripsi" => $d["Deskripsi"]
+        "Deskripsi" => $d["Deskripsi"],
+        "Gambar" => $d["Gambar"]
     );
     echo "<td style='width:25% margin: 0vw;padding:0vw;'>";
     echo "<div class='card' style='min-height: 20vw;height: 20vw;font-size: 1.2vw; padding-top:z1vw; font-weight: bold; text-align: center; margin:0.3vw;
@@ -90,13 +91,12 @@ foreach ($data2 as $d) {
     width:14vw;margin:0.5vw;'>";
 
     echo $d["Nama_Barang"];
-    echo "<img class='card-img-top' style='margin-top:1vw' src = 'data:image/png;base64," . base64_encode($d['Gambar']) . "'/>";
+    echo "<img class='card-img-top' style='margin-top:1vw' src = '".$d["Gambar"]."'/>";
     echo "<div class='card-body' style='display: none; padding-top:4vw;>";
     echo "<h5 class='card-title fs-5' style=''>";
     echo "</h5>";
     echo "</div>";
     echo "<form action='card.php' method='post'>";
-    echo "<input type='hidden' name='gbr' value='" . base64_encode($d["Gambar"]) . "'>";
     echo "<button type='submit' name='barang' value='" . json_encode($data) . "' class='dtl btn-outline-secondary btn-sm' style='width: 6vw; margin-top:0.9vw; border-radius: 6px; height:2vw;font-size:1.2vw'>Details</button>";
     echo "</form>";
     // echo "<a href='card.php?barang=" . json_encode($data) ."&gbr=".$gbr."' class='opo d-flex justify-content-center' style='text-decoration: none;'>";
