@@ -307,7 +307,7 @@ require_once("connector.php");
                                 </ul>
                             </li>
                             <li class="nav-item me-4">
-                                <a class="nav-link text-dark" href="contactus.php">Specials</a>
+                                <a class="nav-link text-dark" href="#footer">Specials</a>
                             </li>
                             <li class="nav-item dropdown me-4">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
@@ -323,6 +323,12 @@ require_once("connector.php");
                                     </li>
                                     <li>
                                         <a class="dropdown-item text-dark" href="contactus.php">Location</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="contactus.php">Help</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-dark" href="contactus.php">Questions</a>
                                     </li>
                                 </ul>
                             </li>
@@ -349,11 +355,11 @@ require_once("connector.php");
                             </button>
                             <ul class="dropdown-menu">
                                 <?php
-                                    if(!isset($_SESSION["logged"])){
-                                        echo '<li><a class="dropdown-item" href="logincus.php">Login</a></li>';
-                                    }else{
-                                        echo '<li><a class="dropdown-item" href="logout.php">Logout</a></li>';
-                                    }
+                                if (!isset($_SESSION["logged"])) {
+                                    echo '<li><a class="dropdown-item" href="logincus.php">Login</a></li>';
+                                } else {
+                                    echo '<li><a class="dropdown-item" href="logout.php">Logout</a></li>';
+                                }
                                 ?>
                             </ul>
                         </div>
@@ -655,42 +661,55 @@ require_once("connector.php");
                                 </div>
 
                 </section>
-                <!-- <section class="container-fluid d-flex justify-content-center isifot"
-                    style="margin-top:3vw; width:100%;height:100%;" id="footer">
-                    <div class="row ftr p-3" style="width: 80%; margin-bottom:3vw; height:20vw;">
-                        <div class="col-12">
-                            <p class="display-4 fs-2 pb-2" style="text-align: center;">Contact</p>
+                <hr class="my-4 mt-5">
+                <section class="container-fluid d-flex justify-content-center isifot"
+                    style="margin-top:2vw; width:100%;height:100%;" id="footer">
+                    <div class="row ftr p-3" style="width: 100%; margin-bottom:3vw; height:17vw;">
+                        <div class="over d-flex justify-content-center" style="margin-left: 5vw; margin-right:5vw">
+                            <div class="col-3" style="margin: 0.3vw;">
+                                <a class="nav-link text-white" href="loginadmin.php" style="display: flex;">
+                                    <img src="asset/logo/logo.png" class="gambar" style="width: 3vw; height:3vw" alt=""
+                                        srcset="">
+                                    <h2 style="padding-top: 0.5vw; color:black;">
+                                        WATCHES SCRT
+                                    </h2>
+                                </a>
+                                <div class="des ms-5">
+                                    <p style="font-size: 1vw; color:gray">Ngagel Jaya Tengah 73-77 <br>
+                                        Surabaya, Indonesia</p>
+                                </div>
+                            </div>
+                            <div class="col-2 pt-2 ms-4" style="margin: 0.3vw; font-size: 1.3vw; color:dark;">
+                                <p>Useful Link</p>
+                                <div class="des">
+                                    <p style="font-size: 1vw; color:gray">New Series</p>
+                                    <p style="font-size: 1vw; color:gray">Specials</p>
+                                    <p style="font-size: 1vw; color:gray">Support</p>
+                                </div>
+                            </div>
+                            <div class="col-2 ms-5" style="margin: 0.3vw;font-size: 1.3vw; color:dark;">
+                                <p>Our Services</p>
+                                <div class="des">
+                                    <p style="font-size: 1vw; color:gray">Sell Watches</p>
+                                    <p style="font-size: 1vw; color:gray">Save Transactions</p>
+                                    <p style="font-size: 1vw; color:gray">New style</p>
+                                </div>
+                            </div>
+                            <div class="col-4" style="margin: 0.3vw;font-size: 1.3vw; color:dark;">
+                                <p>Subscribe our WATCHES SCRT</p>
+                                <div class="des">
+                                    <p style="font-size: 1vw; color:gray">Find your style and explore it all over</p>
+                                    <form class="d-flex" role="search">
+                                        <button class="btn btn-outline-secondary" type="submit">Subscribe</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <hr class="my-4">
-                        <div class="col-6 row mb-3">
-                            <div class="col-12 d-flex justify-content-start">
-                                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
-                            </div>
-                            <div class="col-12 d-flex justify-content-start">
-                                <h5>031-1111-88</h5>
-                            </div>
-
-
-                            <div class="col-12 d-flex justify-content-start">
-                                <label for="exampleFormControlInput1" class="form-label">Email address
-                                </label>
-                            </div>
-                            <div class="col-12 d-flex justify-content-start">
-                                <h5>scrt@yahoo.co.id</h5>
-                            </div>
-
-                            <div class="col-12 d-flex justify-content-start">
-                                <label for="exampleFormControlTextarea1" class="form-label">Feedback</label>
-                            </div>
-                        </div>
-                        <div class="col-6 ">
-                            <iframe width="100%" height="100%" id="gmap_canvas"
-                                src="https://maps.google.com/maps?q=istts&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><br>
-                                <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
-                        </div>
+                        <a href="contactus.php" style="text-decoration: none; text-align:center;">
+                            <p style="padding-top: 1vw; color:black;">Support and Help</p>
+                        </a>
                     </div>
-                </section> -->
+                </section>
             </div>
         </div>
     </div>
