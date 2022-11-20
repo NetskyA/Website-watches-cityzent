@@ -394,17 +394,17 @@ require_once("connector.php");
                             </div>
                             <div class="carousel-item" data-bs-interval="5000">
                                 <a href="#news">
-                                    <img src="asset/banner/banner1.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
-                                </a>
-                            </div>
-                            <div class="carousel-item">
-                                <a href="#news">
                                     <img src="asset/banner/banner3.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a href="#news">
                                     <img src="asset/banner/banner1.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#news">
+                                    <img src="asset/banner/banner2.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
                                 </a>
                             </div>
                             <div class="carousel-item">

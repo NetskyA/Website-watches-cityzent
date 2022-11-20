@@ -56,7 +56,7 @@ require_once("connector.php");
                     <img class="gmbr" src="asset/logo/profile.png" alt="" srcset="">
                     <p class="sts fs-3 pt-3 text-dark">Admin</p>
                     <p class="sts fs-5 pt-4 ms-3 text-success">Active</p>
-                </div>
+                    <!-- </div>
                 <div class="list">
                     <ul class="nav">
                         <li class="nav-item fs-3 pt-2" style="display: flex;">
@@ -66,9 +66,9 @@ require_once("connector.php");
                             </a>
                         </li>
                     </ul>
+                </div> -->
                 </div>
             </div>
-        </div>
     </nav>
 
     <form action="post">
@@ -76,8 +76,8 @@ require_once("connector.php");
             <div class="con" onmousedown="return false" onselectstart="return false">
                 <div class="d-flex flex-column mb-3 fs-5" style="width: 9vw;">
                     <div class="add pt-4 ps-4">
-                        <a href="#" style="text-decoration: none; color:black;">
-                            List Product
+                        <a href="admin.php" style="text-decoration: none; color:black;">
+                            Home
                         </a>
                     </div>
                     <div class="add pt-4 ps-4">
@@ -93,33 +93,105 @@ require_once("connector.php");
                 </div>
             </div>
             <div class="cover2 mt-1">
-                <div class="ntt">
-                    <div class="jdl pb-2" style="text-align: center; padding-top:0.5vw;" onmousedown="return false"
+                <div class="ntte">
+                    <div class="jdl pt-2" style="text-align: center;" onmousedown="return false"
                         onselectstart="return false">
-                        <h2>List Product</h2>
+                        <h2>New Product</h2>
                     </div>
-                    <!-- <div class="atas mt-4 pt-3" style="display: flex;">
-                        <p class="txt">Name Product</p>
-                        <input type="text" class="inp" name="" id="">
-                        <p class="txt">Entity</p>
-                        <input type="text" class="inp" name="" id="">
-                        <p class="txt">Type Product</p>
-                        <input type="text" class="inp" name="" id="">
-                        <p class="txt">Price</p>
-                        <input type="text" class="inp" name="" id="">
+                    <div class="atas mt-4 pt-1 col-8" style="display: flex;">
+                        <div class="kiri">
+                            <div class="bawah mt-3" style="display: flex; margin-left: 1vw;">
+                                <div class="namep">
+                                    <label for="Nm" class="form-label">Name Product</label>
+                                    <input type="name" id="name" class="form-control"
+                                        aria-describedby="passwordHelpBlock">
+                                </div>
+                                <div class="brand2 ms-3">
+                                    <label for="Nm" class="form-label">New Brand</label>
+                                    <div class="ini" style="display: flex;">
+                                        <input type="name" id="name" style="width: 10vw;" class="form-control"
+                                            aria-describedby="passwordHelpBlock">
+                                    </div>
+                                </div>
+                                <div class="entity ms-3">
+                                    <label for="Nm" class="form-label">Entity</label>
+                                    <input type="name" id="name" class="form-control"
+                                        aria-describedby="passwordHelpBlock">
+                                </div>
+                            </div>
+                            <div class="bawah2 mt-3 ms-1" style="display: flex;">
+                                <div class="wat ms-3">
+                                    <label for="Nm" class="form-label">Water Resistant</label>
+                                    <input type="name" id="name" class="form-control"
+                                        aria-describedby="passwordHelpBlock">
+                                </div>
+                                <div class="color ms-3">
+                                    <label for="Nm" class="form-label">Color</label>
+                                    <input type="name" id="name" class="form-control"
+                                        aria-describedby="passwordHelpBlock">
+
+                                    <!-- <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select</option>
+                                        <option value="1">BLACK</option>
+                                        <option value="2">BLUE</option>
+                                        <option value="3">GREEN</option>
+                                        <option value="4">RED</option>
+                                        <option value="5">BROWN</option>
+                                        <option value="6">BEIGE</option>
+                                        <option value="7">PURPLE</option>
+                                        <option value="8">WHITE</option>
+                                        <option value="9">GRAY</option>
+                                        <option value="10">YELLOW</option>
+                                        <option value="11">ORANGE</option>
+                                        <option value="12">PINK</option>
+                                        <option value="13">SKELETON</option>
+                                        <option value="14">SILVER</option>
+                                        <option value="15">GOLD</option>
+                                    </select> -->
+                                </div>
+                                <div class="dis ms-3">
+                                    <label for="Nm" class="form-label">Display</label>
+                                    <input type="name" id="name" class="form-control"
+                                        aria-describedby="passwordHelpBlock">
+                                </div>
+                                <div class="gen ms-3">
+                                    <label for="Nm" class="form-label">Gender</label>
+                                    <input type="name" id="name" class="form-control"
+                                        aria-describedby="passwordHelpBlock">
+                                </div>
+                                <!-- <div class="price ms-3">
+                                    <label for="Nm" class="form-label">Price</label>
+                                    <input type="name" id="name" class="form-control"
+                                        aria-describedby="passwordHelpBlock">
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kanan2 col-3 ms-3">
+                        <div class="des">
+                            <label for="Nm" class="form-label">Description</label>
+                            <textarea name="note" class="note" style="border-radius: 0.5vw; width:200%; height:8vw;"
+                                id="note"></textarea>
+                        </div>
+                        <div class="input-group mt-3">
+                            <input type="file" class="form-control" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                            <button class="btn btn-outline-secondary" type="button"
+                                id="inputGroupFileAddon04">Upload</button>
+                        </div>
+
                     </div>
                     <div class="detail">
-                        <p class="txt">Result</p>
-                        <div class="result d-flex justify-content-center">
-                            <div class="isiresult"></div>
-                        </div>
                         <hr class="my-4">
-                        <button class="btn btn-secondary ms-3" style="width: 10vw; height:2vw"
-                            type="button">Add</button>
-                    </div> -->
+                        <button class="btn btn-secondary ms-3 mb-3" style="width: 10vw; height:2vw" type="button">Add
+                            Product</button>
+                    </div>
                 </div>
                 <div class="bawah mt-1" style="width: 86vw;">
-                    <table class="table table-striped table-bordered table-paginate" cellspacing="0" width="100%"
+                    <h4 style="text-align: center; padding-top:1vw;">Result</h4>
+                    <hr class="my-4">
+
+                    <table class=" table table-striped table-bordered table-paginate" cellspacing="0" width="100%"
                         onmousedown="return false" onselectstart="return false">
                         <thead>
                             <tr>

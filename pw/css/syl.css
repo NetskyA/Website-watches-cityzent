@@ -41,10 +41,11 @@
 
 .add {
     text-decoration: none;
+    margin-left: 0.6vw;
 }
 
 .add:hover {
-    transform: scale(120%);
+    transform: scale(110%);
     transition: 0.8s;
 }
 
@@ -54,25 +55,38 @@
 }
 
 .inp {
-    height: 2vw;
     border-radius: 10px;
     border: 1px rgb(146, 146, 146) solid;
-    width: 15vw;
+    width: 10vw;
+}
+
+.note {
+    resize: none;
+    display: block;
 }
 
 .txt {
-    font-size: 20px;
+    font-size: 15px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-right: 10px;
-    margin-left: 10px;
-
+    margin-right: 1vw;
+    margin-left: 0.4vw;
+    
 }
 
 .ntt {
     background-color: rgba(184, 184, 184, 0.582);
-    width: 100%;
-    height: 14vw;
+    width: auto;
+    height: auto;
     border-radius: 10px;
+    margin-top: 1.3vw;
+}
+
+.ntte {
+    background-color: rgba(184, 184, 184, 0.582);
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 1.3vw;
 }
 
 .isiresult {

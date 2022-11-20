@@ -39,11 +39,6 @@
 }
 
 
-.coverall {
-    background: rgb(64,110,255);
-    background: linear-gradient(38deg, rgba(64,110,255,1) 0%, rgba(255,0,241,0.8438725832129726) 39%, rgba(255,255,255,1) 98%);
-}
-
 .jdl {
     font-family: 'Dongle', sans-serif;
     font-size: 80px;
