@@ -107,7 +107,7 @@ require_once("connector.php");
                                         aria-describedby="passwordHelpBlock">
                                 </div>
                                 <div class="brand2 ms-3">
-                                    <label for="Nm" class="form-label">New Brand</label>
+                                    <label for="Nm" class="form-label">Brand</label>
                                     <div class="ini" style="display: flex;">
                                         <input type="name" id="name" style="width: 10vw;" class="form-control"
                                             aria-describedby="passwordHelpBlock">
