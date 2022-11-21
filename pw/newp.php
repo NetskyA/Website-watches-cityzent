@@ -45,7 +45,7 @@ if (isset($_POST["add"])) {
                 if (move_uploaded_file($_FILES["fileupload"]["tmp_name"], $target_file)) {
                     $safe = true;
                     $stmt = $conn->prepare("INSERT INTO barang(ID_Brand,ID_Display,ID_Warna,ID_Gender,ID_Resistant,Nama_Barang,Gambar,Stok,Harga,Deskripsi) VALUES(?,?,?,?,?,?,?,?,?,?)");
-                    $stmt->bind_param("iiiiissiis", $brand, $display,$color,$gender,$resistant,$nama,$target_file,$stok,$harga,$desc);
+                    $stmt->bind_param("iiiiissiis", $brand, $display, $color, $gender, $resistant, $nama, $target_file, $stok, $harga, $desc);
                     $result = $stmt->execute();
                 } else {
                     echo '<script>alert("Error")</script>';
@@ -79,22 +79,42 @@ if (isset($_POST["add"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
 
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- Jquery DataTables -->
-    <script type="text/javascript" language="javascript" src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <!-- Bootstrap dataTables Javascript -->
-    <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <!-- 
+    <script>
+    $(document).ready(function() {
+        // panel hide
+        $(".pbawah2").hide();
 
+        // and panel hide
+
+        // action
+        $(".pbawah").click(function() {
+            $(".pbawah2").toggle(1000);
+            $(".pbawah2").show();
+        });
+
+
+    });
+    </script> -->
 
     <script type="text/javascript" charset="utf-8">
-        $(document).ready(function() {
-            $('.table-paginate').dataTable();
-        });
+    $(document).ready(function() {
+        $('.table-paginate').dataTable();
+    });
     </script>
 </head>
 
@@ -106,10 +126,12 @@ if (isset($_POST["add"])) {
     <nav class="navbarr">
         <div class="container-fluid">
             <div class="cover" onmousedown="return false" onselectstart="return false">
-                <div class="gambar mt-3" style="display: flex;">
+                <div class="gambar mt-3 mb-3" style="display: flex;">
                     <img class="gmbr" src="asset/logo/profile.png" alt="" srcset="">
                     <p class="sts fs-3 pt-3 text-dark">Admin</p>
-                    <p class="sts fs-5 pt-4 ms-3 text-success">Active</p>
+                    <div class="nth ms-3">
+                    </div>
+                    <p class="sts fs-5 pt-4 ms-3 me-4 text-success">Active</p>
                     <!-- </div>
                 <div class="list">
                     <ul class="nav">
@@ -135,20 +157,21 @@ if (isset($_POST["add"])) {
                         </a>
                     </div>
                     <div class="add pt-4 ps-4">
-                        <a href="edit.php" style="text-decoration: none; color:black;">
+                        <a href="editbarang.php" style="text-decoration: none; color:black;">
                             Edit Product
                         </a>
                     </div>
-                    <div class="add pt-4 ps-4">
+                    <!-- <div class="add pt-4 ps-4">
                         <a href="newp.php" style="text-decoration: none; color:black;">
                             New Product
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="cover2 mt-1">
                 <div class="ntte">
-                    <div class="jdl pt-2" style="text-align: center;" onmousedown="return false" onselectstart="return false">
+                    <div class="jdl pt-2" style="text-align: center;" onmousedown="return false"
+                        onselectstart="return false">
                         <h2>New Product</h2>
                     </div>
                     <div class="atas mt-4 pt-1 col-8" style="display: flex;">
@@ -156,12 +179,15 @@ if (isset($_POST["add"])) {
                             <div class="bawah mt-3" style="display: flex; margin-left: 1vw;">
                                 <div class="namep">
                                     <label for="Nm" class="form-label">Name Product</label>
-                                    <input type="name" name="name" class="form-control" aria-describedby="passwordHelpBlock" style="width: 10vw;border:0px;border-radius: 0.5vw;height:1.5vw">
+                                    <input type="name" name="name" class="form-control"
+                                        aria-describedby="passwordHelpBlock"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                 </div>
                                 <div class="brand2 ms-3">
                                     <label for="Nm" class="form-label">Brand</label>
                                     <div class="ini" style="display: flex;">
-                                        <select name="brand" style="width: 10vw;border:0px;border-radius: 0.5vw;height:1.5vw">
+                                        <select name="brand"
+                                            style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                             <?php
                                             $stmt = $conn->prepare("SELECT * FROM brand");
                                             $stmt->execute();
@@ -169,7 +195,7 @@ if (isset($_POST["add"])) {
                                             echo '<option value="0"></option>';
                                             foreach ($data as $value) {
                                             ?>
-                                                <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?> Series</option>
+                                            <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?> Series</option>
                                             <?php
                                             }
                                             ?>
@@ -178,17 +204,22 @@ if (isset($_POST["add"])) {
                                 </div>
                                 <div class="entity ms-3">
                                     <label for="Nm" class="form-label">Entity</label>
-                                    <input type="name" name="jumlah" class="form-control" aria-describedby="passwordHelpBlock" style="width: 10vw;border:0px;border-radius: 0.5vw;height:1.5vw">
+                                    <input type="name" name="jumlah" class="form-control"
+                                        aria-describedby="passwordHelpBlock"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                 </div>
                                 <div class="price ms-3">
                                     <label for="Nm" class="form-label">Price</label>
-                                    <input type="name" name="price" class="form-control" aria-describedby="passwordHelpBlock" style="width: 10vw;border:0px;border-radius: 0.5vw;height:1.5vw">
+                                    <input type="name" name="price" class="form-control"
+                                        aria-describedby="passwordHelpBlock"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                 </div>
                             </div>
                             <div class="bawah2 mt-3" style="display: flex;">
                                 <div class="wat ms-3">
                                     <label for="Nm" class="form-label">Water Resistant</label>
-                                    <select name="resistant" style="width: 10vw;border:0px;border-radius: 0.5vw;height:1.5vw">
+                                    <select name="resistant"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                         <?php
                                         $stmt = $conn->prepare("SELECT * FROM resistant");
                                         $stmt->execute();
@@ -196,7 +227,7 @@ if (isset($_POST["add"])) {
                                         echo '<option value="0"></option>';
                                         foreach ($data as $value) {
                                         ?>
-                                            <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
+                                        <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
                                         <?php
                                         }
                                         ?>
@@ -204,7 +235,8 @@ if (isset($_POST["add"])) {
                                 </div>
                                 <div class="color ms-3">
                                     <label for="Nm" class="form-label">Color</label>
-                                    <select name="color" style="width: 10vw;border:0px;border-radius: 0.5vw;height:1.5vw">
+                                    <select name="color"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                         <?php
                                         $stmt = $conn->prepare("SELECT * FROM color");
                                         $stmt->execute();
@@ -212,7 +244,7 @@ if (isset($_POST["add"])) {
                                         echo '<option value="0"></option>';
                                         foreach ($data as $value) {
                                         ?>
-                                            <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
+                                        <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
                                         <?php
                                         }
                                         ?>
@@ -220,7 +252,8 @@ if (isset($_POST["add"])) {
                                 </div>
                                 <div class="dis ms-3">
                                     <label for="Nm" class="form-label">Display</label>
-                                    <select name="display" style="width: 10vw;border:0px;border-radius: 0.5vw;height:1.5vw">
+                                    <select name="display"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                         <?php
                                         $stmt = $conn->prepare("SELECT * FROM display");
                                         $stmt->execute();
@@ -228,7 +261,7 @@ if (isset($_POST["add"])) {
                                         echo '<option value="0"></option>';
                                         foreach ($data as $value) {
                                         ?>
-                                            <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
+                                        <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
                                         <?php
                                         }
                                         ?>
@@ -236,7 +269,8 @@ if (isset($_POST["add"])) {
                                 </div>
                                 <div class="gen ms-3">
                                     <label for="Nm" class="form-label">Gender</label>
-                                    <select name="gender" style="width: 10vw;border:0px;border-radius: 0.5vw;height:1.5vw">
+                                    <select name="gender"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                         <?php
                                         $stmt = $conn->prepare("SELECT * FROM gender");
                                         $stmt->execute();
@@ -244,7 +278,7 @@ if (isset($_POST["add"])) {
                                         echo '<option value="0"></option>';
                                         foreach ($data as $value) {
                                         ?>
-                                            <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
+                                        <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
                                         <?php
                                         }
                                         ?>
@@ -256,17 +290,74 @@ if (isset($_POST["add"])) {
                     <div class="kanan2 col-3 ms-3">
                         <div class="des mt-3">
                             <label for="Nm" class="form-label">Description</label>
-                            <textarea name="note" class="note" style="border-radius: 0.5vw; width:200%; height:8vw;" id="note"></textarea>
+                            <textarea name="note" class="note" style="border-radius: 0.2vw; width:200%; height:8vw;"
+                                id="note"></textarea>
                         </div>
                         <div class="input-group mt-3">
-                            <input type="file" class="form-control" name="fileupload" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>
+                            <input type="file" class="form-control" name="fileupload" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                            <button class="btn btn-outline-secondary" type="button"
+                                id="inputGroupFileAddon04">Upload</button>
                         </div>
 
                     </div>
-                    <div class="detail">
-                        <hr class="my-4">
-                        <input type="submit" value="Add Product" class="btn btn-secondary ms-3 mb-3" style="width: 10vw; height:2vw" name="add">
+                    <div class="detail mt-3">
+                        <input type="submit" value="Add Product" class="btn btn-secondary ms-3 mb-3"
+                            style="width: 10vw; height:2vw" name="add">
+                    </div>
+                    <hr class="my-4">
+                    <div class="pbawah" style="margin-bottom: 3vw;">
+                        <div class="jdl" style="text-align: center;" onmousedown="return false"
+                            onselectstart="return false">
+                            <h2>Add Category</h2>
+                        </div>
+                        <div class="pbawah2 mt-3" style="display: flex; margin-left: 1vw;">
+                            <div class="abrand">
+                                <label for="Nm" class="form-label">Brand</label>
+                                <div class="isi" style="display: flex;">
+                                    <input type="name" name="name" class="form-control"
+                                        aria-describedby="passwordHelpBlock"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <input type="submit" class="btna" value="Add">
+                                </div>
+                            </div>
+                            <div class="adisplay ms-3">
+                                <label for="Nm" class="form-label">Display</label>
+                                <div class="isi" style="display: flex;">
+                                    <input type="name" name="dis" class="form-control"
+                                        aria-describedby="passwordHelpBlock"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <input type="submit" class="btna" value="Add">
+                                </div>
+                            </div>
+                            <div class="awarna ms-3">
+                                <label for="Nm" class="form-label">Warna</label>
+                                <div class="isi" style="display: flex;">
+                                    <input type="name" name="warna" class="form-control"
+                                        aria-describedby="passwordHelpBlock"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <input type="submit" class="btna" value="Add">
+                                </div>
+                            </div>
+                            <div class="agender ms-3">
+                                <label for="Nm" class="form-label">Gender</label>
+                                <div class="isi" style="display: flex;">
+                                    <input type="name" name="gender" class="form-control"
+                                        aria-describedby="passwordHelpBlock"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <input type="submit" class="btna" value="Add">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="aresis ms-3 mt-3">
+                            <label for="Nm" class="form-label">Resistant</label>
+                            <div class="isi mb-4" style="display: flex;">
+                                <input type="name" name="resis" class="form-control mb-5"
+                                    aria-describedby="passwordHelpBlock"
+                                    style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                <input type="submit" class="btna mb-5" value="Add">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -275,7 +366,8 @@ if (isset($_POST["add"])) {
 
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
 </script>
 
 

@@ -2,7 +2,7 @@
 require_once("connector.php");
 if (isset($_POST["edit"])) {
     $data2 = $_POST["data"];
-    header("Location: editbarang.php?id=".$data2);
+    header("Location: editbarang.php?id=" . $data2);
 }
 
 if (isset($_POST["del"])) {
@@ -29,20 +29,24 @@ if (isset($_POST["del"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
 
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- Jquery DataTables -->
-    <script type="text/javascript" language="javascript" src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <!-- Bootstrap dataTables Javascript -->
-    <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
     <script type="text/javascript" charset="utf-8">
-        $(document).ready(function() {
-            $('.table-paginate').dataTable();
-        });
+    $(document).ready(function() {
+        $('.table-paginate').dataTable();
+    });
     </script>
 </head>
 
@@ -57,13 +61,16 @@ if (isset($_POST["del"])) {
                 <div class="gambar mt-3" style="display: flex;">
                     <img class="gmbr" src="asset/logo/profile.png" alt="" srcset="">
                     <p class="sts fs-3 pt-3 text-dark">Admin</p>
-                    <p class="sts fs-5 pt-4 ms-3 text-success">Active</p>
+                    <div class="nth ms-3">
+                    </div>
+                    <p class="sts fs-5 pt-4 ms-3 me-4 text-success">Active</p>
                 </div>
                 <div class="list">
                     <ul class="nav">
                         <li class="nav-item fs-3 pt-2" style="display: flex;">
                             <a href="loginadmin.php">
-                                <button class="btn btn-secondary mt-4 ms-4" style="width: 10vw; height:2vw" type="button">Logout</button>
+                                <button class="btn btn-secondary mt-4 ms-4" style="width: 10vw; height:2vw"
+                                    type="button">Logout</button>
                             </a>
                         </li>
                     </ul>
@@ -81,11 +88,11 @@ if (isset($_POST["del"])) {
                         List Product
                     </a>
                 </div>
-                <div class="add pt-4 ps-4">
+                <!-- <div class="add pt-4 ps-4">
                     <a href="edit.php" style="text-decoration: none; color:black;">
                         Edit Product
                     </a>
-                </div>
+                </div> -->
                 <div class="add pt-4 ps-4">
                     <a href="newp.php" style="text-decoration: none; color:black;">
                         New Product
@@ -95,7 +102,8 @@ if (isset($_POST["del"])) {
         </div>
         <div class="cover2 mt-1">
             <div class="ntt">
-                <div class="jdl pb-2" style="text-align: center; padding-top:0.5vw;" onmousedown="return false" onselectstart="return false">
+                <div class="jdl pb-2" style="text-align: center; padding-top:0.5vw;" onmousedown="return false"
+                    onselectstart="return false">
                     <h2>List Product</h2>
                 </div>
                 <!-- <div class="atas mt-4 pt-3" style="display: flex;">
@@ -119,16 +127,17 @@ if (isset($_POST["del"])) {
                     </div> -->
             </div>
             <div class="bawah mt-1" style="width: 86vw;">
-                <table class="table table-striped table-bordered table-paginate" cellspacing="0" width="100%" onmousedown="return false" onselectstart="return false">
+                <table class="table table-striped table-bordered table-paginate" cellspacing="0" width="100%"
+                    onmousedown="return false" onselectstart="return false">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th style="width: 3vw;">ID</th>
                             <th>ID_BRAND</th>
                             <th>Display</th>
                             <th>Warna</th>
                             <th>Gender</th>
                             <th>Resistant</th>
-                            <th>Nama</th>
+                            <th style="width: 8.5vw;">Nama</th>
                             <th>Gambar</th>
                             <th>Stok</th>
                             <th>Harga</th>
@@ -143,26 +152,26 @@ if (isset($_POST["del"])) {
                         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                         foreach ($data as $key => $value) {
                         ?>
-                            <tr>
-                                <td><?= $value["ID"] ?></td>
-                                <td><?= $value["ID_Brand"] ?></td>
-                                <td><?= $value["ID_Display"] ?></td>
-                                <td><?= $value["ID_Warna"] ?></td>
-                                <td><?= $value["ID_Gender"] ?></td>
-                                <td><?= $value["ID_Resistant"] ?></td>
-                                <td><?= $value["Nama_Barang"] ?></td>
-                                <td><?= $value["Gambar"] ?></td>
-                                <td><?= $value["Stok"] ?></td>
-                                <td><?= $value["Harga"] ?></td>
-                                <td><?= $value["Deskripsi"] ?></td>
-                                <td>
-                                    <form action="" method="post">
-                                        <input type="hidden" name="data" value="<?= $value["ID"] ?>">
-                                        <input type="submit" value="Edit" name="edit">
-                                        <input type="submit" value="Delete" name="del">
-                                    </form>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><?= $value["ID"] ?></td>
+                            <td><?= $value["ID_Brand"] ?></td>
+                            <td><?= $value["ID_Display"] ?></td>
+                            <td><?= $value["ID_Warna"] ?></td>
+                            <td><?= $value["ID_Gender"] ?></td>
+                            <td><?= $value["ID_Resistant"] ?></td>
+                            <td><?= $value["Nama_Barang"] ?></td>
+                            <td><?= $value["Gambar"] ?></td>
+                            <td><?= $value["Stok"] ?></td>
+                            <td><?= $value["Harga"] ?></td>
+                            <td><?= $value["Deskripsi"] ?></td>
+                            <td>
+                                <form action="" method="post" style="display: flex;">
+                                    <input type="hidden" name="data" value="<?= $value["ID"] ?>">
+                                    <input type="submit" class="capek" value="Edit" name="edit">
+                                    <input type="submit" class="capek ms-1" value="Delete" name="del">
+                                </form>
+                            </td>
+                        </tr>
 
                         <?php
                         }
@@ -631,7 +640,8 @@ if (isset($_POST["del"])) {
 
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
 </script>
 
 

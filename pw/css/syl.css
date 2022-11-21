@@ -2,7 +2,8 @@
     background: rgb(204, 204, 204);
     background: linear-gradient(180deg, rgb(201, 200, 200) 0%, rgba(253,253,253,0.9699230033810399) 100%);
     box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-    height: 6vw;
+    height: auto;
+    width: auto;
 }
 
 .cover {
@@ -27,13 +28,23 @@
     margin: 16px;
     width: 50px;
 }
+
+.nth{
+    width: 0px;
+    height: 35px;
+    float: left;
+    justify-content: start;
+    margin-top: 1.1vw;
+    border: 1px rgb(130, 130, 130) solid;
+}
+
 .cover2 {
     display: table-row;
 }
 
 .gambar {
-    background-color: rgba(184, 184, 184, 0.582);
-    width: 20vw;
+    background-color: rgba(255, 255, 255, 0.582);
+    width: auto;
     height: 80px;
     margin: 4px;
     border-radius: 10px;
@@ -83,7 +94,7 @@
 
 .ntte {
     background-color: rgba(184, 184, 184, 0.582);
-    width: auto;
+    width: 60vw;
     height: auto;
     border-radius: 10px;
     margin-top: 1.3vw;
@@ -107,3 +118,25 @@
     text-decoration: none;
     color: black;
 } */
+
+.capek{
+    background-color: gray;
+    border: none;
+    border-radius: 0.2vw;
+    color: white;
+    font-size: 0.9vw;
+}
+
+.btna{
+    background-color: gray;
+    border: none;
+    border-radius: 0.2vw;
+    color: white;
+    font-size: 0.7vw;
+    margin-left: 0.6vw;
+    width: 3vw;
+}
+
+.table-paginate{
+    color: black;
+}
