@@ -51,14 +51,15 @@ if (isset($_POST["del"])) {
 </head>
 
 <body>
-    <div class="judul d-flex justify-content-center" style="text-align: center;">
+    <div class="judul d-flex justify-content-center" style="text-align: center;" onmousedown="return false"
+        onselectstart="return false">
         <img src="asset/logo/logo.png" class="logo" style="height: 3vw; height:3vw;" alt="" srcset="">
         <h1 class="dtc pt-1">DATA CENTER</h1>
     </div>
     <nav class="navbarr">
         <div class="container-fluid">
             <div class="cover" onmousedown="return false" onselectstart="return false">
-                <div class="gambar mt-3" style="display: flex;">
+                <div class="gambar mt-3 mb-3" style="display: flex;">
                     <img class="gmbr" src="asset/logo/profile.png" alt="" srcset="">
                     <p class="sts fs-3 pt-3 text-dark">Admin</p>
                     <div class="nth ms-3">
@@ -132,7 +133,7 @@ if (isset($_POST["del"])) {
                     <thead>
                         <tr>
                             <th style="width: 3vw;">ID</th>
-                            <th>ID_BRAND</th>
+                            <th style="width: 5.9vw;">ID BRAND</th>
                             <th>Display</th>
                             <th>Warna</th>
                             <th>Gender</th>
@@ -153,22 +154,22 @@ if (isset($_POST["del"])) {
                         foreach ($data as $key => $value) {
                         ?>
                         <tr>
-                            <td><?= $value["ID"] ?></td>
-                            <td><?= $value["ID_Brand"] ?></td>
-                            <td><?= $value["ID_Display"] ?></td>
-                            <td><?= $value["ID_Warna"] ?></td>
-                            <td><?= $value["ID_Gender"] ?></td>
-                            <td><?= $value["ID_Resistant"] ?></td>
-                            <td><?= $value["Nama_Barang"] ?></td>
-                            <td><?= $value["Gambar"] ?></td>
-                            <td><?= $value["Stok"] ?></td>
-                            <td><?= $value["Harga"] ?></td>
+                            <td style="text-align: center;"><?= $value["ID"] ?></td>
+                            <td style="text-align: center;"><?= $value["ID_Brand"] ?></td>
+                            <td style="text-align: center;"><?= $value["ID_Display"] ?></td>
+                            <td style="text-align: center;"><?= $value["ID_Warna"] ?></td>
+                            <td style="text-align: center;"><?= $value["ID_Gender"] ?></td>
+                            <td style="text-align: center;"><?= $value["ID_Resistant"] ?></td>
+                            <td style="text-align: center;"><?= $value["Nama_Barang"] ?></td>
+                            <td style="text-align: center;"><?= $value["Gambar"] ?></td>
+                            <td style="text-align: center;"><?= $value["Stok"] ?></td>
+                            <td style="text-align: center;"><?= $value["Harga"] ?></td>
                             <td><?= $value["Deskripsi"] ?></td>
-                            <td>
+                            <td style="text-align: center;">
                                 <form action="" method="post" style="display: flex;">
                                     <input type="hidden" name="data" value="<?= $value["ID"] ?>">
                                     <input type="submit" class="capek" value="Edit" name="edit">
-                                    <input type="submit" class="capek ms-1" value="Delete" name="del">
+                                    <input type="submit" class="capek2 ms-1" value="Delete" name="del">
                                 </form>
                             </td>
                         </tr>

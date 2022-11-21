@@ -152,13 +152,13 @@ if (isset($_POST["add"])) {
             <div class="con" onmousedown="return false" onselectstart="return false">
                 <div class="d-flex flex-column mb-3 fs-5" style="width: 9vw;">
                     <div class="add pt-4 ps-4">
-                        <a href="admin.php" style="text-decoration: none; color:black;">
-                            Home
+                        <a href="editbarang.php" style="text-decoration: none; color:black;">
+                            Edit Product
                         </a>
                     </div>
                     <div class="add pt-4 ps-4">
-                        <a href="editbarang.php" style="text-decoration: none; color:black;">
-                            Edit Product
+                        <a href="admin.php" style="text-decoration: none; color:black;">
+                            Back
                         </a>
                     </div>
                     <!-- <div class="add pt-4 ps-4">

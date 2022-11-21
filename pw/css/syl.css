@@ -120,7 +120,15 @@
 } */
 
 .capek{
-    background-color: gray;
+    background-color: rgb(255, 208, 0);
+    border: none;
+    border-radius: 0.2vw;
+    color: white;
+    font-size: 0.9vw;
+}
+
+.capek2{
+    background-color: rgb(255, 0, 0);
     border: none;
     border-radius: 0.2vw;
     color: white;
