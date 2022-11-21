@@ -1,6 +1,61 @@
 <?php
 require_once("connector.php");
+if (isset($_POST["add"])) {
+    $nama = $_POST["name"];
+    $brand = $_POST["brand"];
+    $resistant = $_POST[""];
+    $nama = $_POST["name"];
+    $nama = $_POST["name"];
+    $nama = $_POST["name"];
+    $nama = $_POST["name"];
+    $nama = $_POST["name"];
+    $nama = $_POST["name"];
+    if ($_FILES['fileupload']['size'] != 0) {
+        $target_dir = "asset/gambar/";
+        $target_file = $target_dir . basename($_FILES["fileupload"]["name"]);
+        $uploadOk = true;
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
+        // Check if image file is a actual image or fake image
+        $check = getimagesize($_FILES["fileupload"]["tmp_name"]);
+        if ($check !== false) {
+            $uploadOk = true;
+        } else {
+            $uploadOk = false;
+            echo '<script>alert("File is not an image.")</script>';
+        }
+
+        // Check if file already exists
+        if (file_exists($target_file) && $uploadOk == true) {
+            $uploadOk = false;
+            echo '<script>alert("File already Exists")</script>';
+        }
+
+        // Check file size
+        // if ($_FILES["addImage"]["size"] > 10000000 && $uploadOk == true) {
+        //     $uploadOk = false;
+        //     alert("Sorry, your file is too large.");
+        // }
+
+        // Allow certain file formats
+        if ($imageFileType != "jpg" && $imageFileType != "png"&& $imageFileType != "jpeg" && $uploadOk == true) {
+            $uploadOk = false;
+            echo '<script>alert("File Format not supported")</script>';
+        }
+
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == false) {
+            $safe = false;
+        } else {
+            if (move_uploaded_file($_FILES["fileupload"]["tmp_name"], $target_file)) {
+                $safe = true;
+            } else {
+                echo '<script>alert("Error")</script>';
+                $safe = false;
+            }
+        }
+    }
+}
 ?>
 
 <!doctype html>
@@ -21,26 +76,22 @@ require_once("connector.php");
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
 
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- Jquery DataTables -->
-    <script type="text/javascript" language="javascript"
-        src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <!-- Bootstrap dataTables Javascript -->
-    <script type="text/javascript" language="javascript"
-        src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
 
     <script type="text/javascript" charset="utf-8">
-    $(document).ready(function() {
-        $('.table-paginate').dataTable();
-    });
+        $(document).ready(function() {
+            $('.table-paginate').dataTable();
+        });
     </script>
 </head>
 
@@ -71,7 +122,7 @@ require_once("connector.php");
             </div>
     </nav>
 
-    <form action="post">
+    <form method="POST" enctype="multipart/form-data">
         <div class="container-fluid" style="display: flex;">
             <div class="con" onmousedown="return false" onselectstart="return false">
                 <div class="d-flex flex-column mb-3 fs-5" style="width: 9vw;">
@@ -94,8 +145,7 @@ require_once("connector.php");
             </div>
             <div class="cover2 mt-1">
                 <div class="ntte">
-                    <div class="jdl pt-2" style="text-align: center;" onmousedown="return false"
-                        onselectstart="return false">
+                    <div class="jdl pt-2" style="text-align: center;" onmousedown="return false" onselectstart="return false">
                         <h2>New Product</h2>
                     </div>
                     <div class="atas mt-4 pt-1 col-8" style="display: flex;">
@@ -103,96 +153,124 @@ require_once("connector.php");
                             <div class="bawah mt-3" style="display: flex; margin-left: 1vw;">
                                 <div class="namep">
                                     <label for="Nm" class="form-label">Name Product</label>
-                                    <input type="name" id="name" class="form-control"
-                                        aria-describedby="passwordHelpBlock">
+                                    <input type="name" name="name" class="form-control" aria-describedby="passwordHelpBlock">
                                 </div>
                                 <div class="brand2 ms-3">
                                     <label for="Nm" class="form-label">Brand</label>
                                     <div class="ini" style="display: flex;">
-                                        <input type="name" id="name" style="width: 10vw;" class="form-control"
-                                            aria-describedby="passwordHelpBlock">
+                                        <select name="brand" style="width: 10vw;border:0px;border-radius: 0.5vw;height:2vw">
+                                            <?php
+                                            $stmt = $conn->prepare("SELECT * FROM brand");
+                                            $stmt->execute();
+                                            $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                                            echo '<option value="0"></option>';
+                                            foreach ($data as $value) {
+                                            ?>
+                                                <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?> Series</option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="entity ms-3">
                                     <label for="Nm" class="form-label">Entity</label>
-                                    <input type="name" id="name" class="form-control"
-                                        aria-describedby="passwordHelpBlock">
+                                    <input type="name" name="jumlah" class="form-control" aria-describedby="passwordHelpBlock">
                                 </div>
                             </div>
-                            <div class="bawah2 mt-3 ms-1" style="display: flex;">
+                            <div class="bawah2 mt-3" style="display: flex;">
                                 <div class="wat ms-3">
                                     <label for="Nm" class="form-label">Water Resistant</label>
-                                    <input type="name" id="name" class="form-control"
-                                        aria-describedby="passwordHelpBlock">
+                                    <select name="resistant" style="width: 10vw;border:0px;border-radius: 0.5vw;height:2vw">
+                                        <?php
+                                        $stmt = $conn->prepare("SELECT * FROM resistant");
+                                        $stmt->execute();
+                                        $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                                        echo '<option value="0"></option>';
+                                        foreach ($data as $value) {
+                                        ?>
+                                            <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
-                                <div class="color ms-3">
+                                <div class="color">
                                     <label for="Nm" class="form-label">Color</label>
-                                    <input type="name" id="name" class="form-control"
-                                        aria-describedby="passwordHelpBlock">
-
-                                    <!-- <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select</option>
-                                        <option value="1">BLACK</option>
-                                        <option value="2">BLUE</option>
-                                        <option value="3">GREEN</option>
-                                        <option value="4">RED</option>
-                                        <option value="5">BROWN</option>
-                                        <option value="6">BEIGE</option>
-                                        <option value="7">PURPLE</option>
-                                        <option value="8">WHITE</option>
-                                        <option value="9">GRAY</option>
-                                        <option value="10">YELLOW</option>
-                                        <option value="11">ORANGE</option>
-                                        <option value="12">PINK</option>
-                                        <option value="13">SKELETON</option>
-                                        <option value="14">SILVER</option>
-                                        <option value="15">GOLD</option>
-                                    </select> -->
+                                    <select name="color" style="width: 10vw;border:0px;border-radius: 0.5vw;height:2vw">
+                                        <?php
+                                        $stmt = $conn->prepare("SELECT * FROM color");
+                                        $stmt->execute();
+                                        $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                                        echo '<option value="0"></option>';
+                                        foreach ($data as $value) {
+                                        ?>
+                                            <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="dis ms-3">
                                     <label for="Nm" class="form-label">Display</label>
-                                    <input type="name" id="name" class="form-control"
-                                        aria-describedby="passwordHelpBlock">
+                                    <select name="display" style="width: 10vw;border:0px;border-radius: 0.5vw;height:2vw">
+                                        <?php
+                                        $stmt = $conn->prepare("SELECT * FROM display");
+                                        $stmt->execute();
+                                        $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                                        echo '<option value="0"></option>';
+                                        foreach ($data as $value) {
+                                        ?>
+                                            <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="gen ms-3">
                                     <label for="Nm" class="form-label">Gender</label>
-                                    <input type="name" id="name" class="form-control"
-                                        aria-describedby="passwordHelpBlock">
+                                    <select name="gender" style="width: 10vw;border:0px;border-radius: 0.5vw;height:2vw">
+                                        <?php
+                                        $stmt = $conn->prepare("SELECT * FROM gender");
+                                        $stmt->execute();
+                                        $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                                        echo '<option value="0"></option>';
+                                        foreach ($data as $value) {
+                                        ?>
+                                            <option value="<?= $value["ID"] ?>"><?= $value["Nama"] ?></option>
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
-                                <!-- <div class="price ms-3">
+                                <div class="price ms-3">
                                     <label for="Nm" class="form-label">Price</label>
-                                    <input type="name" id="name" class="form-control"
-                                        aria-describedby="passwordHelpBlock">
-                                </div> -->
+                                    <input type="name" name="price" class="form-control" aria-describedby="passwordHelpBlock">
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="kanan2 col-3 ms-3">
                         <div class="des mt-3">
                             <label for="Nm" class="form-label">Description</label>
-                            <textarea name="note" class="note" style="border-radius: 0.5vw; width:200%; height:8vw;"
-                                id="note"></textarea>
+                            <textarea name="note" class="note" style="border-radius: 0.5vw; width:200%; height:8vw;" id="note"></textarea>
                         </div>
                         <div class="input-group mt-3">
-                            <input type="file" class="form-control" id="inputGroupFile04"
-                                aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                            <button class="btn btn-outline-secondary" type="button"
-                                id="inputGroupFileAddon04">Upload</button>
+                            <input type="file" class="form-control" name="fileupload" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>
                         </div>
 
                     </div>
                     <div class="detail">
                         <hr class="my-4">
-                        <button class="btn btn-secondary ms-3 mb-3" style="width: 10vw; height:2vw" type="button">Add
-                            Product</button>
+                        <input type="submit" value="Add Product" class="btn btn-secondary ms-3 mb-3" style="width: 10vw; height:2vw" name="add">
                     </div>
                 </div>
                 <div class="bawah mt-1" style="width: 86vw;">
                     <h4 style="text-align: center; padding-top:1vw;">Result</h4>
                     <hr class="my-4">
 
-                    <table class=" table table-striped table-bordered table-paginate" cellspacing="0" width="100%"
-                        onmousedown="return false" onselectstart="return false">
+                    <table class=" table table-striped table-bordered table-paginate" cellspacing="0" width="100%" onmousedown="return false" onselectstart="return false">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -669,8 +747,7 @@ require_once("connector.php");
 
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
 </script>
 
 
