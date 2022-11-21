@@ -44,6 +44,9 @@ if (isset($_POST["add"])) {
             } else {
                 if (move_uploaded_file($_FILES["fileupload"]["tmp_name"], $target_file)) {
                     $safe = true;
+                    $stmt = $conn->prepare("INSERT INTO barang(ID_Brand,ID_Display,ID_Warna,ID_Gender,ID_Resistant,Nama_Barang,Gambar,Stok,Harga,Deskripsi) VALUES(?,?,?,?,?,?,?,?,?,?)");
+                    $stmt->bind_param("iiiiissiis", $brand, $display,$color,$gender,$resistant,$nama,$target_file,$stok,$harga,$desc);
+                    $result = $stmt->execute();
                 } else {
                     echo '<script>alert("Error")</script>';
                     $safe = false;
@@ -153,7 +156,7 @@ if (isset($_POST["add"])) {
                             <div class="bawah mt-3" style="display: flex; margin-left: 1vw;">
                                 <div class="namep">
                                     <label for="Nm" class="form-label">Name Product</label>
-                                    <input type="name" name="name" class="form-control" aria-describedby="passwordHelpBlock">
+                                    <input type="name" name="name" class="form-control" aria-describedby="passwordHelpBlock" style="width: 10vw;border:0px;border-radius: 0.5vw;height:1.5vw">
                                 </div>
                                 <div class="brand2 ms-3">
                                     <label for="Nm" class="form-label">Brand</label>
@@ -175,7 +178,7 @@ if (isset($_POST["add"])) {
                                 </div>
                                 <div class="entity ms-3">
                                     <label for="Nm" class="form-label">Entity</label>
-                                    <input type="name" name="jumlah" class="form-control" aria-describedby="passwordHelpBlock">
+                                    <input type="name" name="jumlah" class="form-control" aria-describedby="passwordHelpBlock" style="width: 10vw;border:0px;border-radius: 0.5vw;height:1.5vw">
                                 </div>
                                 <div class="price ms-3">
                                     <label for="Nm" class="form-label">Price</label>
