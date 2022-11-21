@@ -278,7 +278,7 @@ require_once("connector.php");
     <div class="coverall">
         <div class="cover">
             <!--navbar-->
-            <nav class="navbar navbar-expand-lg bg-light">
+            <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <div class="container-fluid">
                     <a class="nav-link text-white pt-2" href="loginadmin.php" style="display: flex;">
                         <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
@@ -371,7 +371,7 @@ require_once("connector.php");
             <!--endnavbar-->
 
             <div class="contentall">
-                <div class="content1">
+                <div class="content1" style="margin-top:6vw;">
                     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
                         style="margin: 1vw">
                         <div class="carousel-indicators">
