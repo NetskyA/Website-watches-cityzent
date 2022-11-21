@@ -2,8 +2,12 @@
 require_once("connector.php");
 if (isset($_POST["edit"])) {
     $data2 = $_POST["data"];
-    echo "<script>alert('halo')</script>";
-    header("Location: edit.php");
+    header("Location: editbarang.php?id=".$data2);
+}
+
+if (isset($_POST["del"])) {
+    $data2 = $_POST["data"];
+    $result = $conn->query("DELETE FROM barang WHERE ID=$data2");
 }
 ?>
 
@@ -152,10 +156,10 @@ if (isset($_POST["edit"])) {
                                 <td><?= $value["Harga"] ?></td>
                                 <td><?= $value["Deskripsi"] ?></td>
                                 <td>
-                                    <form action="editbarang.php" method="post">
+                                    <form action="" method="post">
                                         <input type="hidden" name="data" value="<?= $value["ID"] ?>">
                                         <input type="submit" value="Edit" name="edit">
-                                        <input type="submit" value="Delete">
+                                        <input type="submit" value="Delete" name="del">
                                     </form>
                                 </td>
                             </tr>
