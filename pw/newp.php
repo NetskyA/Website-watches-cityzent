@@ -59,6 +59,57 @@ if (isset($_POST["add"])) {
         echo '<script>alert("Ada yang Belum diisi")</script>';
     }
 }
+
+if(isset($_POST["btnbrnd"])){
+    $nama = $_POST["inpbrand"];
+    if($nama==""){
+        echo '<script>alert("Inputan Belum diisi")</script>';
+    }else{
+        $stmt = $conn->prepare("INSERT INTO brand(Nama) VALUES(?)");
+        $stmt->bind_param("s", $nama);
+        $result = $stmt->execute();
+    }
+}
+if (isset($_POST["btndisplay"])) {
+    $nama = $_POST["inpdisplay"];
+    if ($nama == "") {
+        echo '<script>alert("Inputan Belum diisi")</script>';
+    } else {
+        $stmt = $conn->prepare("INSERT INTO display(Nama) VALUES(?)");
+        $stmt->bind_param("s", $nama);
+        $result = $stmt->execute();
+    }
+}
+if (isset($_POST["btnwarna"])) {
+    $nama = $_POST["inpwarna"];
+    if ($nama == "") {
+        echo '<script>alert("Inputan Belum diisi")</script>';
+    } else {
+        $stmt = $conn->prepare("INSERT INTO color(Nama) VALUES(?)");
+        $stmt->bind_param("s", $nama);
+        $result = $stmt->execute();
+    }
+}
+if (isset($_POST["btngender"])) {
+    $nama = $_POST["inpgender"];
+    if ($nama == "") {
+        echo '<script>alert("Inputan Belum diisi")</script>';
+    } else {
+        $stmt = $conn->prepare("INSERT INTO gender(Nama) VALUES(?)");
+        $stmt->bind_param("s", $nama);
+        $result = $stmt->execute();
+    }
+}
+if (isset($_POST["btnresistant"])) {
+    $nama = $_POST["inpresistant"];
+    if ($nama == "") {
+        echo '<script>alert("Inputan Belum diisi")</script>';
+    } else {
+        $stmt = $conn->prepare("INSERT INTO resistant(Nama) VALUES(?)");
+        $stmt->bind_param("s", $nama);
+        $result = $stmt->execute();
+    }
+}
 ?>
 
 <!doctype html>
@@ -151,11 +202,6 @@ if (isset($_POST["add"])) {
         <div class="container-fluid" style="display: flex;">
             <div class="con" onmousedown="return false" onselectstart="return false">
                 <div class="d-flex flex-column mb-3 fs-5" style="width: 9vw;">
-                    <div class="add pt-4 ps-4">
-                        <a href="editbarang.php" style="text-decoration: none; color:black;">
-                            Edit Product
-                        </a>
-                    </div>
                     <div class="add pt-4 ps-4">
                         <a href="admin.php" style="text-decoration: none; color:black;">
                             Back
@@ -315,47 +361,47 @@ if (isset($_POST["add"])) {
                             <div class="abrand">
                                 <label for="Nm" class="form-label">Brand</label>
                                 <div class="isi" style="display: flex;">
-                                    <input type="name" name="name" class="form-control"
+                                    <input type="text" name="inpbrand" class="form-control"
                                         aria-describedby="passwordHelpBlock"
                                         style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
-                                    <input type="submit" class="btna" value="Add">
+                                    <input type="submit" class="btna" value="Add" name="btnbrnd">
                                 </div>
                             </div>
                             <div class="adisplay ms-3">
                                 <label for="Nm" class="form-label">Display</label>
                                 <div class="isi" style="display: flex;">
-                                    <input type="name" name="dis" class="form-control"
+                                    <input type="text" name="inpdisplay" class="form-control"
                                         aria-describedby="passwordHelpBlock"
                                         style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
-                                    <input type="submit" class="btna" value="Add">
+                                    <input type="submit" class="btna" value="Add" name="btndisplay">
                                 </div>
                             </div>
                             <div class="awarna ms-3">
                                 <label for="Nm" class="form-label">Warna</label>
                                 <div class="isi" style="display: flex;">
-                                    <input type="name" name="warna" class="form-control"
+                                    <input type="text" name="inpwarna" class="form-control"
                                         aria-describedby="passwordHelpBlock"
                                         style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
-                                    <input type="submit" class="btna" value="Add">
+                                    <input type="submit" class="btna" value="Add" name="btnwarna">
                                 </div>
                             </div>
                             <div class="agender ms-3">
                                 <label for="Nm" class="form-label">Gender</label>
                                 <div class="isi" style="display: flex;">
-                                    <input type="name" name="gender" class="form-control"
+                                    <input type="name" name="inpgender" class="form-control"
                                         aria-describedby="passwordHelpBlock"
                                         style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
-                                    <input type="submit" class="btna" value="Add">
+                                    <input type="submit" class="btna" value="Add" name="btngender">
                                 </div>
                             </div>
                         </div>
                         <div class="aresis ms-3 mt-3">
                             <label for="Nm" class="form-label">Resistant</label>
                             <div class="isi mb-4" style="display: flex;">
-                                <input type="name" name="resis" class="form-control mb-5"
+                                <input type="name" name="inpresistant" class="form-control mb-5"
                                     aria-describedby="passwordHelpBlock"
                                     style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
-                                <input type="submit" class="btna mb-5" value="Add">
+                                <input type="submit" class="btna mb-5" value="Add" name="btnresistant">
                             </div>
                         </div>
                     </div>
