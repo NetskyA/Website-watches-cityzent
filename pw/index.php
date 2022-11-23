@@ -389,6 +389,7 @@ require_once("connector.php");
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="5000">
                                 <a href="#news">
+                                    <!-- ho -->
                                     <img src="asset/banner/banner4.jpg" class="gmbr d-block w-100 rounded-4" alt="...">
                                 </a>
                             </div>
