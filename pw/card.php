@@ -24,8 +24,8 @@ $gender = mysqli_fetch_assoc($result);
 $result = mysqli_query($conn, "SELECT Nama FROM resistant WHERE ID='" . $_SESSION['temp']['ID_Resistant'] . "'");
 $resistant = mysqli_fetch_assoc($result);
 
-if (isset($_POST["plus"]) && ($_SESSION["total"] >= 0)) {
-    if (!($_SESSION["total"] + 1 > $_SESSION["temp"]["Stok"])) {
+if ($_SESSION["total"]!= "Barang Habis" &&(isset($_POST["plus"]) && ($_SESSION["total"] >= 0))) {
+    if (($_SESSION["total"] + 1 <= $_SESSION["temp"]["Stok"])) {
         $_SESSION["total"] = $_SESSION["total"] + 1;
     }
 }
