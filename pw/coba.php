@@ -89,9 +89,11 @@ if (isset($_REQUEST["berhasil"])) {
             <div class="jdl">
                 <p>Appreciation to you</p>
             </div>
-            <img src="asset/animate/test.gif" class="logo" alt="Computer man"
-                style="width:8.2vw;height:6vw;justify-content:center;">
-            <div class="sks  d-flex justify-content-center">
+            <div class="gmb d-flex justify-content-center">
+                <img src="asset/animate/test.gif" class="logo" alt="Computer man"
+                    style="width:8.2vw;height:6vw;justify-content:center;">
+            </div>
+            <div class="sks d-flex justify-content-center">
                 <p style="text-align: center; width:28vw; font-size:0.8vw;">For those of you who care about style, the
                     purchase of this
                     watch
@@ -101,7 +103,7 @@ if (isset($_REQUEST["berhasil"])) {
             </div>
             <hr class="my-4 mt-2" style="width: 100%;">
 
-            <div class="isi justify-content-center mt-2">
+            <div class="isi justify-content-center mt-2" style="margin-left:2vw; margin-right:2vw;">
                 <div class="kusus" style="display: flex; font-size:0.8vw;">
                     <p>Invoice number : <?= $id ?></p>
                     <p style="padding-left:28vw;">Status : Gold</p>
@@ -123,10 +125,10 @@ if (isset($_REQUEST["berhasil"])) {
                 </a>
 
             </div>
-            <div class="print" style="margin-top: 2vw;">
+            <div class="print" style="margin-top: 1vw;">
                 <button style="font-size:0.8vw;" class="prn text-secondary" onclick="window.print()">Print this
                     page</button>
-                <a href="contactus.php" style="padding-left: 23vw;">
+                <a href="contactus.php" style="padding-left: 36vw;">
                     <button type="button" style="width: 8vw; font-size:0.8vw;" class="btn text-secondary">Help</button>
                 </a>
             </div>

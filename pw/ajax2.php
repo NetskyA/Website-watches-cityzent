@@ -10,7 +10,7 @@ foreach ($listbarang as $key => $value) {
 
     echo "<div class='d-flex' style='flex-direction:row;width:100%'>";
     echo "<div class='kc'>";
-    echo '<img style="width: 15vw; height:15vw;" src = "'.$data[0]['Gambar']. '"/>';
+    echo '<img style="width: 15vw; height:15vw;" src = "' . $data[0]['Gambar'] . '"/>';
     echo "</div>";
     echo "<div class='kt mt-3' style='width: 30wv;'>";
     echo "<h4>";
@@ -24,8 +24,8 @@ foreach ($listbarang as $key => $value) {
     echo "<div class='enti'>";
     echo "<input type='hidden' name='dat2' value=" . $value["ID"] . ">";
     echo "<div class='jumlah d-flex' style='width: 10vw;'>";
-    echo "<button id='kurang' style='width: 4vw; height: 2vw;' class='btn btn-secondary' onclick='min(" . $value["ID"] . ")'>-</button>";
-    echo "<button id='tambah' style='width: 4vw; height: 2vw; margin-left:0.5vw' class='btn btn-secondary' onclick='plus(" . $value["ID"] . ")'>+</button>";
+    echo "<button id='kurang' style='width: 4vw; height: auto;' class='btn btn-secondary' onclick='min(" . $value["ID"] . ")'>-</button>";
+    echo "<button id='tambah' style='width: 4vw; height: auto; margin-left:0.5vw' class='btn btn-secondary' onclick='plus(" . $value["ID"] . ")'>+</button>";
     echo "</div>";
 
     echo "<p class='serial mt-1' style='color: gray; margin-right:5vw;'>Entity : " . $value["jml"] . "</p>";

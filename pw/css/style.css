@@ -305,3 +305,12 @@ body {
     border: 1px rgb(130, 130, 130) solid;
 }
 
+.nth2{
+    width: 0px;
+    height: 2vw;
+    float: left;
+    justify-content: start;
+    margin-top: 0.2vw;
+    border: 1px rgb(130, 130, 130) solid;
+}
+
