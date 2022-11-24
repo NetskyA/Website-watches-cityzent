@@ -14,18 +14,19 @@ if (isset($_REQUEST["berhasil"])) {
         $stmt->execute();
         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
         array_push($listbarang2, $data[0]["Nama_Barang"]);
+        $subtotal = $value["jml"] * $data[0]["Harga"];
+        $subtotalall += $subtotal;
+
         // $subtotal = $value["jml"] * $data[0]["Harga"];
         // $subtotalall += $subtotal;
     }
     $stmt = $conn->prepare("INSERT INTO h_trans(ID, ID_Customer, Total, Waktu_Transaksi) VALUES(?,?,?,?)");
-    $stmt->bind_param("ssss", $id, $idcus, $subtotal, $waktu);
+    $stmt->bind_param("ssss", $id, $idcus, $subtotalall, $waktu);
     $result = $stmt->execute();
     foreach ($listbarang as $key => $value) {
         $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
         $stmt->execute();
         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-        $subtotal = $value["jml"] * $data[0]["Harga"];
-        $subtotalall += $subtotal;
         $jml = $value["jml"];
         $idbar = $value['ID'];
         $hasilstok = $data[0]["Stok"] - $value["jml"];
