@@ -678,6 +678,9 @@ require_once("connector.php");
                                     <p style="font-size: 1vw; color:gray">Ngagel Jaya Tengah 73-77 <br>
                                         Surabaya, Indonesia</p>
                                     <p style="font-size: 0.7vw; color:gray">Payment By Midtrans</p>
+                                    <p style="font-size: 0.6vw; color:gray">Copyright © 2022 WATCHES SCRT. All Rights
+                                        Reserved.</p>
+
                                 </div>
                             </div>
                             <div class="col-2 pt-2 ms-4" style="margin: 0.3vw; font-size: 1.3vw; color:dark;">
