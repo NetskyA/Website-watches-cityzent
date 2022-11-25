@@ -10,9 +10,6 @@ if (isset($_REQUEST["barang"])) {
         $_SESSION["total"] = 0;
     }
 }
-if (!isset($_SESSION["cart"])) {
-    $_SESSION["cart"] = [];
-}
 $result = mysqli_query($conn, "SELECT Nama FROM brand WHERE ID='" . $_SESSION['temp']['ID_Brand'] . "'");
 $brand = mysqli_fetch_assoc($result);
 $result = mysqli_query($conn, "SELECT Nama FROM color WHERE ID='" . $_SESSION['temp']['ID_Warna'] . "'");
@@ -24,7 +21,7 @@ $gender = mysqli_fetch_assoc($result);
 $result = mysqli_query($conn, "SELECT Nama FROM resistant WHERE ID='" . $_SESSION['temp']['ID_Resistant'] . "'");
 $resistant = mysqli_fetch_assoc($result);
 
-if ($_SESSION["total"]!= "Barang Habis" &&(isset($_POST["plus"]) && ($_SESSION["total"] >= 0))) {
+if (isset($_POST["plus"]) ) {
     if (($_SESSION["total"] + 1 <= $_SESSION["temp"]["Stok"])) {
         $_SESSION["total"] = $_SESSION["total"] + 1;
     }
@@ -37,22 +34,31 @@ if (isset($_POST["minus"]) && ($_SESSION["total"] > 0)) {
 }
 
 if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SESSION["total"] != 0)) {
-    $temp = array(
-        "ID" => $_SESSION["temp"]["ID"],
-        "jml" => $_SESSION["total"],
-        "waktu" => date("Y-m-d")
-    );
     $ket = false;
-    $length = count($_SESSION["cart"]);
-    for ($i = 0; $i < $length; $i++) {
-        if ($_SESSION["cart"][$i]["ID"] == $temp["ID"]) {
-            $tot = $_SESSION["cart"][$i]["jml"] + $_SESSION["total"];
-            $_SESSION["cart"][$i]["jml"] = $tot;
-            $ket = true;
+    $stmt = $conn->prepare("SELECT * FROM cart");
+    if(isset($_SESSION["logged"])){
+        $iduse = $_SESSION["logged"];
+    }else{
+        $iduse = -1;
+    }
+    $waktu = date("Y-m-d");
+    $stmt->execute();
+    $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $jml = $_SESSION["total"];
+    $idtemp = $_SESSION["temp"]["ID"];
+    foreach ($data as $key => $value) {
+        if($value["ID_User"]==$iduse && $value["ID_Barang"]== $_SESSION["temp"]["ID"]){
+            $stmt = $conn->prepare("UPDATE cart SET Jumlah=? , Waktu=? WHERE ID_User = ? and ID_Barang = ?");
+            $stmt->bind_param("isii", $jml,$waktu,$iduse, $idtemp);
+            $result = $stmt->execute();
+            $ket = true;       
         }
     }
+
     if (!$ket) {
-        array_push($_SESSION["cart"], $temp);
+        $stmt = $conn->prepare("INSERT INTO cart(ID_User,ID_Barang,Jumlah,Waktu) VALUES(?,?,?,?)");
+        $stmt->bind_param("iiis", $iduse,$idtemp,$jml,$waktu);
+        $result = $stmt->execute();
     }
     header("Location: index.php");
 }
@@ -65,8 +71,7 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WATCHES SCRT | Online Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!--Framework Use-->
     <link rel="stylesheet" href="css/style.css">
@@ -77,29 +82,27 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
     <script>
-    $(document).ready(function() {
-        // panel hide
-        $("#panelss").hide();
-        // and panel hide
+        $(document).ready(function() {
+            // panel hide
+            $("#panelss").hide();
+            // and panel hide
 
-        // action
-        $("#tglss").click(function() {
-            $("#tglss").text("Hide");
-            $("#panelss").toggle(1500);
+            // action
             $("#tglss").click(function() {
-                $("#tglss").text("Show More");
+                $("#tglss").text("Hide");
+                $("#panelss").toggle(1500);
+                $("#tglss").click(function() {
+                    $("#tglss").text("Show More");
+                });
             });
+            // and action
         });
-        // and action
-    });
     </script>
     <!--Framework Use-->
 </head>
@@ -110,24 +113,18 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
             <!--navbar-->
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
                         <ul class="navbar-nav fs-5">
                             <li class="nav-item ms-4">
-                                <a class="nav-link text-dark" href="index.php"><svg xmlns="http://www.w3.org/2000/svg"
-                                        width="30" height="35" fill="currentColor" class="bi bi-arrow-left-circle"
-                                        viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                                <a class="nav-link text-dark" href="index.php"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
                                     </svg></a>
                             </li>
                             <li class="nav-item dropdown ms-4">
-                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <?= $_SESSION["temp"]["Nama_Barang"] ?>
                                 </a>
                             </li>
@@ -142,7 +139,7 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                     <div class="view d-flex mt-5">
                         <div class="kanan2">
                             <?php
-                            echo '<img src = "'.$_SESSION['temp']["Gambar"].'">';
+                            echo '<img src = "' . $_SESSION['temp']["Gambar"] . '">';
                             ?>
                         </div>
                         <div class="kiri2 mt-4 ms-5" style="padding-left: 3vw; padding-top:2vw">
@@ -162,15 +159,13 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                                 <h4>Price</h4>
                                 <h5><span>Rp. </span><?= $_SESSION["temp"]["Harga"] ?></h5>
 
-                                <form c action="" method="post">
+                                <form action="" method="post">
                                     <h5>
                                         <p style="padding-top: 2vw;">Add Entity</p>
                                     </h5>
                                     <div class="jumlah d-flex">
-                                        <input type="submit" value="-" style="width: 5%;" class="btn btn-secondary"
-                                            name="minus">
-                                        <input type="submit" value="+" style="width: 5%;margin-left:0.5vw"
-                                            class="btn btn-secondary" name="plus">
+                                        <input type="submit" value="-" style="width: 5%;" class="btn btn-secondary" name="minus">
+                                        <input type="submit" value="+" style="width: 5%;margin-left:0.5vw" class="btn btn-secondary" name="plus">
                                     </div>
                                 </form>
                                 <h5 style="padding-top: 1vw;">
@@ -201,8 +196,7 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                                 <hr class=" my-4 mt-4" style="width: 100%;">
 
                                 <form action="" method="post">
-                                    <input type="submit" name="checkout" value="Add Cart"
-                                        class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">
+                                    <input type="submit" name="checkout" value="Add Cart" class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">
                                 </form>
                             </div>
                         </div>
@@ -214,11 +208,11 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
     </div>
 </body>
 <script>
-$(document).ready(function() {
-    $('body').bind('cut copy', function(e) {
-        e.preventDefault();
+    $(document).ready(function() {
+        $('body').bind('cut copy', function(e) {
+            e.preventDefault();
+        });
     });
-});
 </script>
 
 </html>
