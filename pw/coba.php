@@ -5,16 +5,18 @@ if (isset($_REQUEST["berhasil"])) {
     $id = $_SESSION["orderid"];
     $idcus = $_SESSION["logged"];
     $waktu = date("Y-m-d");
-    $listbarang = $_SESSION["cart"];
+    $stmt = $conn->prepare("SELECT * FROM cart where ID_User=" . $idcus);
+    $stmt->execute();
+    $listbarang = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     $subtotalall = 0;
     $listbarang2 = [];
     $subtotalall = 0;
     foreach ($listbarang as $key => $value) {
-        $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
+        $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID_Barang'] . "'");
         $stmt->execute();
         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
         array_push($listbarang2, $data[0]["Nama_Barang"]);
-        $subtotal = $value["jml"] * $data[0]["Harga"];
+        $subtotal = $value["Jumlah"] * $data[0]["Harga"];
         $subtotalall += $subtotal;
 
         // $subtotal = $value["jml"] * $data[0]["Harga"];
@@ -24,12 +26,12 @@ if (isset($_REQUEST["berhasil"])) {
     $stmt->bind_param("ssss", $id, $idcus, $subtotalall, $waktu);
     $result = $stmt->execute();
     foreach ($listbarang as $key => $value) {
-        $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID'] . "'");
+        $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID_Barang'] . "'");
         $stmt->execute();
         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-        $jml = $value["jml"];
-        $idbar = $value['ID'];
-        $hasilstok = $data[0]["Stok"] - $value["jml"];
+        $jml = $value["Jumlah"];
+        $idbar = $value['ID_Barang'];
+        $hasilstok = $data[0]["Stok"] - $value["Jumlah"];
         $stmt = $conn->prepare("UPDATE barang SET stok = ? WHERE ID = ?");
         $stmt->bind_param("ii", $hasilstok, $idbar);
         $result = $stmt->execute();
@@ -37,7 +39,7 @@ if (isset($_REQUEST["berhasil"])) {
         $stmt->bind_param("iii", $id, $idbar, $jml);
         $result = $stmt->execute();
     }
-    unset($_SESSION["cart"]);
+    $result = $conn->query("DELETE FROM cart WHERE ID_User = $idcus");
     $stmt = $conn->prepare("SELECT * FROM customer where customer.ID = '" . $idcus . "'");
     $stmt->execute();
     $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
