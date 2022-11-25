@@ -28,6 +28,10 @@
     margin: 16px;
     width: 50px;
 }
+.gmbr:hover {
+    transform: scale(120%);
+    transition: 1s;
+}
 
 .nth{
     width: 0px;
@@ -147,4 +151,10 @@
 
 .table-paginate{
     color: black;
+}
+
+
+.bck:hover{
+    transform: scale(110%);
+    transition: 1s;
 }

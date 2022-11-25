@@ -84,18 +84,18 @@ if (isset($_REQUEST["berhasil"])) {
 <body class="bdy">
     <div class="coverall d-flex justify-content-center">
         <div class="isinya">
-            <div class="atas d-flex">
+            <div class="atas d-flex" onmousedown='return false;' onselectstart='return false;'>
                 <img src="asset/logo/logo.png" class="logo2" alt="" srcset="">
                 <p style="font-size:0.8vw; padding-top:0.5vw;">WATCHES SCRT</p>
             </div>
-            <div class="jdl">
+            <div class="jdl" onmousedown='return false;' onselectstart='return false;'>
                 <p>Appreciation to you</p>
             </div>
-            <div class="gmb d-flex justify-content-center">
+            <div class="gmb d-flex justify-content-center" onmousedown='return false;' onselectstart='return false;'>
                 <img src="asset/animate/test.gif" class="logo" alt="Computer man"
                     style="width:8.2vw;height:6vw;justify-content:center;">
             </div>
-            <div class="sks d-flex justify-content-center">
+            <div class="sks d-flex justify-content-center" onmousedown='return false;' onselectstart='return false;'>
                 <p style="text-align: center; width:28vw; font-size:0.8vw;">For those of you who care about style, the
                     purchase of this
                     watch
@@ -105,7 +105,8 @@ if (isset($_REQUEST["berhasil"])) {
             </div>
             <hr class="my-4 mt-2" style="width: 100%;">
 
-            <div class="isi justify-content-center mt-2" style="margin-left:2vw; margin-right:2vw;">
+            <div class="isi justify-content-center mt-2" onmousedown='return false;' onselectstart='return false;'
+                style="margin-left:2vw; margin-right:2vw;">
                 <div class="kusus" style="display: flex; font-size:0.8vw;">
                     <p>Invoice number : <?= $id ?></p>
                     <p style="padding-left:28vw;">Status : Gold</p>
