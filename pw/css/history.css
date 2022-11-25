@@ -1,0 +1,85 @@
+.navbar {
+    background: rgb(204, 204, 204);
+    background: linear-gradient(180deg, rgb(201, 200, 200) 0%, rgba(253,253,253,0.9699230033810399) 100%);
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.kiri3 {
+    background-color: rgb(255, 255, 255);
+    width: 70vw;
+    margin: 2vw;
+    height: 70vw;
+    box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
+}
+
+.judulw{
+    margin-top: 0.7vw;
+    background-color: gainsboro;
+    height: 4vw;
+    width: auto;
+}
+
+.logo{
+    width: 4vw;
+    height: 4vw;
+}
+
+.nth1{
+    width: 0px;
+    height: 2vw;
+    float: left;
+    justify-content: start;
+    margin-top: 0.2vw;
+    border: 1px rgb(130, 130, 130) solid;
+}
+
+.nth2{
+    width: 0px;
+    height: auto;
+    float: left;
+    justify-content: start;
+    margin-top: 0.2vw;
+    border: 1px rgba(130, 130, 130, 0.597) solid;
+}
+
+.isi{
+    margin: 3vw;
+    display: flex;
+}
+
+.isi2{
+    margin-top: 0vw;
+    display: flex;
+    margin-left: 3vw;
+}
+.isi3{
+    padding-left: 3vw;
+    padding-top: 1vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1vw;
+}
+
+.stts{
+    font-size: 1.4vw;
+}
+
+/* .sort{
+    margin-top: 1.5vw;
+} */
+
+.stts1{
+    margin-top: 1.5vw;
+}
+
+.tengah{
+    margin-left: 3vw;
+}
+
+.kiri{
+    display: flex;
+}
+
+.gmbr1{
+    width: 13vw;
+    height: 13vw;
+}
