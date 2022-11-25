@@ -166,7 +166,7 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                             </div>
                             <div class="price mt-2">
                                 <h4>Price</h4>
-                                <h5><span>Rp. </span><?= $_SESSION["temp"]["Harga"] ?></h5>
+                                <h5><span>Rp. </span><?= number_format($_SESSION["temp"]["Harga"], 2, ',', '.');?></h5>
 
                                 <form action="" method="post">
                                     <h5>
