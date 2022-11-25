@@ -1,5 +1,14 @@
 <?php
+if(isset($_POST["kirim"])){
+    $username = strip_tags($_POST["username"]);
+    $email = strip_tags($_POST["email"]);
+    $desc = strip_tags($_POST["desc"]);
+    if($username=="" || $email=="" || $desc==""){
+        echo "<script>alert('Inputan ada yang kosong')</script>";
+    }else{
 
+    }
+}
 ?>
 
 <!doctype html>
@@ -20,11 +29,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
     <!--Framework Use-->
 
@@ -56,54 +63,49 @@
         </div>
         <hr class="my-4 mt-3">
         <div class="bawah2 " style="width: 85%; margin:3vw;">
-            <form action="">
+            <form action="" method="post">
                 <div class="ats1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-dash" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                         <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                     </svg>
                     Username
                 </div>
                 <div class="ats2">
                     <div class="mb-3">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                 </div>
 
 
                 <div class="ats1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-dash" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                         <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                     </svg>
                     Your e-mail address
                 </div>
                 <div class="ats2">
                     <div class="mb-3">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                 </div>
 
 
                 <div class="ats1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-dash" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                         <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                     </svg>
                     Description
                 </div>
                 <div class="ats2">
                     <div class="mb-3">
-                        <textarea class="form-control note" style="resize: none;max-height: 15vw;"
-                            id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control note" name="desc" style="resize: none;max-height: 15vw;" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                 </div>
 
 
                 <div class="ats1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-dash" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
                         <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
                     </svg>
                     Upload File
@@ -116,9 +118,7 @@
                     </div>
                 </div>
                 <div class="oke">
-                    <a href="#">
-                        <button type="submit" class="sub btn btn-outline-secondary">Submit</button>
-                    </a>
+                    <input type="submit" value="Submit" name="kirim" class="sub btn btn-outline-secondary">
                     <a href="contactus.php" style="text-decoration:none">
                         <p class="can text-dark">Cancel</p>
                     </a>
