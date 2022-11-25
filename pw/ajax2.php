@@ -24,7 +24,7 @@ foreach ($listbarang as $key => $value) {
     echo "<b>" . $data[0]['Nama_Brand'] . "</b>";
     echo "</h4>";
     echo "<p class='serial pt-1' style='color: gray;'>" . $data[0]['Nama_Barang'] . "</p>";
-    echo "<p class='serial' style='color: red;'>Rp. " . number_format($data[0]["Harga"], 2, ',', '.'). "</p>";
+    echo "<p class='serial' style='color: red;'>Rp. " . number_format($data[0]["Harga"], 2, ',', '.') . "</p>";
     echo "<p class='serial' style='color: gray;'>Tanggal dimasukkan :" . $value["Waktu"] . "</p>";
     echo "<hr class='my-4' style='border: 1px solid gray'>";
     echo "<div class='subttl d-flex'>";
@@ -32,14 +32,14 @@ foreach ($listbarang as $key => $value) {
     echo "<input type='hidden' name='dat2' value=" . $value["ID_Barang"] . ">";
     echo "<div class='jumlah d-flex' style='width: 10vw;'>";
     echo "<button id='kurang' style='width: 4vw; height: auto;' class='btn btn-secondary' onclick='min(" . $value["ID_Barang"] . "," . $value["ID_User"] . ")'>-</button>";
-    echo "<button id='tambah' style='width: 4vw; height: auto; margin-left:0.5vw' class='btn btn-secondary' onclick='plus(" . $value["ID_Barang"] . ",". $value["ID_User"].")'>+</button>";
+    echo "<button id='tambah' style='width: 4vw; height: auto; margin-left:0.5vw' class='btn btn-secondary' onclick='plus(" . $value["ID_Barang"] . "," . $value["ID_User"] . ")'>+</button>";
     echo "</div>";
 
-    echo "<p class='serial mt-1' style='color: gray; margin-right:5vw;'>Entity : " . $value["Jumlah"] . "</p>";
+    echo "<p class='serial mt-1' style='color: gray; margin-right:5vw;'>Quantity : " . $value["Jumlah"] . "</p>";
     echo "</div>";
     echo "<div class='sub'>";
     echo "<h5>";
-    echo "<p class='serial pt-1' style='color: gray;'>Subtotal : Rp. ". number_format($subtotal, 2, ',', '.');
+    echo "<p class='serial pt-1' style='color: gray;'>Subtotal : Rp. " . number_format($subtotal, 2, ',', '.');
     echo "</h4>";
     echo "</p>";
     echo "</div>";
@@ -47,7 +47,7 @@ foreach ($listbarang as $key => $value) {
     echo "</div>";
     echo "<div class='kr mt-4' style='margin-left: 17vw;'>";
     echo "<div class='cancel' style='margin-right:0vw;'>";
-    echo "<input type='hidden' name='dat' value='" . $value["ID_Barang"]. ">";
+    echo "<input type='hidden' name='dat' value='" . $value["ID_Barang"] . ">";
     echo "<a href='' style='color: gray;'>";
     echo '<button id="delete" style="border:0px;background-color:white;" onclick="del(' .  $value["ID_Barang"] . "," . $value["ID_User"] . ')">';
     echo '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">';
