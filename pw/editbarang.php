@@ -8,15 +8,15 @@ $stmt->execute();
 $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
 if (isset($_POST["save"])) {
-    $nama = $_POST["nama"];
-    $brand = $_POST["brand"];
-    $note = $_POST["note"];
-    $color = $_POST["color"];
-    $display = $_POST["display"];
-    $resistant = $_POST["resistant"];
-    $price = $_POST["harga"];
-    $stok = $_POST["stok"];
-    $gender = $_POST["gender"];
+    $nama = strip_tags($_POST["nama"]);
+    $brand = strip_tags($_POST["brand"]);
+    $note = strip_tags($_POST["note"]);
+    $color = strip_tags($_POST["color"]);
+    $display = strip_tags($_POST["display"]);
+    $resistant = strip_tags($_POST["resistant"]);
+    $price = strip_tags($_POST["harga"]);
+    $stok = strip_tags($_POST["stok"]);
+    $gender = strip_tags($_POST["gender"]);
     if ($nama != "" && $stok != "" && $price != "" && $note != "") {
         if ($_FILES['fileupload']['size'] != 0) {
             if ((is_numeric($stok) == 1 && is_numeric($price) == 1) && ($stok > 0 && $price > 0)) {

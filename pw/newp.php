@@ -1,15 +1,15 @@
 <?php
 require_once("connector.php");
 if (isset($_POST["add"])) {
-    $nama = $_POST["name"];
-    $brand = $_POST["brand"];
-    $resistant = $_POST["resistant"];
-    $stok = $_POST["jumlah"];
-    $color = $_POST["color"];
-    $display = $_POST["display"];
-    $harga = $_POST["price"];
-    $gender = $_POST["gender"];
-    $desc = $_POST["note"];
+    $nama = strip_tags($_POST["name"]);
+    $brand = strip_tags($_POST["brand"]);
+    $resistant = strip_tags($_POST["resistant"]);
+    $stok = strip_tags($_POST["jumlah"]);
+    $color = strip_tags($_POST["color"]);
+    $display = strip_tags($_POST["display"]);
+    $harga = strip_tags($_POST["price"]);
+    $gender = strip_tags($_POST["gender"]);
+    $desc = strip_tags($_POST["note"]);
     if ($_FILES['fileupload']['size'] != 0 && $nama != "" && $brand != 0 && $resistant != 0 && $stok != "" && $harga != "" && $color != 0 && $display != 0 && $gender != 0 && $desc != "") {
         if ((is_numeric($stok) == 1 && is_numeric($harga) == 1) && ($stok > 0 && $harga > 0)) {
             $target_dir = "asset/gambar/";
@@ -61,7 +61,7 @@ if (isset($_POST["add"])) {
 }
 
 if(isset($_POST["btnbrnd"])){
-    $nama = $_POST["inpbrand"];
+    $nama = strip_tags($_POST["inpbrand"]);
     if($nama==""){
         echo '<script>alert("Inputan Belum diisi")</script>';
     }else{
@@ -71,7 +71,7 @@ if(isset($_POST["btnbrnd"])){
     }
 }
 if (isset($_POST["btndisplay"])) {
-    $nama = $_POST["inpdisplay"];
+    $nama = strip_tags($_POST["inpdisplay"]);
     if ($nama == "") {
         echo '<script>alert("Inputan Belum diisi")</script>';
     } else {
@@ -81,7 +81,7 @@ if (isset($_POST["btndisplay"])) {
     }
 }
 if (isset($_POST["btnwarna"])) {
-    $nama = $_POST["inpwarna"];
+    $nama = strip_tags($_POST["inpwarna"]);
     if ($nama == "") {
         echo '<script>alert("Inputan Belum diisi")</script>';
     } else {
@@ -91,7 +91,7 @@ if (isset($_POST["btnwarna"])) {
     }
 }
 if (isset($_POST["btngender"])) {
-    $nama = $_POST["inpgender"];
+    $nama = strip_tags($_POST["inpgender"]);
     if ($nama == "") {
         echo '<script>alert("Inputan Belum diisi")</script>';
     } else {
@@ -101,7 +101,7 @@ if (isset($_POST["btngender"])) {
     }
 }
 if (isset($_POST["btnresistant"])) {
-    $nama = $_POST["inpresistant"];
+    $nama = strip_tags($_POST["inpresistant"]);
     if ($nama == "") {
         echo '<script>alert("Inputan Belum diisi")</script>';
     } else {
