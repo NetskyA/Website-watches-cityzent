@@ -124,16 +124,28 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                     <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
                         <ul class="navbar-nav fs-5">
                             <li class="nav-item ms-4">
-                                <a class="nav-link text-dark" href="index.php"><svg xmlns="http://www.w3.org/2000/svg"
-                                        width="30" height="35" fill="currentColor" class="bi bi-arrow-left-circle"
-                                        viewBox="0 0 16 16">
+                                <!-- <a class="nav-link text-dark" href="index.php">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor"
+                                        class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd"
                                             d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
-                                    </svg></a>
+                                    </svg></a> -->
+                                <a class="nav-link text-white" href="loginadmin.php" style="display: flex;">
+                                    <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
+                                    <h2 style="padding-top: 0.5vw; color:black;">
+                                        WATCHES SCRT
+                                    </h2>
+                                    <div class="nth3 ms-3">
+                                    </div>
+                                </a>
                             </li>
+                            <a href="index.php" style="text-decoration:none">
+                                <p class="home text-dark ms-3"
+                                    style="padding-top: 1vw;font-size:1.3vw; text-decoration: none;">Home</p>
+                            </a>
                             <li class="nav-item dropdown ms-4">
-                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link text-dark fs-4" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" style="padding-top: 1.1vw;">
                                     <?= $_SESSION["temp"]["Nama_Barang"] ?>
                                 </a>
                             </li>
@@ -144,7 +156,7 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
             <!-- and nav -->
             <!-- content -->
             <div class="content d-flex justify-content-center">
-                <div class="isic mt-5 rounded">
+                <div class="isic mt-1 rounded">
                     <div class="view d-flex mt-5">
                         <div class="kanan2">
                             <?php
@@ -166,7 +178,7 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                             </div>
                             <div class="price mt-2">
                                 <h4>Price</h4>
-                                <h5><span>Rp. </span><?= number_format($_SESSION["temp"]["Harga"], 2, ',', '.');?></h5>
+                                <h5><span>Rp. </span><?= number_format($_SESSION["temp"]["Harga"], 2, ',', '.'); ?></h5>
 
                                 <form action="" method="post">
                                     <h5>
@@ -187,7 +199,7 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                                         Show more
                                     </p>
                                     <div id="panelss" style="width: 100%;">
-                                        <div class="btn-group dropend fs-5">
+                                        <div class="btn-group dropend fs-5 mb-5">
                                             - Type: <?= $display["Nama"] ?>
                                             <br>
                                             - Gender: <?= $gender["Nama"] ?><br>
@@ -205,10 +217,9 @@ if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SE
                                     </div>
                                 </div>
                                 <hr class=" my-4 mt-4" style="width: 100%;">
-
                                 <form action="" method="post">
                                     <input type="submit" name="checkout" value="Add Cart"
-                                        class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3">
+                                        class="btn btn-outline-secondary d-grid col-4 mx-auto mt-3 mb-5">
                                 </form>
                             </div>
                         </div>

@@ -314,6 +314,15 @@ body {
     border: 1px rgb(130, 130, 130) solid;
 }
 
+.nth3{
+    width: 0px;
+    height: 2.3vw;
+    float: left;
+    justify-content: start;
+    margin-top: 0.5vw;
+    border: 1px rgb(130, 130, 130) solid;
+}
+
 .gmbr{
     width: 55vw;
     height: 35vw;
