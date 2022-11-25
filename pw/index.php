@@ -357,7 +357,11 @@ require_once("connector.php");
                                 <?php
                                 if (!isset($_SESSION["logged"])) {
                                     echo '<li><a class="dropdown-item" href="logincus.php">Login</a></li>';
-                                } else {
+                                }
+                                //  else if (!isset($_SESSION["his"])) {
+                                //     echo '<li><a class="dropdown-item" href="history.php">Transaction</a></li>';
+                                // } 
+                                else {
                                     echo '<li><a class="dropdown-item" href="logout.php">Logout</a></li>';
                                 }
                                 ?>
@@ -373,7 +377,7 @@ require_once("connector.php");
             <div class="contentall">
                 <div class="content1" style="margin-top:6vw;">
                     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
-                        style="margin: 7vw">
+                        style="margin: 7vw; margin-bottom: 2vw;">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
                                 class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -427,7 +431,7 @@ require_once("connector.php");
                     </div>
                 </div>
                 <!-- nav2 -->
-                <div class="nav2 d-flex justify-content-evenly align-items-center mt-1 row">
+                <div class="nav2 d-flex justify-content-evenly align-items-center row">
                     <div class="col-3 res">
                         <a href="#" class="gbr d-flex align-items-center justify-content-center">
                             <img class="logo2" src="asset/logo/casio.png" alt="">
