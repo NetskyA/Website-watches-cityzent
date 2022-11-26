@@ -122,5 +122,3 @@ $isi .= '<p style="font-size:0.8vw;">Total price : Rp' . number_format($subtotal
 ';
 $mail->Body = $isi;
 $mail->send();
-
-?>

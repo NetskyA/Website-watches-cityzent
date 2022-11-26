@@ -21,6 +21,9 @@ if (isset($_POST["del"])) {
 
     <!--Framework Use-->
     <link rel="stylesheet" href="css/syl.css">
+    <!-- <script src="css/jscript.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="asset/favicon/logoscrt.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/7e563a8c7f.js" crossorigin="anonymous"></script>
@@ -48,6 +51,8 @@ if (isset($_POST["del"])) {
         $('.table-paginate').dataTable();
     });
     </script>
+
+
 </head>
 
 <body>
@@ -103,6 +108,10 @@ if (isset($_POST["del"])) {
                     <a href="datauser.php" style="text-decoration: none; color:black;">
                         List User </a>
                 </div>
+                <div class="add pt-4 ps-4">
+                    <a href="export.php" style="text-decoration: none; color:black;">
+                        Export Data</a>
+                </div>
             </div>
         </div>
         <div class="cover2 mt-1">
@@ -131,6 +140,11 @@ if (isset($_POST["del"])) {
                             type="button">Add</button>
                     </div> -->
             </div>
+            <div class="ex">
+                <a href="exportall.php">
+                    <input type="button" class="exp" value="Export">
+                </a>
+            </div>
             <div class="bawah mt-1" style="width: 86vw;">
                 <table class="table table-striped table-bordered table-paginate" cellspacing="0" width="100%"
                     onmousedown="return false" onselectstart="return false">
@@ -147,7 +161,7 @@ if (isset($_POST["del"])) {
                             <th>Stock</th>
                             <th style="width: 7.5vw;">Price</th>
                             <th>Description</th>
-                            <th>Status</th>
+                            <th style="width: 10vw;">Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -212,6 +226,26 @@ ba.ID_Brand = br.ID and ba.ID_Warna = co.ID and ba.ID_Display=di.ID and ba.ID_Ge
         </div>
     </div>
 
+    <script>
+    $(document).ready(function() {
+        $('#mauexport').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+    });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
