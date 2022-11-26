@@ -99,7 +99,6 @@ if (isset($_POST["login"])) {
         <div class="isi">
             <div class="kotak d-flex justify-content-center">
                 <form action="" method="POST">
-
                     <div class="coverall2">
                         <div class="jdl">
                             <h2>

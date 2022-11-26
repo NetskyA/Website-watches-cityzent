@@ -38,62 +38,78 @@ if (isset($_POST["login"])) {
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
     <!-- and framework -->
 
+    <style>
+    /* .bg {
+            background-image: url("asset/banner/banneradmin.jpg");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        } */
+    </style>
+
 </head>
 
 <body class="bdy">
-    <table>
-        <div class="coverall">
-            <div class="bungkus ">
-                <div class="kiri d-flex justify-content-center">
-                    <div class="isikiri" data-aos="zoom-in" data-aos-anchor="#example-anchor" data-aos-offset="500"
-                        data-aos-duration="1000">
-                        <div class="jdl">
-                            Welcome to Administrator
-                        </div>
-                        <div class="logo d-flex justify-content-center mb-2">
-                            <img class="imgs" src="asset/logo/logo.png" alt="" srcset="">
-                        </div>
-                        <div class=" container d-flex justify-content-center mt-3">
-                            <div class="fom" style="width: 50%;">
-                                <form action="" method="post">
-                                    <div class="mb-3">
-                                        <label for="exampleInputUsername" class="form-label">Username</label>
-                                        <input type="text" name="username" id="" placeholder="User Name"
-                                            class="form-control" id="exampleInputUsername" aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" name="password" class="form-control"
-                                            placeholder="Password" id="exampleInputPassword1">
-                                        <div id="emailHelp" class="form-text fs-6">We'll never share your password with
-                                            anyone
-                                            else.
-                                        </div>
-                                    </div>
-                                    <div class="sub d-flex justify-content-center">
-                                        <ul class="nav nav-pills nav-justified d-flex mb-3 d-flex justify-content-center"
-                                            id="ex1" role="tablist">
-                                            <li class="nav-item" role="presentation">
-                                                <a class="nav-link text-dark" id="tab-register" style="width: 7vw;"
-                                                    data-mdb-toggle="pill" href="index.php" role="tab"
-                                                    aria-controls="pills-register" aria-selected="false">Cancel
-                                                </a>
-                                            </li>
+    <div class="bg">
 
-                                            <li class="nav-item" role="presentation">
-                                                <input class="btna" type="submit" value="Login" name="login">
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </form>
+        <table>
+            <div class="coverall">
+                <!-- <img src="asset/banner/bgadmin.jpg" alt="" srcset=""> -->
+                <div class="bungkus">
+                    <div class="kiri d-flex justify-content-center">
+                        <div class="isikiri" data-aos="zoom-in" data-aos-anchor="#example-anchor" data-aos-offset="500"
+                            data-aos-duration="1000">
+                            <div class="jdl">
+                                Welcome to Administrator
+                            </div>
+                            <div class="logo d-flex justify-content-center mb-2">
+                                <img class="imgs" src="asset/logo/logo.png" alt="" srcset="">
+                            </div>
+                            <div class=" container d-flex justify-content-center mt-3">
+                                <div class="fom" style="width: 50%;">
+                                    <form action="" method="post">
+                                        <div class="mb-3">
+                                            <label for="exampleInputUsername" class="form-label">Username</label>
+                                            <input type="text" name="username" id="" placeholder="User Name"
+                                                class="form-control" id="exampleInputUsername"
+                                                aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                                            <input type="password" name="password" class="form-control"
+                                                placeholder="Password" id="exampleInputPassword1">
+                                            <div id="emailHelp" class="form-text fs-6">We'll never share your password
+                                                with
+                                                anyone
+                                                else.
+                                            </div>
+                                        </div>
+                                        <div class="sub d-flex justify-content-center">
+                                            <ul class="nav nav-pills nav-justified d-flex mb-3 d-flex justify-content-center"
+                                                id="ex1" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link text-dark" id="tab-register" style="width: 7vw;"
+                                                        data-mdb-toggle="pill" href="index.php" role="tab"
+                                                        aria-controls="pills-register" aria-selected="false">Cancel
+                                                    </a>
+                                                </li>
+
+                                                <li class="nav-item" role="presentation">
+                                                    <input class="btna" type="submit" value="Login" name="login">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
+    </div>
     </table>
+    </div>
     <script>
     AOS.init();
     </script>
