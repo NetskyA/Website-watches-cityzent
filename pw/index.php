@@ -1,6 +1,6 @@
 <?php
 require_once("connector.php");
-if(isset($_REQUEST["hapus"])){
+if (isset($_REQUEST["hapus"])) {
     $idcus = $_SESSION["logged"];
     $result = $conn->query("DELETE FROM cart WHERE ID_User = $idcus");
 }
@@ -284,7 +284,7 @@ if(isset($_REQUEST["hapus"])){
             <!--navbar-->
             <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <div class="container-fluid">
-                    <a class="nav-link text-white pt-2" href="loginadmin.php" style="display: flex;">
+                    <a class="nav-link text-white pt-2" href="#" style="display: flex;">
                         <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
                         <h2 style="padding-top: 0.5vw; color:black;">
                             WATCHES SCRT
@@ -361,8 +361,7 @@ if(isset($_REQUEST["hapus"])){
                                 <?php
                                 if (!isset($_SESSION["logged"])) {
                                     echo '<li><a class="dropdown-item" href="logincus.php">Login</a></li>';
-                                }
-                                else {
+                                } else {
                                     echo '<li><a class="dropdown-item" href="history.php">Transaction</a></li>';
                                     echo '<li><a class="dropdown-item" href="logout.php">Logout</a></li>';
                                 }
@@ -693,15 +692,19 @@ if(isset($_REQUEST["hapus"])){
                                     <p style="font-size: 1vw; color:gray">Support</p>
                                 </div>
                             </div>
-                            <div class="col-2 ms-5" style="margin: 0.3vw;font-size: 1.3vw; color:dark;">
+                            <div class="col-2 pt-2 ms-5" style="margin: 0.3vw;font-size: 1.3vw; color:dark;">
                                 <p>Our Services</p>
                                 <div class="des">
-                                    <p style="font-size: 1vw; color:gray">Sell Watches</p>
-                                    <p style="font-size: 1vw; color:gray">Save Transactions</p>
+                                    <a href="loginadmin.php" style="text-decoration: none;">
+                                        <p style="font-size: 1vw; color:gray">Admin</p>
+                                    </a>
+                                    <a href="history.php" style="text-decoration: none;">
+                                        <p style="font-size: 1vw; color:gray">Save Transactions</p>
+                                    </a>
                                     <p style="font-size: 1vw; color:gray">New style</p>
                                 </div>
                             </div>
-                            <div class="col-4" style="margin: 0.3vw;font-size: 1.3vw; color:dark;">
+                            <div class="col-4 pt-2" style="margin: 0.3vw;font-size: 1.3vw; color:dark;">
                                 <p>Subscribe our WATCHES SCRT</p>
                                 <div class="des">
                                     <p style="font-size: 1vw; color:gray">Find your style and explore it all over</p>
