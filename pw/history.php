@@ -34,7 +34,7 @@
     <div class="coverall">
         <div class="cover">
             <!--navbar-->
-            <nav class="navbar navbar-expand-lg bg-light">
+            <nav class="navbar navbar-expand-lg bg-light" onmousedown='return false;' onselectstart='return false;'>
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -67,11 +67,11 @@
             <div class="content d-flex justify-content-center">
                 <div class="kiri3">
                     <div class="container-fluid">
-                        <div class="judulw">
+                        <div class="judulw" onmousedown='return false;' onselectstart='return false;'>
                             <p class="display-4 fs-2 pt-3" style="text-align: center;">History Transaction</p>
                         </div>
                         <div class="sort">
-                            <p class="isi3">Search Date</p>
+                            <p class="isi3" onmousedown='return false;' onselectstart='return false;'>Search Date</p>
                             <div class="isi2">
                                 <form action="https://example.com">
                                     <input style="border-radius:0.3vw; height:auto; width:8vw; border: 1px gray solid"
@@ -83,7 +83,7 @@
                             </div>
                         </div>
                         <hr class="my-4" style="border: 1px solid gray">
-                        <div class="isi">
+                        <div class="isi" onmousedown='return false;' onselectstart='return false;'>
                             <div class="kiri">
                                 <div class="gmbr">
                                     <img src="asset/imgW/e.jpg" class="gmbr1" alt="">
@@ -106,9 +106,9 @@
                         </div>
                         <!-- <hr class="my-4" style="border: 1px solid gray"> -->
 
-                        <div class="alamat" style="width: 100%; height:auto;">
+                        <!-- <div class="alamat" style="width: 100%; height:auto;">
 
-                        </div>
+                        </div> -->
                     </div>
                     <hr class="my-4" style="border: 1px solid gray">
 
@@ -117,13 +117,13 @@
             <!-- and content -->
         </div>
     </div>
-</body>
-<script>
-$(document).ready(function() {
-    $('body').bind('cut copy', function(e) {
-        e.preventDefault();
+    <script>
+    $(document).ready(function() {
+        $("body").on("contextmenu", function(e) {
+            return false;
+        });
     });
-});
-</script>
+    </script>
+</body>
 
 </html>

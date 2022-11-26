@@ -65,7 +65,8 @@ if (isset($_POST["del"])) {
                     <ul class="nav">
                         <li class="nav-item fs-3 pt-2" style="display: flex;">
                             <a href="loginadmin.php">
-                                <button class="btn btn-secondary mt-4 ms-4" style="width: 10vw; height:2vw" type="button">Logout</button>
+                                <button class="btn bck btn-secondary mt-4 ms-4" style="width: 10vw; height:2vw"
+                                    type="button">Logout</button>
                             </a>
                         </li>
                     </ul>
