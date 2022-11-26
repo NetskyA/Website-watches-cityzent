@@ -17,23 +17,6 @@ foreach ($listbarang as $key => $value) {
     $subtotal = $value["Jumlah"] * $data[0]["Harga"];
     $subtotalall += $subtotal;
 }
-$stmt = $conn->prepare("INSERT INTO h_trans(ID, ID_Customer, Total, Waktu_Transaksi) VALUES(?,?,?,?)");
-$stmt->bind_param("ssss", $id, $idcus, $subtotalall, $waktu);
-$result = $stmt->execute();
-foreach ($listbarang as $key => $value) {
-    $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID_Barang'] . "'");
-    $stmt->execute();
-    $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-    $jml = $value["Jumlah"];
-    $idbar = $value['ID_Barang'];
-    $hasilstok = $data[0]["Stok"] - $value["Jumlah"];
-    $stmt = $conn->prepare("UPDATE barang SET stok = ? WHERE ID = ?");
-    $stmt->bind_param("ii", $hasilstok, $idbar);
-    $result = $stmt->execute();
-    $stmt = $conn->prepare("INSERT INTO d_trans(ID, ID_Barang, Jumlah) VALUES(?,?,?)");
-    $stmt->bind_param("iii", $id, $idbar, $jml);
-    $result = $stmt->execute();
-}
 $stmt = $conn->prepare("SELECT * FROM customer where customer.ID = '" . $idcus . "'");
 $stmt->execute();
 $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -57,41 +40,37 @@ $mail->isHTML(true);
 $mail->addEmbeddedImage('../asset/logo/logo.png', 'logo_p2t');
 $mail->addEmbeddedImage('../asset/animate/test.gif', 'logo_p3t');
 
-$mail->setFrom('alvinbwiyono222@gmail.com');
+$mail->setFrom('alvinbwiyono@gmail.com');
 $mail->addAddress("$email");
 $mail->Subject = "Invoice";
 $isi = "";
 $isi .=
-    '
+'
 <html>
-<body class="bdy" style="background-color: rgba(104, 104, 104, 0.464);">
+<body">
     <div style="background-color: rgb(255, 255, 255);
-    width: 53vw;
-    margin-left: 2vw;
-    height: auto;
-    border-radius: 1vw;
-    box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
-    margin-left: 23vw;
-    margin-top: 0.5vw;    
-    display: flex;
-    justify-content: center;">
+        width: 100%;
+        margin-left: 2vw;
+        height: auto;
+        border-radius: 1vw;
+        box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
+        margin-top: 0.5vw;    
+        display: flex;
+        justify-content: center;">
         <div class="isinya" style="">
             <div class="atas" style="display: flex;justify-content:center">
                 <img src=\'cid:logo_p2t\' style="width: 3vw;height: 3vw;" alt="" srcset="">
                 <p style="font-size:0.8vw; padding-top:0.5vw;">WATCHES SCRT</p>
             </div>
-            <div style="font-size: 2vw;
-    text-align: center;
-    margin-top: 0.5vw;">
+            <div style="font-size: 2vw;text-align: center;margin-top: 0.5vw;">
                 <p>Appreciation to you</p>
             </div>
-            <div class="gmb" style="display: flex;justify-content: center;width:100%;" >
+            <div class="gmb" style="position:relative;display: flex;justify-content: center;width:100%;" >
                 <img src=\'cid:logo_p3t\' alt=""
-                    style="margin-top: -2vw;display: flex;width:8.2vw;height:6vw;justify-content:center;">
+                    style="position: absolute;margin-left: auto;margin-right: auto;margin-top: -2vw;display: flex;width:8.2vw;height:6vw;justify-content:center;">
             </div>
-            <div class="sks" style="display: flex;width:80%;
-    justify-content: center;text-align:center">
-                <p style="text-align: center; width:100%; font-size:0.8vw;">For those of you who care about style, the
+            <div class="sks" style="position:relative;display: flex;width:100%;justify-content: center;text-align:center">
+                <p style="position: absolute;margin-left: auto;margin-right: auto;text-align: center; width:80%; font-size:0.8vw;">For those of you who care about style, the
                     purchase of this
                     watch
                     is very
@@ -107,11 +86,11 @@ $isi .=
                 </div>
                 <p style="font-size:0.8vw;">Name customer : ' . $nama . '</p>
                 <p style="font-size:0.8vw;">Product name : </p>';
-foreach ($listbarang2 as $key => $value) {
-    $isi .= '<p style="font-size:0.8vw;">' . $value . '</p>';
-}
+                foreach ($listbarang2 as $key => $value) {
+                    $isi .= '<p style="font-size:0.8vw;">' . $value . '</p>';
+                }
 
-$isi .= '<p style="font-size:0.8vw;">Total price : Rp' . number_format($subtotalall, 2, ",", ".") . '</p>
+            $isi .= '<p style="font-size:0.8vw;">Total price : Rp' . number_format($subtotalall, 2, ",", ".") . '</p>
             </div>
             <hr class="my-4 mt-2">
         </div>
