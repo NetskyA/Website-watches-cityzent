@@ -1,5 +1,9 @@
 <?php
 require_once("connector.php");
+if(isset($_REQUEST["hapus"])){
+    $idcus = $_SESSION["logged"];
+    $result = $conn->query("DELETE FROM cart WHERE ID_User = $idcus");
+}
 ?>
 
 <!doctype html>
