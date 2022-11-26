@@ -158,3 +158,5 @@
     transform: scale(110%);
     transition: 1s;
 }
+
+.hidetext { -webkit-text-security: disc; /* Default */ }
