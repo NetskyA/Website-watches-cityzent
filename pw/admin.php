@@ -110,7 +110,7 @@ if (isset($_POST["del"])) {
                 </div>
                 <div class="add pt-4 ps-4">
                     <a href="export.php" style="text-decoration: none; color:black;">
-                        Export Data</a>
+                        Sales Report</a>
                 </div>
             </div>
         </div>
