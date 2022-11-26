@@ -74,7 +74,8 @@ if (isset($_POST["del"])) {
                     <tr>
                         <td style="text-align: center;"><?php echo $value["ID"] ?></td>
                         <td style="text-align: center;"><?php echo $value["ID_Customer"] ?></td>
-                        <td style="text-align: center;"><?php echo $value["Total"] ?></td>
+                        <td style="text-align: center;">Rp. <?php echo number_format($value["Total"], 2, ',', '.') ?>
+                        </td>
                         <td style="text-align: center;"><?php echo $value["Waktu_Transaksi"] ?></td>
                     </tr>
 

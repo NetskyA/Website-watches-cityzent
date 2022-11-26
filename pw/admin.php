@@ -183,7 +183,7 @@ ba.ID_Brand = br.ID and ba.ID_Warna = co.ID and ba.ID_Display=di.ID and ba.ID_Ge
                             <td style="text-align: center;"><?= $value["Nama_Barang"] ?></td>
                             <td style="text-align: center;"><?= $value["Gambar"] ?></td>
                             <td style="text-align: center;"><?= $value["Stok"] ?></td>
-                            <td style="text-align: center;">Rp <?= number_format($value["Harga"], 2, ',', '.') ?></td>
+                            <td style="text-align: center;">Rp. <?= number_format($value["Harga"], 2, ',', '.') ?></td>
                             <td style="text-align: center;">
                                 <div style="height:6vw; overflow:hidden"><?= $value["Deskripsi"] ?></div>
                             </td>
