@@ -316,7 +316,7 @@ require_once("connector.php");
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item text-dark" href="history.php">Number Phone</a>
+                                        <a class="dropdown-item text-dark" href="contactus.php">Number Phone</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item text-dark" href="contactus.php">Email</a>
@@ -358,10 +358,8 @@ require_once("connector.php");
                                 if (!isset($_SESSION["logged"])) {
                                     echo '<li><a class="dropdown-item" href="logincus.php">Login</a></li>';
                                 }
-                                //  else if (!isset($_SESSION["his"])) {
-                                //     echo '<li><a class="dropdown-item" href="history.php">Transaction</a></li>';
-                                // } 
                                 else {
+                                    echo '<li><a class="dropdown-item" href="history.php">Transaction</a></li>';
                                     echo '<li><a class="dropdown-item" href="logout.php">Logout</a></li>';
                                 }
                                 ?>

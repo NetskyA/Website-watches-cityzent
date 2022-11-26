@@ -118,7 +118,7 @@ if (isset($_REQUEST["berhasil"])) {
                     echo '<p style="font-size:0.8vw;">' . $value . '</p>';
                 }
                 ?>
-                <p style="font-size:0.8vw;">Total price : Rp. <?= number_format($subtotalall, 2, ',', '.'); ?></p>
+                <p style="font-size:0.8vw;">Total price : Rp <?= number_format($subtotalall, 2, ',', '.'); ?></p>
             </div>
             <hr class="my-4 mt-2">
             <div class="bawah d-flex justify-content-center">

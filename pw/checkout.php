@@ -363,7 +363,7 @@ foreach ($listbarang as $key => $value) {
                                     <h4>
                                         <b>Subtotal All</b>
                                     </h4>
-                                    <p class="serial pt-1" style="color: red;">Rp.
+                                    <p class="serial pt-1" style="color: red;">Rp
                                         <?= number_format($total, 2, ',', '.'); ?></p>
                                 </div>
                             </div>
