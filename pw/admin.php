@@ -145,7 +145,7 @@ if (isset($_POST["del"])) {
                     <input type="button" class="exp" value="Export">
                 </a>
             </div>
-            <div class="bawah mt-1" style="width: 86vw;">
+            <div class="bawah mt-1 mb-5" style="width: 86vw;">
                 <table class="table table-striped table-bordered table-paginate" cellspacing="0" width="100%"
                     onmousedown="return false" onselectstart="return false">
                     <thead>

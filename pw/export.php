@@ -53,7 +53,7 @@ if (isset($_POST["del"])) {
     </nav>
     <div class="container">
         <h4 class="jd pt-4">Data Exporting</h4>
-        <div class="data-tables datatable-dark mt-4">
+        <div class="data-tables datatable-dark mt-4 mb-5">
             <table class="table table-striped table-bordered table-paginate" id="mauexport" cellspacing="0" width="100%"
                 onmousedown="return false" onselectstart="return false">
                 <thead>
