@@ -60,7 +60,7 @@ if (isset($_POST["del"])) {
                     <tr>
                         <th style="width: 5vw;">ID</th>
                         <th style="width: 5.9vw;">ID Customer</th>
-                        <th style="width: 8.5vw;">Total</th>
+                        <th style="width: 8.5vw;">Subtotal</th>
                         <th style="width: 8.5vw;">Date Transaction</th>
                     </tr>
                 </thead>
