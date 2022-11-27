@@ -283,7 +283,7 @@ foreach ($listbarang as $key => $value) {
                             <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
 
                             <li class="nav-item dropdown me-4 pt-2" style="display: flex;">
-                                <p style="width:11.5vw; font-size:1.5vw; font-weight:bold;">Cityzent</p>
+                                <p style="width:6.6vw; font-size:1.5vw; font-weight:bold;">Cityzent</p>
                                 <div class="nth2">
                                 </div>
                             </li>

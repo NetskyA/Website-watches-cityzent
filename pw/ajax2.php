@@ -25,7 +25,7 @@ foreach ($listbarang as $key => $value) {
     echo "</h4>";
     echo "<p class='serial pt-1' style='color: gray;'>" . $data[0]['Nama_Barang'] . "</p>";
     echo "<p class='serial' style='color: red;'>Rp " . number_format($data[0]["Harga"], 2, ',', '.') . "</p>";
-    echo "<p class='serial' style='color: gray;'>Tanggal dimasukkan :" . $value["Waktu"] . "</p>";
+    echo "<p class='serial' style='color: gray;'>Time add : " . $value["Waktu"] . "</p>";
     echo "<hr class='my-4' style='border: 1px solid gray'>";
     echo "<div class='subttl d-flex'>";
     echo "<div class='enti'>";
