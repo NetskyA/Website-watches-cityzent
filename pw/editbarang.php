@@ -43,7 +43,7 @@ if (isset($_POST["save"])) {
                 // Allow certain file formats
                 if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $uploadOk == true) {
                     $uploadOk = false;
-                    echo '<script>alert("Format File Salah")</script>';
+                    echo '<script>alert("Invalid Format")</script>';
                 }
 
                 // Check if $uploadOk is set to 0 by an error
@@ -70,7 +70,7 @@ if (isset($_POST["save"])) {
             header("Location: admin.php");
         }
     } else {
-        echo '<script>alert("Ada yang Belum diisi")</script>';
+        echo '<script>alert("Please Input All Field")</script>';
     }
 }
 $stmt = $conn->prepare("SELECT * FROM barang WHERE ID='" . $id . "'");

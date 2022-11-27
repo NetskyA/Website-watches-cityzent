@@ -13,8 +13,7 @@ if (isset($_REQUEST["hapus"])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cityzent | Online Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!--Framework Use-->
     <link rel="stylesheet" href="css/style.css">
@@ -38,243 +37,239 @@ if (isset($_REQUEST["hapus"])) {
         display: none;
     }
     </style> -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
 
     <!--Framework Use-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-    $(document).ready(function() {
-        // panel hide
-        $("#panel").hide();
-        $("#panels").hide();
-        $("#panelss").hide();
-        $("#panel1").hide();
-        $("#panel2").hide();
-        $("#panel3").hide();
-        // and panel hide
+        $(document).ready(function() {
+            // panel hide
+            $("#panel").hide();
+            $("#panels").hide();
+            $("#panelss").hide();
+            $("#panel1").hide();
+            $("#panel2").hide();
+            $("#panel3").hide();
+            // and panel hide
 
-        // action
-        $("#tgl").click(function() {
-            $("#panel").toggle(1000);
-        });
+            // action
+            $("#tgl").click(function() {
+                $("#panel").toggle(1000);
+            });
 
-        $("#tgls").click(function() {
-            $("#panels").toggle(1000);
-        });
+            $("#tgls").click(function() {
+                $("#panels").toggle(1000);
+            });
 
-        $("#tglss").click(function() {
-            $("#panelss").toggle(1000);
-        });
+            $("#tglss").click(function() {
+                $("#panelss").toggle(1000);
+            });
 
-        $("#tgl1").click(function() {
-            $("#panel1").toggle(1000);
-        });
+            $("#tgl1").click(function() {
+                $("#panel1").toggle(1000);
+            });
 
-        $("#tgl2").click(function() {
-            $("#panel2").toggle(1000);
-        });
+            $("#tgl2").click(function() {
+                $("#panel2").toggle(1000);
+            });
 
-        $("#tgl3").click(function() {
-            $("#panel3").toggle(1000);
+            $("#tgl3").click(function() {
+                $("#panel3").toggle(1000);
+            });
+            // and action
         });
-        // and action
-    });
     </script>
 
 
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- Jquery DataTables -->
-    <script type="text/javascript" language="javascript"
-        src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <!-- Bootstrap dataTables Javascript -->
-    <script type="text/javascript" language="javascript"
-        src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
     <script type="text/javascript" charset="utf-8">
-    $(document).ready(function() {
-        $('.table-paginate').dataTable();
-    });
+        $(document).ready(function() {
+            $('.table-paginate').dataTable();
+        });
     </script>
     <script>
-    var search = "";
+        var search = "";
 
-    function load() {
-        ajax(1);
-    }
-
-    function ajax(idx) {
-        var countgender = 0;
-        var countbrand = 0;
-        var countwarna = 0;
-        var countwater = 0;
-        var countdisplay = 0;
-        var condition = [];
-        var query = "";
-        search = document
-            .getElementById("cari1")
-            .value;
-        var gender = document.getElementsByName("gdr");
-        for (i = 0; i < gender.length; i++) {
-            if (gender[i].checked == true) {
-                condition.push("ID_Gender=" + gender[i].value);
-            }
-        }
-        if (condition.length != 0) {
-            if (query != "") {
-                query += " and ";
-            }
-            query += "(";
-            query += condition.join(" or ");
-            query += ")";
-        }
-        condition = [];
-        var brand = document.getElementsByName("brn");
-        for (i = 0; i < brand.length; i++) {
-            if (brand[i].checked == true) {
-                condition.push("ID_Brand=" + brand[i].value);
-            }
-        }
-        if (condition.length != 0) {
-            if (query != "") {
-                query += " and ";
-            }
-            query += "(";
-            query += condition.join(" or ");
-            query += ")";
-        }
-        condition = [];
-        var resistance = document.getElementsByName("res");
-        for (i = 0; i < resistance.length; i++) {
-            if (resistance[i].checked == true) {
-                condition.push("ID_Resistant=" + resistance[i].value);
-            }
-        }
-        if (condition.length != 0) {
-            if (query != "") {
-                query += " and ";
-            }
-            query += "(";
-            query += condition.join(" or ");
-            query += ")";
-        }
-        condition = [];
-        var display = document.getElementsByName("dsp");
-        for (i = 0; i < display.length; i++) {
-            if (display[i].checked == true) {
-                condition.push("ID_Display=" + display[i].value);
-            }
-        }
-        if (condition.length != 0) {
-            if (query != "") {
-                query += " and ";
-            }
-            query += "(";
-            query += condition.join(" or ");
-            query += ")";
-        }
-        condition = [];
-        var color = document.getElementsByName("col");
-        for (i = 0; i < color.length; i++) {
-            if (color[i].checked == true) {
-                condition.push("ID_Warna=" + color[i].value);
-            }
-        }
-        if (condition.length != 0) {
-            if (query != "") {
-                query += " and ";
-            }
-            query += "(";
-            query += condition.join(" or ");
-            query += ")";
+        function load() {
+            ajax(1);
         }
 
-        var quer1 = false;
-        var nilaimax = 0;
-        var nilaimin = 99999999;
-        if (document.getElementsByName("prc1")[0].checked == true) {
-            quer1 = true;
-            if (nilaimax < 1000000) {
-                nilaimax = 1000000;
+        function ajax(idx) {
+            var countgender = 0;
+            var countbrand = 0;
+            var countwarna = 0;
+            var countwater = 0;
+            var countdisplay = 0;
+            var condition = [];
+            var query = "";
+            search = document
+                .getElementById("cari1")
+                .value;
+            var gender = document.getElementsByName("gdr");
+            for (i = 0; i < gender.length; i++) {
+                if (gender[i].checked == true) {
+                    condition.push("ID_Gender=" + gender[i].value);
+                }
             }
-            if (nilaimin > 800000) {
-                nilaimin = 800000;
-            }
-        }
-        if (document.getElementsByName("prc2")[0].checked == true) {
-            quer1 = true;
-            if (nilaimax < 1500000) {
-                nilaimax = 1500000;
-            }
-            if (nilaimin > 1000000) {
-                nilaimin = 1000000;
-            }
-        }
-        if (document.getElementsByName("prc3")[0].checked == true) {
-            quer1 = true;
-            if (nilaimax < 3000000) {
-                nilaimax = 3000000;
-            }
-            if (nilaimin > 1500000) {
-                nilaimin = 1500000;
-            }
-        }
-        minim = document.getElementById("minim").value;
-        maks = document.getElementById("maks").value;
-        var validmin = false;
-        var validmaks = false;
-        if (!isNaN(minim) && minim != "") {
-            validmin = true;
-        }
-        if (!isNaN(maks) && maks != "") {
-            validmaks = true;
-        }
-        if (quer1) {
-            if (minim < nilaimin && validmin) {
-                nilaimin = minim;
-            }
-            if (maks > nilaimax && validmaks) {
-                nilaimax = maks;
-            }
-            if (query != "") {
-                query += " and ";
-            }
-            query += "(Harga >=" + nilaimin + " and " + "Harga<=" + nilaimax + ")"
-        } else {
-            if (validmaks == true && validmin == true) {
+            if (condition.length != 0) {
                 if (query != "") {
                     query += " and ";
                 }
-                query += "(Harga >=" + minim + " and " + "Harga<=" + maks + ")";
-            } else if (validmaks == true) {
-                if (query != "") {
-                    query += " and ";
-                }
-                query += "(Harga<=" + maks + ")";
-            } else if (validmin == true) {
-                if (query != "") {
-                    query += " and ";
-                }
-                query += "(Harga>=" + minim + ")";
+                query += "(";
+                query += condition.join(" or ");
+                query += ")";
             }
+            condition = [];
+            var brand = document.getElementsByName("brn");
+            for (i = 0; i < brand.length; i++) {
+                if (brand[i].checked == true) {
+                    condition.push("ID_Brand=" + brand[i].value);
+                }
+            }
+            if (condition.length != 0) {
+                if (query != "") {
+                    query += " and ";
+                }
+                query += "(";
+                query += condition.join(" or ");
+                query += ")";
+            }
+            condition = [];
+            var resistance = document.getElementsByName("res");
+            for (i = 0; i < resistance.length; i++) {
+                if (resistance[i].checked == true) {
+                    condition.push("ID_Resistant=" + resistance[i].value);
+                }
+            }
+            if (condition.length != 0) {
+                if (query != "") {
+                    query += " and ";
+                }
+                query += "(";
+                query += condition.join(" or ");
+                query += ")";
+            }
+            condition = [];
+            var display = document.getElementsByName("dsp");
+            for (i = 0; i < display.length; i++) {
+                if (display[i].checked == true) {
+                    condition.push("ID_Display=" + display[i].value);
+                }
+            }
+            if (condition.length != 0) {
+                if (query != "") {
+                    query += " and ";
+                }
+                query += "(";
+                query += condition.join(" or ");
+                query += ")";
+            }
+            condition = [];
+            var color = document.getElementsByName("col");
+            for (i = 0; i < color.length; i++) {
+                if (color[i].checked == true) {
+                    condition.push("ID_Warna=" + color[i].value);
+                }
+            }
+            if (condition.length != 0) {
+                if (query != "") {
+                    query += " and ";
+                }
+                query += "(";
+                query += condition.join(" or ");
+                query += ")";
+            }
+
+            var quer1 = false;
+            var nilaimax = 0;
+            var nilaimin = 99999999;
+            if (document.getElementsByName("prc1")[0].checked == true) {
+                quer1 = true;
+                if (nilaimax < 1000000) {
+                    nilaimax = 1000000;
+                }
+                if (nilaimin > 800000) {
+                    nilaimin = 800000;
+                }
+            }
+            if (document.getElementsByName("prc2")[0].checked == true) {
+                quer1 = true;
+                if (nilaimax < 1500000) {
+                    nilaimax = 1500000;
+                }
+                if (nilaimin > 1000000) {
+                    nilaimin = 1000000;
+                }
+            }
+            if (document.getElementsByName("prc3")[0].checked == true) {
+                quer1 = true;
+                if (nilaimax < 3000000) {
+                    nilaimax = 3000000;
+                }
+                if (nilaimin > 1500000) {
+                    nilaimin = 1500000;
+                }
+            }
+            minim = document.getElementById("minim").value;
+            maks = document.getElementById("maks").value;
+            var validmin = false;
+            var validmaks = false;
+            if (!isNaN(minim) && minim != "") {
+                validmin = true;
+            }
+            if (!isNaN(maks) && maks != "") {
+                validmaks = true;
+            }
+            if (quer1) {
+                if (minim < nilaimin && validmin) {
+                    nilaimin = minim;
+                }
+                if (maks > nilaimax && validmaks) {
+                    nilaimax = maks;
+                }
+                if (query != "") {
+                    query += " and ";
+                }
+                query += "(Harga >=" + nilaimin + " and " + "Harga<=" + nilaimax + ")"
+            } else {
+                if (validmaks == true && validmin == true) {
+                    if (query != "") {
+                        query += " and ";
+                    }
+                    query += "(Harga >=" + minim + " and " + "Harga<=" + maks + ")";
+                } else if (validmaks == true) {
+                    if (query != "") {
+                        query += " and ";
+                    }
+                    query += "(Harga<=" + maks + ")";
+                } else if (validmin == true) {
+                    if (query != "") {
+                        query += " and ";
+                    }
+                    query += "(Harga>=" + minim + ")";
+                }
+            }
+            $.ajax({
+                type: "GET",
+                data: {
+                    search: search,
+                    idx: idx,
+                    query: query
+                },
+                url: "ajax.php",
+                success: function(msg) {
+                    $('#con').html(msg);
+                }
+            });
         }
-        $.ajax({
-            type: "GET",
-            data: {
-                search: search,
-                idx: idx,
-                query: query
-            },
-            url: "ajax.php",
-            success: function(msg) {
-                $('#con').html(msg);
-            }
-        });
-    }
     </script>
 </head>
 
@@ -292,16 +287,13 @@ if (isset($_REQUEST["hapus"])) {
                         <div class="nth ms-3">
                         </div>
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="nsavbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="nsavbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse ms-3" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-4">
                             <li class="nav-item dropdown me-4">
-                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     New Series
                                 </a>
                                 <ul class="dropdown-menu">
@@ -314,8 +306,7 @@ if (isset($_REQUEST["hapus"])) {
                                 <a class="nav-link text-dark" href="#footer">Specials</a>
                             </li>
                             <li class="nav-item dropdown me-4">
-                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Support
                                 </a>
                                 <ul class="dropdown-menu">
@@ -339,21 +330,15 @@ if (isset($_REQUEST["hapus"])) {
 
                         </ul>
                         <a href="checkout.php" role="button" class="btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="50" fill="currentColor"
-                                class="bi bi-cart4 me-3" viewBox="0 0 16 16" style="margin-right: 0vw;">
-                                <path
-                                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="50" fill="currentColor" class="bi bi-cart4 me-3" viewBox="0 0 16 16" style="margin-right: 0vw;">
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
                             </svg>
                         </a>
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle me-5" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false"><a href="logincus.php" role="button" class="btn"
-                                    style="margin-top: 0.3vw;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="37" height="42" fill="currentColor"
-                                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <button class="btn dropdown-toggle me-5" type="button" data-bs-toggle="dropdown" aria-expanded="false"><a href="logincus.php" role="button" class="btn" style="margin-top: 0.3vw;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="37" height="42" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                        <path fill-rule="evenodd"
-                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                                     </svg>
                                 </a>
                             </button>
@@ -377,19 +362,13 @@ if (isset($_REQUEST["hapus"])) {
 
             <div class="contentall">
                 <div class="content1" style="margin-top:6vw;">
-                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
-                        style="margin: 7vw; margin-bottom: 2vw;">
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin: 7vw; margin-bottom: 2vw;">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
-                                aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="5000">
@@ -419,13 +398,11 @@ if (isset($_REQUEST["hapus"])) {
                                 </a>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -475,13 +452,12 @@ if (isset($_REQUEST["hapus"])) {
                                             $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                             foreach ($data as $value) {
                                             ?>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="checkbox" name="brn"
-                                                    id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    <?= $value["Nama"] ?>
-                                                </p>
-                                            </div>
+                                                <div class="btn-group dropend fs-5">
+                                                    <input class="form-check-input me-1" type="checkbox" name="brn" id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?= $value["Nama"] ?>
+                                                    </p>
+                                                </div>
                                             <?php
                                             }
                                             ?>
@@ -504,13 +480,12 @@ if (isset($_REQUEST["hapus"])) {
                                             $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                             foreach ($data as $value) {
                                             ?>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="checkbox" name="brn"
-                                                    id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    <?= $value["Nama"] ?> Series
-                                                </p>
-                                            </div>
+                                                <div class="btn-group dropend fs-5">
+                                                    <input class="form-check-input me-1" type="checkbox" name="brn" id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?= $value["Nama"] ?> Series
+                                                    </p>
+                                                </div>
                                             <?php
                                             }
                                             ?>
@@ -527,29 +502,24 @@ if (isset($_REQUEST["hapus"])) {
                                         <!-- <div>Click to slide down panel</div> -->
                                         <div id="panelss" style="width: 15vw; margin-left:1.3vw;">
                                             <div class="btn-group dropend fs-6 mb-3">
-                                                <input type="text" name="min" style="width: 5vw;" id="minim"
-                                                    placeholder="Min" oninput="ajax(1)">
+                                                <input type="text" name="min" style="width: 5vw;" id="minim" placeholder="Min" oninput="ajax(1)">
                                                 <h3 style="margin: 3px;">-</h3>
-                                                <input type="text" name="max" style="width: 5vw;" id="maks"
-                                                    placeholder="Max" oninput="ajax(1)">
+                                                <input type="text" name="max" style="width: 5vw;" id="maks" placeholder="Max" oninput="ajax(1)">
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="checkbox" name="prc1"
-                                                    id="exampleRadios1" onclick="ajax(1)">
+                                                <input class="form-check-input me-1" type="checkbox" name="prc1" id="exampleRadios1" onclick="ajax(1)">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Rp 800k - 1000k
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="checkbox" name="prc2"
-                                                    id="exampleRadios1" onclick="ajax(1)">
+                                                <input class="form-check-input me-1" type="checkbox" name="prc2" id="exampleRadios1" onclick="ajax(1)">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Rp 1000k - 1500k
                                                 </p>
                                             </div>
                                             <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="checkbox" name="prc3"
-                                                    id="exampleRadios1" onclick="ajax(1)">
+                                                <input class="form-check-input me-1" type="checkbox" name="prc3" id="exampleRadios1" onclick="ajax(1)">
                                                 <p class="brand" style="font-size: 1vw;">
                                                     Rp 1500k - 3000k
                                                 </p>
@@ -573,13 +543,12 @@ if (isset($_REQUEST["hapus"])) {
                                             $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                             foreach ($data as $value) {
                                             ?>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="checkbox" name="res"
-                                                    id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    <?= $value["Nama"] ?>
-                                                </p>
-                                            </div>
+                                                <div class="btn-group dropend fs-5">
+                                                    <input class="form-check-input me-1" type="checkbox" name="res" id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?= $value["Nama"] ?>
+                                                    </p>
+                                                </div>
                                             <?php
                                             }
                                             ?>
@@ -601,13 +570,12 @@ if (isset($_REQUEST["hapus"])) {
                                             $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                             foreach ($data as $value) {
                                             ?>
-                                            <div class="btn-group dropend fs-5">
-                                                <input class="form-check-input me-1" type="checkbox" name="dsp"
-                                                    id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    <?= $value["Nama"] ?>
-                                                </p>
-                                            </div>
+                                                <div class="btn-group dropend fs-5">
+                                                    <input class="form-check-input me-1" type="checkbox" name="dsp" id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?= $value["Nama"] ?>
+                                                    </p>
+                                                </div>
                                             <?php
                                             }
                                             ?>
@@ -621,21 +589,19 @@ if (isset($_REQUEST["hapus"])) {
                                             </label>
                                             Color
                                         </p>
-                                        <div id="panel3"
-                                            style="width: 8.5vw;height:18vw; margin-left:1.3vw;overflow:scroll;">
+                                        <div id="panel3" style="width: 8.5vw;height:18vw; margin-left:1.3vw;overflow:scroll;">
                                             <?php
                                             $stmt = $conn->prepare("SELECT * FROM color");
                                             $stmt->execute();
                                             $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                             foreach ($data as $value) {
                                             ?>
-                                            <div class="btn-group dropend fs-5" style='width:100%;'>
-                                                <input class="form-check-input me-1" type="checkbox" name="col"
-                                                    id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
-                                                <p class="brand" style="font-size: 1vw;">
-                                                    <?= $value["Nama"] ?>
-                                                </p>
-                                            </div>
+                                                <div class="btn-group dropend fs-5" style='width:100%;'>
+                                                    <input class="form-check-input me-1" type="checkbox" name="col" id="exampleRadios1" onclick="ajax(1)" value="<?= $value["ID"] ?>">
+                                                    <p class="brand" style="font-size: 1vw;">
+                                                        <?= $value["Nama"] ?>
+                                                    </p>
+                                                </div>
                                             <?php
                                             }
                                             ?>
@@ -648,10 +614,8 @@ if (isset($_REQUEST["hapus"])) {
                                     <div class="container-fluid">
                                         <p class="display-4 fs-2 pt-3" style="text-align: center;">Wacthes New Series
                                         </p>
-                                        <div class="src d-flex justify-content-center mb-3"
-                                            style="width: 40%;float:right;">
-                                            <input class="form-control" type="search" placeholder="Search..."
-                                                aria-label="Search" name="tekscari" id="cari1" oninput="ajax(1)">
+                                        <div class="src d-flex justify-content-center mb-3" style="width: 40%;float:right;">
+                                            <input class="form-control" type="search" placeholder="Search..." aria-label="Search" name="tekscari" id="cari1" oninput="ajax(1)">
                                             <hr class="my-4">
                                             <button class="btn btn-outline-secondary" onclick="ajax(1)">Search</button>
 
@@ -663,14 +627,12 @@ if (isset($_REQUEST["hapus"])) {
 
                 </section>
                 <hr class="my-4 mt-5">
-                <section class="container-fluid d-flex justify-content-center isifot"
-                    style="margin-top:2vw; width:100%;height:100%;" id="footer">
+                <section class="container-fluid d-flex justify-content-center isifot" style="margin-top:2vw; width:100%;height:100%;" id="footer">
                     <div class="row ftr p-3" style="width: 100%; margin-bottom:3vw; height:17vw;">
                         <div class="over d-flex justify-content-center" style="margin-left: 5vw; margin-right:5vw">
                             <div class="col-3" style="margin: 0.3vw;">
                                 <a class="nav-link text-white" href="loginadmin.php" style="display: flex;">
-                                    <img src="asset/logo/logo.png" class="gambar" style="width: 3vw; height:3vw" alt=""
-                                        srcset="">
+                                    <img src="asset/logo/logo.png" class="gambar" style="width: 3vw; height:3vw" alt="" srcset="">
                                     <h2 style="padding-top: 0.5vw; color:black;">
                                         Cityzent
                                     </h2>
@@ -695,8 +657,8 @@ if (isset($_REQUEST["hapus"])) {
                             <div class="col-2 pt-2 ms-5" style="margin: 0.3vw;font-size: 1.3vw; color:dark;">
                                 <p>Our Services</p>
                                 <div class="des">
-                                    <a href="loginadmin.php" style="text-decoration: none;">
-                                        <p style="font-size: 1vw; color:gray">Admin</p>
+                                    <a href="#" style="text-decoration: none;">
+                                        <p style="font-size: 1vw; color:gray">Payment</p>
                                     </a>
                                     <a href="history.php" style="text-decoration: none;">
                                         <p style="font-size: 1vw; color:gray">Save Transactions</p>
@@ -724,11 +686,11 @@ if (isset($_REQUEST["hapus"])) {
     </div>
 </body>
 <script>
-$(document).ready(function() {
-    $('body').bind('cut copy', function(e) {
-        e.preventDefault();
+    $(document).ready(function() {
+        $('body').bind('cut copy', function(e) {
+            e.preventDefault();
+        });
     });
-});
 </script>
 
 </html>

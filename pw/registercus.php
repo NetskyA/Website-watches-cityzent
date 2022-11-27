@@ -26,7 +26,7 @@ if (isset($_POST["regist"])) {
         $username == "" || $pass == "" || $copass == "" || $email == "" || $phone == "" || $negara == "" ||
         $provinsi == "" || $district == "" || $city == "" || $street == "" || $note == ""
     ) {
-        echo "<script>alert('Ada Field Kosong')</script>";
+        echo "<script>alert('Please Input All Field')</script>";
     } else {
         if ($pass == $copass) {
             $panjang = strlen($pass);
@@ -46,13 +46,13 @@ if (isset($_POST["regist"])) {
                     $result = $stmt->execute();
                     header("Location: logincus.php");
                 } else {
-                    echo "<script>alert('Email Sudah Terdaftar')</script>";
+                    echo "<script>alert('Email Has Been Registered')</script>";
                 }
             } else {
-                echo "<script>alert('Panjang Password Invalid')</script>";
+                echo "<script>alert('Invalid Password Length')</script>";
             }
         } else {
-            echo "<script>alert('Password dan Confirm Password Salah')</script>";
+            echo "<script>alert('Password and Confirm Password Don't Match')</script>";
         }
     }
 }

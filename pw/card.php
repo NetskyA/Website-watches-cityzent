@@ -5,7 +5,7 @@ if (isset($_REQUEST["barang"])) {
     $data = json_decode($data, true);
     $_SESSION["temp"] = $data;
     if ($_SESSION["temp"]["Stok"] == 0) {
-        $_SESSION["total"] = "Barang Habis";
+        $_SESSION["total"] = "Out of Stock";
     } else {
         $_SESSION["total"] = 0;
     }
@@ -33,7 +33,7 @@ if (isset($_POST["minus"]) && ($_SESSION["total"] > 0)) {
     }
 }
 
-if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Barang Habis") && ($_SESSION["total"] != 0)) {
+if (isset($_POST["checkout"]) && ($_SESSION["total"] != "Out of Stock") && ($_SESSION["total"] != 0)) {
     $ket = false;
     $stmt = $conn->prepare("SELECT * FROM cart");
     if (isset($_SESSION["logged"])) {

@@ -4,7 +4,7 @@ if (isset($_POST["kirim"])) {
     $email = strip_tags($_POST["email"]);
     $desc = strip_tags($_POST["desc"]);
     if ($username == "" || $email == "" || $desc == "") {
-        echo "<script>alert('Inputan ada yang kosong')</script>";
+        echo "<script>alert('Please Input All Field')</script>";
     } else {
     }
 }

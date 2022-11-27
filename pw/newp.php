@@ -35,7 +35,7 @@ if (isset($_POST["add"])) {
             // Allow certain file formats
             if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $uploadOk == true) {
                 $uploadOk = false;
-                echo '<script>alert("Format File Salah")</script>';
+                echo '<script>alert("Invalid format")</script>';
             }
 
             // Check if $uploadOk is set to 0 by an error
@@ -53,17 +53,17 @@ if (isset($_POST["add"])) {
                 }
             }
         } else {
-            echo '<script>alert("Input Invalid")</script>';
+            echo '<script>alert("Invalid Input")</script>';
         }
     } else {
-        echo '<script>alert("Ada yang Belum diisi")</script>';
+        echo '<script>alert("Please Input All Field")</script>';
     }
 }
 
 if (isset($_POST["btnbrnd"])) {
     $nama = strip_tags($_POST["inpbrand"]);
     if ($nama == "") {
-        echo '<script>alert("Inputan Belum diisi")</script>';
+        echo '<script>alert("Please Input All Field")</script>';
     } else {
         $stmt = $conn->prepare("INSERT INTO brand(Nama) VALUES(?)");
         $stmt->bind_param("s", $nama);
@@ -73,7 +73,7 @@ if (isset($_POST["btnbrnd"])) {
 if (isset($_POST["btndisplay"])) {
     $nama = strip_tags($_POST["inpdisplay"]);
     if ($nama == "") {
-        echo '<script>alert("Inputan Belum diisi")</script>';
+        echo '<script>alert("Please Input All Field")</script>';
     } else {
         $stmt = $conn->prepare("INSERT INTO display(Nama) VALUES(?)");
         $stmt->bind_param("s", $nama);
@@ -83,7 +83,7 @@ if (isset($_POST["btndisplay"])) {
 if (isset($_POST["btnwarna"])) {
     $nama = strip_tags($_POST["inpwarna"]);
     if ($nama == "") {
-        echo '<script>alert("Inputan Belum diisi")</script>';
+        echo '<script>alert("Please Input All Field")</script>';
     } else {
         $stmt = $conn->prepare("INSERT INTO color(Nama) VALUES(?)");
         $stmt->bind_param("s", $nama);
@@ -93,7 +93,7 @@ if (isset($_POST["btnwarna"])) {
 if (isset($_POST["btngender"])) {
     $nama = strip_tags($_POST["inpgender"]);
     if ($nama == "") {
-        echo '<script>alert("Inputan Belum diisi")</script>';
+        echo '<script>alert("Please Input All Field")</script>';
     } else {
         $stmt = $conn->prepare("INSERT INTO gender(Nama) VALUES(?)");
         $stmt->bind_param("s", $nama);
@@ -103,7 +103,7 @@ if (isset($_POST["btngender"])) {
 if (isset($_POST["btnresistant"])) {
     $nama = strip_tags($_POST["inpresistant"]);
     if ($nama == "") {
-        echo '<script>alert("Inputan Belum diisi")</script>';
+        echo '<script>alert("Please Input All Field")</script>';
     } else {
         $stmt = $conn->prepare("INSERT INTO resistant(Nama) VALUES(?)");
         $stmt->bind_param("s", $nama);
