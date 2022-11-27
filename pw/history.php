@@ -53,7 +53,7 @@ if (isset($_POST["tgl"])) {
                             <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
 
                             <li class="nav-item dropdown me-4 pt-2" style="display: flex;">
-                                <p style="width:11.5vw; font-size:1.5vw; font-weight:bold;">Cityzent</p>
+                                <p style="width:7vw; font-size:1.5vw; font-weight:bold;">Cityzent</p>
                                 <div class="nth1">
                                 </div>
                             </li>
@@ -95,7 +95,7 @@ if (isset($_POST["tgl"])) {
                         if ($dat == "") {
                             $stmt = $conn->prepare("SELECT d.ID as 'Invoice',c.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',d.Jumlah as 'Jumlah',b.Harga as 'Harga',h.Waktu_Transaksi as 'Waktu'  from h_trans h,d_trans d, barang b,customer c where h.ID=d.ID and d.ID_Barang=b.ID and h.ID_Customer=c.ID and h.ID_Customer=$id");
                         } else {
-                            $stmt = $conn->prepare("SELECT d.ID as 'Invoice',c.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',d.Jumlah as 'Jumlah',b.Harga as 'Harga',h.Waktu_Transaksi as 'Waktu'  from h_trans h,d_trans d, barang b,customer c where h.ID=d.ID and d.ID_Barang=b.ID and h.ID_Customer=c.ID and h.ID_Customer=$id and h.Waktu_Transaksi>='" . $dat . "'");
+                            $stmt = $conn->prepare("SELECT d.ID as 'Invoice',c.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',d.Jumlah as 'Jumlah',b.Harga as 'Harga',h.Waktu_Transaksi as 'Waktu'  from h_trans h,d_trans d, barang b,customer c where h.ID=d.ID and d.ID_Barang=b.ID and h.ID_Customer=c.ID and h.ID_Customer=$id and h.Waktu_Transaksi='" . $dat . "'");
                         }
                         $stmt->execute();
                         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
