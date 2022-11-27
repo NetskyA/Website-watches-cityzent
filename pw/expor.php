@@ -9,7 +9,7 @@ require_once 'connector.php';
 $output = "";
 
 $output .= "
-		<table>
+		<table border='1'>
 			<thead>
 				<tr>
                     <th>Nota</th>
