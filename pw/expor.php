@@ -19,12 +19,12 @@ $output .= "
 				</tr>
 			<tbody>
 	";
-$subtotal=0;
+$subtotal = 0;
 $stmt = $conn->prepare("SELECT c.Nama_Lengkap as 'Nama',h.ID as 'ID',h.Total as 'Total',h.Waktu_Transaksi as 'Waktu' from h_trans h,customer c where h.ID_Customer=c.ID");
 $stmt->execute();
 $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 foreach ($data as $key => $value) {
-    $subtotal+= $value["Total"];
+    $subtotal += $value["Total"];
     $output .= "
 				<tr>
 					<td>" . $value["ID"] . "</td>
@@ -40,7 +40,7 @@ $output .= "
                 <td></td>
                 <td></td>
                 <td>Subtotal :</td>
-                <td>Rp ".number_format($subtotal, 2, ',', '.')."</td>
+                <td>Rp " . number_format($subtotal, 2, ',', '.') . "</td>
             </tr>
 			</tbody>
  
