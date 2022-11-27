@@ -32,7 +32,7 @@ if (isset($_POST["del"])) {
     <div class="judul d-flex justify-content-center" style="text-align: center;" onmousedown="return false"
         onselectstart="return false">
         <img src="asset/logo/logo.png" class="logo" style="height: 3vw; height:3vw;" alt="" srcset="">
-        <h1 class="dtc pt-1 fs-5">DATA CENTER</h1>
+        <h1 class="dtc pt-1 fs-5" onmousedown="return false" onselectstart="return false">DATA CENTER</h1>
     </div>
     <nav class="navbarr">
         <div class="container-fluid">
@@ -52,7 +52,7 @@ if (isset($_POST["del"])) {
         </div>
     </nav>
     <div class="container">
-        <h4 class="jd pt-4">Data Exporting</h4>
+        <h4 class="jd pt-4" onmousedown="return false" onselectstart="return false">Data Exporting</h4>
         <div class="data-tables datatable-dark mt-4 mb-5">
             <table class="table table-striped table-bordered table-paginate" id="mauexport" cellspacing="0" width="100%"
                 onmousedown="return false" onselectstart="return false">
@@ -61,7 +61,7 @@ if (isset($_POST["del"])) {
                         <th style="width: 5vw;">ID</th>
                         <th style="width: 5.9vw;">ID Customer</th>
                         <th style="width: 8.5vw;">Total</th>
-                        <th style="width: 8.5vw;">Date Transaksi</th>
+                        <th style="width: 8.5vw;">Date Transaction</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -13,7 +13,7 @@ if (isset($_POST["del"])) {
 <html>
 
 <head>
-    <title>Cityzent | Sales Reports</title>
+    <title>Cityzent | Detail Brands</title>
     <link rel="stylesheet" href="css/syl.css">
     <link rel="shortcut icon" href="asset/favicon/logoscrt.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
