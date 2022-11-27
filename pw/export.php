@@ -21,16 +21,14 @@ if (isset($_POST["del"])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js">
     </script>
 </head>
 
 <body>
-    <div class="judul d-flex justify-content-center" style="text-align: center;" onmousedown="return false"
-        onselectstart="return false">
+    <div class="judul d-flex justify-content-center" style="text-align: center;" onmousedown="return false" onselectstart="return false">
         <img src="asset/logo/logo.png" class="logo" style="height: 3vw; height:3vw;" alt="" srcset="">
         <h1 class="dtc pt-1 fs-5" onmousedown="return false" onselectstart="return false">DATA CENTER</h1>
     </div>
@@ -45,56 +43,55 @@ if (isset($_POST["del"])) {
                     <p class="sts2 fs-5 pt-3 text-success">Active</p>
                 </div>
                 <a href="admin.php" style="margin-top: 0.8vw;">
-                    <button class="btn bck2 btn-secondary mt-4 ms-4 me-5"
-                        style="width: 10vw; height:2vw; margin-left:2vw;" type="button">Back</button>
+                    <button class="btn bck2 btn-secondary mt-4 ms-4 me-5" style="width: 10vw; height:2vw; margin-left:2vw;" type="button">Back</button>
                 </a>
             </div>
         </div>
     </nav>
     <div class="container">
-        <h4 class="jd pt-4" onmousedown="return false" onselectstart="return false">Data Exporting</h4>
+        <h4 class="jd pt-4">Data Exporting</h4>
+        <div class="ex">
+            <a href="expor.php">
+                <input type="button" class="exp" value="Export">
+            </a>
+        </div>
         <div class="data-tables datatable-dark mt-4 mb-5">
-            <table class="table table-striped table-bordered table-paginate mt-5" id="mauexport" cellspacing="0"
-                width="100%" onmousedown="return false" onselectstart="return false">
+            <table class="table table-striped table-bordered table-paginate" id="mauexport" cellspacing="0" width="100%" onmousedown="return false" onselectstart="return false">
                 <thead>
                     <tr>
-                        <th style="width: 5vw;">ID</th>
-                        <th style="width: 5.9vw;">ID Customer</th>
-                        <th style="width: 8.5vw;">Subtotal</th>
-                        <th style="width: 8.5vw;">Date Transaction</th>
+                        <th style="width: 5vw;">Nota</th>
+                        <th style="width: 5.9vw;">Nama Customer</th>
+                        <th style="width: 8.5vw;">Total</th>
+                        <th style="width: 8.5vw;">Date Transaksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $stmt = $conn->prepare("select* from h_trans");
+                    $stmt = $conn->prepare("SELECT c.Nama_Lengkap as 'Nama',h.ID as 'ID',h.Total as 'Total',h.Waktu_Transaksi as 'Waktu' from h_trans h,customer c where h.ID_Customer=c.ID");
                     $stmt->execute();
                     $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                     foreach ($data as $key => $value) {
                     ?>
-                    <tr>
-                        <td style="text-align: center;"><?php echo $value["ID"] ?></td>
-                        <td style="text-align: center;"><?php echo $value["ID_Customer"] ?></td>
-                        <td style="text-align: center;">Rp. <?php echo number_format($value["Total"], 2, ',', '.') ?>
-                        </td>
-                        <td style="text-align: center;"><?php echo $value["Waktu_Transaksi"] ?></td>
-                    </tr>
+                        <tr>
+                            <td style="text-align: center;"><?php echo $value["ID"] ?></td>
+                            <td style="text-align: center;"><?php echo $value["Nama"] ?></td>
+                            <td style="text-align: center;">Rp. <?php echo number_format($value["Total"], 2, ',', '.') ?>
+                            </td>
+                            <td style="text-align: center;"><?php echo $value["Waktu"] ?></td>
+                        </tr>
 
                     <?php
                     }
                     ?>
                 </tbody>
             </table>
-
         </div>
     </div>
 
     <script>
-    $(document).ready(function() {
-        $('#mauexport').DataTable({
-            dom: 'Bfrtip',
-            buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+        $(document).ready(function() {
+
         });
-    });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
