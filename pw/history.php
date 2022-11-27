@@ -12,7 +12,7 @@ if (isset($_POST["tgl"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WATCHES SCRT | Online Shop</title>
+    <title>Cityzent | Online Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
@@ -53,7 +53,7 @@ if (isset($_POST["tgl"])) {
                             <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
 
                             <li class="nav-item dropdown me-4 pt-2" style="display: flex;">
-                                <p style="width:11.5vw; font-size:1.5vw; font-weight:bold;">WATCHES SCRT</p>
+                                <p style="width:11.5vw; font-size:1.5vw; font-weight:bold;">Cityzent</p>
                                 <div class="nth1">
                                 </div>
                             </li>
@@ -152,14 +152,14 @@ if (isset($_POST["tgl"])) {
                                 <img src="asset/logo/logo.png" class="gambar" style="width: 3vw; height:3vw" alt=""
                                     srcset="">
                                 <h2 style="padding-top: 0.5vw; color:black;">
-                                    WATCHES SCRT
+                                    Cityzent
                                 </h2>
                             </a>
                             <div class="des ms-5">
                                 <p style="font-size: 1vw; color:gray">Ngagel Jaya Tengah 73-77 <br>
                                     Surabaya, Indonesia</p>
                                 <p style="font-size: 0.7vw; color:gray">Payment By Midtrans</p>
-                                <p style="font-size: 0.6vw; color:gray">Copyright © 2022 WATCHES SCRT. All Rights
+                                <p style="font-size: 0.6vw; color:gray">Copyright © 2022 Cityzent. All Rights
                                     Reserved.</p>
 
                             </div>
@@ -181,7 +181,7 @@ if (isset($_POST["tgl"])) {
                             </div>
                         </div>
                         <div class="col-4" style="margin: 0.3vw;font-size: 1.3vw; color:dark;">
-                            <p>Subscribe our WATCHES SCRT</p>
+                            <p>Subscribe our Cityzent</p>
                             <div class="des">
                                 <p style="font-size: 1vw; color:gray">Find your style and explore it all over</p>
                                 <form class="d-flex" role="search">

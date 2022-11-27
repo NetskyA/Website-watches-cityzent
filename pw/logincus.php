@@ -35,7 +35,7 @@ if (isset($_POST["login"])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WATCHES SCRT | Online Shop</title>
+    <title>Cityzent | Online Shop</title>
     <!--Framework Use-->
     <link rel="stylesheet" href="css/stylecus.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

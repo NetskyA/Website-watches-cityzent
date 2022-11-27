@@ -145,7 +145,7 @@ foreach ($listbarang as $key => $value) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WATCHES SCRT | Online Shop</title>
+    <title>Cityzent | Online Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
@@ -283,7 +283,7 @@ foreach ($listbarang as $key => $value) {
                             <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
 
                             <li class="nav-item dropdown me-4 pt-2" style="display: flex;">
-                                <p style="width:11.5vw; font-size:1.5vw; font-weight:bold;">WATCHES SCRT</p>
+                                <p style="width:11.5vw; font-size:1.5vw; font-weight:bold;">Cityzent</p>
                                 <div class="nth2">
                                 </div>
                             </li>

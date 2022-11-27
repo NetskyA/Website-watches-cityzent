@@ -84,7 +84,7 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WATCHES SCRT | Online Shop</title>
+    <title>Cityzent | Online Shop</title>
 
     <!--Framework Use-->
     <link rel="stylesheet" href="css/syl.css">
@@ -96,27 +96,32 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
 
     <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <!-- Jquery DataTables -->
-    <script type="text/javascript" language="javascript" src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="http:////cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <!-- Bootstrap dataTables Javascript -->
-    <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="http://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
 
     <script type="text/javascript" charset="utf-8">
-        $(document).ready(function() {
-            $('.table-paginate').dataTable();
-        });
+    $(document).ready(function() {
+        $('.table-paginate').dataTable();
+    });
     </script>
 </head>
 
 <body>
-    <div class="judul d-flex justify-content-center" style="text-align: center;" onmousedown="return false" onselectstart="return false">
+    <div class="judul d-flex justify-content-center" style="text-align: center;" onmousedown="return false"
+        onselectstart="return false">
         <img src="asset/logo/logo.png" class="logo" style="height: 3vw; height:3vw;" alt="" srcset="">
         <h1 class="dtc pt-1">DATA CENTER</h1>
     </div>
@@ -167,7 +172,8 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
             </div>
             <div class="cover2 mt-1">
                 <div class="ntte">
-                    <div class="jdl pt-2" style="text-align: center;" onmousedown="return false" onselectstart="return false">
+                    <div class="jdl pt-2" style="text-align: center;" onmousedown="return false"
+                        onselectstart="return false">
                         <h2>Edit Product</h2>
                     </div>
                     <div class="atas mt-4 pt-1 col-8" style="display: flex;">
@@ -176,14 +182,17 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                 <div class="namep">
                                     <label for="Nm" class="form-label">Name Product</label>
                                     <div class="ini" style="display: flex;">
-                                        <input name="nama" type="name" id="name1" style="width: 15vw;" class="form-control" aria-describedby="passwordHelpBlock" value="<?= $data[0]["Nama_Barang"] ?>">
+                                        <input name="nama" type="name" id="name1" style="width: 15vw;"
+                                            class="form-control" aria-describedby="passwordHelpBlock"
+                                            value="<?= $data[0]["Nama_Barang"] ?>">
                                     </div>
                                 </div>
                             </div>
                             <div class="bawah mt-3" style="display: flex; margin-left: 1vw;">
                                 <div class="namep">
                                     <label for="Nm" class="form-label">Brand</label>
-                                    <select name="brand" style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <select name="brand"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                         <?php
                                         $stmt = $conn->prepare("SELECT * FROM brand");
                                         $stmt->execute();
@@ -200,15 +209,20 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                 </div>
                                 <div class="stock ms-3">
                                     <label for="Nm" class="form-label">Stock</label>
-                                    <input type="text" id="name" name="stok" value="<?= $data[0]["Stok"] ?>" class="form-control" aria-describedby="passwordHelpBlock" style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <input type="text" id="name" name="stok" value="<?= $data[0]["Stok"] ?>"
+                                        class="form-control" aria-describedby="passwordHelpBlock"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                 </div>
                                 <div class=" price ms-3">
                                     <label for="Nm" class="form-label">Price</label>
-                                    <input type="name" id="text" name="harga" value="<?= $data[0]["Harga"] ?>" class="form-control" aria-describedby="passwordHelpBlock" style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <input type="name" id="text" name="harga" value="<?= $data[0]["Harga"] ?>"
+                                        class="form-control" aria-describedby="passwordHelpBlock"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                 </div>
                                 <div class=" wat ms-3">
                                     <label for="Nm" class="form-label">Water Resistant</label>
-                                    <select name="resistant" style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <select name="resistant"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                         <?php
                                         $stmt = $conn->prepare("SELECT * FROM resistant");
                                         $stmt->execute();
@@ -227,7 +241,8 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                             <div class="bawah2 mt-3 ms-1" style="display: flex;">
                                 <div class="color ms-3" style="display:flex;flex-direction: column;">
                                     <label for="Nm" class="form-label">Color</label>
-                                    <select name="color" style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <select name="color"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                         <?php
                                         $stmt = $conn->prepare("SELECT * FROM color");
                                         $stmt->execute();
@@ -244,7 +259,8 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                 </div>
                                 <div class="dis ms-3" style="display:flex;flex-direction: column;">
                                     <label for="Nm" class="form-label">Display</label>
-                                    <select name="display" style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <select name="display"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                         <?php
                                         $stmt = $conn->prepare("SELECT * FROM display");
                                         $stmt->execute();
@@ -261,7 +277,8 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                                 </div>
                                 <div class="gen ms-3" style="display:flex;flex-direction: column;">
                                     <label for="Nm" class="form-label">Gender</label>
-                                    <select name="gender" style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
+                                    <select name="gender"
+                                        style="width: 10vw;border:0px;border-radius: 0.2vw;height:1.5vw">
                                         <?php
                                         $stmt = $conn->prepare("SELECT * FROM gender");
                                         $stmt->execute();
@@ -279,7 +296,8 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                             </div>
                             <div class="des ms-3 mt-3">
                                 <label for="Nm" class="form-label">Description</label>
-                                <textarea name="note" class="note" style="border-radius: 0.5vw; width:100%; height:8vw;" id="note"><?= $data[0]["Deskripsi"] ?></textarea>
+                                <textarea name="note" class="note" style="border-radius: 0.5vw; width:100%; height:8vw;"
+                                    id="note"><?= $data[0]["Deskripsi"] ?></textarea>
                             </div>
                         </div>
                         <div class="kanan" style="display: flex;">
@@ -290,13 +308,16 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                     </div>
                     <div class="kanan2 col-3 ms-3 mt-3">
                         <div class="input-group">
-                            <input name="fileupload" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Upload</button>
+                            <input name="fileupload" type="file" class="form-control" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                            <button class="btn btn-outline-secondary" type="button"
+                                id="inputGroupFileAddon04">Upload</button>
                         </div>
                     </div>
                     <div class="detail">
                         <hr class="my-4">
-                        <input name="save" type="submit" value="Save Edit" class="btn btn-secondary ms-3 mb-3" style="width: 10vw; height:2vw">
+                        <input name="save" type="submit" value="Save Edit" class="btn btn-secondary ms-3 mb-3"
+                            style="width: 10vw; height:2vw">
                     </div>
                 </div>
             </div>
@@ -305,7 +326,8 @@ $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
 </script>
 
 

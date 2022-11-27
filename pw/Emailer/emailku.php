@@ -21,7 +21,8 @@ $stmt = $conn->prepare("SELECT * FROM customer where customer.ID = '" . $idcus .
 $stmt->execute();
 $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 $nama = $data[0]["Nama_Lengkap"];
-$email= $data[0]["Email"];
+$email = $data[0]["Email"];
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -45,7 +46,7 @@ $mail->addAddress("$email");
 $mail->Subject = "Invoice";
 $isi = "";
 $isi .=
-'
+    '
 <html>
 <body">
     <div style="background-color: rgb(255, 255, 255);
@@ -60,7 +61,7 @@ $isi .=
         <div class="isinya" style="">
             <div class="atas" style="display: flex;justify-content:center">
                 <img src=\'cid:logo_p2t\' style="width: 3vw;height: 3vw;" alt="" srcset="">
-                <p style="font-size:0.8vw; padding-top:0.5vw;">WATCHES SCRT</p>
+                <p style="font-size:0.8vw; padding-top:0.5vw;">Cityzent</p>
             </div>
             <div style="font-size: 2vw;text-align: center;margin-top: 0.5vw;">
                 <p>Appreciation to you</p>
@@ -86,11 +87,11 @@ $isi .=
                 </div>
                 <p style="font-size:0.8vw;">Name customer : ' . $nama . '</p>
                 <p style="font-size:0.8vw;">Product name : </p>';
-                foreach ($listbarang2 as $key => $value) {
-                    $isi .= '<p style="font-size:0.8vw;">' . $value . '</p>';
-                }
+foreach ($listbarang2 as $key => $value) {
+    $isi .= '<p style="font-size:0.8vw;">' . $value . '</p>';
+}
 
-            $isi .= '<p style="font-size:0.8vw;">Total price : Rp' . number_format($subtotalall, 2, ",", ".") . '</p>
+$isi .= '<p style="font-size:0.8vw;">Total price : Rp' . number_format($subtotalall, 2, ",", ".") . '</p>
             </div>
             <hr class="my-4 mt-2">
         </div>
