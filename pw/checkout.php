@@ -311,17 +311,16 @@ foreach ($listbarang as $key => $value) {
 
                         <div class="alamat" style="width: 100%; height:auto;">
                             <div class="judulw">
-                                <p class="display-4 fs-3 pt-3" style="text-align: center;">Address Sended</p>
+                                <p class="display-4 fs-3 pt-3" style="text-align: center;">Shipping Address</p>
                             </div>
                             <div class="bgks d-flex">
                                 <div class="isinya mt-5" style="width: 30vw;">
                                     <div class="dropdown mb-4">
                                         <select name="" id="drop">
-                                            <option value="JNE">JNE</option>
-                                            <option>J&T Express</option>
-                                            <option>POS Indonesia</option>
-                                            <option>SiCepat</option>
-                                            <option>Pandu Logistics</option>
+                                            <option value="JNE">DHL</option>
+                                            <option>FedEx</option>
+                                            <option>UPS</option>
+                                            <option>Prime</option>
                                         </select>
                                     </div>
                                     <div class="up">

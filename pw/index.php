@@ -612,7 +612,7 @@ if (isset($_REQUEST["hapus"])) {
                                 <!-- and navbar kiri -->
                                 <div class="kiri">
                                     <div class="container-fluid">
-                                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Wacthes New Series
+                                        <p class="display-4 fs-2 pt-3" style="text-align: center;">Watches New Series
                                         </p>
                                         <div class="src d-flex justify-content-center mb-3" style="width: 40%;float:right;">
                                             <input class="form-control" type="search" placeholder="Search..." aria-label="Search" name="tekscari" id="cari1" oninput="ajax(1)">

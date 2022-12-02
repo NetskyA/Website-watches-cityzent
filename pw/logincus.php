@@ -72,13 +72,13 @@ if (isset($_POST["login"])) {
             margin: 0;
         }
 
-        .bg {
-            background-image: url("asset/banner/banner.jpg");
-            height: 100%;
+        /* .bg {
+            /* background-image: url("asset/banner/banner.jpg"); */
+            /* height: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-        }
+        } */
 
         .kotak {
             position: absolute;
@@ -97,7 +97,7 @@ if (isset($_POST["login"])) {
     </style>
 </head>
 
-<body class="bd bg-dark">
+<body class="bd">
     <div class="bg">
         <div class="isi">
             <div class="kotak d-flex justify-content-center">
