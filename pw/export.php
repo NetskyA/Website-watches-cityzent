@@ -1,14 +1,6 @@
 <?php
 require_once("connector.php");
-if (isset($_POST["edit"])) {
-    $data2 = $_POST["data"];
-    header("Location: editbarang.php?id=" . $data2);
-}
 
-if (isset($_POST["del"])) {
-    $data2 = $_POST["data"];
-    $result = $conn->query("UPDATE barang SET Stok=0 WHERE ID=$data2");
-}
 ?>
 <html>
 
@@ -50,11 +42,6 @@ if (isset($_POST["del"])) {
     </nav>
     <div class="container">
         <h4 class="jd pt-4">Data Exporting</h4>
-        <div class="ex">
-            <a href="expor.php">
-                <input type="button" class="exp" value="Export">
-            </a>
-        </div>
         <div class="data-tables datatable-dark mt-4 mb-5">
             <table class="table table-striped table-bordered table-paginate" id="mauexport" cellspacing="0" width="100%" onmousedown="return false" onselectstart="return false">
                 <thead>
@@ -90,7 +77,12 @@ if (isset($_POST["del"])) {
 
     <script>
         $(document).ready(function() {
-
+            $('#mauexport').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
         });
     </script>
 
