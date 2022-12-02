@@ -7,7 +7,7 @@ if (isset($_REQUEST["barang"])) {
     if ($_SESSION["temp"]["Stok"] == 0) {
         $_SESSION["total"] = "Out of Stock";
     } else {
-        $_SESSION["total"] = 0;
+        $_SESSION["total"] = 1;
     }
 }
 $result = mysqli_query($conn, "SELECT Nama FROM brand WHERE ID='" . $_SESSION['temp']['ID_Brand'] . "'");
