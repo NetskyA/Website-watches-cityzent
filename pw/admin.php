@@ -32,9 +32,11 @@ if (isset($_POST["del"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
 
     <script type="text/javascript" language="javascript" src="script/jquery-1.12.4.min.js"></script>
@@ -43,16 +45,17 @@ if (isset($_POST["del"])) {
     <!-- Bootstrap dataTables Javascript -->
     <script type="text/javascript" language="javascript" src="script/bootsrap.js"></script>
     <script type="text/javascript" charset="utf-8">
-        $(document).ready(function() {
-            $('.table-paginate').dataTable();
-        });
+    $(document).ready(function() {
+        $('.table-paginate').dataTable();
+    });
     </script>
 
 
 </head>
 
 <body>
-    <div class="judul d-flex justify-content-center" style="text-align: center;" onmousedown="return false" onselectstart="return false">
+    <div class="judul d-flex justify-content-center" style="text-align: center;" onmousedown="return false"
+        onselectstart="return false">
         <img src="asset/logo/logo.png" class="logo" style="height: 3vw; height:3vw;" alt="" srcset="">
         <h1 class="dtc pt-1">DATA CENTER</h1>
     </div>
@@ -70,7 +73,8 @@ if (isset($_POST["del"])) {
                     <ul class="nav">
                         <li class="nav-item fs-3 pt-2" style="display: flex;">
                             <a href="loginadmin.php">
-                                <button class="btn bck btn-secondary mt-4 ms-4" style="width: 10vw; height:2vw" type="button">Logout</button>
+                                <button class="btn bck btn-secondary mt-4 ms-4" style="width: 10vw; height:2vw"
+                                    type="button">Logout</button>
                             </a>
                         </li>
                     </ul>
@@ -110,7 +114,8 @@ if (isset($_POST["del"])) {
         </div>
         <div class="cover2 mt-1">
             <div class="ntt">
-                <div class="jdl pb-2" style="text-align: center; padding-top:0.5vw;" onmousedown="return false" onselectstart="return false">
+                <div class="jdl pb-2" style="text-align: center; padding-top:0.5vw;" onmousedown="return false"
+                    onselectstart="return false">
                     <h2>List Product</h2>
                 </div>
                 <!-- <div class="atas mt-4 pt-3" style="display: flex;">
@@ -135,15 +140,18 @@ if (isset($_POST["del"])) {
             </div>
             <div class="ex">
                 <a href="exportall.php" style="display: flex; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-spreadsheet text-light ms-2 me-1 mt-2" viewBox="0 0 16 16">
-                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-file-earmark-spreadsheet text-light ms-2 me-1 mt-2" viewBox="0 0 16 16">
+                        <path
+                            d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z" />
                     </svg>
                     <p style="font-size: 0.8vw; color:white;" class="port me-3 pt-1">Go Export</p>
                     <!-- <input type="button" class="exp" value="Go Export"> -->
                 </a>
             </div>
             <div class="bawah mt-1 mb-5" style="width: 86vw;">
-                <table class="table table-striped table-bordered table-paginate" cellspacing="0" width="100%" onmousedown="return false" onselectstart="return false">
+                <table class="table table-striped table-bordered table-paginate" cellspacing="0" width="100%"
+                    onmousedown="return false" onselectstart="return false">
                     <thead>
                         <tr>
                             <th style="width: 3vw;">ID</th>
@@ -169,45 +177,49 @@ ba.ID_Brand = br.ID and ba.ID_Warna = co.ID and ba.ID_Display=di.ID and ba.ID_Ge
                         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                         foreach ($data as $key => $value) {
                         ?>
-                            <tr>
-                                <td style="text-align: center;"><?= $value["ID"] ?></td>
-                                <td style="text-align: center;"><?= $value["Brand"] ?></td>
-                                <td style="text-align: center;"><?= $value["Display"] ?></td>
-                                <td style="text-align: center;"><?= $value["Color"] ?></td>
-                                <td style="text-align: center;"><?= $value["Gender"] ?></td>
-                                <td style="text-align: center;"><?= $value["Resistant"] ?></td>
-                                <td style="text-align: center;"><?= $value["Nama_Barang"] ?></td>
-                                <td style="text-align: center;"><?= $value["Gambar"] ?></td>
-                                <td style="text-align: center;"><?= $value["Stok"] ?></td>
-                                <td style="text-align: center;">Rp. <?= number_format($value["Harga"], 2, ',', '.') ?></td>
-                                <td style="text-align: center;">
-                                    <div style="height:6vw; overflow:hidden"><?= $value["Deskripsi"] ?></div>
-                                </td>
-                                <td style="text-align: center;">
-                                    <?php
+                        <tr>
+                            <td style="text-align: center;"><?= $value["ID"] ?></td>
+                            <td style="text-align: center;"><?= $value["Brand"] ?></td>
+                            <td style="text-align: center;"><?= $value["Display"] ?></td>
+                            <td style="text-align: center;"><?= $value["Color"] ?></td>
+                            <td style="text-align: center;"><?= $value["Gender"] ?></td>
+                            <td style="text-align: center;"><?= $value["Resistant"] ?></td>
+                            <td style="text-align: center;"><?= $value["Nama_Barang"] ?></td>
+                            <td style="text-align: center;"><?= $value["Gambar"] ?></td>
+                            <td style="text-align: center;"><?= $value["Stok"] ?></td>
+                            <td style="text-align: center;">Rp. <?= number_format($value["Harga"], 2, ',', '.') ?></td>
+                            <td style="text-align: center;">
+                                <div style="height:6vw; overflow:hidden"><?= $value["Deskripsi"] ?></div>
+                            </td>
+                            <td style="text-align: center;">
+                                <?php
                                     if ($value["Stok"] == 0) {
                                     ?>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-circle-fill text-warning" viewBox="0 0 16 16">
-                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
-                                        </svg>
-                                    <?php
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-x-circle-fill text-warning" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                                </svg>
+                                <?php
                                     } else {
                                     ?>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
-                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                        </svg>
-                                    <?php
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-check-circle-fill text-success" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                </svg>
+                                <?php
                                     }
                                     ?>
-                                </td>
-                                <td style="text-align: center;">
-                                    <form action="" method="post" style="display: flex;">
-                                        <input type="hidden" name="data" value="<?= $value["ID"] ?>">
-                                        <input type="submit" class="capek" value="Edit" name="edit">
-                                        <input type="submit" class="capek2 ms-1" value="Delete" name="del">
-                                    </form>
-                                </td>
-                            </tr>
+                            </td>
+                            <td style="text-align: center;">
+                                <form action="" method="post" style="display: flex;">
+                                    <input type="hidden" name="data" value="<?= $value["ID"] ?>">
+                                    <input type="submit" class="capek" value="Edit" name="edit">
+                                    <input type="submit" class="capek2 ms-1" value="Delete" name="del">
+                                </form>
+                            </td>
+                        </tr>
 
                         <?php
                         }
@@ -219,14 +231,14 @@ ba.ID_Brand = br.ID and ba.ID_Warna = co.ID and ba.ID_Display=di.ID and ba.ID_Ge
     </div>
 
     <script>
-        $(document).ready(function() {
-            $('#mauexport').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
-            });
+    $(document).ready(function() {
+        $('#mauexport').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
         });
+    });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -240,7 +252,8 @@ ba.ID_Brand = br.ID and ba.ID_Warna = co.ID and ba.ID_Display=di.ID and ba.ID_Ge
     <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
 </script>
 
 

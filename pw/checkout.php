@@ -321,6 +321,7 @@ foreach ($listbarang as $key => $value) {
                                             <option>FedEx</option>
                                             <option>UPS</option>
                                             <option>Prime</option>
+                                            <option>Aramax</option>
                                         </select>
                                     </div>
                                     <div class="up">

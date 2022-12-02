@@ -1,10 +1,12 @@
 <?php
 require_once("connector.php");
+
 if (isset($_SESSION["logged"])) {
     $idx = $_SESSION["logged"];
 } else {
     $idx = -1;
 }
+
 $stmt = $conn->prepare("SELECT * FROM cart where ID_User=" . $idx);
 $stmt->execute();
 $listbarang = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -60,6 +62,7 @@ foreach ($listbarang as $key => $value) {
     echo '</div>';
     echo '<hr class="my-4" style="border: 1px solid gray">';
 }
+
 if (count($listbarang) == 0) {
     echo "<div class='d-flex justify-content-center align-items-center'style='width:100%;height:40vw;font-size: 5vw;'>";
     echo "Product Not Found";

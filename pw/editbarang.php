@@ -3,6 +3,7 @@ require_once("connector.php");
 if (isset($_REQUEST["id"])) {
     $id = $_REQUEST["id"];
 }
+
 $stmt = $conn->prepare("SELECT * FROM barang WHERE ID='" . $id . "'");
 $stmt->execute();
 $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
