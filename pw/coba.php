@@ -118,12 +118,14 @@ if (isset($_REQUEST["berhasil"])) {
                     <p style="padding-left:28vw;">Status : Gold</p>
                 </div>
                 <p style="font-size:0.8vw;">Name customer : <?= $nama ?></p>
-                <p style="font-size:0.8vw;">Product name : </p>
-                <?php
-                foreach ($listbarang2 as $key => $value) {
-                    echo '<p style="font-size:0.8vw;">' . $value . '</p>';
-                }
-                ?>
+                <div style="display: flex;">
+                    <p style="font-size:0.8vw;margin-right:0.2vw">Product name : </p>
+                    <?php
+                    foreach ($listbarang2 as $key => $value) {
+                        echo '<p style="font-size:0.8vw;margin-right:0.2vw;"><span>' . $value . ',</span></p>';
+                    }
+                    ?>
+                </div>
                 <p style="font-size:0.8vw;">Total price : Rp <?= number_format($subtotalall, 2, ',', '.'); ?></p>
             </div>
             <hr class="my-4 mt-2">
