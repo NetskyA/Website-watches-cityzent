@@ -146,7 +146,8 @@ foreach ($listbarang as $key => $value) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cityzent | Online Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!--Framework Use-->
     <link rel="stylesheet" href="css/style.css">
@@ -157,101 +158,103 @@ foreach ($listbarang as $key => $value) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
     </script>
     <!--Framework Use-->
 
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-SoATxc1jvSH64Jjh">
     </script>
     <script type="text/javascript">
-        function bayar() {
-            // SnapToken acquired from previous step
-            inp1 = document.getElementById("nname").value;
-            inp2 = document.getElementById("nadd").value;
-            inp3 = document.getElementById("ntelp").value;
-            inp4 = document.getElementsByClassName("note")[0].value;
-            status = document.getElementById("log").value;
-            if (status == 'false') {
-                window.location.href = "logincus.php";
+    function bayar() {
+        // SnapToken acquired from previous step
+        inp1 = document.getElementById("nname").value;
+        inp2 = document.getElementById("nadd").value;
+        inp3 = document.getElementById("ntelp").value;
+        inp4 = document.getElementsByClassName("note")[0].value;
+        status = document.getElementById("log").value;
+        if (status == 'false') {
+            window.location.href = "logincus.php";
+        } else {
+            if (inp1 == "" || inp2 == "" | inp3 == "" || inp4 == "") {
+                alert("Please Input All Field");
             } else {
-                if (inp1 == "" || inp2 == "" | inp3 == "" || inp4 == "") {
-                    alert("Please Input All Field");
+                if (isNaN(inp3)) {
+                    alert("Please Input number");
                 } else {
-                    if (isNaN(inp3)) {
-                        alert("Please Input number");
-                    } else {
-                        snap.pay('<?php echo $snap_token ?>', {
-                            // Optional
-                            onSuccess: function(result) {
-                                /* You may add your own js here, this is just example */
-                                window.location.href = "coba.php?berhasil=1";
-                            },
-                            // Optional
-                            onPending: function(result) {
-                                /* You may add your own js here, this is just example */
+                    snap.pay('<?php echo $snap_token ?>', {
+                        // Optional
+                        onSuccess: function(result) {
+                            /* You may add your own js here, this is just example */
+                            window.location.href = "coba.php?berhasil=1";
+                        },
+                        // Optional
+                        onPending: function(result) {
+                            /* You may add your own js here, this is just example */
 
-                            },
-                            // Optional
-                            onError: function(result) {
-                                /* You may add your own js here, this is just example */
-                            },
+                        },
+                        // Optional
+                        onError: function(result) {
+                            /* You may add your own js here, this is just example */
+                        },
 
-                            onClose: function(result) {
+                        onClose: function(result) {
 
-                            }
-                        });
-                    }
+                        }
+                    });
                 }
             }
-        };
-
-        function ajax() {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-                document.getElementById("isi").innerHTML = this.responseText;
-            }
-            xhttp.open("GET", "ajax2.php");
-            xhttp.send();
         }
+    };
 
-        function del(idx, iduser) {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-                ajax();
-                window.location.href = "checkout.php";
-            }
-            xhttp.open("GET", "operation.php?operation2=delete&idx=" + idx + "&idus=" + iduser);
-            xhttp.send();
+    function ajax() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("isi").innerHTML = this.responseText;
         }
+        xhttp.open("GET", "ajax2.php");
+        xhttp.send();
+    }
 
-        function min(idx, iduser) {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-
-                ajax();
-                window.location.href = "checkout.php";
-            }
-            xhttp.open("GET", "operation.php?operation2=min&idx=" + idx + "&idus=" + iduser);
-            xhttp.send();
-        }
-
-        function plus(idx, iduser) {
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-
-                ajax();
-                window.location.href = "checkout.php";
-            }
-            xhttp.open("GET", "operation.php?operation2=plus&idx=" + idx + "&idus=" + iduser);
-            xhttp.send();
-
-        }
-
-        function load() {
+    function del(idx, iduser) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
             ajax();
+            window.location.href = "checkout.php";
         }
+        xhttp.open("GET", "operation.php?operation2=delete&idx=" + idx + "&idus=" + iduser);
+        xhttp.send();
+    }
+
+    function min(idx, iduser) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+
+            ajax();
+            window.location.href = "checkout.php";
+        }
+        xhttp.open("GET", "operation.php?operation2=min&idx=" + idx + "&idus=" + iduser);
+        xhttp.send();
+    }
+
+    function plus(idx, iduser) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+
+            ajax();
+            window.location.href = "checkout.php";
+        }
+        xhttp.open("GET", "operation.php?operation2=plus&idx=" + idx + "&idus=" + iduser);
+        xhttp.send();
+
+    }
+
+    function load() {
+        ajax();
+    }
     </script>
 </head>
 
@@ -261,7 +264,9 @@ foreach ($listbarang as $key => $value) {
             <!--navbar-->
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse fs-3" id="navbarNavDropdown">
@@ -283,7 +288,8 @@ foreach ($listbarang as $key => $value) {
                                 </div>
                             </li>
                             <a href="index.php" style="text-decoration:none">
-                                <p class="home text-dark" style="padding-top: 0.5vw;font-size:1.5vw; text-decoration: none;">Home</p>
+                                <p class="home text-dark"
+                                    style="padding-top: 0.5vw;font-size:1.5vw; text-decoration: none;">Home</p>
                             </a>
                         </ul>
                     </div>
@@ -327,23 +333,27 @@ foreach ($listbarang as $key => $value) {
                                     <div class="up">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">Customer's name</label>
-                                            <input type="text" class="form-control" id="nname" aria-describedby="emailHelp">
+                                            <input type="text" class="form-control" id="nname"
+                                                aria-describedby="emailHelp">
                                         </div>
                                     </div>
                                     <div class="up">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">Address</label>
-                                            <input type="text" class="form-control" id="nadd" aria-describedby="emailHelp">
+                                            <input type="text" class="form-control" id="nadd"
+                                                aria-describedby="emailHelp">
                                         </div>
                                     </div>
                                     <div class="up">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">Phone Number</label>
-                                            <input type="text" class="form-control" id="ntelp" aria-describedby="emailHelp">
+                                            <input type="text" class="form-control" id="ntelp"
+                                                aria-describedby="emailHelp">
                                         </div>
                                     </div>
                                     <label for="exampleFormControlTextarea1">Note</label>
-                                    <textarea class="form-control note" style="resize: none;max-height: 15vw;" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control note" style="resize: none;max-height: 15vw;"
+                                        id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
                                 <div class="isinya2 mt-5 pt-4" style="margin-left: 5vw;" id="bwh">
                                     <h4>
@@ -365,11 +375,11 @@ foreach ($listbarang as $key => $value) {
                             <?php
                             if (isset($_SESSION["logged"])) {
                             ?>
-                                <input type="hidden" id="log" value="<?= $_SESSION["logged"] ?>">
+                            <input type="hidden" id="log" value="<?= $_SESSION["logged"] ?>">
                             <?php
                             } else {
                             ?>
-                                <input type="hidden" id="log" value="false">
+                            <input type="hidden" id="log" value="false">
                             <?php
                             }
                             ?>
@@ -385,11 +395,11 @@ foreach ($listbarang as $key => $value) {
     </div>
 </body>
 <script>
-    $(document).ready(function() {
-        $('body').bind('cut copy', function(e) {
-            e.preventDefault();
-        });
+$(document).ready(function() {
+    $('body').bind('cut copy', function(e) {
+        e.preventDefault();
     });
+});
 </script>
 
 </html>
