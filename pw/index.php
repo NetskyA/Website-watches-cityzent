@@ -286,7 +286,7 @@ if (isset($_REQUEST["hapus"])) {
                 <div class="container-fluid">
                     <a class="nav-link text-white pt-2" href="#" style="display: flex;">
                         <img src="asset/logo/logo.png" class="logo" alt="" srcset="">
-                        <h2 style="padding-top: 0.5vw; color:black;">
+                        <h2 style="padding-top: 0.7vw; color:black;">
                             Cityzent
                         </h2>
                         <div class="nth ms-3">

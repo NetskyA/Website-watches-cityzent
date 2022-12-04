@@ -7,10 +7,16 @@
     background-color: rgb(255, 255, 255);
     width: 45vw;
     margin: 2vw;
-    height: 45vw;
+    height: 42vw;
     margin-left: 30vw;
     box-shadow: inset 0 -3em 3em rgba(125, 125, 125, 0.1), 0 0 0 2px rgb(221, 221, 221), 0.3em 0.3em 1em rgba(128, 128, 128, 0.3);
 
+}
+
+.jdl{
+    text-align: center;
+    margin-left: 4vw;
+    padding-left: 5vw;
 }
 
 .sub{

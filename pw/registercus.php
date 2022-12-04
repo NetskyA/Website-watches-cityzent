@@ -112,7 +112,7 @@ if (isset($_POST["regist"])) {
         background: rgba(0, 0, 0, 0.5);
         color: #f1f1f1;
         width: 85%;
-        height: 90%;
+        height: auto;
         padding: 3vw;
         border-radius: 0.9vw;
         justify-content: center;
