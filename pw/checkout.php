@@ -309,6 +309,8 @@ foreach ($listbarang as $key => $value) {
                             if (count($listbarang) == 0) {
                                 echo "<div class='d-flex justify-content-center align-items-center'style='width:100%;height:40vw;font-size: 5vw;'>";
                                 echo "Product Not Found";
+                                echo "<img src='asset/animate/not.gif' class='logo' alt='Computer man' style='width:8.2vw;height:6vw;justify-content:center;'>
+                                ";
                                 echo "</div>";
                             }
                             ?>
