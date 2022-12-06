@@ -22,8 +22,9 @@ if (isset($_REQUEST["berhasil"])) {
         // $subtotal = $value["jml"] * $data[0]["Harga"];
         // $subtotalall += $subtotal;
     }
-    $stmt = $conn->prepare("INSERT INTO h_trans(ID, ID_Customer, Total, Waktu_Transaksi) VALUES(?,?,?,?)");
-    $stmt->bind_param("ssss", $id, $idcus, $subtotalall, $waktu);
+    $stat=1;
+    $stmt = $conn->prepare("INSERT INTO h_trans(ID, ID_Customer, Total, Waktu_Transaksi,Status) VALUES(?,?,?,?,?)");
+    $stmt->bind_param("ssssi", $id, $idcus, $subtotalall, $waktu,$stat);
     $result = $stmt->execute();
     foreach ($listbarang as $key => $value) {
         $stmt = $conn->prepare("SELECT ba.Nama_Barang as  'Nama_Barang', b.Nama as 'Nama_Brand',ba.Stok as 'Stok', ba.Harga as'Harga' FROM brand b,color c,display d, gender g,resistant r, barang ba WHERE ba.ID_Brand = b.ID and ba.ID_Display = d.ID and ba.ID_Warna = c.ID and ba.ID_Gender = g.ID and ba.ID_Resistant = r.ID and ba.ID='" . $value['ID_Barang'] . "'");

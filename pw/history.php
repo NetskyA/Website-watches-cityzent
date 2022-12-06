@@ -93,20 +93,20 @@ if (isset($_POST["tgl"])) {
                         <?php
                         $id = $_SESSION["logged"];
                         if ($dat == "") {
-                            $stmt2 = $conn->prepare("SELECT cu.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',ca.Jumlah as 'Jumlah',b.Harga as 'Harga',ca.Waktu as 'Waktu' FROM cart ca,customer cu,barang b where ca.ID_Barang=b.ID and ca.ID_User=cu.ID and ID_User=" . $id);
-                            $stmt = $conn->prepare("SELECT d.ID as 'Invoice',c.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',d.Jumlah as 'Jumlah',b.Harga as 'Harga',h.Waktu_Transaksi as 'Waktu'  from h_trans h,d_trans d, barang b,customer c where h.ID=d.ID and d.ID_Barang=b.ID and h.ID_Customer=c.ID and h.ID_Customer=$id");
+                            // $stmt2 = $conn->prepare("SELECT cu.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',ca.Jumlah as 'Jumlah',b.Harga as 'Harga',ca.Waktu as 'Waktu' FROM cart ca,customer cu,barang b where ca.ID_Barang=b.ID and ca.ID_User=cu.ID and ID_User=" . $id);
+                            $stmt = $conn->prepare("SELECT h.Status as 'Status',d.ID as 'Invoice',c.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',d.Jumlah as 'Jumlah',b.Harga as 'Harga',h.Waktu_Transaksi as 'Waktu'  from h_trans h,d_trans d, barang b,customer c where h.ID=d.ID and d.ID_Barang=b.ID and h.ID_Customer=c.ID and h.ID_Customer=$id order by h.Waktu_Transaksi desc");
                         } else {
-                            $stmt2 = $conn->prepare("SELECT cu.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',ca.Jumlah as 'Jumlah',b.Harga as 'Harga',ca.Waktu as 'Waktu' FROM cart ca,customer cu,barang b where ca.ID_Barang=b.ID and ca.ID_User=cu.ID and ca.ID_User=" . $id." and ca.Waktu='" . $dat . "'");
-                            $stmt = $conn->prepare("SELECT d.ID as 'Invoice',c.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',d.Jumlah as 'Jumlah',b.Harga as 'Harga',h.Waktu_Transaksi as 'Waktu'  from h_trans h,d_trans d, barang b,customer c where h.ID=d.ID and d.ID_Barang=b.ID and h.ID_Customer=c.ID and h.ID_Customer=$id and h.Waktu_Transaksi='" . $dat . "'");
+                            // $stmt2 = $conn->prepare("SELECT cu.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',ca.Jumlah as 'Jumlah',b.Harga as 'Harga',ca.Waktu as 'Waktu' FROM cart ca,customer cu,barang b where ca.ID_Barang=b.ID and ca.ID_User=cu.ID and ca.ID_User=" . $id." and ca.Waktu='" . $dat . "'");
+                            $stmt = $conn->prepare("SELECT h.Status as 'Status',d.ID as 'Invoice',c.Nama_Lengkap as 'Nama',b.Nama_Barang as 'Barang',b.Gambar as 'Gambar',d.Jumlah as 'Jumlah',b.Harga as 'Harga',h.Waktu_Transaksi as 'Waktu'  from h_trans h,d_trans d, barang b,customer c where h.ID=d.ID and d.ID_Barang=b.ID and h.ID_Customer=c.ID and h.ID_Customer=$id and h.Waktu_Transaksi='" . $dat . "' order by h.Waktu_Transaksi desc");
                         }
                         $stmt->execute();
                         $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-                        $stmt2->execute();
-                        $listbarang = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
-                        foreach ($listbarang as $key => $v) {
-                            $subtotal = $v["Jumlah"] * $v["Harga"];
+                        // $stmt2->execute();
+                        // $listbarang = $stmt2->get_result()->fetch_all(MYSQLI_ASSOC);
+                        // foreach ($listbarang as $key => $v) {
+                        //     $subtotal = $v["Jumlah"] * $v["Harga"];
                         ?>
-                        <div class="isi" onmousedown='return false;' onselectstart='return false;'>
+                        <!-- <div class="isi" onmousedown='return false;' onselectstart='return false;'>
                             <div class="kiri">
                                 <div class="gmbr">
                                     <img src="<?= $v["Gambar"] ?>" class="gmbr1" alt="">
@@ -127,9 +127,9 @@ if (isset($_POST["tgl"])) {
                                 </div>
                             </div>
                         </div>
-                        <hr class="my-4" style="border: 1px solid gray">
+                        <hr class="my-4" style="border: 1px solid gray"> -->
                         <?php
-                        }
+                        // }
                         foreach ($data as $key => $v) {
                             $subtotal = $v["Jumlah"] * $v["Harga"];
                         ?>
@@ -143,7 +143,14 @@ if (isset($_POST["tgl"])) {
                             </div>
                             <div class="tengah">
                                 <div class="stts">
-                                    <p>Status : <span class="sc text-success">Success</span></p>
+                                    <?php 
+                                        if($v["Status"]==0){
+                                            echo '<p>Status : <span class="sc text-success">Success</span></p>';
+                                        }else{
+                                            echo '<p>Status : <span class="sc text-warning">Pending</span></p>';
+                                        }
+                                    
+                                    ?>
                                 </div>
                                 <div class="stts1">
                                     <p>Invoice number : <?= $v["Invoice"] ?></p>

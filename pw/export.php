@@ -1,6 +1,9 @@
 <?php
 require_once("connector.php");
-
+if(isset($_POST["edit"])){
+    $data2 = $_POST["data"];
+    $result = $conn->query("UPDATE h_trans SET Status=0 WHERE ID=$data2");
+}
 ?>
 <html>
 
@@ -50,11 +53,12 @@ require_once("connector.php");
                         <th style="width: 5.9vw;">Nama Customer</th>
                         <th style="width: 8.5vw;">Total</th>
                         <th style="width: 8.5vw;">Date Transaksi</th>
+                        <th style="width: 1vw;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $stmt = $conn->prepare("SELECT c.Nama_Lengkap as 'Nama',h.ID as 'ID',h.Total as 'Total',h.Waktu_Transaksi as 'Waktu' from h_trans h,customer c where h.ID_Customer=c.ID");
+                    $stmt = $conn->prepare("SELECT h.Status as 'Status',c.Nama_Lengkap as 'Nama',h.ID as 'ID',h.Total as 'Total',h.Waktu_Transaksi as 'Waktu' from h_trans h,customer c where h.ID_Customer=c.ID order by h.Waktu_Transaksi");
                     $stmt->execute();
                     $data = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
                     foreach ($data as $key => $value) {
@@ -65,6 +69,22 @@ require_once("connector.php");
                             <td style="text-align: center;">Rp. <?php echo number_format($value["Total"], 2, ',', '.') ?>
                             </td>
                             <td style="text-align: center;"><?php echo $value["Waktu"] ?></td>
+                            <?php
+                            if ($value["Status"] == 1) {
+                            ?>
+                                <td style="text-align: center;">
+                                    <form action="" method="post">
+                                        <input type="hidden" name="data" value="<?= $value["ID"] ?>">
+                                        <input type="submit" style="width:100%;height:100%" class="capek" value="Finish" name="edit">
+                                    </form>
+                                </td>
+                            <?php
+                            } else {
+                            ?>
+                                <td></td>
+                            <?php
+                            }
+                            ?>
                         </tr>
 
                     <?php
